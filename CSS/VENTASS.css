@@ -1,0 +1,79 @@
+    body { 
+        font-family: Arial;
+        padding: 20px; 
+    background: linear-gradient(
+      135deg,
+      #050505,
+      #111111,
+      #1a1a1a,
+      #2a0000
+    );
+        color: #fff;
+        font-family: "Michroma", sans-serif;
+        min-height: 100vh;
+        }
+  
+    table { 
+        width: 100%; 
+        border-collapse: collapse; 
+        margin-top: 20px; 
+                    background-color: linear-gradient(
+    to left,
+    #000000,
+    #1a1a1a,
+    #3a3a3a); 
+        text-align: center;
+        font-family: "Michroma", sans-serif;
+    }
+    th, td { 
+        padding: 12px; 
+        border: 1px solid #ccc; 
+        text-align: center; 
+    }
+    th { 
+        background-color: #a20000; 
+        color: white; 
+    }
+    button {
+        background: linear-gradient(
+      135deg,
+      #5c0000,
+      #a20000,
+      #ff2b2b
+    );
+        border-radius: 20px;
+        margin-top: 20px;
+        padding: 10px;
+        text-decoration: none;
+        color:#fff;
+        border: none;
+        text-shadow: 2px 2px 10px#fff;
+        font-family: "Michroma", sans-serif;
+    }
+
+    button:hover{
+    background: #fff;
+    color: #a20000;
+}
+
+    button a {
+            background: linear-gradient(
+      135deg,
+      #5c0000,
+      #a20000,
+      #ff2b2b
+    );
+        border-radius: 20px;
+        margin-top: 20px;
+        padding: 10px;
+        text-decoration: none;
+        color:#fff;
+        border: none;
+        text-shadow: 2px 2px 10px#fff;
+        font-family: "Michroma", sans-serif;
+    }
+
+    button a:hover{
+    background: #fff;
+    color: #a20000;
+}

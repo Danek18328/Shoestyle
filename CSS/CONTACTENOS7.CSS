@@ -1,0 +1,1442 @@
+/* =========================================================
+   4 FUENTES DE SHOESTYLE
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --rojo: #e10620;
+    --rojo-oscuro: #a20000;
+    --rojo-brillante: #ff2e2e;
+
+    --fondo: #050505;
+    --fondo-2: #0d0d0d;
+    --fondo-3: #151515;
+
+    --tarjeta: #181818;
+
+    --blanco: #ffffff;
+
+    --gris-claro: #c7c7c7;
+    --gris: #8c8c8c;
+    --gris-oscuro: #303030;
+
+    --borde: rgba(255,255,255,0.08);
+
+    --borde-hover: rgba(225,6,32,0.65);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+    padding: 0;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #151515 0%,
+            #050505 45%,
+            #030303 100%
+        );
+
+    color: var(--blanco);
+
+    font-family: 'Manrope', sans-serif;
+
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
+
+#contenedor {
+
+    width: 100%;
+    min-height: 100vh;
+
+    background: var(--fondo);
+
+    box-shadow:
+        0 0 30px rgba(0,0,0,0.7);
+}
+
+
+/* =========================================================
+   BANNER
+========================================================= */
+
+.banner-portada {
+        position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    color: #fff;
+}
+
+/* CONTENEDOR DE LA IMAGEN */
+
+.imagen-banner {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+}
+
+/* IMAGEN DE FONDO */
+
+.imagen-banner img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* CAPA OSCURA */
+
+.capa-oscura {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 0, 0, 0.452) 0%,
+            rgba(0, 0, 0, 0.88) 100%
+        );
+
+    z-index: 1;
+}
+
+/* CONTENIDO ENCIMA DEL FONDO */
+
+.top-bar,
+.lema-centro {
+    position: relative;
+    z-index: 10;
+}
+
+
+
+
+.top-bar {
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+    min-height: 90px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    color: var(--blanco);
+
+    font-family: 'Impact', 'Arial Black', sans-serif;
+
+    font-size: 1.5rem;
+
+    letter-spacing: 1px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.04);
+}
+
+.logo-rojo {
+    color: var(--rojo);
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
+
+.navegacion ul {
+
+    list-style: none;
+
+    display: flex;
+
+    gap: 25px;
+
+    align-items: center;
+}
+
+.navegacion ul li a {
+
+    position: relative;
+
+    color: #b3b3b3;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8  5rem;
+    font-weight: 600;
+
+    letter-spacing: 0.7px;
+
+    transition: color 0.3s ease;
+}
+
+.navegacion ul li a:hover {
+
+    color: #ffffff;
+
+}
+
+.navegacion ul li a.activo {
+
+    color: #ffffff;
+
+    position: relative;
+}
+
+.navegacion ul li a.activo::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 100%;
+    height: 2px;
+
+    background: var(--rojo);
+
+    box-shadow:
+        0 0 10px rgba(225,6,32,0.7);
+}
+
+
+/* =========================================================
+   ICONOS SUPERIORES
+========================================================= */
+
+.top-icons {
+
+    display: flex;
+
+    gap: 20px;
+
+    align-items: center;
+}
+
+.icon-link {
+
+    color: #ffffff;
+
+    font-size: 1.1rem;
+
+    transition:
+        color 0.3s ease,
+        transform 0.2s ease;
+}
+
+.icon-link:hover {
+
+    color: var(--rojo);
+
+    transform: scale(1.1);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.contenido-centro {
+
+    position: relative;
+
+    z-index: 10;
+
+    text-align: center;
+
+    max-width: 900px;
+
+    padding: 0 20px;
+
+    margin-top: -40px;
+
+    animation:
+        aparecerHero 1s ease forwards;
+}
+
+@keyframes aparecerHero {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   ETIQUETA HERO
+========================================================= */
+
+.etiqueta-hero {
+
+    margin-bottom: 18px;
+
+    color: var(--rojo);
+
+    font-family: 'poppins', sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================================
+   TÍTULO HERO
+========================================================= */
+
+.titulo-hero {
+
+        font-family: 'Impact', 'Arial Black', sans-serif;
+
+
+    font-size:
+        clamp(3rem, 7vw, 6rem);
+
+    line-height: 0.95;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+.titulo-hero::after {
+
+    content: "";
+
+    display: block;
+
+    width: 80px;
+    height: 4px;
+
+    margin: 25px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--rojo),
+            var(--rojo-brillante)
+        );
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+========================================================= */
+
+.subtitulo {
+
+    margin-top: 25px;
+
+    color: #cccccc;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LEMA
+========================================================= */
+
+.lema-centro {
+
+    position: relative;
+
+    z-index: 10;
+
+    text-align: center;
+
+    margin-bottom: 5px;
+}
+
+.lema-centro p {
+
+    color: rgba(255,255,255,0.75);
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(1rem, 2vw, 1.5rem);
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 3px 15px rgba(0,0,0,0.8);
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.scroll-indicator {
+
+    margin-bottom: 20px;
+
+    z-index: 10;
+
+    opacity: 0.6;
+}
+
+.mouse {
+
+    width: 24px;
+    height: 40px;
+
+    border:
+        2px solid #ffffff;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    padding-top: 8px;
+}
+
+.rueda {
+
+    width: 4px;
+    height: 8px;
+
+    background: var(--rojo);
+
+    border-radius: 2px;
+
+    animation:
+        encoger-rueda 1.5s infinite;
+}
+
+@keyframes encoger-rueda {
+
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main.contacto {
+
+    width: 100%;
+
+    padding: 100px 5% 120px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #080808 0%,
+            #050505 100%
+        );
+}
+
+
+/* =========================================================
+   SECCIÓN CONTACTO
+========================================================= */
+
+.contacto-seccion {
+
+    width: min(1300px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr 1.1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   INFORMACIÓN CONTACTO
+========================================================= */
+
+.contacto-info {
+
+    padding: 20px;
+}
+
+.seccion-etiqueta {
+
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: var(--rojo);
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 22px;
+
+    letter-spacing: 4px;
+}
+
+.contacto-info h2 {
+
+    font-family:
+        'Archivo Black',
+        sans-serif;
+
+    font-size:
+        clamp(2.3rem, 5vw, 4rem);
+
+    line-height: 1;
+
+    color: var(--blanco);
+
+    margin-bottom: 25px;
+}
+
+.contacto-info h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 3px;
+
+    margin-top: 18px;
+
+    background: var(--rojo);
+}
+
+.texto-contacto {
+
+    color: var(--gris-claro);
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    max-width: 600px;
+}
+
+
+/* =========================================================
+   DATOS CONTACTO
+========================================================= */
+
+.datos-contacto {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    margin-top: 40px;
+}
+
+.dato {
+
+    display: flex;
+
+    gap: 15px;
+
+    align-items: flex-start;
+
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #181818,
+            #101010
+        );
+
+    border:
+        1px solid var(--borde);
+
+    border-radius: 12px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.dato:hover {
+
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(225,6,32,0.5);
+}
+
+.dato-icono {
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(225,6,32,0.12);
+
+    color: var(--rojo);
+
+    font-size: 16px;
+}
+
+.dato h3 {
+
+    margin-bottom: 7px;
+
+    color: var(--blanco);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+.dato p {
+
+    color: var(--gris);
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FORMULARIO
+========================================================= */
+
+.formulario-contacto {
+
+    padding: 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1a1a1a,
+            #0e0e0e
+        );
+
+    border:
+        1px solid var(--borde);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.45);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.formulario-contacto::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--rojo),
+            var(--rojo-brillante)
+        );
+}
+
+.formulario-header {
+
+    margin-bottom: 35px;
+}
+
+.formulario-etiqueta {
+
+    color: var(--rojo);
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 20px;
+
+    letter-spacing: 3px;
+}
+
+.formulario-header h2 {
+
+    margin-top: 8px;
+
+    color: var(--blanco);
+
+    font-family:
+        'Archivo Black',
+        sans-serif;
+
+    font-size: 32px;
+}
+
+.formulario-header h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 3px;
+
+    margin-top: 14px;
+
+    background: var(--rojo);
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.campo {
+
+    margin-bottom: 22px;
+}
+
+.campo label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--gris-claro);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.7px;
+}
+
+.campo input,
+.campo textarea {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    background: #090909;
+
+    color: var(--blanco);
+
+    border:
+        1px solid rgba(255,255,255,0.1);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.campo input {
+
+    height: 50px;
+}
+
+.campo textarea {
+
+    min-height: 145px;
+
+    resize: vertical;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+
+    color: #666;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+
+    border-color: var(--rojo);
+
+    background: #0c0c0c;
+
+    box-shadow:
+        0 0 0 3px rgba(225,6,32,0.1);
+}
+
+
+/* =========================================================
+   BOTÓN FORMULARIO
+========================================================= */
+
+.formulario-contacto button {
+
+    width: 100%;
+
+    padding: 15px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--rojo),
+            #ff3b30
+        );
+
+    color: var(--blanco);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.formulario-contacto button i {
+
+    margin-left: 8px;
+}
+
+.formulario-contacto button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(225,6,32,0.3);
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff263c,
+            #e10620
+        );
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    width: 100%;
+
+    padding: 70px 5% 25px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0a0a0a,
+            #030303
+        );
+
+    border-top:
+        1px solid rgba(255,255,255,0.08);
+
+    color: var(--blanco);
+
+    text-align: center;
+
+    font-family: 'Manrope', sans-serif;
+}
+
+
+/* =========================================================
+   REDES SOCIALES
+========================================================= */
+
+.redes-sociales {
+
+    margin-bottom: 55px;
+}
+
+.redes-sociales h3 {
+
+    margin-bottom: 25px;
+
+    font-family:
+        'Archivo Black',
+        sans-serif;
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+}
+
+.iconos-redes {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.iconos-redes a {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    border-radius: 50%;
+
+    background: #111111;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.iconos-redes a:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--rojo);
+
+    background: #181818;
+}
+
+.iconos-redes a img {
+
+    width: 25px;
+    height: 25px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   FOOTER INFO
+========================================================= */
+
+.footer-info {
+
+    width: min(1250px, 100%);
+
+    margin: 0 auto;
+
+    padding: 45px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 60px;
+
+    text-align: left;
+
+    border-top:
+        1px solid rgba(255,255,255,0.07);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.07);
+}
+
+.footer-info h4 {
+
+    margin-bottom: 22px;
+
+    color: var(--blanco);
+
+    font-family:
+        'Archivo Black',
+        sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1.5px;
+}
+
+.footer-info h4::after {
+
+    content: "";
+
+    display: block;
+
+    width: 30px;
+    height: 2px;
+
+    margin-top: 10px;
+
+    background: var(--rojo);
+}
+
+.footer-info ul {
+
+    list-style: none;
+
+    padding: 0;
+}
+
+.footer-info ul li {
+
+    margin-bottom: 12px;
+
+    color: #888;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.footer-info ul li strong {
+
+    color: #d5d5d5;
+}
+
+.footer-info ul li a {
+
+    color: #888;
+
+    transition:
+        color 0.3s ease;
+}
+
+.footer-info ul li a:hover {
+
+    color: var(--rojo);
+}
+
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.copyright {
+
+    padding-top: 25px;
+
+    text-align: center;
+}
+
+.copyright p {
+
+    color: #555;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .top-bar {
+
+        padding: 22px 25px;
+    }
+
+    .navegacion ul {
+
+        gap: 15px;
+    }
+
+    .navegacion ul li a {
+
+        font-size: 0.65rem;
+    }
+
+    .contacto-seccion {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .contacto-info {
+
+        text-align: center;
+    }
+
+    .texto-contacto {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contacto-info h2::after {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .formulario-contacto {
+
+        max-width: 750px;
+
+        width: 100%;
+
+        margin: auto;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE 850px
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .top-bar {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 20px;
+    }
+
+    .logo {
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .navegacion {
+
+        width: 100%;
+
+        overflow-x: auto;
+    }
+
+    .navegacion ul {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .top-icons {
+
+        display: none;
+    }
+
+    .datos-contacto {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-info {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 40px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE 600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .banner-portada {
+
+        height: 850px;
+    }
+
+    .top-bar {
+
+        padding: 20px 15px;
+    }
+
+    .navegacion ul {
+
+        gap: 10px 15px;
+    }
+
+    .navegacion ul li a {
+
+        font-size: 0.58rem;
+    }
+
+    .contenido-centro {
+
+        margin-top: -20px;
+    }
+
+    .etiqueta-hero {
+
+        font-size: 18px;
+
+        letter-spacing: 3px;
+    }
+
+    .titulo-hero {
+
+        font-size: clamp(3rem, 16vw, 5rem);
+    }
+
+    .subtitulo {
+
+        font-size: 14px;
+    }
+
+    .lema-centro p {
+
+        font-size: 14px;
+
+        letter-spacing: 3px;
+    }
+
+    main.contacto {
+
+        padding:
+            70px 20px 80px;
+    }
+
+    .contacto-info {
+
+        padding: 0;
+    }
+
+    .contacto-info h2 {
+
+        font-size: 36px;
+    }
+
+    .texto-contacto {
+
+        font-size: 14px;
+    }
+
+    .datos-contacto {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .formulario-contacto {
+
+        padding: 30px 20px;
+    }
+
+    .formulario-header h2 {
+
+        font-size: 27px;
+    }
+
+    .footer-info {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        text-align: center;
+    }
+
+    .footer-info h4::after {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-info ul li {
+
+        font-size: 12px;
+    }
+
+    .iconos-redes {
+
+        gap: 10px;
+    }
+
+    .iconos-redes a {
+
+        width: 42px;
+        height: 42px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE 400px
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .navegacion ul {
+
+        gap: 8px 10px;
+    }
+
+    .navegacion ul li a {
+
+        font-size: 0.52rem;
+    }
+
+    .titulo-hero {
+
+        font-size: 2.8rem;
+    }
+
+    .formulario-contacto {
+
+        padding: 25px 16px;
+    }
+}

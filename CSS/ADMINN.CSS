@@ -1,0 +1,79 @@
+        body {
+            margin: 20px;
+    background: linear-gradient(
+      135deg,
+      #050505,
+      #111111,
+      #1a1a1a,
+      #2a0000
+    );
+            color: #fff;
+            font-family: "Michroma", sans-serif;
+        }
+
+
+
+        h1 {
+            color: #ffffff;
+        }
+        a.btn {
+            padding: 10px 15px;
+            background: linear-gradient(
+        135deg,
+        #5c0000,
+        #a20000,
+        #ff2b2b
+        );
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            box-shadow: 2px 2px 10px#fff;
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            box-shadow: 2px 2px 10px#fff;
+            border-radius: 20px;
+            text-align: center;
+            background-color: linear-gradient(
+      135deg,
+      #050505,
+      #111111,
+      #1a1a1a,
+      #2a0000
+    );
+            font-family: "Michroma", sans-serif;
+        }
+
+
+
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ffffff;
+            text-align: center;
+            font-family: "Michroma", sans-serif;
+        }
+        th {
+     
+            color: white;
+            font-family: "Michroma", sans-serif;
+            
+        }
+        img {
+            max-width: 60px;
+        }
+        .acciones a {
+            padding: 10px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            margin-right: 10px;
+            width: 40px;
+        }
+        .editar { background-color: #07daff;}
+        .eliminar { background-color: #dc3545; }
+        

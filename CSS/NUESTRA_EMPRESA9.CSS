@@ -1,0 +1,1048 @@
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #ffffff;
+    font-family: "Comfortaa", sans-serif;
+    overflow-x: hidden;
+}
+
+#contenedor {
+    width: 100%;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.banner-portada {
+    position: relative;
+    width: 100%;
+    height: 720px;
+    min-height: 650px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Video */
+
+.video-container {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+}
+
+.video-fondo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.capa-oscura {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.466) 0%,
+            rgba(0, 0, 0, 0.377) 45%,
+            rgba(0, 0, 0, 0.301) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   BARRA SUPERIOR
+========================================================= */
+
+.top-bar {
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+    min-height: 90px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+
+/* Logo */
+
+.logo {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.logo-rojo {
+    color: #e50914;
+}
+
+
+/* Navegación */
+
+.navegacion ul {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.navegacion a {
+    text-decoration: none;
+    color: #b3b3b3;
+    font-size: 0.8  5rem;
+    font-family: 'poppins', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+
+.navegacion a.activo::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 100%;
+    height: 2px;
+
+    background: var(--rojo);
+}
+
+
+
+/* Iconos */
+
+.top-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-link {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    transition: 0.3s ease;
+}
+
+.icon-link:hover {
+    background: #e50914;
+    border-color: #e50914;
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.contenido-centro {
+    position: relative;
+    z-index: 5;
+
+    width: min(1100px, 90%);
+
+    margin: auto;
+
+    padding-top: 70px;
+}
+
+.etiqueta-hero {
+    margin-bottom: 18px;
+
+    color: var(--rojo);
+
+    font-family: 'poppins', sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+}
+
+.titulo-hero {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+
+    font-size: clamp(42px, 7vw, 86px);
+    line-height: 1.05;
+
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    max-width: 900px;
+}
+
+.titulo-hero span {
+    color: #e50914;
+}
+
+.subtitulo {
+    max-width: 620px;
+
+    margin-top: 25px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* Botón */
+
+.btn-rojo {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    margin-top: 35px;
+
+    min-width: 190px;
+    padding: 15px 25px;
+
+    background: #e50914;
+    border: 1px solid #e50914;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.btn-rojo:hover {
+    background: transparent;
+    color: #ffffff;
+
+    box-shadow: 0 0 25px rgba(229, 9, 20, 0.35);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.scroll-indicator {
+    position: absolute;
+
+    bottom: 35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.mouse {
+    width: 25px;
+    height: 40px;
+
+    border: 2px solid rgba(255, 255, 255, 0.65);
+
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+
+    padding-top: 7px;
+}
+
+.rueda {
+    width: 3px;
+    height: 8px;
+
+    background: #e50914;
+
+    border-radius: 5px;
+
+    animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+    width: 100%;
+    background: #080808;
+}
+
+
+/* =========================================================
+   INTRODUCCIÓN
+========================================================= */
+
+.introduccion {
+    width: min(950px, 90%);
+
+    margin: auto;
+
+    padding: 120px 0 90px;
+
+    text-align: center;
+}
+
+.seccion-etiqueta {
+    color: #e50914;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.introduccion h2 {
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(28px, 4vw, 46px);
+
+    line-height: 1.25;
+}
+
+.linea-roja {
+    width: 55px;
+    height: 3px;
+
+    margin: 25px 0;
+
+    background: #e50914;
+}
+
+.introduccion .linea-roja {
+    margin: 25px auto;
+}
+
+.introduccion p {
+    max-width: 750px;
+
+    margin: auto;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-family: "Matangi", sans-serif;
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SOBRE NOSOTROS
+========================================================= */
+
+.bloque-empresa {
+    width: min(1200px, 90%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 550px;
+}
+
+.empresa-texto {
+    padding: 70px 70px 70px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.numero-seccion {
+    color: #e50914;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+}
+
+.empresa-texto h2 {
+    margin-top: 15px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 34px;
+}
+
+.empresa-texto p {
+    margin-top: 18px;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-family: "Matangi", sans-serif;
+
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+
+/* Destacado */
+
+.empresa-destacado {
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(229, 9, 20, 0.9),
+            rgba(80, 0, 5, 0.85)
+        );
+
+    overflow: hidden;
+}
+
+.empresa-destacado::before {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 50%;
+}
+
+.empresa-destacado::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 50%;
+}
+
+.destacado-contenido {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+}
+
+.destacado-contenido i {
+    font-size: 70px;
+
+    margin-bottom: 30px;
+}
+
+.destacado-contenido h3 {
+    font-family: "Michroma", sans-serif;
+
+    font-size: 38px;
+}
+
+.destacado-contenido span {
+    display: block;
+
+    margin-top: 10px;
+
+    font-family: "Matangi", sans-serif;
+
+    font-size: 17px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   MISIÓN Y VISIÓN
+========================================================= */
+
+.mision-vision {
+    width: min(1200px, 90%);
+
+    margin: 100px auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.tarjeta-info {
+    position: relative;
+
+    padding: 55px;
+
+    background: #101010;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition: 0.35s ease;
+}
+
+.tarjeta-info:hover {
+    border-color: rgba(229, 9, 20, 0.6);
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.icono-info {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 35px;
+
+    border: 1px solid #e50914;
+
+    color: #e50914;
+
+    font-size: 23px;
+}
+
+.tarjeta-info h2 {
+    margin-top: 15px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 28px;
+}
+
+.tarjeta-info p {
+    color: rgba(255, 255, 255, 0.65);
+
+    font-family: "Matangi", sans-serif;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   VALORES
+========================================================= */
+
+.valores {
+    width: min(1200px, 90%);
+
+    margin: 130px auto;
+}
+
+.cabecera-seccion {
+    margin-bottom: 60px;
+}
+
+.cabecera-seccion span {
+    color: #e50914;
+
+    font-family: "Michroma", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+}
+
+.cabecera-seccion h2 {
+    margin-top: 15px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(30px, 4vw, 45px);
+}
+
+.cabecera-seccion p {
+    margin-top: 15px;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    font-family: "Matangi", sans-serif;
+}
+
+.valores-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.valor {
+    padding: 35px 28px;
+
+    background: #101010;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    transition: 0.3s ease;
+}
+
+.valor:hover {
+    border-color: #e50914;
+
+    transform: translateY(-8px);
+}
+
+.valor-icono {
+    font-size: 28px;
+
+    color: #e50914;
+
+    margin-bottom: 25px;
+}
+
+.valor h3 {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    margin-bottom: 15px;
+}
+
+.valor p {
+    color: rgba(255, 255, 255, 0.6);
+
+    font-family: "Matangi", sans-serif;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   FRASE FINAL
+========================================================= */
+
+.frase-final {
+    position: relative;
+
+    min-height: 450px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            rgba(229, 9, 20, 0.12),
+            rgba(229, 9, 20, 0.02)
+        );
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.frase-contenido span {
+    color: #e50914;
+
+    font-family: "Michroma", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+}
+
+.frase-contenido h2 {
+    margin-top: 20px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(35px, 6vw, 70px);
+
+    line-height: 1.15;
+}
+
+.frase-contenido strong {
+    color: #e50914;
+}
+
+.frase-contenido p {
+    max-width: 600px;
+
+    margin: 25px auto 0;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-family: "Matangi", sans-serif;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #050505;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    padding-top: 70px;
+}
+
+.redes-sociales {
+    text-align: center;
+
+    padding: 0 20px 55px;
+}
+
+.redes-sociales h3 {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.iconos-redes {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.iconos-redes a {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 50%;
+
+    transition: 0.3s ease;
+
+    overflow: hidden;
+}
+
+.iconos-redes a:hover {
+    border-color: #e50914;
+
+    transform: translateY(-5px);
+}
+
+.iconos-redes img {
+    width: 23px;
+    height: 23px;
+
+    object-fit: contain;
+}
+
+
+/* Footer columnas */
+
+.footer-info {
+    width: min(1200px, 90%);
+
+    margin: auto;
+
+    padding: 55px 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 60px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.columna h4 {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.columna ul {
+    list-style: none;
+}
+
+.columna li {
+    margin-bottom: 12px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-family: "Matangi", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.columna a {
+    color: rgba(255, 255, 255, 0.55);
+
+    transition: 0.3s ease;
+}
+
+.columna a:hover {
+    color: #e50914;
+}
+
+
+/* Copyright */
+
+.copyright {
+    padding: 25px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.copyright p {
+    color: rgba(255, 255, 255, 0.4);
+
+    font-family: "Matangi", sans-serif;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navegacion ul {
+        gap: 15px;
+    }
+
+    .navegacion a {
+        font-size: 10px;
+    }
+
+    .valores-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .banner-portada {
+        height: 650px;
+    }
+
+    .top-bar {
+        padding: 20px 5%;
+
+        flex-wrap: wrap;
+
+        gap: 20px;
+    }
+
+    .navegacion {
+        order: 3;
+
+        width: 100%;
+
+        overflow-x: auto;
+    }
+
+    .navegacion ul {
+        width: max-content;
+    }
+
+    .top-icons {
+        margin-left: auto;
+    }
+
+    .contenido-centro {
+        padding-top: 50px;
+    }
+
+    .bloque-empresa {
+        grid-template-columns: 1fr;
+    }
+
+    .empresa-texto {
+        padding: 60px 0;
+    }
+
+    .empresa-destacado {
+        min-height: 400px;
+    }
+
+    .mision-vision {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-info {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .top-icons {
+        gap: 8px;
+    }
+
+    .icon-link {
+        width: 34px;
+        height: 34px;
+    }
+
+    .titulo-hero {
+        font-size: 40px;
+
+        letter-spacing: -1px;
+    }
+
+    .subtitulo {
+        font-size: 14px;
+    }
+
+    .introduccion {
+        padding: 80px 0 60px;
+    }
+
+    .empresa-texto {
+        padding: 40px 0;
+    }
+
+    .empresa-texto h2 {
+        font-size: 27px;
+    }
+
+    .tarjeta-info {
+        padding: 35px 25px;
+    }
+
+    .valores {
+        margin: 80px auto;
+    }
+
+    .valores-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .frase-contenido h2 {
+        font-size: 35px;
+    }
+
+    .iconos-redes {
+        gap: 8px;
+    }
+
+}

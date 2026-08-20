@@ -1,0 +1,54 @@
+body {
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(../imagenes/fondo.png);
+    color: #fff;
+    font-family: "Michroma", sans-serif;
+    font-weight: normal;
+    }
+
+    @keyframes brilloContenedor {
+    0%, 100% {
+        box-shadow: 0 0 10px #a20000;
+    }
+    50% {
+        box-shadow: 0 0 25px #a20000, 0 0 40px #a20000;
+    }
+}
+
+    .form {
+    background: #2c2c2c;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 3px 0.3px 10px #a20000;
+    width: 400px;
+    
+    }
+    input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    gap: 10px;
+    }
+
+button{
+    background-color: #a20000;
+    border-radius: 20px;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    margin-top: 10px;
+    box-shadow: 2px 2px 10px #fff;
+    font-family: "Michroma", sans-serif;
+
+}
+
+button a {
+    text-decoration: none;
+    color: #fff;
+
+}
