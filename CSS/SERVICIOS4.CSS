@@ -384,18 +384,70 @@ button {
 
 
 /* =========================================================
-   TÍTULO
+   HERO
+========================================================= */
+
+.contenido-centro {
+
+    position: relative;
+
+    z-index: 10;
+
+    text-align: center;
+
+    max-width: 900px;
+
+    padding: 0 20px;
+
+    margin-top: -40px;
+
+    animation:
+        aparecerHero 1s ease forwards;
+}
+
+@keyframes aparecerHero {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   ETIQUETA HERO
+========================================================= */
+
+.etiqueta-hero {
+
+    margin-bottom: 18px;
+
+    color: var(--rojo);
+
+    font-family: 'poppins', sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================================
+   TÍTULO HERO
 ========================================================= */
 
 .titulo-hero {
 
-    font-family:
-        'Impact',
-        'Arial Black',
-        sans-serif;
+        font-family: 'Impact', 'Arial Black', sans-serif;
+
 
     font-size:
-        clamp(3.5rem, 8vw, 6.5rem);
+        clamp(3rem, 7vw, 6rem);
 
     line-height: 0.95;
 
@@ -411,7 +463,6 @@ button {
     display: block;
 
     width: 80px;
-
     height: 4px;
 
     margin: 25px auto 0;
@@ -437,11 +488,42 @@ button {
 
     font-family: 'Manrope', sans-serif;
 
-    font-size:
-        clamp(0.9rem, 2vw, 1.1rem);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
 
     line-height: 1.6;
 }
+
+
+/* =========================================================
+   LEMA
+========================================================= */
+
+.lema-centro {
+
+    position: relative;
+
+    z-index: 10;
+
+    text-align: center;
+
+    margin-bottom: 5px;
+}
+
+.lema-centro p {
+
+    color: rgba(255,255,255,0.75);
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(1rem, 2vw, 1.5rem);
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 3px 15px rgba(0,0,0,0.8);
+}
+
+
 
 
 /* =========================================================
