@@ -13,37 +13,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
-
 <body>
 
 <div id="contenedor">
 
-
     <!-- =====================================================
-         BANNER
+         HERO
     ====================================================== -->
 
     <header class="banner-portada">
 
+        <!-- FONDO -->
         <div class="imagen-banner">
 
-            <img
-                src="../imagenes/BANNER-SERVICIOS.jpg"
-                alt="Banner de servicios SHOESTYLE">
+            <img src="../imagenes/BANNER-SERVICIOS.jpg"
+                 alt="Servicios SHOESTYLE">
 
             <div class="capa-oscura"></div>
 
@@ -51,35 +46,19 @@
 
 
         <!-- =================================================
-             BARRA SUPERIOR
+             BARRA DE NAVEGACIÓN
         ================================================== -->
 
         <div class="top-bar">
 
             <!-- LOGO -->
-
             <a href="../index.php" class="logo">
-                SHOE<span class="logo-rojo">STYLE</span>
+                SHOE<span>STYLE</span>
             </a>
 
 
-            <!-- BOTÓN HAMBURGUESA -->
-
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Abrir menú"
-                aria-expanded="false"
-                type="button">
-
-                <i class="fa-solid fa-bars"></i>
-
-            </button>
-
-
-            <!-- MENÚ -->
-
-            <nav class="navegacion" id="navegacion">
+            <!-- NAVEGACIÓN DESKTOP / MÓVIL -->
+            <nav class="navegacion" id="menu">
 
                 <ul>
 
@@ -136,8 +115,7 @@
             </nav>
 
 
-            <!-- ICONOS -->
-
+            <!-- ICONOS DESKTOP -->
             <div class="top-icons">
 
                 <a href="#" class="icon-link" aria-label="Carrito">
@@ -149,6 +127,19 @@
                 </a>
 
             </div>
+
+
+            <!-- HAMBURGUESA -->
+            <button
+                class="menu-movil"
+                id="botonMenu"
+                type="button"
+                aria-label="Abrir menú"
+                aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
 
         </div>
 
@@ -175,17 +166,6 @@
         </div>
 
 
-        <!-- LEMA -->
-
-        <div class="lema-centro">
-
-            <p>
-                TU ESTILO EMPIEZA POR LOS PIES
-            </p>
-
-        </div>
-
-
         <!-- SCROLL -->
 
         <div class="scroll-indicator">
@@ -199,7 +179,6 @@
     </header>
 
 
-
     <!-- =====================================================
          SERVICIOS
     ====================================================== -->
@@ -208,32 +187,21 @@
 
         <section class="servicios">
 
-            <span class="seccion-etiqueta">
-                SHOESTYLE
-            </span>
-
             <h2>
                 NUESTROS SERVICIOS
             </h2>
 
             <p class="descripcion-servicios">
-
                 En SHOESTYLE buscamos ofrecer una experiencia
                 sencilla, moderna y completa para que encuentres
                 el calzado que mejor representa tu estilo.
-
             </p>
 
-
-            <!-- =================================================
-                 GRID
-            ================================================== -->
 
             <div class="servicios-grid">
 
 
-                <!-- SERVICIO 1 -->
-
+                <!-- 1 -->
                 <article class="servicio-card">
 
                     <div class="servicio-icono">
@@ -250,9 +218,8 @@
                         diferentes estilos de calzado.
                     </p>
 
-                    <a
-                        href="../paginas/productos.php"
-                        class="servicio-btn">
+                    <a href="../paginas/productos.php"
+                       class="servicio-btn">
 
                         VER PRODUCTOS
 
@@ -263,9 +230,7 @@
                 </article>
 
 
-
-                <!-- SERVICIO 2 -->
-
+                <!-- 2 -->
                 <article class="servicio-card">
 
                     <div class="servicio-icono">
@@ -282,9 +247,8 @@
                         colección.
                     </p>
 
-                    <a
-                        href="../paginas/galeria fotografica.html"
-                        class="servicio-btn">
+                    <a href="../paginas/galeria fotografica.html"
+                       class="servicio-btn">
 
                         EXPLORAR GALERÍA
 
@@ -295,9 +259,7 @@
                 </article>
 
 
-
-                <!-- SERVICIO 3 -->
-
+                <!-- 3 -->
                 <article class="servicio-card">
 
                     <div class="servicio-icono">
@@ -314,9 +276,8 @@
                         de comunicación.
                     </p>
 
-                    <a
-                        href="../paginas/contactenos.html"
-                        class="servicio-btn">
+                    <a href="../paginas/contactenos.html"
+                       class="servicio-btn">
 
                         CONTACTARNOS
 
@@ -327,9 +288,7 @@
                 </article>
 
 
-
-                <!-- SERVICIO 4 -->
-
+                <!-- 4 -->
                 <article class="servicio-card">
 
                     <div class="servicio-icono">
@@ -346,9 +305,8 @@
                         disponibles en SHOESTYLE.
                     </p>
 
-                    <a
-                        href="../index.php"
-                        class="servicio-btn">
+                    <a href="../index.php"
+                       class="servicio-btn">
 
                         DESCUBRIR
 
@@ -359,9 +317,7 @@
                 </article>
 
 
-
-                <!-- SERVICIO 5 -->
-
+                <!-- 5 -->
                 <article class="servicio-card">
 
                     <div class="servicio-icono">
@@ -378,9 +334,8 @@
                         disponibles para comunicarte con nosotros.
                     </p>
 
-                    <a
-                        href="../paginas/contactenos.html"
-                        class="servicio-btn">
+                    <a href="../paginas/contactenos.html"
+                       class="servicio-btn">
 
                         MÁS INFORMACIÓN
 
@@ -391,9 +346,7 @@
                 </article>
 
 
-
-                <!-- SERVICIO 6 -->
-
+                <!-- 6 -->
                 <article class="servicio-card">
 
                     <div class="servicio-icono">
@@ -410,11 +363,10 @@
                         sociales.
                     </p>
 
-                    <a
-                        href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="servicio-btn">
+                    <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="servicio-btn">
 
                         CONTACTAR
 
@@ -431,15 +383,11 @@
     </main>
 
 
-
     <!-- =====================================================
          FOOTER
     ====================================================== -->
 
     <footer>
-
-
-        <!-- REDES -->
 
         <div class="redes-sociales">
 
@@ -449,59 +397,46 @@
 
             <div class="iconos-redes">
 
-                <a
-                    href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                <a href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
+                   target="_blank"
+                   rel="noopener noreferrer">
 
-                    <img
-                        src="../imagenes/facebook.png"
-                        alt="Facebook">
+                    <img src="../imagenes/facebook.png"
+                         alt="Facebook">
 
                 </a>
-
 
                 <a href="#">
 
-                    <img
-                        src="../imagenes/instagram.jpg"
-                        alt="Instagram">
+                    <img src="../imagenes/instagram.jpg"
+                         alt="Instagram">
 
                 </a>
 
+                <a href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
+                   target="_blank"
+                   rel="noopener noreferrer">
 
-                <a
-                    href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    <img
-                        src="../imagenes/tiktok.png"
-                        alt="TikTok">
+                    <img src="../imagenes/tiktok.png"
+                         alt="TikTok">
 
                 </a>
 
+                <a href="https://x.com/shoestyle397157"
+                   target="_blank"
+                   rel="noopener noreferrer">
 
-                <a
-                    href="https://x.com/shoestyle397157"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    <img
-                        src="../imagenes/twitter.png"
-                        alt="X">
+                    <img src="../imagenes/twitter.png"
+                         alt="X">
 
                 </a>
 
+                <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
+                   target="_blank"
+                   rel="noopener noreferrer">
 
-                <a
-                    href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    <img
-                        src="../imagenes/whatsapp.png"
-                        alt="WhatsApp">
+                    <img src="../imagenes/whatsapp.png"
+                         alt="WhatsApp">
 
                 </a>
 
@@ -509,9 +444,6 @@
 
         </div>
 
-
-
-        <!-- INFORMACIÓN -->
 
         <div class="footer-info">
 
@@ -596,12 +528,9 @@
                 <ul>
 
                     <li>
-                        <a
-                            href="../paginas/terminos.pdf"
-                            target="_blank">
-
+                        <a href="../paginas/terminos.pdf"
+                           target="_blank">
                             Términos y Condiciones
-
                         </a>
                     </li>
 
@@ -624,9 +553,6 @@
         </div>
 
 
-
-        <!-- COPYRIGHT -->
-
         <div class="copyright">
 
             <p>
@@ -641,40 +567,47 @@
 </div>
 
 
-
 <!-- =====================================================
-     JAVASCRIPT
+     JAVASCRIPT MENÚ
 ====================================================== -->
 
 <script>
 
-const menuToggle = document.getElementById("menuToggle");
-const navegacion = document.getElementById("navegacion");
+const botonMenu = document.getElementById("botonMenu");
+const menu = document.getElementById("menu");
 
-menuToggle.addEventListener("click", () => {
+botonMenu.addEventListener("click", function () {
 
-    const abierto = navegacion.classList.toggle("menu-abierto");
+    const abierto = menu.classList.toggle("activo");
 
-    menuToggle.setAttribute("aria-expanded", abierto);
+    botonMenu.setAttribute("aria-expanded", abierto);
 
-    menuToggle.innerHTML = abierto
-        ? '<i class="fa-solid fa-xmark"></i>'
-        : '<i class="fa-solid fa-bars"></i>';
+    if (abierto) {
+
+        botonMenu.innerHTML =
+            '<i class="fa-solid fa-xmark"></i>';
+
+    } else {
+
+        botonMenu.innerHTML =
+            '<i class="fa-solid fa-bars"></i>';
+
+    }
 
 });
 
 
-/* CERRAR MENÚ AL TOCAR UN ENLACE */
+/* Cerrar menú al seleccionar una opción */
 
-document.querySelectorAll(".navegacion a").forEach(enlace => {
+document.querySelectorAll(".navegacion a").forEach(function (enlace) {
 
-    enlace.addEventListener("click", () => {
+    enlace.addEventListener("click", function () {
 
-        navegacion.classList.remove("menu-abierto");
+        menu.classList.remove("activo");
 
-        menuToggle.setAttribute("aria-expanded", "false");
+        botonMenu.setAttribute("aria-expanded", "false");
 
-        menuToggle.innerHTML =
+        botonMenu.innerHTML =
             '<i class="fa-solid fa-bars"></i>';
 
     });
@@ -682,20 +615,27 @@ document.querySelectorAll(".navegacion a").forEach(enlace => {
 });
 
 
-/* EVITAR QUE LOS # SALTEN ARRIBA */
+/* Cerrar menú al hacer clic fuera */
 
-document.querySelectorAll('a[href="#"]').forEach(enlace => {
+document.addEventListener("click", function (evento) {
 
-    enlace.addEventListener("click", function(e) {
+    if (
+        !menu.contains(evento.target) &&
+        !botonMenu.contains(evento.target)
+    ) {
 
-        e.preventDefault();
+        menu.classList.remove("activo");
 
-    });
+        botonMenu.setAttribute("aria-expanded", "false");
+
+        botonMenu.innerHTML =
+            '<i class="fa-solid fa-bars"></i>';
+
+    }
 
 });
 
 </script>
-
 
 </body>
 </html>
