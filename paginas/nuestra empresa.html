@@ -68,20 +68,10 @@
         SHOE<span class="logo-rojo">STYLE</span>
     </a>
 
-    <!-- BOTÓN HAMBURGUESA -->
-    <button class="menu-hamburguesa" id="menuHamburguesa" aria-label="Abrir menú">
-        <i class="fa-solid fa-bars"></i>
-    </button>
-
     <nav class="navegacion" id="navegacion">
 
         <ul>
-
-            <li>
-                <a href="../index.php">
-                    INICIO
-                </a>
-            </li>
+            <li><a href="../index.php">INICIO</a></li>
 
             <li>
                 <a href="#" class="activo">
@@ -89,17 +79,9 @@
                 </a>
             </li>
 
-            <li>
-                <a href="./productos.php">
-                    PRODUCTOS
-                </a>
-            </li>
+            <li><a href="./productos.php">PRODUCTOS</a></li>
 
-            <li>
-                <a href="./contactenos.html">
-                    CONTACTENOS
-                </a>
-            </li>
+            <li><a href="./contactenos.html">CONTACTENOS</a></li>
 
             <li>
                 <a href="./inicio de sesion.html">
@@ -107,11 +89,7 @@
                 </a>
             </li>
 
-            <li>
-                <a href="./servicios.html">
-                    SERVICIOS
-                </a>
-            </li>
+            <li><a href="./servicios.html">SERVICIOS</a></li>
 
             <li>
                 <a href="./galeria fotografica.html">
@@ -119,15 +97,21 @@
                 </a>
             </li>
 
-            <li>
-                <a href="./registrarse.html">
-                    REGISTRARSE
-                </a>
-            </li>
-
+            <li><a href="./registrarse.html">REGISTRARSE</a></li>
         </ul>
 
     </nav>
+
+    <!-- HAMBURGUESA -->
+    <button
+        class="menu-movil"
+        id="menuMovil"
+        aria-label="Abrir menú"
+        aria-expanded="false">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
 
     <div class="top-icons">
 
@@ -142,8 +126,6 @@
     </div>
 
 </div>
-
-
 
 
         <!-- =================================================
@@ -936,124 +918,93 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =====================================================
-       MENÚ HAMBURGUESA
-    ====================================================== */
-
-    const menuHamburguesa =
-        document.getElementById("menuHamburguesa");
+    const menuMovil =
+        document.getElementById("menuMovil");
 
     const navegacion =
         document.getElementById("navegacion");
 
 
-    if (menuHamburguesa && navegacion) {
-
-        menuHamburguesa.addEventListener("click", function () {
-
-            navegacion.classList.toggle("activo");
-
-            const abierto =
-                navegacion.classList.contains("activo");
+    if (!menuMovil || !navegacion) {
+        return;
+    }
 
 
-            menuHamburguesa.setAttribute(
-                "aria-expanded",
-                abierto
-            );
+    menuMovil.addEventListener("click", function () {
+
+        navegacion.classList.toggle("activo");
+
+        const abierto =
+            navegacion.classList.contains("activo");
+
+        menuMovil.setAttribute(
+            "aria-expanded",
+            abierto
+        );
 
 
-            /* Cambiar icono */
-
-            const icono =
-                menuHamburguesa.querySelector("i");
+        const icono =
+            menuMovil.querySelector("i");
 
 
-            if (abierto) {
+        if (abierto) {
 
-                icono.classList.remove("fa-bars");
-                icono.classList.add("fa-xmark");
+            icono.classList.remove("fa-bars");
+            icono.classList.add("fa-xmark");
 
-                menuHamburguesa.setAttribute(
-                    "aria-label",
-                    "Cerrar menú"
+        } else {
+
+            icono.classList.remove("fa-xmark");
+            icono.classList.add("fa-bars");
+
+        }
+
+    });
+
+
+    /* Cerrar al seleccionar */
+
+    navegacion
+        .querySelectorAll("a")
+        .forEach(enlace => {
+
+            enlace.addEventListener("click", function () {
+
+                navegacion.classList.remove("activo");
+
+                menuMovil.setAttribute(
+                    "aria-expanded",
+                    "false"
                 );
 
-            } else {
+                const icono =
+                    menuMovil.querySelector("i");
 
                 icono.classList.remove("fa-xmark");
                 icono.classList.add("fa-bars");
 
-                menuHamburguesa.setAttribute(
-                    "aria-label",
-                    "Abrir menú"
-                );
-
-            }
+            });
 
         });
 
 
-        /* =================================================
-           CERRAR MENÚ AL SELECCIONAR UNA OPCIÓN
-        ================================================== */
-
-        navegacion
-            .querySelectorAll("a")
-            .forEach(function (enlace) {
-
-                enlace.addEventListener("click", function () {
-
-                    navegacion.classList.remove("activo");
-
-                    menuHamburguesa.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-
-                    const icono =
-                        menuHamburguesa.querySelector("i");
-
-
-                    icono.classList.remove("fa-xmark");
-                    icono.classList.add("fa-bars");
-
-
-                    menuHamburguesa.setAttribute(
-                        "aria-label",
-                        "Abrir menú"
-                    );
-
-                });
-
-            });
-
-    }
-
-
-    /* =====================================================
-       SCROLL SUAVE
-    ====================================================== */
+    /* Scroll suave */
 
     document
         .querySelectorAll('a[href^="#"]')
-        .forEach(function (enlace) {
+        .forEach(enlace => {
 
             enlace.addEventListener("click", function (e) {
 
                 const href =
                     this.getAttribute("href");
 
-
                 if (href === "#") {
                     return;
                 }
 
-
                 const destino =
                     document.querySelector(href);
-
 
                 if (destino) {
 
