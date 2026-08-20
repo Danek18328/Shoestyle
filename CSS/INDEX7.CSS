@@ -1171,22 +1171,30 @@ footer {
    RESPONSIVE
 ========================================================= */
 
+
 /* =========================================================
-   TABLETS GRANDES
+   BOTÓN MENÚ MÓVIL
+   Oculto por defecto en PC
 ========================================================= */
 
-@media (max-width: 1100px) {
+.menu-movil {
+    display: none;
+}
 
-    .top-bar {
-        padding: 0 4%;
-    }
 
-    .navegacion ul {
-        gap: 20px;
-    }
+/* =========================================================
+   TABLETS Y DISPOSITIVOS MEDIANOS
+   800px o menos
+========================================================= */
 
-    .navegacion ul li a {
-        font-size: 0.8rem;
+@media (max-width: 800px) {
+
+    /* -----------------------------------------------------
+       GENERAL
+    ----------------------------------------------------- */
+
+    body {
+        overflow-x: hidden;
     }
 
     main {
@@ -1194,35 +1202,13 @@ footer {
         padding-right: 4%;
     }
 
-    .productos {
-        grid-template-columns: repeat(3, 1fr);
-    }
 
-    .resenas-contenedor {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .formulario-resena {
-        max-width: 600px;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .footer-info {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-    }
-}
-
-
-/* =========================================================
-   TABLETS
-========================================================= */
-
-@media (max-width: 800px) {
+    /* -----------------------------------------------------
+       HEADER
+    ----------------------------------------------------- */
 
     .top-bar {
+        position: relative;
         min-height: 75px;
         padding: 0 25px;
     }
@@ -1231,131 +1217,47 @@ footer {
         font-size: 1.3rem;
     }
 
-    .navegacion ul {
-        gap: 15px;
-    }
 
-    .navegacion ul li a {
-        font-size: 0.75rem;
-    }
-
-    .top-icons {
-        gap: 12px;
-        font-size: 1rem;
-    }
-
-    .contenido-centro {
-        width: 100%;
-        padding: 0 25px;
-        margin-top: -20px;
-    }
-
-    .lema-principal {
-        font-size: clamp(3rem, 10vw, 5rem);
-    }
-
-    .subtitulo {
-        font-size: 0.95rem;
-    }
-
-    main {
-        padding-top: 60px;
-    }
-
-    main > section {
-        margin-bottom: 80px;
-    }
-
-    .productos {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .marcas {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .carrusel {
-        gap: 10px;
-    }
-
-    .carrusel img {
-        width: 75vw;
-        height: 400px;
-    }
-
-    .footer-info {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-    }
-}
-
-
-/* =========================================================
-   CELULARES
-========================================================= */
-
-@media (max-width: 600px) {
-
-    body {
-        overflow-x: hidden;
-    }
-
-    main {
-        padding: 50px 15px 20px;
-    }
-
-    main > section {
-        margin-bottom: 70px;
-    }
-
-    main h2 {
-        font-size: 26px;
-        line-height: 1.15;
-    }
-
-    main > section > p {
-        font-size: 14px;
-        line-height: 1.7;
-    }
-
-
-    /* =========================
-       BANNER
-    ========================= */
-
-    .banner-portada {
-        min-height: 100svh;
-        height: 100svh;
-    }
-
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    .top-bar {
-        position: relative;
-        min-height: 70px;
-        padding: 0 18px;
-    }
-
-    .logo {
-        font-size: 1.1rem;
-    }
-
-
-    /* =========================
-       OCULTAR MENÚ DE PC
-    ========================= */
+    /* -----------------------------------------------------
+       OCULTAR MENÚ DE ESCRITORIO
+    ----------------------------------------------------- */
 
     .navegacion {
         display: none !important;
     }
 
 
-    /* =========================
-       MENÚ ABIERTO
-    ========================= */
+    /* -----------------------------------------------------
+       BOTÓN HAMBURGUESA
+    ----------------------------------------------------- */
+
+    .menu-movil {
+        display: flex !important;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 42px;
+        height: 42px;
+
+        padding: 0;
+
+        background: transparent;
+        border: none;
+
+        color: #ffffff;
+
+        font-size: 24px;
+
+        cursor: pointer;
+
+        z-index: 1000;
+    }
+
+
+    /* -----------------------------------------------------
+       MENÚ DESPLEGABLE
+    ----------------------------------------------------- */
 
     .navegacion.activo {
         display: block !important;
@@ -1363,8 +1265,8 @@ footer {
         position: absolute;
 
         top: 70px;
-        left: 15px;
-        right: 15px;
+        left: 20px;
+        right: 20px;
 
         background: rgba(10, 10, 10, 0.97);
 
@@ -1384,6 +1286,7 @@ footer {
 
     .navegacion.activo ul {
         display: flex;
+
         flex-direction: column;
 
         gap: 0;
@@ -1402,9 +1305,9 @@ footer {
 
         padding: 13px 10px;
 
-        font-size: 0.8rem;
-
         color: #c7c7c7;
+
+        font-size: 0.8rem;
 
         border-bottom:
             1px solid rgba(255, 255, 255, 0.06);
@@ -1414,78 +1317,57 @@ footer {
         border-bottom: none;
     }
 
+    .navegacion.activo ul li a:hover {
+        color: #ffffff;
+        padding-left: 15px;
+    }
 
-    /* =========================
-       ICONOS PC
-    ========================= */
+
+    /* -----------------------------------------------------
+       ICONOS DE ESCRITORIO
+    ----------------------------------------------------- */
 
     .top-icons {
         display: none;
     }
 
 
-    /* =========================
-       BOTÓN HAMBURGUESA
-    ========================= */
+    /* -----------------------------------------------------
+       BANNER
+    ----------------------------------------------------- */
 
-    .menu-movil {
-        display: flex !important;
-
-        align-items: center;
-        justify-content: center;
-
-        width: 42px;
-        height: 42px;
-
-        padding: 0;
-
-        background: transparent;
-
-        border: none;
-
-        color: #ffffff;
-
-        font-size: 24px;
-
-        cursor: pointer;
-
-        z-index: 1000;
+    .banner-portada {
+        min-height: 100svh;
+        height: 100svh;
     }
-
-
-    /* =========================
-       CONTENIDO CENTRAL
-    ========================= */
 
     .contenido-centro {
         width: 100%;
-        padding: 0 18px;
-        margin-top: 0;
+
+        padding: 0 25px;
+
+        margin-top: -20px;
     }
 
     .lema-principal {
-        font-size: clamp(2.8rem, 14vw, 4.5rem);
+        font-size: clamp(3rem, 10vw, 5rem);
+
         line-height: 0.95;
+
         letter-spacing: 1px;
     }
 
     .subtitulo {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
+
         line-height: 1.5;
-
-        margin-top: 15px;
-        margin-bottom: 25px;
     }
-
-
-    /* =========================
-       BOTONES
-    ========================= */
 
     .botones-container {
         width: 100%;
 
         flex-direction: column;
+
         align-items: center;
 
         gap: 12px;
@@ -1494,6 +1376,207 @@ footer {
     .btn-rojo,
     .btn-linea {
         width: 100%;
+
+        max-width: 280px;
+
+        justify-content: center;
+
+        padding: 13px 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       MARCAS
+    ----------------------------------------------------- */
+
+    .marcas {
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 12px;
+    }
+
+    .marcas img {
+        height: 80px;
+
+        padding: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       PRODUCTOS
+    ----------------------------------------------------- */
+
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 18px;
+    }
+
+    .producto {
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       CARRUSEL
+    ----------------------------------------------------- */
+
+    .carrusel {
+        gap: 10px;
+    }
+
+    .carrusel img {
+        width: 75vw;
+
+        height: 400px;
+    }
+
+
+    /* -----------------------------------------------------
+       RESEÑAS
+    ----------------------------------------------------- */
+
+    .resenas-contenedor {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .formulario-resena {
+        max-width: 600px;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    .footer-info {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 40px;
+    }
+}
+
+
+/* =========================================================
+   CELULARES
+   600px o menos
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* -----------------------------------------------------
+       GENERAL
+    ----------------------------------------------------- */
+
+    body {
+        overflow-x: hidden;
+    }
+
+    main {
+        padding: 50px 15px 20px;
+    }
+
+    main > section {
+        margin-bottom: 70px;
+    }
+
+    main h2 {
+        font-size: 26px;
+
+        line-height: 1.15;
+    }
+
+    main > section > p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* -----------------------------------------------------
+       HEADER
+    ----------------------------------------------------- */
+
+    .top-bar {
+        min-height: 70px;
+
+        padding: 0 18px;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .navegacion.activo {
+        top: 65px;
+
+        left: 15px;
+
+        right: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       BANNER
+    ----------------------------------------------------- */
+
+    .banner-portada {
+        min-height: 100svh;
+
+        height: 100svh;
+    }
+
+    .contenido-centro {
+        width: 100%;
+
+        padding: 0 18px;
+
+        margin-top: 0;
+    }
+
+    .lema-principal {
+        font-size: clamp(2.8rem, 14vw, 4.5rem);
+
+        line-height: 0.95;
+
+        letter-spacing: 1px;
+    }
+
+    .subtitulo {
+        font-size: 0.85rem;
+
+        line-height: 1.5;
+
+        margin-top: 15px;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* -----------------------------------------------------
+       BOTONES
+    ----------------------------------------------------- */
+
+    .botones-container {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 12px;
+    }
+
+    .btn-rojo,
+    .btn-linea {
+        width: 100%;
+
         max-width: 280px;
 
         justify-content: center;
@@ -1504,18 +1587,18 @@ footer {
     }
 
 
-    /* =========================
+    /* -----------------------------------------------------
        SCROLL
-    ========================= */
+    ----------------------------------------------------- */
 
     .scroll-indicator {
         margin-bottom: 15px;
     }
 
 
-    /* =========================
+    /* -----------------------------------------------------
        MARCAS
-    ========================= */
+    ----------------------------------------------------- */
 
     .marcas {
         grid-template-columns: repeat(2, 1fr);
@@ -1536,9 +1619,9 @@ footer {
     }
 
 
-    /* =========================
+    /* -----------------------------------------------------
        PRODUCTOS
-    ========================= */
+    ----------------------------------------------------- */
 
     .productos {
         grid-template-columns: 1fr;
@@ -1550,6 +1633,7 @@ footer {
 
     .producto {
         width: 100%;
+
         max-width: 380px;
 
         min-height: 420px;
@@ -1563,6 +1647,7 @@ footer {
 
     .producto h3 {
         font-size: 17px;
+
         margin-top: 18px;
     }
 
@@ -1575,9 +1660,9 @@ footer {
     }
 
 
-    /* =========================
+    /* -----------------------------------------------------
        CARRUSEL
-    ========================= */
+    ----------------------------------------------------- */
 
     .carrusel {
         width: 100%;
@@ -1597,6 +1682,7 @@ footer {
 
     .flecha {
         width: 36px;
+
         height: 36px;
 
         min-width: 36px;
@@ -1605,24 +1691,27 @@ footer {
     }
 
 
-    /* =========================
+    /* -----------------------------------------------------
        RESEÑAS
-    ========================= */
+    ----------------------------------------------------- */
 
     .resenas-contenedor {
         grid-template-columns: 1fr;
+
         gap: 35px;
     }
 
     .lista-resenas h2,
     .formulario-resena h2 {
         font-size: 25px;
+
         text-align: center;
     }
 
     .lista-resenas h2::after,
     .formulario-resena h2::after {
         margin-left: auto;
+
         margin-right: auto;
     }
 
@@ -1636,13 +1725,14 @@ footer {
 
     .reseña {
         min-height: auto;
+
         padding: 20px;
     }
 
 
-    /* =========================
+    /* -----------------------------------------------------
        FORMULARIO
-    ========================= */
+    ----------------------------------------------------- */
 
     .formulario-resena {
         width: 100%;
@@ -1663,19 +1753,20 @@ footer {
     }
 
 
-    /* =========================
+    /* -----------------------------------------------------
        SEPARADORES
-    ========================= */
+    ----------------------------------------------------- */
 
     hr {
         width: 90%;
+
         margin: 65px auto;
     }
 
 
-    /* =========================
+    /* -----------------------------------------------------
        FOOTER
-    ========================= */
+    ----------------------------------------------------- */
 
     footer {
         margin-top: 60px;
@@ -1693,11 +1784,13 @@ footer {
 
     .iconos-redes a {
         width: 42px;
+
         height: 42px;
     }
 
     .iconos-redes a img {
         width: 21px;
+
         height: 21px;
     }
 
@@ -1717,6 +1810,7 @@ footer {
 
     .footer-info h4::after {
         margin-left: auto;
+
         margin-right: auto;
     }
 
@@ -1726,12 +1820,15 @@ footer {
 
     .copyright p {
         font-size: 11px;
+
         line-height: 1.5;
     }
 }
 
+
 /* =========================================================
    CELULARES PEQUEÑOS
+   380px o menos
 ========================================================= */
 
 @media (max-width: 380px) {
@@ -1745,18 +1842,24 @@ footer {
     }
 
     .menu-movil {
+        width: 38px;
+
+        height: 38px;
+
         font-size: 22px;
     }
 
-    .navegacion {
-        top: 65px;
+    .navegacion.activo {
+        top: 63px;
 
         left: 10px;
 
         right: 10px;
+
+        padding: 12px;
     }
 
-    .navegacion ul li a {
+    .navegacion.activo ul li a {
         padding: 12px 8px;
 
         font-size: 0.75rem;
@@ -1808,12 +1911,17 @@ footer {
 
 
 /* =========================================================
-   BOTÓN MENÚ OCULTO EN PC
+   PC
+   801px en adelante
 ========================================================= */
 
-@media (min-width: 601px) {
+@media (min-width: 801px) {
 
     .menu-movil {
-        display: none;
+        display: none !important;
+    }
+
+    .navegacion {
+        display: block;
     }
 }
