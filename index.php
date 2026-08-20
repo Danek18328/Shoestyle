@@ -1,15 +1,18 @@
 <?php
+
 // Conexión a la base de datos
-$host = getenv('DB_HOST') ?: 'localhost';
-$user = getenv('DB_USER') ?: 'root';
-$password = getenv('DB_PASSWORD') ?: '';
-$database = getenv('DB_NAME') ?: 'shoestyle';
+$host = getenv('DB_HOST');
+$user = getenv('DB_USER');
+$password = getenv('DB_PASSWORD');
+$database = getenv('DB_NAME');
+$port = (int)getenv('DB_PORT');
 
 $conexion = new mysqli(
     $host,
     $user,
     $password,
-    $database
+    $database,
+    $port
 );
 
 if ($conexion->connect_error) {
@@ -25,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comentario = $conexion->real_escape_string($_POST['comentario']);
     $estrellas = (int) $_POST['estrellas'];
 
-    $sqlInsert = "INSERT INTO resenas (nombre, comentario, estrellas) 
+    $sqlInsert = "INSERT INTO resenas (nombre, comentario, estrellas)
                   VALUES ('$nombre', '$comentario', '$estrellas')";
 
     $conexion->query($sqlInsert);
