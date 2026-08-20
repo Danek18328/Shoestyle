@@ -1,7 +1,3 @@
-/* =========================================================
-   FUENTES
-========================================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
@@ -14,21 +10,18 @@
 :root {
 
     --rojo: #e10620;
-    --rojo-oscuro: #a20000;
     --rojo-brillante: #ff2e2e;
 
     --fondo: #050505;
     --fondo-2: #0d0d0d;
-    --fondo-3: #151515;
 
     --blanco: #ffffff;
 
     --gris-claro: #c7c7c7;
     --gris: #8c8c8c;
-    --gris-oscuro: #303030;
 
     --borde: rgba(255,255,255,0.08);
-    --borde-hover: rgba(225,6,32,0.65);
+
 }
 
 
@@ -62,19 +55,10 @@ body {
 
 a {
     text-decoration: none;
-    color: inherit;
 }
 
-button,
-input,
-textarea,
-select {
+button {
     font-family: inherit;
-}
-
-img {
-    max-width: 100%;
-    display: block;
 }
 
 
@@ -88,13 +72,11 @@ img {
     min-height: 100vh;
 
     background: var(--fondo);
-
-    overflow-x: hidden;
 }
 
 
 /* =========================================================
-   BANNER
+   HERO
 ========================================================= */
 
 .banner-portada {
@@ -102,21 +84,24 @@ img {
     position: relative;
 
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+
+    min-height: 600px;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: space-between;
+
     align-items: center;
 
     overflow: hidden;
-
-    color: var(--blanco);
 }
 
 
 /* =========================================================
-   IMAGEN BANNER
+   IMAGEN
 ========================================================= */
 
 .imagen-banner {
@@ -138,14 +123,12 @@ img {
 
     object-fit: cover;
 
-    object-position: center;
-
     display: block;
 }
 
 
 /* =========================================================
-   CAPA OSCURA
+   OSCURECER IMAGEN
 ========================================================= */
 
 .capa-oscura {
@@ -155,12 +138,11 @@ img {
     inset: 0;
 
     background:
-
         linear-gradient(
             180deg,
-            rgba(0,0,0,0.72) 0%,
-            rgba(0,0,0,0.38) 45%,
-            rgba(0,0,0,0.78) 100%
+            rgba(0,0,0,0.65) 0%,
+            rgba(0,0,0,0.35) 45%,
+            rgba(0,0,0,0.85) 100%
         );
 
     z-index: 1;
@@ -175,9 +157,10 @@ img {
 
     position: relative;
 
-    z-index: 20;
+    z-index: 100;
 
     width: 100%;
+
     min-height: 90px;
 
     padding: 0 6%;
@@ -188,15 +171,15 @@ img {
 
     justify-content: space-between;
 
-    gap: 25px;
+    gap: 30px;
 
     border-bottom:
         1px solid rgba(255,255,255,0.12);
 
     background:
-        rgba(0,0,0,0.28);
+        rgba(0,0,0,0.25);
 
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
 }
 
 
@@ -208,7 +191,7 @@ img {
 
     flex-shrink: 0;
 
-    color: var(--blanco);
+    color: white;
 
     font-family:
         'Impact',
@@ -218,96 +201,78 @@ img {
     font-size: 1.5rem;
 
     letter-spacing: 1px;
-
-    transition:
-        transform 0.3s ease;
 }
 
-.logo:hover {
-
-    transform: scale(1.04);
-}
-
-.logo-rojo {
-
+.logo span {
     color: var(--rojo);
 }
 
 
 /* =========================================================
-   NAVEGACIÓN DESKTOP
+   NAVEGACIÓN
 ========================================================= */
 
 .navegacion {
 
-    display: flex;
+    display: block;
 
-    align-items: center;
-
-    justify-content: center;
-
-    flex: 1;
-
-    min-width: 0;
+    z-index: 1000;
 }
 
 .navegacion ul {
 
-    width: 100%;
-
-    list-style: none;
-
     display: flex;
-
-    justify-content: center;
 
     align-items: center;
 
-    gap: clamp(12px, 1.5vw, 27px);
+    gap: 28px;
 
-    flex-wrap: nowrap;
+    list-style: none;
 }
 
-.navegacion li {
-
-    flex-shrink: 0;
-}
-
-.navegacion ul li a {
+.navegacion a {
 
     position: relative;
+
+    display: block;
 
     color: #b3b3b3;
 
     font-family: 'Poppins', sans-serif;
-    font-size: 0.8  5rem;
+
+    font-size: 0.8rem;
+
     font-weight: 600;
 
-    letter-spacing: 0.7px;
+    letter-spacing: 0.5px;
 
-    transition: color 0.3s ease;
+    white-space: nowrap;
+
+    transition:
+        color 0.3s ease;
 }
 
-.navegacion ul li a:hover {
+.navegacion a:hover,
+.navegacion a.activo {
 
-    color: var(--blanco);
+    color: white;
 }
 
-.navegacion ul li a.activo {
 
-    color: var(--blanco);
-}
+/* Línea roja */
 
-.navegacion ul li a.activo::after {
+.navegacion a.activo::after {
 
     content: "";
 
     position: absolute;
 
     left: 0;
+
     bottom: -9px;
 
     width: 100%;
+
     height: 2px;
 
     background: var(--rojo);
@@ -318,23 +283,23 @@ img {
 
 
 /* =========================================================
-   ICONOS
+   ICONOS DESKTOP
 ========================================================= */
 
 .top-icons {
-
-    flex-shrink: 0;
 
     display: flex;
 
     align-items: center;
 
     gap: 20px;
+
+    flex-shrink: 0;
 }
 
 .icon-link {
 
-    color: var(--blanco);
+    color: white;
 
     font-size: 1.1rem;
 
@@ -352,49 +317,51 @@ img {
 
 
 /* =========================================================
-   BOTÓN HAMBURGUESA
+   HAMBURGUESA
 ========================================================= */
 
-.menu-toggle {
+.menu-movil {
 
     display: none;
 
-    width: 44px;
-    height: 44px;
-
-    border: 1px solid rgba(255,255,255,0.15);
-
-    border-radius: 10px;
-
-    background: rgba(0,0,0,0.45);
-
-    color: var(--blanco);
-
-    font-size: 20px;
-
-    cursor: pointer;
+    width: 42px;
+    height: 42px;
 
     align-items: center;
     justify-content: center;
 
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 10001;
+
     transition:
-        background 0.3s ease,
-        border-color 0.3s ease,
-        color 0.3s ease;
+        color 0.3s ease,
+        background 0.3s ease;
 }
 
-.menu-toggle:hover {
-
-    background: rgba(225,6,32,0.15);
-
-    border-color: var(--rojo);
+.menu-movil:hover {
 
     color: var(--rojo);
+
+    background:
+        rgba(255,255,255,0.06);
 }
 
 
 /* =========================================================
-   HERO
+   HERO CENTRADO
 ========================================================= */
 
 .contenido-centro {
@@ -403,19 +370,19 @@ img {
 
     z-index: 10;
 
-    width: min(900px, 90%);
+    width: min(900px, 100%);
 
     padding: 0 20px;
 
-    text-align: center;
-
     margin-top: -40px;
 
+    text-align: center;
+
     animation:
-        aparecerHero 1s ease forwards;
+        aparecer 1s ease forwards;
 }
 
-@keyframes aparecerHero {
+@keyframes aparecer {
 
     from {
 
@@ -436,7 +403,7 @@ img {
 
 
 /* =========================================================
-   ETIQUETA HERO
+   ETIQUETA
 ========================================================= */
 
 .etiqueta-hero {
@@ -467,7 +434,7 @@ img {
         sans-serif;
 
     font-size:
-        clamp(3rem, 7vw, 6rem);
+        clamp(3.5rem, 8vw, 6.5rem);
 
     line-height: 0.95;
 
@@ -483,6 +450,7 @@ img {
     display: block;
 
     width: 80px;
+
     height: 4px;
 
     margin: 25px auto 0;
@@ -516,42 +484,6 @@ img {
 
 
 /* =========================================================
-   LEMA
-========================================================= */
-
-.lema-centro {
-
-    position: relative;
-
-    z-index: 10;
-
-    text-align: center;
-
-    margin-bottom: 55px;
-
-    padding: 0 20px;
-}
-
-.lema-centro p {
-
-    color:
-        rgba(255,255,255,0.75);
-
-    font-family:
-        'Bebas Neue',
-        sans-serif;
-
-    font-size:
-        clamp(1rem, 2vw, 1.5rem);
-
-    letter-spacing: 5px;
-
-    text-shadow:
-        0 3px 15px rgba(0,0,0,0.8);
-}
-
-
-/* =========================================================
    SCROLL
 ========================================================= */
 
@@ -559,13 +491,9 @@ img {
 
     position: absolute;
 
-    z-index: 10;
-
     bottom: 20px;
 
-    left: 50%;
-
-    transform: translateX(-50%);
+    z-index: 10;
 
     opacity: 0.7;
 }
@@ -575,16 +503,16 @@ img {
     width: 24px;
     height: 40px;
 
-    border:
-        2px solid var(--blanco);
-
-    border-radius: 20px;
-
     display: flex;
 
     justify-content: center;
 
     padding-top: 8px;
+
+    border:
+        2px solid white;
+
+    border-radius: 20px;
 }
 
 .rueda {
@@ -597,10 +525,10 @@ img {
     border-radius: 2px;
 
     animation:
-        encoger-rueda 1.5s infinite;
+        rueda 1.5s infinite;
 }
 
-@keyframes encoger-rueda {
+@keyframes rueda {
 
     0% {
 
@@ -629,7 +557,7 @@ main {
     width: 100%;
 
     padding:
-        110px 5% 120px;
+        100px 5% 120px;
 
     background:
         linear-gradient(
@@ -639,43 +567,21 @@ main {
         );
 }
 
-
-/* =========================================================
-   SECCIÓN SERVICIOS
-========================================================= */
-
 .servicios {
 
-    width:
-        min(1400px, 100%);
+    width: min(1400px, 100%);
 
     margin: auto;
 
     text-align: center;
 }
 
-.seccion-etiqueta {
 
-    display: inline-block;
-
-    margin-bottom: 15px;
-
-    color: var(--rojo);
-
-    font-family:
-        'Poppins',
-        sans-serif;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    letter-spacing: 4px;
-}
+/* =========================================================
+   TÍTULO SERVICIOS
+========================================================= */
 
 .servicios h2 {
-
-    color: var(--blanco);
 
     font-family:
         'Archivo Black',
@@ -683,7 +589,7 @@ main {
         sans-serif;
 
     font-size:
-        clamp(2.3rem, 5vw, 4rem);
+        clamp(2.2rem, 5vw, 4rem);
 
     line-height: 1.05;
 }
@@ -695,18 +601,22 @@ main {
     display: block;
 
     width: 60px;
+
     height: 3px;
 
-    margin:
-        22px auto 0;
+    margin: 22px auto 0;
 
     background: var(--rojo);
 }
 
+
+/* =========================================================
+   DESCRIPCIÓN
+========================================================= */
+
 .descripcion-servicios {
 
-    width:
-        min(750px, 100%);
+    width: min(750px, 100%);
 
     margin:
         25px auto 65px;
@@ -725,8 +635,7 @@ main {
 
 .servicios-grid {
 
-    width:
-        min(1250px, 100%);
+    width: min(1250px, 100%);
 
     margin: auto;
 
@@ -745,14 +654,11 @@ main {
 
 .servicio-card {
 
-    position: relative;
-
     min-width: 0;
 
     min-height: 350px;
 
-    padding:
-        40px 30px;
+    padding: 40px 30px;
 
     display: flex;
 
@@ -789,7 +695,7 @@ main {
         translateY(-10px);
 
     border-color:
-        var(--borde-hover);
+        rgba(225,6,32,0.65);
 
     box-shadow:
         0 20px 45px rgba(0,0,0,0.5),
@@ -806,14 +712,12 @@ main {
     width: 70px;
     height: 70px;
 
-    flex-shrink: 0;
+    margin-bottom: 25px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
-
-    margin-bottom: 25px;
 
     border-radius: 50%;
 
@@ -832,8 +736,7 @@ main {
         background 0.3s ease;
 }
 
-.servicio-card:hover
-.servicio-icono {
+.servicio-card:hover .servicio-icono {
 
     transform:
         scale(1.08);
@@ -851,7 +754,7 @@ main {
 
     margin-bottom: 15px;
 
-    color: var(--blanco);
+    color: white;
 
     font-family:
         'Archivo Black',
@@ -891,6 +794,7 @@ main {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 8px;
@@ -907,11 +811,9 @@ main {
             #ff3b30
         );
 
-    color: var(--blanco);
+    color: white;
 
-    font-family:
-        'Poppins',
-        sans-serif;
+    font-family: 'Poppins', sans-serif;
 
     font-size: 12px;
 
@@ -928,13 +830,7 @@ main {
         translateY(-3px);
 
     box-shadow:
-        0 8px 20px
-        rgba(225,6,32,0.25);
-}
-
-.servicio-btn i {
-
-    font-size: 11px;
+        0 8px 20px rgba(225,6,32,0.25);
 }
 
 
@@ -957,10 +853,7 @@ footer {
         );
 
     border-top:
-        1px solid
-        rgba(255,255,255,0.08);
-
-    color: var(--blanco);
+        1px solid rgba(255,255,255,0.08);
 
     text-align: center;
 }
@@ -993,11 +886,10 @@ footer {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     gap: 15px;
-
-    flex-wrap: wrap;
 }
 
 .iconos-redes a {
@@ -1011,8 +903,7 @@ footer {
     justify-content: center;
 
     border:
-        1px solid
-        rgba(255,255,255,0.15);
+        1px solid rgba(255,255,255,0.15);
 
     border-radius: 50%;
 
@@ -1047,13 +938,12 @@ footer {
 
 
 /* =========================================================
-   FOOTER INFO
+   INFORMACIÓN FOOTER
 ========================================================= */
 
 .footer-info {
 
-    width:
-        min(1250px, 100%);
+    width: min(1250px, 100%);
 
     margin: auto;
 
@@ -1070,19 +960,15 @@ footer {
     text-align: left;
 
     border-top:
-        1px solid
-        rgba(255,255,255,0.07);
+        1px solid rgba(255,255,255,0.07);
 
     border-bottom:
-        1px solid
-        rgba(255,255,255,0.07);
+        1px solid rgba(255,255,255,0.07);
 }
 
 .footer-info h4 {
 
     margin-bottom: 22px;
-
-    color: var(--blanco);
 
     font-family:
         'Archivo Black',
@@ -1100,6 +986,7 @@ footer {
     display: block;
 
     width: 30px;
+
     height: 2px;
 
     margin-top: 10px;
@@ -1125,7 +1012,7 @@ footer {
     line-height: 1.6;
 }
 
-.footer-info li strong {
+.footer-info strong {
 
     color: #d5d5d5;
 }
@@ -1162,7 +1049,7 @@ footer {
 
 
 /* =========================================================
-   TABLETS GRANDES
+   TABLETS
 ========================================================= */
 
 @media (max-width: 1200px) {
@@ -1170,17 +1057,22 @@ footer {
     .top-bar {
 
         padding:
-            0 30px;
+            0 3%;
     }
 
     .navegacion ul {
 
-        gap: 13px;
+        gap: 14px;
     }
 
-    .navegacion ul li a {
+    .navegacion a {
 
-        font-size: 9px;
+        font-size: 0.68rem;
+    }
+
+    .top-icons {
+
+        gap: 12px;
     }
 
     .servicios-grid {
@@ -1192,154 +1084,32 @@ footer {
 
 
 /* =========================================================
-   TABLETS
+   TABLETS PEQUEÑAS
 ========================================================= */
 
 @media (max-width: 900px) {
 
-    .banner-portada {
-
-        min-height: 850px;
-    }
-
     .top-bar {
 
-        min-height: 80px;
+        min-height: 70px;
 
         padding:
-            0 25px;
+            0 22px;
     }
-
-    /* OCULTAR MENÚ NORMAL */
 
     .navegacion {
-
-        position: absolute;
-
-        top: 80px;
-        left: 15px;
-        right: 15px;
-
-        width: auto;
-
-        display: block;
-
-        opacity: 0;
-
-        visibility: hidden;
-
-        transform:
-            translateY(-10px);
-
-        pointer-events: none;
-
-        transition:
-            opacity 0.3s ease,
-            transform 0.3s ease,
-            visibility 0.3s ease;
-    }
-
-    /* MENÚ ABIERTO */
-
-    .navegacion.menu-abierto {
-
-        opacity: 1;
-
-        visibility: visible;
-
-        transform:
-            translateY(0);
-
-        pointer-events: auto;
-    }
-
-    .navegacion ul {
-
-        width: 100%;
-
-        padding: 15px;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 0;
-
-        background:
-            rgba(8,8,8,0.97);
-
-        border:
-            1px solid
-            rgba(255,255,255,0.1);
-
-        border-radius: 14px;
-
-        box-shadow:
-            0 20px 50px
-            rgba(0,0,0,0.6);
-
-        backdrop-filter: blur(15px);
-    }
-
-    .navegacion ul li {
-
-        width: 100%;
-    }
-
-    .navegacion ul li a {
-
-        width: 100%;
-
-        padding:
-            13px 15px;
-
-        font-size: 12px;
-
-        text-align: center;
-
-        border-radius: 8px;
-    }
-
-    .navegacion ul li a:hover {
-
-        background:
-            rgba(255,255,255,0.05);
-    }
-
-    .navegacion ul li a.activo::after {
 
         display: none;
     }
 
-    .navegacion ul li a.activo {
-
-        color: var(--rojo);
-
-        background:
-            rgba(225,6,32,0.08);
-    }
-
-    /* HAMBURGUESA */
-
-    .menu-toggle {
-
-        display: flex;
-
-        order: 3;
-    }
-
     .top-icons {
 
-        margin-left: auto;
-
-        gap: 15px;
+        display: none;
     }
 
-    .contenido-centro {
+    .menu-movil {
 
-        margin-top: -20px;
+        display: flex;
     }
 
     .servicios-grid {
@@ -1347,15 +1117,114 @@ footer {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
 
-        gap: 20px;
+        gap: 18px;
     }
 
-    .footer-info {
+    .servicio-card {
 
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        min-height: 330px;
 
-        gap: 40px;
+        padding:
+            35px 25px;
+    }
+}
+
+
+/* =========================================================
+   MENÚ MÓVIL
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .navegacion.activo {
+
+        display: block;
+
+        position: fixed;
+
+        top: 75px;
+
+        left: 12px;
+
+        right: 12px;
+
+        width: auto;
+
+        max-height:
+            calc(100vh - 90px);
+
+        overflow-y: auto;
+
+        padding: 8px;
+
+        background:
+            rgba(10,10,10,0.98);
+
+        border:
+            1px solid rgba(255,255,255,0.12);
+
+        border-radius: 14px;
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,0.85);
+
+        backdrop-filter:
+            blur(18px);
+
+        z-index: 100000;
+    }
+
+    .navegacion.activo ul {
+
+        display: flex;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 0;
+
+        list-style: none;
+    }
+
+    .navegacion.activo li {
+
+        width: 100%;
+    }
+
+    .navegacion.activo a {
+
+        width: 100%;
+
+        padding:
+            14px 12px;
+
+        font-size: 0.76rem;
+
+        color: #c7c7c7;
+
+        border-bottom:
+            1px solid rgba(255,255,255,0.07);
+
+        white-space: normal;
+    }
+
+    .navegacion.activo li:last-child a {
+
+        border-bottom: none;
+    }
+
+    .navegacion.activo a:hover {
+
+        color: white;
+
+        background:
+            rgba(255,255,255,0.05);
+    }
+
+    .navegacion.activo a.activo::after {
+
+        display: none;
     }
 }
 
@@ -1368,76 +1237,58 @@ footer {
 
     .banner-portada {
 
-        min-height: 780px;
-
-        height: 100svh;
-
-        max-height: 900px;
+        min-height: 560px;
     }
 
     .top-bar {
 
-        min-height: 70px;
+        min-height: 60px;
 
         padding:
-            0 16px;
-
-        gap: 12px;
+            0 14px;
     }
 
     .logo {
 
-        font-size: 1.3rem;
+        font-size: 0.95rem;
     }
 
-    .top-icons {
+    .menu-movil {
 
-        gap: 10px;
+        width: 40px;
+        height: 40px;
+
+        font-size: 21px;
     }
 
-    .icon-link {
+    .navegacion.activo {
 
-        font-size: 1rem;
+        top: 67px;
+
+        left: 8px;
+        right: 8px;
+
+        max-height:
+            calc(100vh - 78px);
     }
 
-    .menu-toggle {
-
-        width: 42px;
-        height: 42px;
-
-        font-size: 18px;
-    }
-
-    .navegacion {
-
-        top: 70px;
-
-        left: 10px;
-        right: 10px;
-    }
-
-    .navegacion ul {
-
-        padding: 10px;
-
-        border-radius: 12px;
-    }
-
-    .navegacion ul li a {
+    .navegacion.activo a {
 
         padding:
-            12px 10px;
+            13px 10px;
 
-        font-size: 11px;
+        font-size: 0.72rem;
     }
+
+
+    /* HERO */
 
     .contenido-centro {
 
-        width: 95%;
+        margin-top: -20px;
 
-        padding: 0 10px;
-
-        margin-top: -10px;
+        padding:
+            0 18px;
     }
 
     .etiqueta-hero {
@@ -1445,90 +1296,49 @@ footer {
         font-size: 11px;
 
         letter-spacing: 3px;
-
-        margin-bottom: 14px;
     }
 
     .titulo-hero {
 
         font-size:
-            clamp(3rem, 16vw, 5rem);
+            clamp(3rem, 15vw, 4.5rem);
 
         letter-spacing: 2px;
     }
 
-    .titulo-hero::after {
-
-        width: 60px;
-
-        height: 3px;
-
-        margin-top: 20px;
-    }
-
     .subtitulo {
 
-        margin-top: 20px;
+        font-size: 14px;
 
-        font-size: 13px;
-
-        line-height: 1.7;
+        line-height: 1.5;
     }
 
-    .lema-centro {
-
-        margin-bottom: 50px;
-
-        padding:
-            0 15px;
-    }
-
-    .lema-centro p {
-
-        font-size: 13px;
-
-        letter-spacing: 3px;
-    }
-
-    .scroll-indicator {
-
-        bottom: 15px;
-    }
 
     /* MAIN */
 
     main {
 
         padding:
-            70px 18px 80px;
-    }
-
-    .seccion-etiqueta {
-
-        font-size: 11px;
-
-        letter-spacing: 3px;
+            70px 16px 80px;
     }
 
     .servicios h2 {
 
         font-size:
-            clamp(2rem, 11vw, 3rem);
-
-        line-height: 1.1;
+            clamp(2rem, 10vw, 3rem);
     }
 
     .descripcion-servicios {
 
-        margin:
-            22px auto 45px;
-
         font-size: 14px;
 
         line-height: 1.7;
+
+        margin-bottom: 45px;
     }
 
-    /* GRID */
+
+    /* SERVICIOS */
 
     .servicios-grid {
 
@@ -1537,73 +1347,50 @@ footer {
         gap: 18px;
     }
 
-    /* TARJETAS */
-
     .servicio-card {
-
-        width: 100%;
 
         min-height: 320px;
 
         padding:
-            35px 22px;
-
-        border-radius: 16px;
+            32px 22px;
     }
 
     .servicio-icono {
 
-        width: 62px;
-        height: 62px;
+        width: 65px;
+        height: 65px;
 
-        font-size: 23px;
-
-        margin-bottom: 20px;
+        font-size: 24px;
     }
 
-    .servicio-card h3 {
-
-        font-size: 16px;
-    }
-
-    .servicio-card p {
-
-        font-size: 13px;
-
-        line-height: 1.7;
-    }
-
-    .servicio-btn {
-
-        padding:
-            10px 18px;
-
-        font-size: 11px;
-    }
 
     /* FOOTER */
 
     footer {
 
         padding:
-            55px 20px 25px;
+            60px 20px 20px;
     }
 
-    .redes-sociales {
+    .footer-info {
 
-        margin-bottom: 40px;
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        text-align: center;
     }
 
-    .redes-sociales h3 {
+    .footer-info h4::after {
 
-        font-size: 13px;
+        margin-left: auto;
 
-        line-height: 1.5;
+        margin-right: auto;
     }
 
     .iconos-redes {
 
-        gap: 9px;
+        gap: 10px;
     }
 
     .iconos-redes a {
@@ -1614,52 +1401,8 @@ footer {
 
     .iconos-redes img {
 
-        width: 21px;
-        height: 21px;
-    }
-
-    .footer-info {
-
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-
-        padding:
-            35px 0;
-
-        text-align: center;
-    }
-
-    .footer-info h4 {
-
-        font-size: 12px;
-
-        margin-bottom: 18px;
-    }
-
-    .footer-info h4::after {
-
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .footer-info li {
-
-        font-size: 12px;
-
-        line-height: 1.7;
-    }
-
-    .copyright {
-
-        padding-top: 20px;
-    }
-
-    .copyright p {
-
-        font-size: 10px;
-
-        line-height: 1.6;
+        width: 22px;
+        height: 22px;
     }
 }
 
@@ -1668,73 +1411,49 @@ footer {
    CELULARES PEQUEÑOS
 ========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 380px) {
 
     .top-bar {
 
+        min-height: 55px;
+
         padding:
-            0 12px;
+            0 10px;
     }
 
     .logo {
 
-        font-size: 1.15rem;
+        font-size: 0.82rem;
     }
 
-    .top-icons {
+    .menu-movil {
 
-        gap: 7px;
+        width: 36px;
+        height: 36px;
+
+        font-size: 20px;
     }
 
-    .icon-link {
+    .navegacion.activo {
 
-        font-size: 0.9rem;
+        top: 62px;
+
+        left: 6px;
+        right: 6px;
     }
 
-    .menu-toggle {
-
-        width: 39px;
-        height: 39px;
-
-        font-size: 17px;
-    }
-
-    .titulo-hero {
-
-        font-size: 2.8rem;
-    }
-
-    .subtitulo {
-
-        font-size: 12px;
-    }
-
-    main {
+    .navegacion.activo a {
 
         padding:
-            60px 14px 70px;
+            11px 8px;
+
+        font-size: 0.68rem;
     }
 
     .servicio-card {
 
-        min-height: 315px;
-
         padding:
-            30px 18px;
+            28px 18px;
     }
 
-    .servicio-card h3 {
-
-        font-size: 15px;
-    }
-
-    .servicio-card p {
-
-        font-size: 12px;
-    }
-
-    .footer-info li {
-
-        font-size: 11px;
-    }
 }
