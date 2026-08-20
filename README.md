@@ -19,12 +19,12 @@
 </p>
 
 <p align="center">
-  <a href="https://shoestyle-2.onrender.com/paginas/galeria%20fotografica.html">
+  <a href="https://shoestyle-2.onrender.com/index.php">
     🚀 Ver aplicación
   </a>
   •
   <a href="https://github.com/Danek18328/Shoestyle">
-    💻 Código fuente
+    Código fuente
   </a>
 </p>
 
