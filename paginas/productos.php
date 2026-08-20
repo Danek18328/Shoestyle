@@ -1,6 +1,4 @@
-<?php
-include '../PHP/conexion.php';
-?>
+<?php include '../PHP/conexion.php'; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -12,12 +10,14 @@ include '../PHP/conexion.php';
 
     <title>Productos | SHOESTYLE</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="../CSS/PRODUCTOS5.CSS">
 
     <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- 4 FUENTES -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,11 +32,9 @@ include '../PHP/conexion.php';
 
 </head>
 
-
 <body>
 
 <div id="contenedor">
-
 
     <!-- =====================================================
          BANNER
@@ -54,7 +52,6 @@ include '../PHP/conexion.php';
 
         </div>
 
-
         <!-- =================================================
              BARRA SUPERIOR
         ================================================== -->
@@ -69,23 +66,9 @@ include '../PHP/conexion.php';
 
             </a>
 
-
-            <!-- BOTÓN HAMBURGUESA -->
-
-            <button
-                class="menu-movil"
-                id="menuMovil"
-                aria-label="Abrir menú"
-                aria-expanded="false">
-
-                <i class="fa-solid fa-bars"></i>
-
-            </button>
-
-
             <!-- MENÚ -->
 
-            <nav class="navegacion" id="navegacion">
+            <nav class="navegacion">
 
                 <ul>
 
@@ -141,7 +124,6 @@ include '../PHP/conexion.php';
 
             </nav>
 
-
             <!-- ICONOS -->
 
             <div class="top-icons">
@@ -168,9 +150,8 @@ include '../PHP/conexion.php';
 
         </div>
 
-
         <!-- =================================================
-             CONTENIDO HERO
+             CONTENIDO DEL HERO
         ================================================== -->
 
         <div class="contenido-centro">
@@ -201,14 +182,16 @@ include '../PHP/conexion.php';
 
         </div>
 
-
-        <!-- LEMA -->
+        <!-- =================================================
+             LEMA
+        ================================================== -->
 
         <div class="lema-centro">
         </div>
 
-
-        <!-- SCROLL -->
+        <!-- =================================================
+             SCROLL
+        ================================================== -->
 
         <div class="scroll-indicator">
 
@@ -222,14 +205,13 @@ include '../PHP/conexion.php';
 
     </header>
 
-
-
     <!-- =====================================================
          CATÁLOGO
     ====================================================== -->
 
     <main id="catalogo" class="productos">
 
+        <!-- CABECERA -->
 
         <section class="encabezado-productos">
 
@@ -242,10 +224,12 @@ include '../PHP/conexion.php';
             </h2>
 
             <p>
+
                 Explora nuestra selección de zapatos.
                 Encuentra diferentes marcas, estilos,
                 colores y tallas para elegir el modelo
                 que más te guste.
+
             </p>
 
             <a
@@ -260,8 +244,6 @@ include '../PHP/conexion.php';
 
         </section>
 
-
-
         <!-- =================================================
              PRODUCTOS
         ================================================== -->
@@ -270,55 +252,19 @@ include '../PHP/conexion.php';
 
             <?php
 
-            /*
-             * CONSULTA A LA BASE DE DATOS
-             */
+            $resultado = $conexion->query(
+                "SELECT * FROM zapatos"
+            );
 
-            $resultado = $conexion->query("SELECT * FROM zapatos");
-
-
-            /*
-             * COMPROBAR SI LA CONSULTA FALLÓ
-             */
-
-            if ($resultado === false):
-
-            ?>
-
-                <div class="sin-productos">
-
-                    <i class="fa-solid fa-triangle-exclamation"></i>
-
-                    <h3>
-                        Error al cargar los productos
-                    </h3>
-
-                    <p>
-                        No fue posible consultar la base de datos.
-                    </p>
-
-                    <small>
-                        Error MySQL:
-                        <?= htmlspecialchars($conexion->error) ?>
-                    </small>
-
-                </div>
-
-
-            <?php
-
-            /*
-             * SI LA CONSULTA FUNCIONÓ Y HAY PRODUCTOS
-             */
-
-            elseif ($resultado->num_rows > 0):
+            if ($resultado && $resultado->num_rows > 0):
 
                 while ($fila = $resultado->fetch_assoc()):
 
             ?>
 
-                <article class="card-producto">
+                <!-- TARJETA -->
 
+                <article class="card-producto">
 
                     <!-- IMAGEN -->
 
@@ -335,25 +281,19 @@ include '../PHP/conexion.php';
 
                     </div>
 
-
                     <!-- INFORMACIÓN -->
 
                     <div class="info-producto">
-
 
                         <h3>
                             <?= htmlspecialchars($fila['nombre']) ?>
                         </h3>
 
-
                         <div class="detalles-producto">
-
 
                             <p>
 
-                                <strong>
-                                    Marca
-                                </strong>
+                                <strong>Marca</strong>
 
                                 <span>
                                     <?= htmlspecialchars($fila['marca']) ?>
@@ -361,12 +301,9 @@ include '../PHP/conexion.php';
 
                             </p>
 
-
                             <p>
 
-                                <strong>
-                                    Talla
-                                </strong>
+                                <strong>Talla</strong>
 
                                 <span>
                                     <?= htmlspecialchars($fila['talla']) ?>
@@ -374,12 +311,9 @@ include '../PHP/conexion.php';
 
                             </p>
 
-
                             <p>
 
-                                <strong>
-                                    Género
-                                </strong>
+                                <strong>Género</strong>
 
                                 <span>
                                     <?= htmlspecialchars($fila['genero']) ?>
@@ -387,12 +321,9 @@ include '../PHP/conexion.php';
 
                             </p>
 
-
                             <p>
 
-                                <strong>
-                                    Color
-                                </strong>
+                                <strong>Color</strong>
 
                                 <span>
                                     <?= htmlspecialchars($fila['color']) ?>
@@ -400,12 +331,9 @@ include '../PHP/conexion.php';
 
                             </p>
 
-
                             <p>
 
-                                <strong>
-                                    Tipo
-                                </strong>
+                                <strong>Tipo</strong>
 
                                 <span>
                                     <?= htmlspecialchars($fila['tipo']) ?>
@@ -413,9 +341,7 @@ include '../PHP/conexion.php';
 
                             </p>
 
-
                         </div>
-
 
                         <!-- PRECIO -->
 
@@ -424,19 +350,19 @@ include '../PHP/conexion.php';
                             $
 
                             <?= number_format(
-                                (float) $fila['precio'],
+                                $fila['precio'],
                                 2
                             ) ?>
 
                         </div>
 
-
-                        <!-- CARRITO -->
+                        <!-- AGREGAR AL CARRITO -->
 
                         <form
                             action="../paginas/carrito.php"
                             method="POST"
-                            class="form-carrito">
+                            class="form-carrito"
+                        >
 
                             <?php foreach ($fila as $key => $value): ?>
 
@@ -448,7 +374,6 @@ include '../PHP/conexion.php';
 
                             <?php endforeach; ?>
 
-
                             <button type="submit">
 
                                 <i class="fa-solid fa-cart-shopping"></i>
@@ -459,20 +384,13 @@ include '../PHP/conexion.php';
 
                         </form>
 
-
                     </div>
 
                 </article>
 
-
             <?php
 
                 endwhile;
-
-
-            /*
-             * SI NO HAY PRODUCTOS
-             */
 
             else:
 
@@ -493,17 +411,11 @@ include '../PHP/conexion.php';
 
                 </div>
 
-            <?php
-
-            endif;
-
-            ?>
+            <?php endif; ?>
 
         </section>
 
     </main>
-
-
 
     <!-- =====================================================
          FOOTER
@@ -511,6 +423,7 @@ include '../PHP/conexion.php';
 
     <footer>
 
+        <!-- REDES -->
 
         <div class="redes-sociales">
 
@@ -518,21 +431,17 @@ include '../PHP/conexion.php';
                 ENCUÉNTRANOS TAMBIÉN EN:
             </h3>
 
-
             <div class="iconos-redes">
-
 
                 <a
                     href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    target="_blank">
 
                     <img
                         src="../imagenes/facebook.png"
                         alt="Facebook">
 
                 </a>
-
 
                 <a href="#">
 
@@ -542,11 +451,9 @@ include '../PHP/conexion.php';
 
                 </a>
 
-
                 <a
                     href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    target="_blank">
 
                     <img
                         src="../imagenes/tiktok.png"
@@ -554,11 +461,9 @@ include '../PHP/conexion.php';
 
                 </a>
 
-
                 <a
                     href="https://x.com/shoestyle397157"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    target="_blank">
 
                     <img
                         src="../imagenes/twitter.png"
@@ -566,11 +471,9 @@ include '../PHP/conexion.php';
 
                 </a>
 
-
                 <a
                     href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    target="_blank">
 
                     <img
                         src="../imagenes/whatsapp.png"
@@ -578,15 +481,15 @@ include '../PHP/conexion.php';
 
                 </a>
 
-
             </div>
 
         </div>
 
-
+        <!-- INFORMACIÓN -->
 
         <div class="footer-info">
 
+            <!-- AYUDA -->
 
             <div class="columna">
 
@@ -624,6 +527,7 @@ include '../PHP/conexion.php';
 
             </div>
 
+            <!-- SHOESTYLE -->
 
             <div class="columna">
 
@@ -658,6 +562,7 @@ include '../PHP/conexion.php';
 
             </div>
 
+            <!-- LEGAL -->
 
             <div class="columna">
 
@@ -699,9 +604,9 @@ include '../PHP/conexion.php';
 
             </div>
 
-
         </div>
 
+        <!-- COPYRIGHT -->
 
         <div class="copyright">
 
@@ -714,13 +619,9 @@ include '../PHP/conexion.php';
 
         </div>
 
-
     </footer>
 
-
 </div>
-
-
 
 <!-- =====================================================
      JAVASCRIPT
@@ -728,97 +629,16 @@ include '../PHP/conexion.php';
 
 <script>
 
-const menuMovil =
-    document.getElementById("menuMovil");
-
-const navegacion =
-    document.getElementById("navegacion");
-
-
-if (menuMovil && navegacion) {
-
-    menuMovil.addEventListener("click", function () {
-
-        navegacion.classList.toggle("activo");
-
-        const abierto =
-            navegacion.classList.contains("activo");
-
-        menuMovil.setAttribute(
-            "aria-expanded",
-            abierto
-        );
-
-
-        const icono =
-            menuMovil.querySelector("i");
-
-
-        if (abierto) {
-
-            icono.classList.remove("fa-bars");
-            icono.classList.add("fa-xmark");
-
-        } else {
-
-            icono.classList.remove("fa-xmark");
-            icono.classList.add("fa-bars");
-
-        }
-
-    });
-
-
-    navegacion
-        .querySelectorAll("a")
-        .forEach(enlace => {
-
-            enlace.addEventListener("click", function () {
-
-                navegacion.classList.remove("activo");
-
-                menuMovil.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-
-                const icono =
-                    menuMovil.querySelector("i");
-
-
-                icono.classList.remove("fa-xmark");
-                icono.classList.add("fa-bars");
-
-            });
-
-        });
-
-}
-
-
-/*
- * SCROLL SUAVE
- */
-
 document
     .querySelectorAll('a[href^="#"]')
     .forEach(enlace => {
 
         enlace.addEventListener("click", function(e) {
 
-            const href =
-                this.getAttribute("href");
-
-
-            if (href === "#") {
-                return;
-            }
-
-
             const destino =
-                document.querySelector(href);
-
+                document.querySelector(
+                    this.getAttribute("href")
+                );
 
             if (destino) {
 
@@ -836,7 +656,5 @@ document
 
 </script>
 
-
 </body>
-
 </html>
