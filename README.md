@@ -13,7 +13,7 @@
 
 <p align="center">
   <a href="https://shoestyle-2.onrender.com/paginas/galeria%20fotografica.html">
-    🚀 Ver SHOESTYLE
+    (https://shoestyle-2.onrender.com/paginas/galeria%20fotografica.html)
   </a>
 </p>
 
