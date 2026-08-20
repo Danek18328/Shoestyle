@@ -3,17 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 
-/* =========================================================
-   VARIABLES
-========================================================= */
-
 :root {
-
     --rojo: #e10620;
+    --rojo-oscuro: #a20000;
     --rojo-brillante: #ff2e2e;
 
     --fondo: #050505;
     --fondo-2: #0d0d0d;
+    --fondo-3: #151515;
 
     --blanco: #ffffff;
 
@@ -21,7 +18,7 @@
     --gris: #8c8c8c;
 
     --borde: rgba(255,255,255,0.08);
-
+    --borde-hover: rgba(225,6,32,0.65);
 }
 
 
@@ -40,12 +37,7 @@ html {
 }
 
 body {
-
-    width: 100%;
-    min-height: 100vh;
-
-    background: var(--fondo);
-
+    background: #050505;
     color: var(--blanco);
 
     font-family: 'Manrope', sans-serif;
@@ -57,36 +49,28 @@ a {
     text-decoration: none;
 }
 
-button {
-    font-family: inherit;
-}
-
 
 /* =========================================================
    CONTENEDOR
 ========================================================= */
 
 #contenedor {
-
     width: 100%;
     min-height: 100vh;
 
-    background: var(--fondo);
+    background: #050505;
 }
 
 
 /* =========================================================
-   HERO
+   BANNER
 ========================================================= */
 
 .banner-portada {
-
-    position: relative;
+        position: relative;
 
     width: 100%;
     height: 100vh;
-
-    min-height: 600px;
 
     display: flex;
 
@@ -97,17 +81,14 @@ button {
     align-items: center;
 
     overflow: hidden;
+
+    color: #fff;
 }
 
-
-/* =========================================================
-   IMAGEN
-========================================================= */
+/* CONTENEDOR DE LA IMAGEN */
 
 .imagen-banner {
-
     position: absolute;
-
     inset: 0;
 
     width: 100%;
@@ -116,8 +97,9 @@ button {
     z-index: 0;
 }
 
-.imagen-banner img {
+/* IMAGEN DE FONDO */
 
+.imagen-banner img {
     width: 100%;
     height: 100%;
 
@@ -126,26 +108,28 @@ button {
     display: block;
 }
 
-
-/* =========================================================
-   OSCURECER IMAGEN
-========================================================= */
+/* CAPA OSCURA */
 
 .capa-oscura {
-
     position: absolute;
-
     inset: 0;
 
     background:
-        linear-gradient(
-            180deg,
-            rgba(0,0,0,0.65) 0%,
-            rgba(0,0,0,0.35) 45%,
-            rgba(0,0,0,0.85) 100%
+        radial-gradient(
+            circle,
+            rgba(0, 0, 0, 0.541) 0%,
+            rgba(0, 0, 0, 0.534) 100%
         );
 
     z-index: 1;
+}
+
+/* CONTENIDO ENCIMA DEL FONDO */
+
+.top-bar,
+.lema-centro {
+    position: relative;
+    z-index: 10;
 }
 
 
@@ -154,56 +138,32 @@ button {
 ========================================================= */
 
 .top-bar {
-
     position: relative;
-
-    z-index: 100;
+    z-index: 10;
 
     width: 100%;
-
     min-height: 90px;
 
     padding: 0 6%;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
-    gap: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 
-    border-bottom:
-        1px solid rgba(255,255,255,0.12);
-
-    background:
-        rgba(0,0,0,0.25);
-
+    background: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
 }
 
-
-/* =========================================================
-   LOGO
-========================================================= */
-
 .logo {
-
-    flex-shrink: 0;
-
-    color: white;
-
-    font-family:
-        'Impact',
-        'Arial Black',
-        sans-serif;
-
     font-size: 1.5rem;
-
     letter-spacing: 1px;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    color: white;
 }
 
-.logo span {
+.logo-rojo {
     color: var(--rojo);
 }
 
@@ -212,67 +172,42 @@ button {
    NAVEGACIÓN
 ========================================================= */
 
-.navegacion {
-
-    display: block;
-
-    z-index: 1000;
-}
-
 .navegacion ul {
+    list-style: none;
 
     display: flex;
 
-    align-items: center;
-
-    gap: 28px;
-
-    list-style: none;
+    gap: 30px;
 }
 
-.navegacion a {
-
+.navegacion ul li a {
     position: relative;
-
-    display: block;
 
     color: #b3b3b3;
 
     font-family: 'Poppins', sans-serif;
-
-    font-size: 0.8rem;
-
+    font-size: 0.8  5rem;
     font-weight: 600;
 
-    letter-spacing: 0.5px;
+    letter-spacing: 0.7px;
 
-    white-space: nowrap;
-
-    transition:
-        color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.navegacion a:hover,
-.navegacion a.activo {
-
+.navegacion ul li a:hover,
+.navegacion ul li a.activo {
     color: white;
 }
 
-
-/* Línea roja */
-
-.navegacion a.activo::after {
-
+.navegacion ul li a.activo::after {
     content: "";
 
     position: absolute;
 
     left: 0;
-
-    bottom: -9px;
+    bottom: -8px;
 
     width: 100%;
-
     height: 2px;
 
     background: var(--rojo);
@@ -283,22 +218,18 @@ button {
 
 
 /* =========================================================
-   ICONOS DESKTOP
+   ICONOS
 ========================================================= */
 
 .top-icons {
-
     display: flex;
-
-    align-items: center;
 
     gap: 20px;
 
-    flex-shrink: 0;
+    z-index: 10;
 }
 
 .icon-link {
-
     color: white;
 
     font-size: 1.1rem;
@@ -309,77 +240,9 @@ button {
 }
 
 .icon-link:hover {
-
     color: var(--rojo);
 
     transform: scale(1.1);
-}
-
-
-/* =========================================================
-   HAMBURGUESA
-========================================================= */
-
-.menu-movil {
-
-    display: none;
-
-    width: 42px;
-    height: 42px;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    border: none;
-
-    border-radius: 8px;
-
-    background: transparent;
-
-    color: white;
-
-    font-size: 22px;
-
-    cursor: pointer;
-
-    z-index: 10001;
-
-    transition:
-        color 0.3s ease,
-        background 0.3s ease;
-}
-
-.menu-movil:hover {
-
-    color: var(--rojo);
-
-    background:
-        rgba(255,255,255,0.06);
-}
-
-
-
-
-
-/* =========================================================
-   ETIQUETA
-========================================================= */
-
-.etiqueta-hero {
-
-    margin-bottom: 18px;
-
-    color: var(--rojo);
-
-    font-family: 'Poppins', sans-serif;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    letter-spacing: 4px;
 }
 
 
@@ -522,7 +385,6 @@ button {
     text-shadow:
         0 3px 15px rgba(0,0,0,0.8);
 }
-
 
 
 
