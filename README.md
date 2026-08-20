@@ -24,12 +24,12 @@ El proyecto integra catálogo de productos, usuarios, compras, facturación, adm
 <!-- Agrega aquí capturas de pantalla de tu proyecto -->
 
 <p align="center">
-  <img src="imagenes/readme/inicio.png" width="90%">
+  <img src="Capturas/SHOESTYLE-HERO.png" width="90%">
 </p>
 
 <p align="center">
-  <img src="imagenes/readme/productos.png" width="45%">
-  <img src="imagenes/readme/admin.png" width="45%">
+  <img src="Capturas/SHOESTYLE-3.png" width="45%">
+  <img src="Capturas/SHOESTYLE-4.png" width="45%">
 </p>
 
 ---
