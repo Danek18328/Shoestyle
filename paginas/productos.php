@@ -1,4 +1,6 @@
-<?php include '../PHP/conexion.php'; ?>
+<?php
+include '../PHP/conexion.php';
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -42,7 +44,6 @@
 
     <header class="banner-portada">
 
-
         <div class="imagen-banner">
 
             <img
@@ -60,7 +61,6 @@
 
         <div class="top-bar">
 
-
             <!-- LOGO -->
 
             <a href="../index.php" class="logo">
@@ -70,9 +70,7 @@
             </a>
 
 
-            <!-- =================================================
-                 BOTÓN HAMBURGUESA
-            ================================================== -->
+            <!-- BOTÓN HAMBURGUESA -->
 
             <button
                 class="menu-movil"
@@ -85,9 +83,7 @@
             </button>
 
 
-            <!-- =================================================
-                 MENÚ
-            ================================================== -->
+            <!-- MENÚ -->
 
             <nav class="navegacion" id="navegacion">
 
@@ -146,9 +142,7 @@
             </nav>
 
 
-            <!-- =================================================
-                 ICONOS
-            ================================================== -->
+            <!-- ICONOS -->
 
             <div class="top-icons">
 
@@ -171,7 +165,6 @@
                 </a>
 
             </div>
-
 
         </div>
 
@@ -209,17 +202,13 @@
         </div>
 
 
-        <!-- =================================================
-             LEMA
-        ================================================== -->
+        <!-- LEMA -->
 
         <div class="lema-centro">
         </div>
 
 
-        <!-- =================================================
-             SCROLL
-        ================================================== -->
+        <!-- SCROLL -->
 
         <div class="scroll-indicator">
 
@@ -230,7 +219,6 @@
             </div>
 
         </div>
-
 
     </header>
 
@@ -282,11 +270,48 @@
 
             <?php
 
-            $resultado = $conexion->query(
-                "SELECT * FROM zapatos"
-            );
+            /*
+             * CONSULTA A LA BASE DE DATOS
+             */
 
-            if ($resultado && $resultado->num_rows > 0):
+            $resultado = $conexion->query("SELECT * FROM zapatos");
+
+
+            /*
+             * COMPROBAR SI LA CONSULTA FALLÓ
+             */
+
+            if ($resultado === false):
+
+            ?>
+
+                <div class="sin-productos">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    <h3>
+                        Error al cargar los productos
+                    </h3>
+
+                    <p>
+                        No fue posible consultar la base de datos.
+                    </p>
+
+                    <small>
+                        Error MySQL:
+                        <?= htmlspecialchars($conexion->error) ?>
+                    </small>
+
+                </div>
+
+
+            <?php
+
+            /*
+             * SI LA CONSULTA FUNCIONÓ Y HAY PRODUCTOS
+             */
+
+            elseif ($resultado->num_rows > 0):
 
                 while ($fila = $resultado->fetch_assoc()):
 
@@ -294,6 +319,8 @@
 
                 <article class="card-producto">
 
+
+                    <!-- IMAGEN -->
 
                     <div class="imagen-producto">
 
@@ -309,6 +336,8 @@
                     </div>
 
 
+                    <!-- INFORMACIÓN -->
+
                     <div class="info-producto">
 
 
@@ -321,70 +350,93 @@
 
 
                             <p>
-                                <strong>Marca</strong>
+
+                                <strong>
+                                    Marca
+                                </strong>
 
                                 <span>
                                     <?= htmlspecialchars($fila['marca']) ?>
                                 </span>
+
                             </p>
 
 
                             <p>
-                                <strong>Talla</strong>
+
+                                <strong>
+                                    Talla
+                                </strong>
 
                                 <span>
                                     <?= htmlspecialchars($fila['talla']) ?>
                                 </span>
+
                             </p>
 
 
                             <p>
-                                <strong>Género</strong>
+
+                                <strong>
+                                    Género
+                                </strong>
 
                                 <span>
                                     <?= htmlspecialchars($fila['genero']) ?>
                                 </span>
+
                             </p>
 
 
                             <p>
-                                <strong>Color</strong>
+
+                                <strong>
+                                    Color
+                                </strong>
 
                                 <span>
                                     <?= htmlspecialchars($fila['color']) ?>
                                 </span>
+
                             </p>
 
 
                             <p>
-                                <strong>Tipo</strong>
+
+                                <strong>
+                                    Tipo
+                                </strong>
 
                                 <span>
                                     <?= htmlspecialchars($fila['tipo']) ?>
                                 </span>
+
                             </p>
 
 
                         </div>
 
+
+                        <!-- PRECIO -->
 
                         <div class="precio">
 
                             $
 
                             <?= number_format(
-                                $fila['precio'],
+                                (float) $fila['precio'],
                                 2
                             ) ?>
 
                         </div>
 
 
+                        <!-- CARRITO -->
+
                         <form
                             action="../paginas/carrito.php"
                             method="POST"
-                            class="form-carrito"
-                        >
+                            class="form-carrito">
 
                             <?php foreach ($fila as $key => $value): ?>
 
@@ -405,7 +457,6 @@
 
                             </button>
 
-
                         </form>
 
 
@@ -417,6 +468,11 @@
             <?php
 
                 endwhile;
+
+
+            /*
+             * SI NO HAY PRODUCTOS
+             */
 
             else:
 
@@ -437,11 +493,13 @@
 
                 </div>
 
-            <?php endif; ?>
+            <?php
 
+            endif;
+
+            ?>
 
         </section>
-
 
     </main>
 
@@ -466,7 +524,8 @@
 
                 <a
                     href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
 
                     <img
                         src="../imagenes/facebook.png"
@@ -486,7 +545,8 @@
 
                 <a
                     href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
 
                     <img
                         src="../imagenes/tiktok.png"
@@ -497,7 +557,8 @@
 
                 <a
                     href="https://x.com/shoestyle397157"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
 
                     <img
                         src="../imagenes/twitter.png"
@@ -508,7 +569,8 @@
 
                 <a
                     href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
 
                     <img
                         src="../imagenes/whatsapp.png"
@@ -606,6 +668,7 @@
                 <ul>
 
                     <li>
+
                         <a
                             href="../paginas/terminos.pdf"
                             target="_blank">
@@ -613,18 +676,23 @@
                             Términos y Condiciones
 
                         </a>
+
                     </li>
 
                     <li>
+
                         <a href="#">
                             Política de Privacidad
                         </a>
+
                     </li>
 
                     <li>
+
                         <a href="#">
                             Condiciones de Uso
                         </a>
+
                     </li>
 
                 </ul>
@@ -638,8 +706,10 @@
         <div class="copyright">
 
             <p>
+
                 &copy; 2025 SHOESTYLE.
                 Todos los derechos reservados.
+
             </p>
 
         </div>
@@ -679,8 +749,10 @@ if (menuMovil && navegacion) {
             abierto
         );
 
+
         const icono =
             menuMovil.querySelector("i");
+
 
         if (abierto) {
 
@@ -710,8 +782,10 @@ if (menuMovil && navegacion) {
                     "false"
                 );
 
+
                 const icono =
                     menuMovil.querySelector("i");
+
 
                 icono.classList.remove("fa-xmark");
                 icono.classList.add("fa-bars");
@@ -723,6 +797,10 @@ if (menuMovil && navegacion) {
 }
 
 
+/*
+ * SCROLL SUAVE
+ */
+
 document
     .querySelectorAll('a[href^="#"]')
     .forEach(enlace => {
@@ -732,12 +810,15 @@ document
             const href =
                 this.getAttribute("href");
 
+
             if (href === "#") {
                 return;
             }
 
+
             const destino =
                 document.querySelector(href);
+
 
             if (destino) {
 
@@ -757,4 +838,5 @@ document
 
 
 </body>
+
 </html>
