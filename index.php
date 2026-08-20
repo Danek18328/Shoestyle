@@ -63,27 +63,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <div class="top-bar">
-        <h1 class="logo">SHOE<span class="logo-rojo">STYLE</span></h1>
-        
-        <nav class="navegacion">
-            <ul>
-                <li><a href="./index.php">INICIO</a></li>
-                <li><a href="./paginas/nuestra empresa.html">NUESTRA EMPRESA</a></li>
-                <li><a href="./paginas/productos.php">PRODUCTOS</a></li>
-                <li><a href="./paginas/contactenos.html">CONTACTENOS</a></li>
-                <li><a href="./paginas/inicio de sesion.html">INICIO DE SESIÓN</a></li>
-                <li><a href="./paginas/servicios.html">SERVICIOS</a></li>
-                <li><a href="./paginas/galeria fotografica.html">GALERÍA FOTOGRÁFICA</a></li>
-                <li><a href="./paginas/registrarse.html">REGISTRARSE</a></li>
-            </ul>
-        </nav>
+    <h1 class="logo">SHOE<span class="logo-rojo">STYLE</span></h1>
 
-        <div class="top-icons">
-           <a href="#" class="icon-link"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="#" class="icon-link"><i class="fa-regular fa-eye"></i></a>
-        </div>
+    <nav class="navegacion">
+        <ul>
+            <li><a href="./index.php">INICIO</a></li>
+            <li><a href="./paginas/nuestra empresa.html">NUESTRA EMPRESA</a></li>
+            <li><a href="./paginas/productos.php">PRODUCTOS</a></li>
+            <li><a href="./paginas/contactenos.html">CONTACTENOS</a></li>
+            <li><a href="./paginas/inicio de sesion.html">INICIO DE SESIÓN</a></li>
+            <li><a href="./paginas/servicios.html">SERVICIOS</a></li>
+            <li><a href="./paginas/galeria fotografica.html">GALERÍA FOTOGRÁFICA</a></li>
+            <li><a href="./paginas/registrarse.html">REGISTRARSE</a></li>
+        </ul>
+    </nav>
+
+    <div class="top-icons">
+        <a href="#" class="icon-link">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+        <a href="#" class="icon-link">
+            <i class="fa-regular fa-eye"></i>
+        </a>
     </div>
 
+    <!-- MENÚ MÓVIL -->
+    <button class="menu-movil" id="menuMovil" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</div>
+    
     <div class="contenido-centro">
         <h2 class="lema-principal">
             TU ESTILO EMPIEZA <br>
