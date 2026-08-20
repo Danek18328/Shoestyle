@@ -1,15 +1,17 @@
 <?php
 
 $servername = getenv('DB_HOST') ?: 'localhost';
-$username = getenv('DB_USER') ?: 'root';
-$password = getenv('DB_PASSWORD') ?: '';
-$dbname = getenv('DB_NAME') ?: 'shoestyle';
+$username   = getenv('DB_USER') ?: 'root';
+$password   = getenv('DB_PASSWORD') ?: '';
+$dbname     = getenv('DB_NAME') ?: 'shoestyle';
+$port       = getenv('DB_PORT') ?: 3306;
 
 $conexion = new mysqli(
     $servername,
     $username,
     $password,
-    $dbname
+    $dbname,
+    (int)$port
 );
 
 if ($conexion->connect_error) {
