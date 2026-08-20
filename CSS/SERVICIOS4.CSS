@@ -360,46 +360,7 @@ button {
 }
 
 
-/* =========================================================
-   HERO CENTRADO
-========================================================= */
 
-.contenido-centro {
-
-    position: relative;
-
-    z-index: 10;
-
-    width: min(900px, 100%);
-
-    padding: 0 20px;
-
-    margin-top: -40px;
-
-    text-align: center;
-
-    animation:
-        aparecer 1s ease forwards;
-}
-
-@keyframes aparecer {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(25px);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-}
 
 
 /* =========================================================
