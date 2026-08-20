@@ -1,1653 +1,760 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+<?php include '../PHP/conexion.php'; ?>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Productos | SHOESTYLE</title>
+
+    <link rel="stylesheet" href="../CSS/PRODUCTOS5.CSS">
+
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
 
 
-/* =========================================================
-   VARIABLES
-========================================================= */
+<body>
 
-:root {
-
-    --rojo: #e10620;
-    --rojo-oscuro: #a20000;
-    --rojo-brillante: #ff2e2e;
-
-    --fondo: #050505;
-    --fondo-2: #0d0d0d;
-    --fondo-3: #151515;
-
-    --tarjeta: #181818;
-
-    --blanco: #ffffff;
-    --gris-claro: #c7c7c7;
-    --gris: #8c8c8c;
-    --gris-oscuro: #303030;
-
-    --borde: rgba(255,255,255,0.08);
-
-    --borde-hover: rgba(225,6,32,0.65);
-}
+<div id="contenedor">
 
 
-/* =========================================================
-   RESET
-========================================================= */
+    <!-- =====================================================
+         BANNER
+    ====================================================== -->
 
-* {
-
-    margin: 0;
-    padding: 0;
-
-    box-sizing: border-box;
-
-}
+    <header class="banner-portada">
 
 
-html {
+        <div class="imagen-banner">
 
-    scroll-behavior: smooth;
+            <img
+                src="../imagenes/banner-productos.jpg"
+                alt="Banner de productos">
 
-}
+            <div class="capa-oscura"></div>
+
+        </div>
 
 
-body {
+        <!-- =================================================
+             BARRA SUPERIOR
+        ================================================== -->
 
-    margin: 0;
-    padding: 0;
+        <div class="top-bar">
 
-    background:
-        radial-gradient(
-            circle at top,
-            #151515 0%,
-            #050505 45%,
-            #030303 100%
+
+            <!-- LOGO -->
+
+            <a href="../index.php" class="logo">
+
+                SHOE<span class="logo-rojo">STYLE</span>
+
+            </a>
+
+
+            <!-- =================================================
+                 BOTÓN HAMBURGUESA
+            ================================================== -->
+
+            <button
+                class="menu-movil"
+                id="menuMovil"
+                aria-label="Abrir menú"
+                aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <!-- =================================================
+                 MENÚ
+            ================================================== -->
+
+            <nav class="navegacion" id="navegacion">
+
+                <ul>
+
+                    <li>
+                        <a href="../index.php">
+                            INICIO
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../paginas/nuestra empresa.html">
+                            NUESTRA EMPRESA
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="activo">
+                            PRODUCTOS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../paginas/contactenos.html">
+                            CONTACTENOS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../paginas/inicio de sesion.html">
+                            INICIO DE SESIÓN
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../paginas/servicios.html">
+                            SERVICIOS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../paginas/galeria fotografica.html">
+                            GALERIA FOTOGRAFICA
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../paginas/registrarse.html">
+                            REGISTRARSE
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- =================================================
+                 ICONOS
+            ================================================== -->
+
+            <div class="top-icons">
+
+                <a
+                    href="../paginas/carrito.php"
+                    class="icon-link"
+                    title="Carrito">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                </a>
+
+                <a
+                    href="#catalogo"
+                    class="icon-link"
+                    title="Ver productos">
+
+                    <i class="fa-regular fa-eye"></i>
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             CONTENIDO HERO
+        ================================================== -->
+
+        <div class="contenido-centro">
+
+            <p class="etiqueta-hero">
+                SHOESTYLE
+            </p>
+
+            <h1 class="titulo-hero">
+
+                CATÁLOGO
+
+                <span>
+                    DE ZAPATOS
+                </span>
+
+            </h1>
+
+            <p class="subtitulo">
+
+                Descubre nuestra colección de calzado,
+                encuentra tu estilo y elige tus favoritos.
+
+            </p>
+
+            <div class="botones-container">
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             LEMA
+        ================================================== -->
+
+        <div class="lema-centro">
+        </div>
+
+
+        <!-- =================================================
+             SCROLL
+        ================================================== -->
+
+        <div class="scroll-indicator">
+
+            <div class="mouse">
+
+                <div class="rueda"></div>
+
+            </div>
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CATÁLOGO
+    ====================================================== -->
+
+    <main id="catalogo" class="productos">
+
+
+        <section class="encabezado-productos">
+
+            <span class="seccion-etiqueta">
+                COLECCIÓN SHOESTYLE
+            </span>
+
+            <h2>
+                CATÁLOGO DE ZAPATOS
+            </h2>
+
+            <p>
+                Explora nuestra selección de zapatos.
+                Encuentra diferentes marcas, estilos,
+                colores y tallas para elegir el modelo
+                que más te guste.
+            </p>
+
+            <a
+                href="../paginas/carrito.php"
+                class="btn-carrito">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                IR AL CARRITO
+
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PRODUCTOS
+        ================================================== -->
+
+        <section class="grid-productos">
+
+            <?php
+
+            $resultado = $conexion->query(
+                "SELECT * FROM zapatos"
+            );
+
+            if ($resultado && $resultado->num_rows > 0):
+
+                while ($fila = $resultado->fetch_assoc()):
+
+            ?>
+
+                <article class="card-producto">
+
+
+                    <div class="imagen-producto">
+
+                        <img
+                            src="<?= htmlspecialchars($fila['imagen']) ?>"
+                            alt="<?= htmlspecialchars($fila['nombre']) ?>"
+                        >
+
+                        <span class="etiqueta-producto">
+                            SHOESTYLE
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-producto">
+
+
+                        <h3>
+                            <?= htmlspecialchars($fila['nombre']) ?>
+                        </h3>
+
+
+                        <div class="detalles-producto">
+
+
+                            <p>
+                                <strong>Marca</strong>
+
+                                <span>
+                                    <?= htmlspecialchars($fila['marca']) ?>
+                                </span>
+                            </p>
+
+
+                            <p>
+                                <strong>Talla</strong>
+
+                                <span>
+                                    <?= htmlspecialchars($fila['talla']) ?>
+                                </span>
+                            </p>
+
+
+                            <p>
+                                <strong>Género</strong>
+
+                                <span>
+                                    <?= htmlspecialchars($fila['genero']) ?>
+                                </span>
+                            </p>
+
+
+                            <p>
+                                <strong>Color</strong>
+
+                                <span>
+                                    <?= htmlspecialchars($fila['color']) ?>
+                                </span>
+                            </p>
+
+
+                            <p>
+                                <strong>Tipo</strong>
+
+                                <span>
+                                    <?= htmlspecialchars($fila['tipo']) ?>
+                                </span>
+                            </p>
+
+
+                        </div>
+
+
+                        <div class="precio">
+
+                            $
+
+                            <?= number_format(
+                                $fila['precio'],
+                                2
+                            ) ?>
+
+                        </div>
+
+
+                        <form
+                            action="../paginas/carrito.php"
+                            method="POST"
+                            class="form-carrito"
+                        >
+
+                            <?php foreach ($fila as $key => $value): ?>
+
+                                <input
+                                    type="hidden"
+                                    name="<?= htmlspecialchars($key) ?>"
+                                    value="<?= htmlspecialchars($value) ?>"
+                                >
+
+                            <?php endforeach; ?>
+
+
+                            <button type="submit">
+
+                                <i class="fa-solid fa-cart-shopping"></i>
+
+                                AGREGAR AL CARRITO
+
+                            </button>
+
+
+                        </form>
+
+
+                    </div>
+
+                </article>
+
+
+            <?php
+
+                endwhile;
+
+            else:
+
+            ?>
+
+                <div class="sin-productos">
+
+                    <i class="fa-solid fa-box-open"></i>
+
+                    <h3>
+                        No hay productos disponibles
+                    </h3>
+
+                    <p>
+                        Actualmente no tenemos productos
+                        registrados en el catálogo.
+                    </p>
+
+                </div>
+
+            <?php endif; ?>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+
+        <div class="redes-sociales">
+
+            <h3>
+                ENCUÉNTRANOS TAMBIÉN EN:
+            </h3>
+
+
+            <div class="iconos-redes">
+
+
+                <a
+                    href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
+                    target="_blank">
+
+                    <img
+                        src="../imagenes/facebook.png"
+                        alt="Facebook">
+
+                </a>
+
+
+                <a href="#">
+
+                    <img
+                        src="../imagenes/instagram.jpg"
+                        alt="Instagram">
+
+                </a>
+
+
+                <a
+                    href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
+                    target="_blank">
+
+                    <img
+                        src="../imagenes/tiktok.png"
+                        alt="TikTok">
+
+                </a>
+
+
+                <a
+                    href="https://x.com/shoestyle397157"
+                    target="_blank">
+
+                    <img
+                        src="../imagenes/twitter.png"
+                        alt="Twitter">
+
+                </a>
+
+
+                <a
+                    href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
+                    target="_blank">
+
+                    <img
+                        src="../imagenes/whatsapp.png"
+                        alt="WhatsApp">
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-info">
+
+
+            <div class="columna">
+
+                <h4>
+                    AYUDA
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
+                            Asistencia
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
+                            Seguimiento de pedidos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
+                            Envíos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
+                            Devoluciones
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="columna">
+
+                <h4>
+                    SHOESTYLE
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <strong>Teléfonos:</strong>
+                        +57 310 700 1125 /
+                        +57 302 2001695
+                    </li>
+
+                    <li>
+                        <strong>Correo:</strong>
+                        shoestyle@gmail.com
+                    </li>
+
+                    <li>
+                        <strong>Horarios:</strong>
+                        8:00 a.m - 7:00 p.m
+                    </li>
+
+                    <li>
+                        <strong>Dirección:</strong>
+                        Por confirmar
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="columna">
+
+                <h4>
+                    INFORMACIÓN LEGAL
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a
+                            href="../paginas/terminos.pdf"
+                            target="_blank">
+
+                            Términos y Condiciones
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Política de Privacidad
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Condiciones de Uso
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                &copy; 2025 SHOESTYLE.
+                Todos los derechos reservados.
+            </p>
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+const menuMovil =
+    document.getElementById("menuMovil");
+
+const navegacion =
+    document.getElementById("navegacion");
+
+
+if (menuMovil && navegacion) {
+
+    menuMovil.addEventListener("click", function () {
+
+        navegacion.classList.toggle("activo");
+
+        const abierto =
+            navegacion.classList.contains("activo");
+
+        menuMovil.setAttribute(
+            "aria-expanded",
+            abierto
         );
 
-    color: var(--blanco);
+        const icono =
+            menuMovil.querySelector("i");
 
-    font-family: 'Manrope', sans-serif;
+        if (abierto) {
 
-    overflow-x: hidden;
+            icono.classList.remove("fa-bars");
+            icono.classList.add("fa-xmark");
 
-}
-
-
-a {
-
-    text-decoration: none;
-
-}
-
-
-img {
-
-    max-width: 100%;
-
-}
-
-
-button,
-input {
-
-    font-family: inherit;
-
-}
-
-
-/* =========================================================
-   CONTENEDOR
-========================================================= */
-
-#contenedor {
-
-    width: 100%;
-    min-height: 100vh;
-
-    background: var(--fondo);
-
-}
-
-
-
-
-/* =========================================================
-   BANNER
-========================================================= */
-
-.banner-portada {
-        position: relative;
-
-    width: 100%;
-    height: 100vh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    overflow: hidden;
-
-    color: #fff;
-}
-
-/* CONTENEDOR DE LA IMAGEN */
-
-.imagen-banner {
-    position: absolute;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    z-index: 0;
-}
-
-/* IMAGEN DE FONDO */
-
-.imagen-banner img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-}
-
-/* CAPA OSCURA */
-
-.capa-oscura {
-    position: absolute;
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0, 0, 0, 0.25) 0%,
-            rgba(0, 0, 0, 0.88) 100%
-        );
-
-    z-index: 1;
-}
-
-/* CONTENIDO ENCIMA DEL FONDO */
-
-.top-bar,
-.lema-centro {
-    position: relative;
-    z-index: 10;
-}
-
-/* =========================================================
-   BARRA SUPERIOR
-========================================================= */
-
-.top-bar {
-    position: relative;
-    z-index: 10;
-
-    width: 100%;
-    min-height: 90px;
-
-    padding: 0 6%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-
-    background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(10px);
-}
-
-
-/* =========================================================
-   LOGO
-========================================================= */
-
-.logo {
-
-    color: #fff;
-
-
-        font-family: 'Impact', 'Arial Black', sans-serif;
-
-
-    font-size: 1.5rem;
-
-    letter-spacing: 1px;
-
-}
-
-
-.logo-rojo {
-
-    color: var(--rojo);
-
-}
-
-
-/* =========================================================
-   MENÚ
-========================================================= */
-
-.top-bar {
-    position: relative;
-    z-index: 10;
-
-    width: 100%;
-    min-height: 90px;
-
-    padding: 0 6%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-
-    background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(10px);
-}
-
-.logo {
-    color: var(--blanco);
-
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-
-    font-family: 'Impact', 'Arial Black', sans-serif;
-}
-
-.logo-rojo {
-    color: var(--rojo);
-}
-
-.navegacion ul {
-    list-style: none;
-
-    display: flex;
-    gap: 30px;
-}
-
-.navegacion ul li a {
-    position: relative;
-
-    color: #b3b3b3;
-
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.8  5rem;
-    font-weight: 600;
-
-    letter-spacing: 0.7px;
-
-    transition: color 0.3s ease;
-}
-
-.navegacion ul li a:hover,
-.navegacion ul li a.activo {
-    color: var(--blanco);
-}
-
-.navegacion ul li a.activo::after {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-
-    width: 100%;
-    height: 2px;
-
-    background: var(--rojo);
-}
-
-/* =========================================================
-   ICONOS
-========================================================= */
-
-.top-icons {
-
-    display: flex;
-
-    gap: 20px;
-
-}
-
-
-.icon-link {
-
-    color: #fff;
-
-    font-size: 1.1rem;
-
-    transition:
-        color 0.3s ease,
-        transform 0.2s ease;
-
-}
-
-
-.icon-link:hover {
-
-    color: var(--rojo);
-
-    transform: scale(1.1);
-
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.contenido-centro {
-
-    position: relative;
-
-    z-index: 10;
-
-    text-align: center;
-
-    max-width: 900px;
-
-    padding: 0 20px;
-
-    margin-top: -40px;
-
-    animation:
-        aparecerHero 1s ease forwards;
-}
-
-@keyframes aparecerHero {
-
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* =========================================================
-   ETIQUETA HERO
-========================================================= */
-
-.etiqueta-hero {
-
-    margin-bottom: 18px;
-
-    color: var(--rojo);
-
-    font-family: 'poppins', sans-serif;
-
-    font-size: 13px;
-
-    letter-spacing: 4px;
-}
-
-
-/* =========================================================
-   TÍTULO HERO
-========================================================= */
-
-.titulo-hero {
-
-        font-family: 'Impact', 'Arial Black', sans-serif;
-
-
-    font-size:
-        clamp(3rem, 7vw, 6rem);
-
-    line-height: 0.95;
-
-    letter-spacing: 4px;
-
-    text-transform: uppercase;
-}
-
-.titulo-hero::after {
-
-    content: "";
-
-    display: block;
-
-    width: 80px;
-    height: 4px;
-
-    margin: 25px auto 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--rojo),
-            var(--rojo-brillante)
-        );
-}
-
-
-/* =========================================================
-   SUBTÍTULO
-========================================================= */
-
-.subtitulo {
-
-    margin-top: 25px;
-
-    color: #cccccc;
-
-    font-family: 'Manrope', sans-serif;
-
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-
-    line-height: 1.6;
-}
-
-
-/* =========================================================
-   LEMA
-========================================================= */
-
-.lema-centro {
-
-    position: relative;
-
-    z-index: 10;
-
-    text-align: center;
-
-    margin-bottom: 5px;
-}
-
-.lema-centro p {
-
-    color: rgba(255,255,255,0.75);
-
-    font-family: 'Bebas Neue', sans-serif;
-
-    font-size: clamp(1rem, 2vw, 1.5rem);
-
-    letter-spacing: 5px;
-
-    text-shadow:
-        0 3px 15px rgba(0,0,0,0.8);
-}
-
-
-
-
-/* =========================================================
-   BOTONES HERO
-========================================================= */
-
-.botones-container {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 18px;
-
-    flex-wrap: wrap;
-
-}
-
-
-.btn-rojo,
-.btn-linea {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 9px;
-
-    padding: 14px 30px;
-
-    border-radius: 50px;
-
-    font-family: 'Poppins', sans-serif;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    letter-spacing: 0.8px;
-
-    transition:
-        all 0.3s ease;
-
-}
-
-
-.btn-rojo {
-
-    background: var(--rojo);
-
-    color: #fff;
-
-}
-
-
-.btn-rojo:hover {
-
-    background: #b8051a;
-
-    transform: translateY(-3px);
-
-}
-
-
-.btn-linea {
-
-    color: #fff;
-
-    border: 1px solid rgba(255,255,255,0.5);
-
-    background: rgba(255,255,255,0.08);
-
-}
-
-
-.btn-linea:hover {
-
-    background: #fff;
-
-    color: #000;
-
-    transform: translateY(-3px);
-
-}
-
-
-/* =========================================================
-   LEMA
-========================================================= */
-
-.lema-centro {
-
-    position: relative;
-
-    z-index: 10;
-
-    margin-bottom: 35px;
-
-}
-
-
-.lema-centro p {
-
-    font-family:
-        'Bebas Neue',
-        sans-serif;
-
-    font-size: 20px;
-
-    letter-spacing: 5px;
-
-    color: #fff;
-
-}
-
-
-/* =========================================================
-   SCROLL
-========================================================= */
-
-.scroll-indicator {
-
-    position: absolute;
-
-    bottom: 20px;
-
-    z-index: 10;
-
-    opacity: 0.6;
-
-}
-
-
-.mouse {
-
-    width: 24px;
-    height: 40px;
-
-    border: 2px solid #fff;
-
-    border-radius: 20px;
-
-    display: flex;
-
-    justify-content: center;
-
-    padding-top: 8px;
-
-}
-
-
-.rueda {
-
-    width: 4px;
-    height: 8px;
-
-    background: var(--rojo);
-
-    border-radius: 2px;
-
-    animation:
-        encoger-rueda 1.5s infinite;
-
-}
-
-
-@keyframes encoger-rueda {
-
-    0% {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-
-    }
-
-    100% {
-
-        opacity: 0;
-
-        transform:
-            translateY(10px);
-
-    }
-
-}
-
-
-/* =========================================================
-   MAIN
-========================================================= */
-
-main.productos {
-
-    width: 100%;
-
-    padding:
-        100px 5% 120px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #080808 0%,
-            #050505 100%
-        );
-
-}
-
-
-/* =========================================================
-   ENCABEZADO
-========================================================= */
-
-.encabezado-productos {
-
-    width:
-        min(900px, 100%);
-
-    margin:
-        0 auto 70px;
-
-    text-align: center;
-
-}
-
-
-.seccion-etiqueta {
-
-    display: block;
-
-    margin-bottom: 15px;
-
-    color: var(--rojo);
-
-    font-family: 'Michroma', sans-serif;
-
-    font-size: 12px;
-
-    letter-spacing: 3px;
-
-}
-
-
-.encabezado-productos h2 {
-
-    font-family:
-        'Archivo Black',
-        'Arial Black',
-        sans-serif;
-
-    font-size:
-        clamp(2rem, 4vw, 3.5rem);
-
-    line-height: 1.1;
-
-    text-transform: uppercase;
-
-}
-
-
-.encabezado-productos h2::after {
-
-    content: "";
-
-    display: block;
-
-    width: 55px;
-
-    height: 3px;
-
-    margin:
-        20px auto 0;
-
-    background: var(--rojo);
-
-}
-
-
-.encabezado-productos p {
-
-    max-width: 750px;
-
-    margin:
-        25px auto 30px;
-
-    color: var(--gris-claro);
-
-    font-size: 16px;
-
-    line-height: 1.8;
-
-}
-
-
-/* =========================================================
-   BOTÓN CARRITO
-========================================================= */
-
-.btn-carrito {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding:
-        13px 27px;
-
-    border-radius: 50px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--rojo),
-            #ff3b30
-        );
-
-    color: #fff;
-
-    font-family: 'Poppins', sans-serif;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-
-}
-
-
-.btn-carrito:hover {
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 10px 25px
-        rgba(225,6,32,0.25);
-
-}
-
-
-/* =========================================================
-   GRID
-========================================================= */
-
-.grid-productos {
-
-    width:
-        min(1400px, 100%);
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(260px, 1fr)
-        );
-
-    gap: 28px;
-
-}
-
-
-/* =========================================================
-   TARJETA
-========================================================= */
-
-.card-producto {
-
-    position: relative;
-
-    overflow: hidden;
-
-    display: flex;
-
-    flex-direction: column;
-
-    min-height: 560px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #1b1b1b,
-            #101010
-        );
-
-    border:
-        1px solid var(--borde);
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 15px 40px
-        rgba(0,0,0,0.4);
-
-    transition:
-        transform 0.35s ease,
-        border-color 0.35s ease,
-        box-shadow 0.35s ease;
-
-}
-
-
-.card-producto:hover {
-
-    transform:
-        translateY(-10px);
-
-    border-color:
-        var(--borde-hover);
-
-    box-shadow:
-        0 25px 55px
-        rgba(0,0,0,0.55),
-        0 0 25px
-        rgba(225,6,32,0.08);
-
-}
-
-
-/* =========================================================
-   IMAGEN
-========================================================= */
-
-.imagen-producto {
-
-    position: relative;
-
-    width: 100%;
-
-    height: 260px;
-
-    overflow: hidden;
-
-    background: #fff;
-
-}
-
-
-.imagen-producto img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    transition:
-        transform 0.5s ease;
-
-}
-
-
-.card-producto:hover
-.imagen-producto img {
-
-    transform:
-        scale(1.07);
-
-}
-
-
-/* =========================================================
-   ETIQUETA
-========================================================= */
-
-.etiqueta-producto {
-
-    position: absolute;
-
-    top: 15px;
-
-    left: 15px;
-
-    padding:
-        6px 11px;
-
-    border-radius: 20px;
-
-    background:
-        rgba(225,6,32,0.95);
-
-    color: #fff;
-
-    font-family:
-        'Poppins',
-        sans-serif;
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
-}
-
-
-/* =========================================================
-   INFORMACIÓN
-========================================================= */
-
-.info-producto {
-
-    display: flex;
-
-    flex-direction: column;
-
-    flex: 1;
-
-    padding: 25px;
-
-}
-
-
-.info-producto h3 {
-
-    margin-bottom: 18px;
-
-    color: #fff;
-
-    font-family:
-        'Archivo Black',
-        'Arial Black',
-        sans-serif;
-
-    font-size: 20px;
-
-    line-height: 1.25;
-
-    text-transform: uppercase;
-
-}
-
-
-/* =========================================================
-   DETALLES
-========================================================= */
-
-.detalles-producto {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 7px;
-
-}
-
-
-.detalles-producto p {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 10px;
-
-    padding-bottom: 7px;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.05);
-
-    color: var(--gris);
-
-    font-size: 12px;
-
-}
-
-
-.detalles-producto strong {
-
-    color: #aaa;
-
-    font-family:
-        'Poppins',
-        sans-serif;
-
-    font-weight: 600;
-
-}
-
-
-.detalles-producto span {
-
-    color: #eee;
-
-    text-align: right;
-
-}
-
-
-/* =========================================================
-   PRECIO
-========================================================= */
-
-.precio {
-
-    margin-top: auto;
-
-    padding-top: 20px;
-
-    margin-bottom: 18px;
-
-    color: var(--blanco);
-
-    font-family:
-        'poppins',
-        sans-serif;
-
-    font-size: 27px;
-
-}
-
+        } else {
 
-/* =========================================================
-   BOTÓN AGREGAR
-========================================================= */
+            icono.classList.remove("fa-xmark");
+            icono.classList.add("fa-bars");
 
-.form-carrito {
+        }
 
-    width: 100%;
+    });
 
-}
-
-
-.form-carrito button {
-
-    width: 100%;
-
-    padding:
-        13px 18px;
-
-    border: none;
-
-    border-radius: 30px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--rojo),
-            #ff3b30
-        );
-
-    color: #fff;
-
-    font-family:
-        'Poppins',
-        sans-serif;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: 0.5px;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
-
-}
-
-
-.form-carrito button:hover {
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 10px 25px
-        rgba(225,6,32,0.25);
-
-    background: #fff;
-
-    color: #000;
-
-}
-
-
-/* =========================================================
-   SIN PRODUCTOS
-========================================================= */
-
-.sin-productos {
-
-    grid-column:
-        1 / -1;
-
-    padding:
-        80px 30px;
-
-    text-align: center;
-
-    background: #111;
-
-    border:
-        1px solid var(--borde);
-
-    border-radius: 18px;
-
-}
-
-
-.sin-productos i {
-
-    margin-bottom: 20px;
-
-    color: var(--rojo);
-
-    font-size: 45px;
-
-}
-
-
-.sin-productos h3 {
-
-    margin-bottom: 10px;
-
-    font-family:
-        'Archivo Black',
-        sans-serif;
-
-}
-
-
-.sin-productos p {
-
-    color: var(--gris);
-
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-
-    width: 100%;
-
-    padding:
-        70px 5% 25px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #0a0a0a,
-            #030303
-        );
-
-    border-top:
-        1px solid
-        rgba(255,255,255,0.08);
-
-    color: #fff;
-
-    text-align: center;
-
-}
-
-
-/* =========================================================
-   REDES
-========================================================= */
-
-.redes-sociales {
-
-    margin-bottom: 55px;
-
-}
-
-
-.redes-sociales h3 {
-
-    margin-bottom: 25px;
-
-    font-family:
-        'Archivo Black',
-        sans-serif;
-
-    font-size: 16px;
-
-    letter-spacing: 1px;
-
-}
-
-
-.iconos-redes {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 15px;
-
-}
-
-
-.iconos-redes a {
-
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    border:
-        1px solid
-        rgba(255,255,255,0.15);
-
-    border-radius: 50%;
-
-    background: #111;
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        background 0.3s ease;
-
-}
-
-
-.iconos-redes a:hover {
-
-    transform:
-        translateY(-5px);
-
-    border-color:
-        var(--rojo);
-
-    background: #181818;
-
-}
-
-
-.iconos-redes img {
-
-    width: 25px;
-    height: 25px;
-
-    object-fit: contain;
-
-    border-radius: 50%;
-
-}
-
-
-/* =========================================================
-   FOOTER INFO
-========================================================= */
-
-.footer-info {
-
-    width:
-        min(1250px, 100%);
-
-    margin: 0 auto;
-
-    padding:
-        45px 0;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 60px;
-
-    text-align: left;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,0.07);
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.07);
-
-}
-
 
-.footer-info h4 {
+    navegacion
+        .querySelectorAll("a")
+        .forEach(enlace => {
 
-    margin-bottom: 22px;
+            enlace.addEventListener("click", function () {
 
-    font-family:
-        'Archivo Black',
-        sans-serif;
+                navegacion.classList.remove("activo");
 
-    font-size: 13px;
+                menuMovil.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-    letter-spacing: 1.5px;
+                const icono =
+                    menuMovil.querySelector("i");
 
-}
-
-
-.footer-info h4::after {
-
-    content: "";
-
-    display: block;
-
-    width: 30px;
-
-    height: 2px;
-
-    margin-top: 10px;
-
-    background: var(--rojo);
-
-}
-
-
-.footer-info ul {
-
-    list-style: none;
-
-}
-
-
-.footer-info li {
-
-    margin-bottom: 12px;
-
-    color: #888;
-
-    font-size: 13px;
-
-    line-height: 1.6;
-
-}
-
-
-.footer-info li strong {
-
-    color: #d5d5d5;
-
-}
-
-
-.footer-info li a {
-
-    color: #888;
-
-    transition:
-        color 0.3s ease;
-
-}
-
-
-.footer-info li a:hover {
-
-    color: var(--rojo);
-
-}
-
-
-/* =========================================================
-   COPYRIGHT
-========================================================= */
-
-.copyright {
-
-    padding-top: 25px;
-
-}
-
-
-.copyright p {
-
-    color: #555;
-
-    font-size: 12px;
-
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 1200px) {
-
-    .navegacion ul {
-
-        gap: 15px;
-
-    }
-
-    .navegacion ul li a {
-
-        font-size: 10px;
-
-    }
-
-}
-
+                icono.classList.remove("fa-xmark");
+                icono.classList.add("fa-bars");
 
-@media (max-width: 950px) {
+            });
 
-    .top-bar {
+        });
 
-        padding:
-            20px 25px;
-
-    }
-
-    .navegacion {
-
-        display: none;
-
-    }
-
-    .grid-productos {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
 }
-
-
-@media (max-width: 650px) {
-
-    .top-bar {
-
-        padding:
-            20px;
-
-    }
-
-
-    .titulo-hero {
-
-        font-size:
-            clamp(2.7rem, 14vw, 4rem);
-
-    }
-
-
-    .subtitulo {
-
-        font-size: 14px;
-
-    }
-
-
-    .botones-container {
-
-        flex-direction: column;
-
-        align-items: center;
-
-    }
-
-
-    .btn-rojo,
-    .btn-linea {
-
-        width: 90%;
-
-    }
-
-
-    .lema-centro p {
 
-        font-size: 15px;
 
-        letter-spacing: 3px;
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(enlace => {
 
-    }
+        enlace.addEventListener("click", function(e) {
 
+            const href =
+                this.getAttribute("href");
 
-    main.productos {
+            if (href === "#") {
+                return;
+            }
 
-        padding:
-            70px 20px 90px;
+            const destino =
+                document.querySelector(href);
 
-    }
+            if (destino) {
 
+                e.preventDefault();
 
-    .encabezado-productos h2 {
+                destino.scrollIntoView({
+                    behavior: "smooth"
+                });
 
-        font-size: 28px;
+            }
 
-    }
+        });
 
+    });
 
-    .encabezado-productos p {
+</script>
 
-        font-size: 14px;
 
-    }
-
-
-    .grid-productos {
-
-        grid-template-columns: 1fr;
-
-        gap: 22px;
-
-    }
-
-
-    .card-producto {
-
-        max-width: 420px;
-
-        width: 100%;
-
-        margin: 0 auto;
-
-    }
-
-
-    .footer-info {
-
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-
-        text-align: center;
-
-    }
-
-
-    .footer-info h4::after {
-
-        margin-left: auto;
-
-        margin-right: auto;
-
-    }
-
-
-    .iconos-redes {
-
-        gap: 10px;
-
-    }
-
-
-    .iconos-redes a {
-
-        width: 42px;
-
-        height: 42px;
-
-    }
-
-}
+</body>
+</html>
