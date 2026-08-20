@@ -1296,8 +1296,6 @@ footer {
 
 @media (max-width: 600px) {
 
-    /* ---------- GENERAL ---------- */
-
     body {
         overflow-x: hidden;
     }
@@ -1321,7 +1319,9 @@ footer {
     }
 
 
-    /* ---------- BANNER ---------- */
+    /* =========================
+       BANNER
+    ========================= */
 
     .banner-portada {
         min-height: 100svh;
@@ -1329,7 +1329,9 @@ footer {
     }
 
 
-    /* ---------- BARRA SUPERIOR ---------- */
+    /* =========================
+       HEADER
+    ========================= */
 
     .top-bar {
         position: relative;
@@ -1342,10 +1344,21 @@ footer {
     }
 
 
-    /* ---------- MENÚ NORMAL ---------- */
+    /* =========================
+       OCULTAR MENÚ DE PC
+    ========================= */
 
     .navegacion {
-        display: none;
+        display: none !important;
+    }
+
+
+    /* =========================
+       MENÚ ABIERTO
+    ========================= */
+
+    .navegacion.activo {
+        display: block !important;
 
         position: absolute;
 
@@ -1353,7 +1366,7 @@ footer {
         left: 15px;
         right: 15px;
 
-        background: rgba(10, 10, 10, 0.96);
+        background: rgba(10, 10, 10, 0.97);
 
         border: 1px solid rgba(255, 255, 255, 0.1);
 
@@ -1366,14 +1379,10 @@ footer {
         box-shadow:
             0 15px 40px rgba(0, 0, 0, 0.6);
 
-        z-index: 99;
+        z-index: 999;
     }
 
-    .navegacion.activo {
-        display: block;
-    }
-
-    .navegacion ul {
+    .navegacion.activo ul {
         display: flex;
         flex-direction: column;
 
@@ -1382,11 +1391,11 @@ footer {
         width: 100%;
     }
 
-    .navegacion ul li {
+    .navegacion.activo ul li {
         width: 100%;
     }
 
-    .navegacion ul li a {
+    .navegacion.activo ul li a {
         display: block;
 
         width: 100%;
@@ -1401,31 +1410,34 @@ footer {
             1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .navegacion ul li:last-child a {
+    .navegacion.activo ul li:last-child a {
         border-bottom: none;
     }
 
-    .navegacion ul li a:hover {
-        color: #ffffff;
-        padding-left: 15px;
-    }
 
-    .navegacion ul li a.activo::after {
-        display: none;
-    }
-
-
-    /* ---------- ICONOS ---------- */
+    /* =========================
+       ICONOS PC
+    ========================= */
 
     .top-icons {
         display: none;
     }
 
 
-    /* ---------- BOTÓN HAMBURGUESA ---------- */
+    /* =========================
+       BOTÓN HAMBURGUESA
+    ========================= */
 
     .menu-movil {
-        display: block;
+        display: flex !important;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 42px;
+        height: 42px;
+
+        padding: 0;
 
         background: transparent;
 
@@ -1437,48 +1449,43 @@ footer {
 
         cursor: pointer;
 
-        z-index: 100;
-
-        padding: 5px;
+        z-index: 1000;
     }
 
 
-    /* ---------- CONTENIDO CENTRAL ---------- */
+    /* =========================
+       CONTENIDO CENTRAL
+    ========================= */
 
     .contenido-centro {
         width: 100%;
-
         padding: 0 18px;
-
         margin-top: 0;
     }
 
     .lema-principal {
         font-size: clamp(2.8rem, 14vw, 4.5rem);
-
         line-height: 0.95;
-
         letter-spacing: 1px;
     }
 
     .subtitulo {
         font-size: 0.85rem;
-
         line-height: 1.5;
 
         margin-top: 15px;
-
         margin-bottom: 25px;
     }
 
 
-    /* ---------- BOTONES ---------- */
+    /* =========================
+       BOTONES
+    ========================= */
 
     .botones-container {
         width: 100%;
 
         flex-direction: column;
-
         align-items: center;
 
         gap: 12px;
@@ -1487,7 +1494,6 @@ footer {
     .btn-rojo,
     .btn-linea {
         width: 100%;
-
         max-width: 280px;
 
         justify-content: center;
@@ -1498,14 +1504,18 @@ footer {
     }
 
 
-    /* ---------- SCROLL ---------- */
+    /* =========================
+       SCROLL
+    ========================= */
 
     .scroll-indicator {
         margin-bottom: 15px;
     }
 
 
-    /* ---------- MARCAS ---------- */
+    /* =========================
+       MARCAS
+    ========================= */
 
     .marcas {
         grid-template-columns: repeat(2, 1fr);
@@ -1526,7 +1536,9 @@ footer {
     }
 
 
-    /* ---------- PRODUCTOS ---------- */
+    /* =========================
+       PRODUCTOS
+    ========================= */
 
     .productos {
         grid-template-columns: 1fr;
@@ -1538,7 +1550,6 @@ footer {
 
     .producto {
         width: 100%;
-
         max-width: 380px;
 
         min-height: 420px;
@@ -1552,7 +1563,6 @@ footer {
 
     .producto h3 {
         font-size: 17px;
-
         margin-top: 18px;
     }
 
@@ -1565,7 +1575,9 @@ footer {
     }
 
 
-    /* ---------- CARRUSEL ---------- */
+    /* =========================
+       CARRUSEL
+    ========================= */
 
     .carrusel {
         width: 100%;
@@ -1585,7 +1597,6 @@ footer {
 
     .flecha {
         width: 36px;
-
         height: 36px;
 
         min-width: 36px;
@@ -1594,25 +1605,24 @@ footer {
     }
 
 
-    /* ---------- RESEÑAS ---------- */
+    /* =========================
+       RESEÑAS
+    ========================= */
 
     .resenas-contenedor {
         grid-template-columns: 1fr;
-
         gap: 35px;
     }
 
     .lista-resenas h2,
     .formulario-resena h2 {
         font-size: 25px;
-
         text-align: center;
     }
 
     .lista-resenas h2::after,
     .formulario-resena h2::after {
         margin-left: auto;
-
         margin-right: auto;
     }
 
@@ -1626,12 +1636,13 @@ footer {
 
     .reseña {
         min-height: auto;
-
         padding: 20px;
     }
 
 
-    /* ---------- FORMULARIO ---------- */
+    /* =========================
+       FORMULARIO
+    ========================= */
 
     .formulario-resena {
         width: 100%;
@@ -1652,16 +1663,19 @@ footer {
     }
 
 
-    /* ---------- SEPARADORES ---------- */
+    /* =========================
+       SEPARADORES
+    ========================= */
 
     hr {
         width: 90%;
-
         margin: 65px auto;
     }
 
 
-    /* ---------- FOOTER ---------- */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
         margin-top: 60px;
@@ -1679,13 +1693,11 @@ footer {
 
     .iconos-redes a {
         width: 42px;
-
         height: 42px;
     }
 
     .iconos-redes a img {
         width: 21px;
-
         height: 21px;
     }
 
@@ -1705,7 +1717,6 @@ footer {
 
     .footer-info h4::after {
         margin-left: auto;
-
         margin-right: auto;
     }
 
@@ -1715,11 +1726,9 @@ footer {
 
     .copyright p {
         font-size: 11px;
-
         line-height: 1.5;
     }
 }
-
 
 /* =========================================================
    CELULARES PEQUEÑOS
