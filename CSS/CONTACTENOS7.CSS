@@ -1,5 +1,5 @@
 /* =========================================================
-   4 FUENTES DE SHOESTYLE
+   FUENTES
 ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap');
@@ -32,7 +32,6 @@
     --gris-oscuro: #303030;
 
     --borde: rgba(255,255,255,0.08);
-
     --borde-hover: rgba(225,6,32,0.65);
 }
 
@@ -77,6 +76,7 @@ a {
 
 img {
     max-width: 100%;
+    display: block;
 }
 
 button,
@@ -108,17 +108,17 @@ select {
 ========================================================= */
 
 .banner-portada {
-        position: relative;
+
+    position: relative;
 
     width: 100%;
     height: 100vh;
+    min-height: 650px;
 
     display: flex;
-
     flex-direction: column;
 
     justify-content: space-between;
-
     align-items: center;
 
     overflow: hidden;
@@ -126,10 +126,15 @@ select {
     color: #fff;
 }
 
-/* CONTENEDOR DE LA IMAGEN */
+
+/* =========================================================
+   IMAGEN BANNER
+========================================================= */
 
 .imagen-banner {
+
     position: absolute;
+
     inset: 0;
 
     width: 100%;
@@ -138,60 +143,56 @@ select {
     z-index: 0;
 }
 
-/* IMAGEN DE FONDO */
-
 .imagen-banner img {
+
     width: 100%;
     height: 100%;
 
     object-fit: cover;
-
-    display: block;
 }
 
-/* CAPA OSCURA */
-
 .capa-oscura {
+
     position: absolute;
+
     inset: 0;
 
     background:
         radial-gradient(
             circle,
-            rgba(0, 0, 0, 0.452) 0%,
-            rgba(0, 0, 0, 0.88) 100%
+            rgba(0,0,0,0.45) 0%,
+            rgba(0,0,0,0.88) 100%
         );
 
     z-index: 1;
 }
 
-/* CONTENIDO ENCIMA DEL FONDO */
 
-.top-bar,
-.lema-centro {
-    position: relative;
-    z-index: 10;
-}
-
-
-
+/* =========================================================
+   BARRA SUPERIOR
+========================================================= */
 
 .top-bar {
+
     position: relative;
-    z-index: 10;
+
+    z-index: 20;
 
     width: 100%;
     min-height: 90px;
 
-    padding: 0 6%;
+    padding: 0 5%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom:
+        1px solid rgba(255,255,255,0.12);
 
-    background: rgba(0, 0, 0, 0.25);
+    background:
+        rgba(0,0,0,0.25);
+
     backdrop-filter: blur(10px);
 }
 
@@ -202,9 +203,14 @@ select {
 
 .logo {
 
+    flex-shrink: 0;
+
     color: var(--blanco);
 
-    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-family:
+        'Impact',
+        'Arial Black',
+        sans-serif;
 
     font-size: 1.5rem;
 
@@ -224,8 +230,14 @@ select {
 
 
 /* =========================================================
-   NAVEGACIÓN
+   NAVEGACIÓN DESKTOP
 ========================================================= */
+
+.navegacion {
+
+    display: flex;
+    align-items: center;
+}
 
 .navegacion ul {
 
@@ -233,37 +245,43 @@ select {
 
     display: flex;
 
-    gap: 25px;
+    gap: 24px;
 
     align-items: center;
+}
+
+.navegacion ul li {
+    flex-shrink: 0;
 }
 
 .navegacion ul li a {
 
     position: relative;
 
+    display: block;
+
     color: #b3b3b3;
 
     font-family: 'Poppins', sans-serif;
-    font-size: 0.8  5rem;
+
+    font-size: 0.75rem;
+
     font-weight: 600;
 
-    letter-spacing: 0.7px;
+    letter-spacing: 0.6px;
 
-    transition: color 0.3s ease;
+    white-space: nowrap;
+
+    transition:
+        color 0.3s ease;
 }
 
 .navegacion ul li a:hover {
-
     color: #ffffff;
-
 }
 
 .navegacion ul li a.activo {
-
     color: #ffffff;
-
-    position: relative;
 }
 
 .navegacion ul li a.activo::after {
@@ -296,6 +314,8 @@ select {
     gap: 20px;
 
     align-items: center;
+
+    flex-shrink: 0;
 }
 
 .icon-link {
@@ -314,6 +334,53 @@ select {
     color: var(--rojo);
 
     transform: scale(1.1);
+}
+
+
+/* =========================================================
+   BOTÓN HAMBURGUESA
+========================================================= */
+
+.menu-toggle {
+
+    display: none;
+
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid
+        rgba(255,255,255,0.15);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.menu-toggle:hover {
+
+    background:
+        rgba(225,6,32,0.12);
+
+    border-color:
+        var(--rojo);
+
+    color:
+        var(--rojo);
 }
 
 
@@ -342,13 +409,19 @@ select {
 @keyframes aparecerHero {
 
     from {
+
         opacity: 0;
-        transform: translateY(25px);
+
+        transform:
+            translateY(25px);
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
@@ -363,7 +436,7 @@ select {
 
     color: var(--rojo);
 
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 
     font-size: 13px;
 
@@ -377,8 +450,10 @@ select {
 
 .titulo-hero {
 
-        font-family: 'Impact', 'Arial Black', sans-serif;
-
+    font-family:
+        'Impact',
+        'Arial Black',
+        sans-serif;
 
     font-size:
         clamp(3rem, 7vw, 6rem);
@@ -399,7 +474,8 @@ select {
     width: 80px;
     height: 4px;
 
-    margin: 25px auto 0;
+    margin:
+        25px auto 0;
 
     background:
         linear-gradient(
@@ -422,7 +498,8 @@ select {
 
     font-family: 'Manrope', sans-serif;
 
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-size:
+        clamp(0.9rem, 2vw, 1.1rem);
 
     line-height: 1.6;
 }
@@ -445,11 +522,15 @@ select {
 
 .lema-centro p {
 
-    color: rgba(255,255,255,0.75);
+    color:
+        rgba(255,255,255,0.75);
 
-    font-family: 'Bebas Neue', sans-serif;
+    font-family:
+        'Bebas Neue',
+        sans-serif;
 
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size:
+        clamp(1rem, 2vw, 1.5rem);
 
     letter-spacing: 5px;
 
@@ -493,7 +574,8 @@ select {
     width: 4px;
     height: 8px;
 
-    background: var(--rojo);
+    background:
+        var(--rojo);
 
     border-radius: 2px;
 
@@ -504,13 +586,19 @@ select {
 @keyframes encoger-rueda {
 
     0% {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 
     100% {
+
         opacity: 0;
-        transform: translateY(10px);
+
+        transform:
+            translateY(10px);
     }
 }
 
@@ -523,7 +611,8 @@ main.contacto {
 
     width: 100%;
 
-    padding: 100px 5% 120px;
+    padding:
+        100px 5% 120px;
 
     background:
         linear-gradient(
@@ -540,7 +629,8 @@ main.contacto {
 
 .contacto-seccion {
 
-    width: min(1300px, 100%);
+    width:
+        min(1300px, 100%);
 
     margin: auto;
 
@@ -556,11 +646,10 @@ main.contacto {
 
 
 /* =========================================================
-   INFORMACIÓN CONTACTO
+   INFORMACIÓN
 ========================================================= */
 
 .contacto-info {
-
     padding: 20px;
 }
 
@@ -570,9 +659,12 @@ main.contacto {
 
     margin-bottom: 15px;
 
-    color: var(--rojo);
+    color:
+        var(--rojo);
 
-    font-family: 'Bebas Neue', sans-serif;
+    font-family:
+        'Bebas Neue',
+        sans-serif;
 
     font-size: 22px;
 
@@ -590,7 +682,8 @@ main.contacto {
 
     line-height: 1;
 
-    color: var(--blanco);
+    color:
+        var(--blanco);
 
     margin-bottom: 25px;
 }
@@ -606,14 +699,18 @@ main.contacto {
 
     margin-top: 18px;
 
-    background: var(--rojo);
+    background:
+        var(--rojo);
 }
 
 .texto-contacto {
 
-    color: var(--gris-claro);
+    color:
+        var(--gris-claro);
 
-    font-family: 'Manrope', sans-serif;
+    font-family:
+        'Manrope',
+        sans-serif;
 
     font-size: 16px;
 
@@ -624,14 +721,15 @@ main.contacto {
 
 
 /* =========================================================
-   DATOS CONTACTO
+   DATOS
 ========================================================= */
 
 .datos-contacto {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
     gap: 20px;
 
@@ -667,7 +765,8 @@ main.contacto {
 
 .dato:hover {
 
-    transform: translateY(-5px);
+    transform:
+        translateY(-5px);
 
     border-color:
         rgba(225,6,32,0.5);
@@ -687,9 +786,11 @@ main.contacto {
 
     border-radius: 50%;
 
-    background: rgba(225,6,32,0.12);
+    background:
+        rgba(225,6,32,0.12);
 
-    color: var(--rojo);
+    color:
+        var(--rojo);
 
     font-size: 16px;
 }
@@ -698,9 +799,12 @@ main.contacto {
 
     margin-bottom: 7px;
 
-    color: var(--blanco);
+    color:
+        var(--blanco);
 
-    font-family: 'Poppins', sans-serif;
+    font-family:
+        'Poppins',
+        sans-serif;
 
     font-size: 12px;
 
@@ -709,9 +813,12 @@ main.contacto {
 
 .dato p {
 
-    color: var(--gris);
+    color:
+        var(--gris);
 
-    font-family: 'Manrope', sans-serif;
+    font-family:
+        'Manrope',
+        sans-serif;
 
     font-size: 12px;
 
@@ -768,15 +875,17 @@ main.contacto {
 }
 
 .formulario-header {
-
     margin-bottom: 35px;
 }
 
 .formulario-etiqueta {
 
-    color: var(--rojo);
+    color:
+        var(--rojo);
 
-    font-family: 'Bebas Neue', sans-serif;
+    font-family:
+        'Bebas Neue',
+        sans-serif;
 
     font-size: 20px;
 
@@ -787,7 +896,8 @@ main.contacto {
 
     margin-top: 8px;
 
-    color: var(--blanco);
+    color:
+        var(--blanco);
 
     font-family:
         'Archivo Black',
@@ -807,7 +917,8 @@ main.contacto {
 
     margin-top: 14px;
 
-    background: var(--rojo);
+    background:
+        var(--rojo);
 }
 
 
@@ -816,7 +927,6 @@ main.contacto {
 ========================================================= */
 
 .campo {
-
     margin-bottom: 22px;
 }
 
@@ -826,9 +936,12 @@ main.contacto {
 
     margin-bottom: 9px;
 
-    color: var(--gris-claro);
+    color:
+        var(--gris-claro);
 
-    font-family: 'Poppins', sans-serif;
+    font-family:
+        'Poppins',
+        sans-serif;
 
     font-size: 12px;
 
@@ -842,11 +955,14 @@ main.contacto {
 
     width: 100%;
 
-    padding: 14px 16px;
+    padding:
+        14px 16px;
 
-    background: #090909;
+    background:
+        #090909;
 
-    color: var(--blanco);
+    color:
+        var(--blanco);
 
     border:
         1px solid rgba(255,255,255,0.1);
@@ -855,7 +971,9 @@ main.contacto {
 
     outline: none;
 
-    font-family: 'Manrope', sans-serif;
+    font-family:
+        'Manrope',
+        sans-serif;
 
     font-size: 14px;
 
@@ -880,30 +998,35 @@ main.contacto {
 .campo input::placeholder,
 .campo textarea::placeholder {
 
-    color: #666;
+    color:
+        #666;
 }
 
 .campo input:focus,
 .campo textarea:focus {
 
-    border-color: var(--rojo);
+    border-color:
+        var(--rojo);
 
-    background: #0c0c0c;
+    background:
+        #0c0c0c;
 
     box-shadow:
-        0 0 0 3px rgba(225,6,32,0.1);
+        0 0 0 3px
+        rgba(225,6,32,0.1);
 }
 
 
 /* =========================================================
-   BOTÓN FORMULARIO
+   BOTÓN
 ========================================================= */
 
 .formulario-contacto button {
 
     width: 100%;
 
-    padding: 15px 25px;
+    padding:
+        15px 25px;
 
     border: none;
 
@@ -916,9 +1039,12 @@ main.contacto {
             #ff3b30
         );
 
-    color: var(--blanco);
+    color:
+        var(--blanco);
 
-    font-family: 'Poppins', sans-serif;
+    font-family:
+        'Poppins',
+        sans-serif;
 
     font-size: 14px;
 
@@ -930,28 +1056,21 @@ main.contacto {
 
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+        box-shadow 0.3s ease;
 }
 
 .formulario-contacto button i {
-
     margin-left: 8px;
 }
 
 .formulario-contacto button:hover {
 
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
-        0 12px 30px rgba(225,6,32,0.3);
-
-    background:
-        linear-gradient(
-            90deg,
-            #ff263c,
-            #e10620
-        );
+        0 12px 30px
+        rgba(225,6,32,0.3);
 }
 
 
@@ -963,7 +1082,8 @@ footer {
 
     width: 100%;
 
-    padding: 70px 5% 25px;
+    padding:
+        70px 5% 25px;
 
     background:
         linear-gradient(
@@ -975,20 +1095,23 @@ footer {
     border-top:
         1px solid rgba(255,255,255,0.08);
 
-    color: var(--blanco);
+    color:
+        var(--blanco);
 
-    text-align: center;
+    text-align:
+        center;
 
-    font-family: 'Manrope', sans-serif;
+    font-family:
+        'Manrope',
+        sans-serif;
 }
 
 
 /* =========================================================
-   REDES SOCIALES
+   REDES
 ========================================================= */
 
 .redes-sociales {
-
     margin-bottom: 55px;
 }
 
@@ -1010,7 +1133,6 @@ footer {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     gap: 15px;
@@ -1027,11 +1149,13 @@ footer {
     justify-content: center;
 
     border:
-        1px solid rgba(255,255,255,0.15);
+        1px solid
+        rgba(255,255,255,0.15);
 
     border-radius: 50%;
 
-    background: #111111;
+    background:
+        #111111;
 
     transition:
         transform 0.3s ease,
@@ -1041,11 +1165,14 @@ footer {
 
 .iconos-redes a:hover {
 
-    transform: translateY(-5px);
+    transform:
+        translateY(-5px);
 
-    border-color: var(--rojo);
+    border-color:
+        var(--rojo);
 
-    background: #181818;
+    background:
+        #181818;
 }
 
 .iconos-redes a img {
@@ -1065,11 +1192,14 @@ footer {
 
 .footer-info {
 
-    width: min(1250px, 100%);
+    width:
+        min(1250px, 100%);
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 
-    padding: 45px 0;
+    padding:
+        45px 0;
 
     display: grid;
 
@@ -1078,20 +1208,24 @@ footer {
 
     gap: 60px;
 
-    text-align: left;
+    text-align:
+        left;
 
     border-top:
-        1px solid rgba(255,255,255,0.07);
+        1px solid
+        rgba(255,255,255,0.07);
 
     border-bottom:
-        1px solid rgba(255,255,255,0.07);
+        1px solid
+        rgba(255,255,255,0.07);
 }
 
 .footer-info h4 {
 
     margin-bottom: 22px;
 
-    color: var(--blanco);
+    color:
+        var(--blanco);
 
     font-family:
         'Archivo Black',
@@ -1113,7 +1247,8 @@ footer {
 
     margin-top: 10px;
 
-    background: var(--rojo);
+    background:
+        var(--rojo);
 }
 
 .footer-info ul {
@@ -1127,9 +1262,12 @@ footer {
 
     margin-bottom: 12px;
 
-    color: #888;
+    color:
+        #888;
 
-    font-family: 'Manrope', sans-serif;
+    font-family:
+        'Manrope',
+        sans-serif;
 
     font-size: 13px;
 
@@ -1137,20 +1275,19 @@ footer {
 }
 
 .footer-info ul li strong {
-
     color: #d5d5d5;
 }
 
 .footer-info ul li a {
 
-    color: #888;
+    color:
+        #888;
 
     transition:
         color 0.3s ease;
 }
 
 .footer-info ul li a:hover {
-
     color: var(--rojo);
 }
 
@@ -1163,119 +1300,231 @@ footer {
 
     padding-top: 25px;
 
-    text-align: center;
+    text-align:
+        center;
 }
 
 .copyright p {
 
-    color: #555;
+    color:
+        #555;
 
-    font-family: 'Manrope', sans-serif;
+    font-family:
+        'Manrope',
+        sans-serif;
 
     font-size: 12px;
 }
 
 
 /* =========================================================
-   RESPONSIVE 1100px
+   TABLET / PANTALLAS MEDIANAS
+   MENÚ HAMBURGUESA
 ========================================================= */
 
 @media (max-width: 1100px) {
 
     .top-bar {
 
-        padding: 22px 25px;
+        min-height: 80px;
+
+        padding:
+            15px 25px;
+    }
+
+    /*
+       IMPORTANTE:
+       A partir de aquí desaparece el menú gigante
+       y aparece el botón hamburguesa.
+    */
+
+    .menu-toggle {
+
+        display: flex;
+
+        order: 2;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .top-icons {
+        order: 3;
+    }
+
+    .navegacion {
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        width: 100%;
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        background:
+            rgba(5,5,5,0.97);
+
+        backdrop-filter:
+            blur(15px);
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,0.08);
+
+        transition:
+            max-height 0.4s ease,
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+    .navegacion.menu-abierto {
+
+        max-height:
+            calc(100vh - 80px);
+
+        overflow-y: auto;
+
+        opacity: 1;
+
+        visibility: visible;
     }
 
     .navegacion ul {
 
-        gap: 15px;
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding:
+            10px 20px 20px;
+    }
+
+    .navegacion ul li {
+
+        width: 100%;
     }
 
     .navegacion ul li a {
 
-        font-size: 0.65rem;
+        width: 100%;
+
+        padding:
+            16px 15px;
+
+        font-size:
+            0.78rem;
+
+        text-align:
+            center;
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,0.06);
+    }
+
+    .navegacion ul li a.activo::after {
+
+        display: none;
+    }
+
+    .navegacion ul li a.activo {
+
+        color:
+            var(--rojo);
+
+        background:
+            rgba(225,6,32,0.06);
+
+        border-radius:
+            8px;
     }
 
     .contacto-seccion {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
         gap: 50px;
     }
 
     .contacto-info {
 
-        text-align: center;
+        text-align:
+            center;
     }
 
     .texto-contacto {
 
-        margin-left: auto;
-        margin-right: auto;
+        margin-left:
+            auto;
+
+        margin-right:
+            auto;
     }
 
     .contacto-info h2::after {
 
-        margin-left: auto;
-        margin-right: auto;
+        margin-left:
+            auto;
+
+        margin-right:
+            auto;
     }
 
     .formulario-contacto {
 
-        max-width: 750px;
+        max-width:
+            750px;
 
-        width: 100%;
+        width:
+            100%;
 
-        margin: auto;
+        margin:
+            auto;
     }
 }
 
 
 /* =========================================================
-   RESPONSIVE 850px
+   TABLET PEQUEÑA
 ========================================================= */
 
 @media (max-width: 850px) {
 
     .top-bar {
 
-        flex-wrap: wrap;
-
-        justify-content: center;
-
-        gap: 20px;
-    }
-
-    .logo {
-
-        width: 100%;
-
-        text-align: center;
-    }
-
-    .navegacion {
-
-        width: 100%;
-
-        overflow-x: auto;
-    }
-
-    .navegacion ul {
-
-        justify-content: center;
-
-        flex-wrap: wrap;
+        padding:
+            15px 20px;
     }
 
     .top-icons {
 
-        display: none;
+        gap: 15px;
+    }
+
+    .contacto-seccion {
+
+        gap: 40px;
     }
 
     .datos-contacto {
 
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
     }
 
     .footer-info {
@@ -1289,154 +1538,473 @@ footer {
 
 
 /* =========================================================
-   RESPONSIVE 600px
+   CELULARES
 ========================================================= */
 
 @media (max-width: 600px) {
 
     .banner-portada {
 
-        height: 850px;
+        height:
+            800px;
+
+        min-height:
+            800px;
     }
 
     .top-bar {
 
-        padding: 20px 15px;
+        min-height:
+            70px;
+
+        padding:
+            12px 15px;
+    }
+
+    .logo {
+
+        font-size:
+            1.35rem;
+    }
+
+    .menu-toggle {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+        font-size:
+            18px;
+    }
+
+    .top-icons {
+
+        gap:
+            12px;
+    }
+
+    .icon-link {
+
+        font-size:
+            1rem;
+    }
+
+    .navegacion.menu-abierto {
+
+        max-height:
+            calc(100vh - 70px);
     }
 
     .navegacion ul {
 
-        gap: 10px 15px;
+        padding:
+            8px 15px 20px;
     }
 
     .navegacion ul li a {
 
-        font-size: 0.58rem;
+        padding:
+            15px 10px;
+
+        font-size:
+            0.72rem;
     }
+
+
+    /* HERO */
 
     .contenido-centro {
 
-        margin-top: -20px;
+        margin-top:
+            -20px;
+
+        padding:
+            0 18px;
     }
 
     .etiqueta-hero {
 
-        font-size: 18px;
+        font-size:
+            11px;
 
-        letter-spacing: 3px;
+        letter-spacing:
+            3px;
     }
 
     .titulo-hero {
 
-        font-size: clamp(3rem, 16vw, 5rem);
+        font-size:
+            clamp(
+                2.8rem,
+                15vw,
+                4.5rem
+            );
+
+        letter-spacing:
+            2px;
+    }
+
+    .titulo-hero::after {
+
+        width:
+            60px;
+
+        height:
+            3px;
+
+        margin-top:
+            20px;
     }
 
     .subtitulo {
 
-        font-size: 14px;
+        font-size:
+            13px;
+
+        line-height:
+            1.6;
+    }
+
+    .lema-centro {
+
+        padding:
+            0 15px;
     }
 
     .lema-centro p {
 
-        font-size: 14px;
+        font-size:
+            12px;
 
-        letter-spacing: 3px;
+        letter-spacing:
+            3px;
     }
+
+
+    /* MAIN */
 
     main.contacto {
 
         padding:
-            70px 20px 80px;
+            65px 18px 75px;
     }
 
     .contacto-info {
 
-        padding: 0;
+        padding:
+            0;
+    }
+
+    .seccion-etiqueta {
+
+        font-size:
+            19px;
+
+        letter-spacing:
+            3px;
     }
 
     .contacto-info h2 {
 
-        font-size: 36px;
+        font-size:
+            35px;
     }
 
     .texto-contacto {
 
-        font-size: 14px;
+        font-size:
+            14px;
+
+        line-height:
+            1.7;
     }
+
+
+    /* DATOS */
 
     .datos-contacto {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
-        gap: 15px;
+        gap:
+            14px;
+
+        margin-top:
+            30px;
     }
+
+    .dato {
+
+        padding:
+            16px;
+
+        text-align:
+            left;
+    }
+
+
+    /* FORMULARIO */
 
     .formulario-contacto {
 
-        padding: 30px 20px;
+        padding:
+            30px 20px;
+
+        border-radius:
+            16px;
+    }
+
+    .formulario-header {
+
+        margin-bottom:
+            28px;
     }
 
     .formulario-header h2 {
 
-        font-size: 27px;
+        font-size:
+            26px;
     }
 
-    .footer-info {
+    .campo {
 
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-
-        text-align: center;
+        margin-bottom:
+            18px;
     }
 
-    .footer-info h4::after {
+    .campo input,
+    .campo textarea {
 
-        margin-left: auto;
-        margin-right: auto;
+        font-size:
+            13px;
     }
 
-    .footer-info ul li {
 
-        font-size: 12px;
+    /* FOOTER */
+
+    footer {
+
+        padding:
+            55px 20px 20px;
+    }
+
+    .redes-sociales {
+
+        margin-bottom:
+            40px;
+    }
+
+    .redes-sociales h3 {
+
+        font-size:
+            14px;
+
+        line-height:
+            1.5;
     }
 
     .iconos-redes {
 
-        gap: 10px;
+        gap:
+            9px;
     }
 
     .iconos-redes a {
 
-        width: 42px;
-        height: 42px;
+        width:
+            42px;
+
+        height:
+            42px;
+    }
+
+    .iconos-redes a img {
+
+        width:
+            22px;
+
+        height:
+            22px;
+    }
+
+    .footer-info {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            35px;
+
+        text-align:
+            center;
+    }
+
+    .footer-info h4::after {
+
+        margin-left:
+            auto;
+
+        margin-right:
+            auto;
+    }
+
+    .footer-info ul li {
+
+        font-size:
+            12px;
     }
 }
 
 
 /* =========================================================
-   RESPONSIVE 400px
+   CELULARES MUY PEQUEÑOS
 ========================================================= */
 
 @media (max-width: 400px) {
 
-    .navegacion ul {
+    .top-bar {
 
-        gap: 8px 10px;
+        padding:
+            10px 12px;
     }
 
-    .navegacion ul li a {
+    .logo {
 
-        font-size: 0.52rem;
+        font-size:
+            1.2rem;
+    }
+
+    .menu-toggle {
+
+        width:
+            40px;
+
+        height:
+            40px;
+    }
+
+    .top-icons {
+
+        gap:
+            9px;
+    }
+
+    .icon-link {
+
+        font-size:
+            0.9rem;
+    }
+
+    .contenido-centro {
+
+        padding:
+            0 15px;
     }
 
     .titulo-hero {
 
-        font-size: 2.8rem;
+        font-size:
+            2.7rem;
+    }
+
+    .etiqueta-hero {
+
+        font-size:
+            10px;
+
+        letter-spacing:
+            2px;
+    }
+
+    .subtitulo {
+
+        font-size:
+            12px;
     }
 
     .formulario-contacto {
 
-        padding: 25px 16px;
+        padding:
+            25px 16px;
+    }
+
+    .formulario-header h2 {
+
+        font-size:
+            24px;
+    }
+
+    .iconos-redes a {
+
+        width:
+            39px;
+
+        height:
+            39px;
+    }
+}
+
+
+/* =========================================================
+   PANTALLAS MUY BAJAS
+========================================================= */
+
+@media (max-height: 650px) and (max-width: 1100px) {
+
+    .banner-portada {
+
+        min-height:
+            600px;
+
+        height:
+            100vh;
+    }
+
+    .navegacion ul li a {
+
+        padding:
+            11px;
+    }
+
+    .contenido-centro {
+
+        margin-top:
+            0;
+    }
+
+    .lema-centro p {
+
+        font-size:
+            11px;
+    }
+}
+
+
+/* =========================================================
+   REDUCIR ANIMACIONES
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior:
+            auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
     }
 }
