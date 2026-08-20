@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú de Navegación</title>
+  <style>
+body {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(
+      135deg,
+      #050505,
+      #111111,
+      #1a1a1a,
+      #2a0000
+    );
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: #2c2c2c;
+            border-radius: 16px;
+            padding: 30px 40px;
+            animation: brilloContenedor 3s infinite ease-in-out;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        @keyframes brilloContenedor {
+            0% { box-shadow: 0 0 10px #a20000; }
+            50% { box-shadow: 0 0 25px #a20000, 0 0 40px #a20000; }
+            100% { box-shadow: 0 0 10px #a20000; }
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #ffffff;
+            text-shadow: 2px 2px 10px white;
+            font-weight: normal;
+        }
+
+        .boton-enlace {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+        background: linear-gradient(
+      135deg,
+      #5c0000,
+      #a20000,
+      #ff2b2b
+    );
+
+    color: #fff;
+    border:none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+      transition: transform 0.3s ease;
+        }
+
+        .boton-enlace:hover {
+        background-color: #fff;
+        color: #ffffff;
+        transform: scale(1.1);
+        }
+        a {
+          text-decoration: none;
+        }
+  </style>
+</head>
+<body>
+<div class="card">
+  <h1>Ir a cada página</h1>
+
+  <a class="boton-enlace" href="./paginas/nomina.html">Nómina</a>
+  <a class="boton-enlace" href="./paginas/prestaciones_sociales.html">Prestaciones Sociales</a>
+  <a class="boton-enlace" href="./paginas/parafiscales.html">Parafiscales</a>
+  <a class="boton-enlace" href="../PHP/pag_admin.php">Volver</a>
+</div>
+</body>
+</html>

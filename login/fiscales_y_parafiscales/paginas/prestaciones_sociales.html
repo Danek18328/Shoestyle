@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prestaciones Sociales</title>
+</head>
+
+<style>
+  body {
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(
+      135deg,
+      #050505,
+      #111111,
+      #1a1a1a,
+      #2a0000
+    );
+        margin:0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        min-height: 100vh;
+    }
+
+    .card{
+
+        background: #2c2c2c;
+        border-radius: 16px;
+        padding: 30px 40px;
+        animation: brilloContenedor 3s infinite ease-in-out;
+        width:100%;
+        max-width: 450px;
+        margin: 30px 0;
+        gap:20px;
+    }
+@keyframes brilloContenedor {
+    0% {
+        box-shadow: 0 0 10px #a20000;
+    }
+    50% {
+        box-shadow: 0 0 25px #a20000, 0 0 40px #a20000;
+    }
+    100% {
+        box-shadow: 0 0 10px #a20000;
+    }
+}
+    h2{
+        margin-bottom: 20px;
+        color: #ffffff;
+        text-align: center;
+        font-weight: normal;
+        text-shadow: 2px 2px 10px white
+    }
+
+    label{
+        display:block;
+        margin: 12px 0 6px;
+        color: #ffffff;           
+    }
+
+
+    input{
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 1rem;
+    }
+
+    button {
+
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+            background: linear-gradient(
+      135deg,
+      #5c0000,
+      #a20000,
+      #ff2b2b
+    );
+    color: #fff;
+    border:none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+      transition: transform 0.3s ease;
+
+    }
+
+    button:hover{
+        background-color: #fff;
+        color: #ffffff;
+        transform: scale(1.1);
+    }
+
+    #resultado {
+        margin-top: 20px;
+        font-size: 1rem;
+        color: #fff;
+        white-space: pre-line;
+    }
+</style>
+
+<body>
+  <div class="card">
+    <h2>Prestaciones Sociales</h2>
+
+    <label>Salario mensual (COP)</label>
+    <input type="number" id="salario" placeholder="Ej: 1200000">
+
+    <label>Fecha de ingreso</label>
+    <input type="date" id="fechaIngreso">
+
+    <label>Fecha de salida</label>
+    <input type="date" id="fechaSalida">
+
+    <button onclick="calcular()">Calcular</button>
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function calcular() {
+      const salario = parseFloat(document.getElementById('salario').value) || 0;
+      const ingreso = new Date(document.getElementById('fechaIngreso').value);
+      const salida = new Date(document.getElementById('fechaSalida').value);
+
+      if (!salario || isNaN(ingreso) || isNaN(salida) || salida <= ingreso) {
+        document.getElementById('resultado').textContent = 'Por favor ingrese datos válidos.';
+        return;
+      }
+
+      const diferencia = Math.floor((salida - ingreso) / (1000 * 60 * 60 * 24)); // días laborados
+      const dias = diferencia;
+
+      const cesantias = (salario * dias) / 360;
+      const interesesCesantias = cesantias * 0.12;
+      const prima = (salario * dias) / 360;
+      const vacaciones = (salario * dias) / 720;
+
+      document.getElementById('resultado').innerHTML = `
+Días laborados: ${dias}
+Cesantías: $${cesantias.toLocaleString('es-CO')}
+Intereses sobre cesantías (12%): $${interesesCesantias.toLocaleString('es-CO')}
+Prima de servicios: $${prima.toLocaleString('es-CO')}
+Vacaciones: $${vacaciones.toLocaleString('es-CO')}
+      `;
+    }
+  </script>
+</body>
+</html>

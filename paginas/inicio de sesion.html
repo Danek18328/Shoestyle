@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="../CSS/SESION1.CSS">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Matangi:wght@300..900&family=Michroma&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="caja1">
+            <form method="post" action="../PHP/login.php">
+                <div class="titulo">Iniciar sesión</div>
+
+                <div class="ub1">&#128273; Ingresar usuario</div>
+                <input type="text" name="txtusuario" required>
+
+                <div class="ub1">&#128274; Ingresar contraseña</div>
+                <input type="password" name="txtpassword" id="txtpassword" required>
+
+                <div class="ub1">
+                    <input type="checkbox" onclick="verpassword()"> Mostrar contraseña
+                </div>
+
+                <div class="ub1">Rol</div>
+                <select name="rol" required>
+                    <option value="" disabled selected>Seleccionar</option>
+                    <option value="Usuario">Usuario</option>
+                    <option value="Admin">Administrador</option>
+                </select>
+
+<div class="botones">
+    <div class="botones-superior">
+        <input type="submit" value="Ingresar">
+        <input type="reset" value="Cancelar">
+    </div>
+    <a href="../index.php" class="btn-volver">Volver</a>
+</div>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function verpassword() {
+            var tipo = document.getElementById("txtpassword");
+            tipo.type = (tipo.type === "password") ? "text" : "password";
+        }
+    </script>
+</body>
+</html>

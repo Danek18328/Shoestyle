@@ -1,0 +1,27 @@
+services:
+  web:
+    build: .
+    container_name: shoestyle-web
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_NAME: shoestyle
+      VISITAS_DB_NAME: visitas
+
+  db:
+    image: mysql:8.0
+    container_name: shoestyle-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./base_de_datos:/docker-entrypoint-initdb.d
+
+volumes:
+  mysql_data:
