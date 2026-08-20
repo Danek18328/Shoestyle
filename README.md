@@ -13,7 +13,6 @@ El proyecto integra catálogo de productos, usuarios, compras, facturación, adm
 | Recurso | Enlace |
 |---|---|
 | 🚀 Aplicación | [Ver SHOESTYLE](#) |
-| 💻 Repositorio | [GitHub](https://github.com/Danek18328/-Shoestyle) |
 | 📦 Despliegue | Render |
 | 🐳 Entorno | Docker |
 
