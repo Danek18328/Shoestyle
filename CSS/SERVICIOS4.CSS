@@ -3,14 +3,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 
+/* =========================================================
+   VARIABLES
+========================================================= */
+
 :root {
+
     --rojo: #e10620;
-    --rojo-oscuro: #a20000;
     --rojo-brillante: #ff2e2e;
 
     --fondo: #050505;
     --fondo-2: #0d0d0d;
-    --fondo-3: #151515;
 
     --blanco: #ffffff;
 
@@ -18,7 +21,7 @@
     --gris: #8c8c8c;
 
     --borde: rgba(255,255,255,0.08);
-    --borde-hover: rgba(225,6,32,0.65);
+
 }
 
 
@@ -37,7 +40,12 @@ html {
 }
 
 body {
-    background: #050505;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background: var(--fondo);
+
     color: var(--blanco);
 
     font-family: 'Manrope', sans-serif;
@@ -49,28 +57,36 @@ a {
     text-decoration: none;
 }
 
+button {
+    font-family: inherit;
+}
+
 
 /* =========================================================
    CONTENEDOR
 ========================================================= */
 
 #contenedor {
+
     width: 100%;
     min-height: 100vh;
 
-    background: #050505;
+    background: var(--fondo);
 }
 
 
 /* =========================================================
-   BANNER
+   HERO
 ========================================================= */
 
 .banner-portada {
-        position: relative;
+
+    position: relative;
 
     width: 100%;
     height: 100vh;
+
+    min-height: 600px;
 
     display: flex;
 
@@ -81,14 +97,17 @@ a {
     align-items: center;
 
     overflow: hidden;
-
-    color: #fff;
 }
 
-/* CONTENEDOR DE LA IMAGEN */
+
+/* =========================================================
+   IMAGEN
+========================================================= */
 
 .imagen-banner {
+
     position: absolute;
+
     inset: 0;
 
     width: 100%;
@@ -97,9 +116,8 @@ a {
     z-index: 0;
 }
 
-/* IMAGEN DE FONDO */
-
 .imagen-banner img {
+
     width: 100%;
     height: 100%;
 
@@ -108,28 +126,26 @@ a {
     display: block;
 }
 
-/* CAPA OSCURA */
+
+/* =========================================================
+   OSCURECER IMAGEN
+========================================================= */
 
 .capa-oscura {
+
     position: absolute;
+
     inset: 0;
 
     background:
-        radial-gradient(
-            circle,
-            rgba(0, 0, 0, 0.541) 0%,
-            rgba(0, 0, 0, 0.534) 100%
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,0.65) 0%,
+            rgba(0,0,0,0.35) 45%,
+            rgba(0,0,0,0.85) 100%
         );
 
     z-index: 1;
-}
-
-/* CONTENIDO ENCIMA DEL FONDO */
-
-.top-bar,
-.lema-centro {
-    position: relative;
-    z-index: 10;
 }
 
 
@@ -138,32 +154,56 @@ a {
 ========================================================= */
 
 .top-bar {
+
     position: relative;
-    z-index: 10;
+
+    z-index: 100;
 
     width: 100%;
+
     min-height: 90px;
 
     padding: 0 6%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    gap: 30px;
 
-    background: rgba(0, 0, 0, 0.25);
+    border-bottom:
+        1px solid rgba(255,255,255,0.12);
+
+    background:
+        rgba(0,0,0,0.25);
+
     backdrop-filter: blur(10px);
 }
 
+
+/* =========================================================
+   LOGO
+========================================================= */
+
 .logo {
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-    font-family: 'Impact', 'Arial Black', sans-serif;
+
+    flex-shrink: 0;
+
     color: white;
+
+    font-family:
+        'Impact',
+        'Arial Black',
+        sans-serif;
+
+    font-size: 1.5rem;
+
+    letter-spacing: 1px;
 }
 
-.logo-rojo {
+.logo span {
     color: var(--rojo);
 }
 
@@ -172,42 +212,67 @@ a {
    NAVEGACIÓN
 ========================================================= */
 
+.navegacion {
+
+    display: block;
+
+    z-index: 1000;
+}
+
 .navegacion ul {
-    list-style: none;
 
     display: flex;
 
-    gap: 30px;
+    align-items: center;
+
+    gap: 28px;
+
+    list-style: none;
 }
 
-.navegacion ul li a {
+.navegacion a {
+
     position: relative;
+
+    display: block;
 
     color: #b3b3b3;
 
     font-family: 'Poppins', sans-serif;
-    font-size: 0.8  5rem;
+
+    font-size: 0.8rem;
+
     font-weight: 600;
 
-    letter-spacing: 0.7px;
+    letter-spacing: 0.5px;
 
-    transition: color 0.3s ease;
+    white-space: nowrap;
+
+    transition:
+        color 0.3s ease;
 }
 
-.navegacion ul li a:hover,
-.navegacion ul li a.activo {
+.navegacion a:hover,
+.navegacion a.activo {
+
     color: white;
 }
 
-.navegacion ul li a.activo::after {
+
+/* Línea roja */
+
+.navegacion a.activo::after {
+
     content: "";
 
     position: absolute;
 
     left: 0;
-    bottom: -8px;
+
+    bottom: -9px;
 
     width: 100%;
+
     height: 2px;
 
     background: var(--rojo);
@@ -218,18 +283,22 @@ a {
 
 
 /* =========================================================
-   ICONOS
+   ICONOS DESKTOP
 ========================================================= */
 
 .top-icons {
+
     display: flex;
+
+    align-items: center;
 
     gap: 20px;
 
-    z-index: 10;
+    flex-shrink: 0;
 }
 
 .icon-link {
+
     color: white;
 
     font-size: 1.1rem;
@@ -240,6 +309,7 @@ a {
 }
 
 .icon-link:hover {
+
     color: var(--rojo);
 
     transform: scale(1.1);
@@ -247,7 +317,51 @@ a {
 
 
 /* =========================================================
-   HERO
+   HAMBURGUESA
+========================================================= */
+
+.menu-movil {
+
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 10001;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease;
+}
+
+.menu-movil:hover {
+
+    color: var(--rojo);
+
+    background:
+        rgba(255,255,255,0.06);
+}
+
+
+/* =========================================================
+   HERO CENTRADO
 ========================================================= */
 
 .contenido-centro {
@@ -256,34 +370,40 @@ a {
 
     z-index: 10;
 
-    text-align: center;
-
-    max-width: 900px;
+    width: min(900px, 100%);
 
     padding: 0 20px;
 
     margin-top: -40px;
 
+    text-align: center;
+
     animation:
-        aparecerHero 1s ease forwards;
+        aparecer 1s ease forwards;
 }
 
-@keyframes aparecerHero {
+@keyframes aparecer {
 
     from {
+
         opacity: 0;
-        transform: translateY(25px);
+
+        transform:
+            translateY(25px);
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
 
 /* =========================================================
-   ETIQUETA HERO
+   ETIQUETA
 ========================================================= */
 
 .etiqueta-hero {
@@ -292,25 +412,29 @@ a {
 
     color: var(--rojo);
 
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 
     font-size: 13px;
+
+    font-weight: 600;
 
     letter-spacing: 4px;
 }
 
 
 /* =========================================================
-   TÍTULO HERO
+   TÍTULO
 ========================================================= */
 
 .titulo-hero {
 
-        font-family: 'Impact', 'Arial Black', sans-serif;
-
+    font-family:
+        'Impact',
+        'Arial Black',
+        sans-serif;
 
     font-size:
-        clamp(3rem, 7vw, 6rem);
+        clamp(3.5rem, 8vw, 6.5rem);
 
     line-height: 0.95;
 
@@ -326,6 +450,7 @@ a {
     display: block;
 
     width: 80px;
+
     height: 4px;
 
     margin: 25px auto 0;
@@ -351,41 +476,11 @@ a {
 
     font-family: 'Manrope', sans-serif;
 
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-size:
+        clamp(0.9rem, 2vw, 1.1rem);
 
     line-height: 1.6;
 }
-
-
-/* =========================================================
-   LEMA
-========================================================= */
-
-.lema-centro {
-
-    position: relative;
-
-    z-index: 10;
-
-    text-align: center;
-
-    margin-bottom: 5px;
-}
-
-.lema-centro p {
-
-    color: rgba(255,255,255,0.75);
-
-    font-family: 'Bebas Neue', sans-serif;
-
-    font-size: clamp(1rem, 2vw, 1.5rem);
-
-    letter-spacing: 5px;
-
-    text-shadow:
-        0 3px 15px rgba(0,0,0,0.8);
-}
-
 
 
 /* =========================================================
