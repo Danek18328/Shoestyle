@@ -212,7 +212,7 @@ select {
     font-family: 'Poppins', sans-serif;
 
     /* CORREGIDO */
-    font-size: 0.85rem;
+    font-size: 0.95rem;
 
     font-weight: 600;
 
@@ -878,16 +878,12 @@ hr {
 
 .resenas-contenedor {
     width: min(1300px, 100%);
-
     margin: 0 auto;
 
-    display: grid;
-
-    grid-template-columns: 1.5fr 0.8fr;
-
+    display: flex;
+    flex-direction: column;
     gap: 50px;
-
-    align-items: start;
+    align-items: stretch;
 }
 
 .lista-resenas h2,
