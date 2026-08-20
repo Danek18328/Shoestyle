@@ -1003,350 +1003,336 @@ footer {
     font-size: 12px;
 }
 
-
 /* =========================================================
-   RESPONSIVE — PORTÁTILES
+   MENÚ RESPONSIVE
 ========================================================= */
 
-@media (max-width: 1100px) {
-
-    .navegacion ul {
-        gap: 15px;
-    }
-
-    .navegacion a {
-        font-size: 10px;
-    }
-
-    .valores-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.menu-movil {
+    display: none !important;
 }
 
 
 /* =========================================================
-   RESPONSIVE — TABLETS
+   PORTÁTILES
 ========================================================= */
 
-@media (max-width: 850px) {
-
-    .banner-portada {
-        height: 650px;
-    }
-
-
-    /* =========================
-       BARRA SUPERIOR
-    ========================= */
+@media (min-width: 801px) and (max-width: 1200px) {
 
     .top-bar {
-        min-height: 80px;
-
-        padding: 15px 5%;
-
-        flex-wrap: nowrap;
-
-        gap: 15px;
+        padding: 0 3%;
     }
 
-
-    /* =========================
-       HAMBURGUESA
-    ========================= */
-
-    .menu-hamburguesa {
-        display: block;
-
-        order: 2;
-
-        margin-left: auto;
-    }
-
-
-    /* =========================
-       NAVEGACIÓN CERRADA
-    ========================= */
-
-    .navegacion {
-        position: absolute;
-
-        top: 100%;
-        left: 0;
-
-        width: 100%;
-
-        display: none;
-
-        padding: 15px 5%;
-
-        background: rgba(5, 5, 5, 0.98);
-
-        backdrop-filter: blur(15px);
-
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-        z-index: 9999;
-
-        max-height: calc(100vh - 80px);
-
-        overflow-y: auto;
-    }
-
-
-    /* =========================
-       NAVEGACIÓN ABIERTA
-    ========================= */
-
-    .navegacion.activo {
-        display: block;
+    .logo {
+        font-size: 1.2rem;
+        flex-shrink: 0;
     }
 
     .navegacion ul {
-        width: 100%;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 0;
+        gap: 12px;
     }
 
-    .navegacion li {
-        width: 100%;
+    .navegacion ul li a {
+        font-size: 0.62rem;
+        letter-spacing: 0.2px;
+        white-space: nowrap;
     }
-
-    .navegacion a {
-        display: block;
-
-        width: 100%;
-
-        padding: 14px 5px;
-
-        font-size: 14px;
-
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .navegacion a.activo::after {
-        display: none;
-    }
-
-
-    /* =========================
-       ICONOS
-    ========================= */
 
     .top-icons {
-        order: 3;
-
-        gap: 15px;
-
-        margin-left: 0;
+        gap: 12px;
+        font-size: 1rem;
+        flex-shrink: 0;
     }
 
     .icon-link {
-        font-size: 18px;
-    }
-
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .contenido-centro {
-        padding-top: 50px;
-    }
-
-
-    /* =========================
-       EMPRESA
-    ========================= */
-
-    .bloque-empresa {
-        grid-template-columns: 1fr;
-    }
-
-    .empresa-texto {
-        padding: 60px 0;
-    }
-
-    .empresa-destacado {
-        min-height: 400px;
-    }
-
-
-    /* =========================
-       MISIÓN / VISIÓN
-    ========================= */
-
-    .mision-vision {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    .footer-info {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
+        font-size: 0.95rem;
     }
 }
 
 
 /* =========================================================
-   RESPONSIVE — CELULARES
+   TABLETS + CELULARES
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .top-bar {
+        min-height: 65px;
+        padding: 0 16px;
+        z-index: 100000;
+    }
+
+    .logo {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    /* Ocultar navegación normal */
+    .navegacion {
+        display: none !important;
+    }
+
+    /* Mostrar hamburguesa */
+    .menu-movil {
+        display: flex !important;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 40px;
+        height: 40px;
+
+        margin: 0;
+        padding: 0;
+
+        border: none;
+        outline: none;
+
+        background: transparent;
+
+        color: #ffffff;
+
+        font-size: 22px;
+
+        cursor: pointer;
+
+        position: relative;
+
+        z-index: 100002;
+
+        flex-shrink: 0;
+    }
+
+    .menu-movil:hover {
+        color: #e50914;
+    }
+
+
+    /* =====================================================
+       MENÚ ABIERTO
+    ===================================================== */
+
+    .navegacion.activo {
+
+        display: block !important;
+
+        position: fixed !important;
+
+        top: 60px;
+
+        left: 10px;
+        right: 10px;
+
+        width: auto;
+
+        max-height: calc(100vh - 75px);
+
+        overflow-y: auto;
+
+        padding: 8px;
+
+        background: rgba(10, 10, 10, 0.98);
+
+        border: 1px solid rgba(255, 255, 255, 0.12);
+
+        border-radius: 14px;
+
+        box-shadow:
+            0 20px 50px rgba(0, 0, 0, 0.8);
+
+        backdrop-filter: blur(15px);
+
+        z-index: 100001;
+    }
+
+
+    /* Lista */
+
+    .navegacion.activo ul {
+
+        display: flex !important;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 0;
+
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+    }
+
+
+    .navegacion.activo ul li {
+
+        display: block;
+
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+    }
+
+
+    /* Enlaces */
+
+    .navegacion.activo ul li a {
+
+        display: block;
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding: 12px 10px;
+
+        color: #c7c7c7;
+
+        font-family: 'Poppins', sans-serif;
+
+        font-size: 0.75rem;
+
+        font-weight: 600;
+
+        line-height: 1.2;
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.07);
+
+        transition:
+            color 0.2s ease,
+            background 0.2s ease;
+    }
+
+    .navegacion.activo ul li:last-child a {
+        border-bottom: none;
+    }
+
+    .navegacion.activo ul li a:hover {
+
+        color: #ffffff;
+
+        background:
+            rgba(255, 255, 255, 0.05);
+    }
+
+
+    /* Ocultar carrito y ojo */
+
+    .top-icons {
+        display: none !important;
+    }
+}
+
+
+/* =========================================================
+   CELULARES
 ========================================================= */
 
 @media (max-width: 600px) {
 
     .top-bar {
-        padding: 15px 5%;
+        min-height: 60px;
+        padding: 0 12px;
     }
-
-
-    /* =========================
-       LOGO
-    ========================= */
 
     .logo {
-        font-size: 20px;
+        font-size: 0.9rem;
     }
 
+    .menu-movil {
 
-    /* =========================
-       HAMBURGUESA
-    ========================= */
+        width: 38px;
+        height: 38px;
 
-    .menu-hamburguesa {
-        display: block;
-
-        font-size: 23px;
+        font-size: 21px;
     }
 
+    .navegacion.activo {
 
-    /* =========================
-       OCULTAR CARRITO Y OJO
-    ========================= */
+        top: 55px;
 
-    .top-icons {
-        display: none;
+        left: 8px;
+        right: 8px;
+
+        max-height: calc(100vh - 65px);
+
+        padding: 7px;
+
+        z-index: 100001;
     }
 
+    .navegacion.activo ul li a {
 
-    /* =========================
-       HERO
-    ========================= */
+        padding: 11px 9px;
 
-    .titulo-hero {
-        font-size: 40px;
-
-        letter-spacing: -1px;
-    }
-
-    .subtitulo {
-        font-size: 14px;
-    }
-
-
-    /* =========================
-       INTRODUCCIÓN
-    ========================= */
-
-    .introduccion {
-        padding: 80px 0 60px;
-    }
-
-
-    /* =========================
-       EMPRESA
-    ========================= */
-
-    .empresa-texto {
-        padding: 40px 0;
-    }
-
-    .empresa-texto h2 {
-        font-size: 27px;
-    }
-
-
-    /* =========================
-       TARJETAS
-    ========================= */
-
-    .tarjeta-info {
-        padding: 35px 25px;
-    }
-
-
-    /* =========================
-       VALORES
-    ========================= */
-
-    .valores {
-        margin: 80px auto;
-    }
-
-    .valores-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* =========================
-       FRASE
-    ========================= */
-
-    .frase-contenido h2 {
-        font-size: 35px;
-    }
-
-
-    /* =========================
-       REDES
-    ========================= */
-
-    .iconos-redes {
-        gap: 8px;
+        font-size: 0.72rem;
     }
 }
 
 
 /* =========================================================
-   CELULARES MUY PEQUEÑOS
+   CELULARES PEQUEÑOS
 ========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 380px) {
+
+    .top-bar {
+
+        min-height: 55px;
+
+        padding: 0 10px;
+    }
 
     .logo {
-        font-size: 18px;
+        font-size: 0.82rem;
     }
 
-    .menu-hamburguesa {
-        font-size: 21px;
+    .menu-movil {
+
+        width: 36px;
+        height: 36px;
+
+        font-size: 20px;
     }
 
-    .titulo-hero {
-        font-size: 34px;
+    .navegacion.activo {
+
+        top: 50px;
+
+        left: 6px;
+        right: 6px;
+
+        max-height: calc(100vh - 58px);
+
+        padding: 6px;
     }
 
-    .subtitulo {
-        font-size: 13px;
+    .navegacion.activo ul li a {
+
+        padding: 10px 8px;
+
+        font-size: 0.68rem;
+    }
+}
+
+
+/* =========================================================
+   PC
+========================================================= */
+
+@media (min-width: 801px) {
+
+    .menu-movil {
+        display: none !important;
     }
 
-    .navegacion a {
-        font-size: 13px;
+    .navegacion {
+        display: block !important;
     }
 
-    .destacado-contenido h3 {
-        font-size: 30px;
-    }
-
-    .destacado-contenido span {
-        font-size: 13px;
+    .top-icons {
+        display: flex;
     }
 }
