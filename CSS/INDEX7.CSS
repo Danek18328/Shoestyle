@@ -1171,7 +1171,10 @@ footer {
    RESPONSIVE
 ========================================================= */
 
-/* Tablets y pantallas medianas */
+/* =========================================================
+   TABLETS GRANDES
+========================================================= */
+
 @media (max-width: 1100px) {
 
     .top-bar {
@@ -1180,6 +1183,10 @@ footer {
 
     .navegacion ul {
         gap: 20px;
+    }
+
+    .navegacion ul li a {
+        font-size: 0.8rem;
     }
 
     main {
@@ -1278,6 +1285,7 @@ footer {
 
     .footer-info {
         grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
     }
 }
 
@@ -1320,7 +1328,11 @@ footer {
         height: 100svh;
     }
 
+
+    /* ---------- BARRA SUPERIOR ---------- */
+
     .top-bar {
+        position: relative;
         min-height: 70px;
         padding: 0 18px;
     }
@@ -1329,50 +1341,164 @@ footer {
         font-size: 1.1rem;
     }
 
-    /* Ocultar navegación en celular */
+
+    /* ---------- MENÚ NORMAL ---------- */
+
     .navegacion {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+        left: 15px;
+        right: 15px;
+
+        background: rgba(10, 10, 10, 0.96);
+
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        border-radius: 15px;
+
+        padding: 15px;
+
+        backdrop-filter: blur(15px);
+
+        box-shadow:
+            0 15px 40px rgba(0, 0, 0, 0.6);
+
+        z-index: 99;
+    }
+
+    .navegacion.activo {
+        display: block;
+    }
+
+    .navegacion ul {
+        display: flex;
+        flex-direction: column;
+
+        gap: 0;
+
+        width: 100%;
+    }
+
+    .navegacion ul li {
+        width: 100%;
+    }
+
+    .navegacion ul li a {
+        display: block;
+
+        width: 100%;
+
+        padding: 13px 10px;
+
+        font-size: 0.8rem;
+
+        color: #c7c7c7;
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .navegacion ul li:last-child a {
+        border-bottom: none;
+    }
+
+    .navegacion ul li a:hover {
+        color: #ffffff;
+        padding-left: 15px;
+    }
+
+    .navegacion ul li a.activo::after {
         display: none;
     }
 
+
+    /* ---------- ICONOS ---------- */
+
     .top-icons {
-        gap: 12px;
-        font-size: 1rem;
+        display: none;
     }
+
+
+    /* ---------- BOTÓN HAMBURGUESA ---------- */
+
+    .menu-movil {
+        display: block;
+
+        background: transparent;
+
+        border: none;
+
+        color: #ffffff;
+
+        font-size: 24px;
+
+        cursor: pointer;
+
+        z-index: 100;
+
+        padding: 5px;
+    }
+
+
+    /* ---------- CONTENIDO CENTRAL ---------- */
 
     .contenido-centro {
         width: 100%;
+
         padding: 0 18px;
+
         margin-top: 0;
     }
 
     .lema-principal {
         font-size: clamp(2.8rem, 14vw, 4.5rem);
+
         line-height: 0.95;
+
         letter-spacing: 1px;
     }
 
     .subtitulo {
         font-size: 0.85rem;
+
         line-height: 1.5;
+
         margin-top: 15px;
+
         margin-bottom: 25px;
     }
 
+
+    /* ---------- BOTONES ---------- */
+
     .botones-container {
         width: 100%;
+
         flex-direction: column;
+
         align-items: center;
+
         gap: 12px;
     }
 
     .btn-rojo,
     .btn-linea {
         width: 100%;
+
         max-width: 280px;
+
         justify-content: center;
+
         padding: 13px 20px;
+
         font-size: 0.9rem;
     }
+
+
+    /* ---------- SCROLL ---------- */
 
     .scroll-indicator {
         margin-bottom: 15px;
@@ -1383,14 +1509,19 @@ footer {
 
     .marcas {
         grid-template-columns: repeat(2, 1fr);
+
         gap: 12px;
+
         padding: 0;
+
         margin-top: 35px;
     }
 
     .marcas img {
         height: 80px;
+
         padding: 12px;
+
         border-radius: 10px;
     }
 
@@ -1399,14 +1530,19 @@ footer {
 
     .productos {
         grid-template-columns: 1fr;
+
         gap: 18px;
+
         margin-top: 35px;
     }
 
     .producto {
         width: 100%;
+
         max-width: 380px;
+
         min-height: 420px;
+
         margin: 0 auto;
     }
 
@@ -1416,6 +1552,7 @@ footer {
 
     .producto h3 {
         font-size: 17px;
+
         margin-top: 18px;
     }
 
@@ -1432,20 +1569,27 @@ footer {
 
     .carrusel {
         width: 100%;
+
         gap: 6px;
+
         margin-top: 35px;
     }
 
     .carrusel img {
         width: calc(100vw - 90px);
+
         height: 250px;
+
         border-radius: 12px;
     }
 
     .flecha {
         width: 36px;
+
         height: 36px;
+
         min-width: 36px;
+
         font-size: 16px;
     }
 
@@ -1454,29 +1598,35 @@ footer {
 
     .resenas-contenedor {
         grid-template-columns: 1fr;
+
         gap: 35px;
     }
 
     .lista-resenas h2,
     .formulario-resena h2 {
         font-size: 25px;
+
         text-align: center;
     }
 
     .lista-resenas h2::after,
     .formulario-resena h2::after {
         margin-left: auto;
+
         margin-right: auto;
     }
 
     .reseñas {
         grid-template-columns: 1fr;
+
         gap: 15px;
+
         margin-top: 25px;
     }
 
     .reseña {
         min-height: auto;
+
         padding: 20px;
     }
 
@@ -1485,7 +1635,9 @@ footer {
 
     .formulario-resena {
         width: 100%;
+
         padding: 22px 18px;
+
         border-radius: 14px;
     }
 
@@ -1504,6 +1656,7 @@ footer {
 
     hr {
         width: 90%;
+
         margin: 65px auto;
     }
 
@@ -1512,6 +1665,7 @@ footer {
 
     footer {
         margin-top: 60px;
+
         padding: 50px 20px 20px;
     }
 
@@ -1525,18 +1679,23 @@ footer {
 
     .iconos-redes a {
         width: 42px;
+
         height: 42px;
     }
 
     .iconos-redes a img {
         width: 21px;
+
         height: 21px;
     }
 
     .footer-info {
         grid-template-columns: 1fr;
+
         gap: 30px;
+
         padding: 35px 0;
+
         text-align: center;
     }
 
@@ -1546,6 +1705,7 @@ footer {
 
     .footer-info h4::after {
         margin-left: auto;
+
         margin-right: auto;
     }
 
@@ -1555,6 +1715,7 @@ footer {
 
     .copyright p {
         font-size: 11px;
+
         line-height: 1.5;
     }
 }
@@ -1574,8 +1735,22 @@ footer {
         font-size: 1rem;
     }
 
-    .top-icons {
-        gap: 8px;
+    .menu-movil {
+        font-size: 22px;
+    }
+
+    .navegacion {
+        top: 65px;
+
+        left: 10px;
+
+        right: 10px;
+    }
+
+    .navegacion ul li a {
+        padding: 12px 8px;
+
+        font-size: 0.75rem;
     }
 
     .contenido-centro {
@@ -1593,6 +1768,7 @@ footer {
     .btn-rojo,
     .btn-linea {
         max-width: 250px;
+
         font-size: 0.85rem;
     }
 
@@ -1606,13 +1782,29 @@ footer {
 
     .carrusel img {
         width: calc(100vw - 75px);
+
         height: 220px;
     }
 
     .flecha {
         width: 32px;
+
         height: 32px;
+
         min-width: 32px;
+
         font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   BOTÓN MENÚ OCULTO EN PC
+========================================================= */
+
+@media (min-width: 601px) {
+
+    .menu-movil {
+        display: none;
     }
 }
