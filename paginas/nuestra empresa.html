@@ -64,124 +64,86 @@
 
         <div class="top-bar">
 
+    <a href="../index.php" class="logo">
+        SHOE<span class="logo-rojo">STYLE</span>
+    </a>
 
-            <!-- LOGO -->
+    <!-- BOTÓN HAMBURGUESA -->
+    <button class="menu-hamburguesa" id="menuHamburguesa" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+    </button>
 
-            <a
-                href="../index.php"
-                class="logo">
+    <nav class="navegacion" id="navegacion">
 
-                SHOE<span class="logo-rojo">STYLE</span>
+        <ul>
 
-            </a>
-
-
-            <!-- =================================================
-                 NAVEGACIÓN
-            ================================================== -->
-
-            <nav
-                class="navegacion"
-                id="navegacion">
-
-                <ul>
-
-                    <li>
-                        <a href="../index.php">
-                            INICIO
-                        </a>
-                    </li>
-
-                    <li>
-                        <a
-                            href="#"
-                            class="activo">
-
-                            NUESTRA EMPRESA
-
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="./productos.php">
-                            PRODUCTOS
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="./contactenos.html">
-                            CONTACTENOS
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="./inicio de sesion.html">
-                            INICIO DE SESIÓN
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="./servicios.html">
-                            SERVICIOS
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="./galeria fotografica.html">
-                            GALERÍA FOTOGRÁFICA
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="./registrarse.html">
-                            REGISTRARSE
-                        </a>
-                    </li>
-
-                </ul>
-
-            </nav>
-
-
-            <!-- =================================================
-                 ICONOS
-            ================================================== -->
-
-            <div class="top-icons">
-
-                <a
-                    href="#"
-                    class="icon-link"
-                    aria-label="Carrito">
-
-                    <i class="fa-solid fa-cart-shopping"></i>
-
+            <li>
+                <a href="../index.php">
+                    INICIO
                 </a>
+            </li>
 
-
-                <a
-                    href="#"
-                    class="icon-link"
-                    aria-label="Visualización">
-
-                    <i class="fa-regular fa-eye"></i>
-
+            <li>
+                <a href="#" class="activo">
+                    NUESTRA EMPRESA
                 </a>
+            </li>
 
-            </div>
+            <li>
+                <a href="./productos.php">
+                    PRODUCTOS
+                </a>
+            </li>
+
+            <li>
+                <a href="./contactenos.html">
+                    CONTACTENOS
+                </a>
+            </li>
+
+            <li>
+                <a href="./inicio de sesion.html">
+                    INICIO DE SESIÓN
+                </a>
+            </li>
+
+            <li>
+                <a href="./servicios.html">
+                    SERVICIOS
+                </a>
+            </li>
+
+            <li>
+                <a href="./galeria fotografica.html">
+                    GALERÍA FOTOGRÁFICA
+                </a>
+            </li>
+
+            <li>
+                <a href="./registrarse.html">
+                    REGISTRARSE
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <div class="top-icons">
+
+        <a href="#" class="icon-link">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+        <a href="#" class="icon-link">
+            <i class="fa-regular fa-eye"></i>
+        </a>
+
+    </div>
+
+</div>
 
 
-            <!-- =================================================
-                 MENÚ HAMBURGUESA
-                 SOLO TABLET / CELULAR
-            ================================================== -->
-
-            <button class="menu-hamburguesa" id="menuHamburguesa" aria-label="Abrir menú">
-                 <i class="fa-solid fa-bars"></i>
-            </button>
-
-
-        </div>
 
 
         <!-- =================================================
@@ -972,31 +934,30 @@
 
 <script>
 
+document.addEventListener("DOMContentLoaded", function () {
+
     /* =====================================================
        MENÚ HAMBURGUESA
     ====================================================== */
 
-    const menuMovil =
-        document.getElementById("menuMovil");
+    const menuHamburguesa =
+        document.getElementById("menuHamburguesa");
 
     const navegacion =
         document.getElementById("navegacion");
 
 
-    if (menuMovil && navegacion) {
+    if (menuHamburguesa && navegacion) {
 
-
-        menuMovil.addEventListener("click", function () {
-
+        menuHamburguesa.addEventListener("click", function () {
 
             navegacion.classList.toggle("activo");
-
 
             const abierto =
                 navegacion.classList.contains("activo");
 
 
-            menuMovil.setAttribute(
+            menuHamburguesa.setAttribute(
                 "aria-expanded",
                 abierto
             );
@@ -1005,76 +966,70 @@
             /* Cambiar icono */
 
             const icono =
-                menuMovil.querySelector("i");
+                menuHamburguesa.querySelector("i");
 
 
             if (abierto) {
 
                 icono.classList.remove("fa-bars");
-
                 icono.classList.add("fa-xmark");
+
+                menuHamburguesa.setAttribute(
+                    "aria-label",
+                    "Cerrar menú"
+                );
 
             } else {
 
                 icono.classList.remove("fa-xmark");
-
                 icono.classList.add("fa-bars");
 
-            }
+                menuHamburguesa.setAttribute(
+                    "aria-label",
+                    "Abrir menú"
+                );
 
+            }
 
         });
 
 
-
         /* =================================================
-           CERRAR MENÚ AL SELECCIONAR OPCIÓN
+           CERRAR MENÚ AL SELECCIONAR UNA OPCIÓN
         ================================================== */
 
         navegacion
             .querySelectorAll("a")
-            .forEach(enlace => {
+            .forEach(function (enlace) {
+
+                enlace.addEventListener("click", function () {
+
+                    navegacion.classList.remove("activo");
+
+                    menuHamburguesa.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
 
-                enlace.addEventListener(
-                    "click",
-                    function () {
+                    const icono =
+                        menuHamburguesa.querySelector("i");
 
 
-                        navegacion.classList.remove(
-                            "activo"
-                        );
+                    icono.classList.remove("fa-xmark");
+                    icono.classList.add("fa-bars");
 
 
-                        menuMovil.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
+                    menuHamburguesa.setAttribute(
+                        "aria-label",
+                        "Abrir menú"
+                    );
 
-
-                        const icono =
-                            menuMovil.querySelector("i");
-
-
-                        icono.classList.remove(
-                            "fa-xmark"
-                        );
-
-
-                        icono.classList.add(
-                            "fa-bars"
-                        );
-
-
-                    }
-                );
-
+                });
 
             });
 
-
     }
-
 
 
     /* =====================================================
@@ -1083,52 +1038,40 @@
 
     document
         .querySelectorAll('a[href^="#"]')
-        .forEach(enlace => {
+        .forEach(function (enlace) {
+
+            enlace.addEventListener("click", function (e) {
+
+                const href =
+                    this.getAttribute("href");
 
 
-            enlace.addEventListener(
-                "click",
-                function (e) {
+                if (href === "#") {
+                    return;
+                }
 
 
-                    const href =
-                        this.getAttribute("href");
+                const destino =
+                    document.querySelector(href);
 
 
-                    /* Ignorar href="#" */
+                if (destino) {
 
-                    if (href === "#") {
-                        return;
-                    }
+                    e.preventDefault();
 
-
-                    const destino =
-                        document.querySelector(href);
-
-
-                    if (destino) {
-
-
-                        e.preventDefault();
-
-
-                        destino.scrollIntoView({
-                            behavior: "smooth"
-                        });
-
-
-                    }
-
+                    destino.scrollIntoView({
+                        behavior: "smooth"
+                    });
 
                 }
-            );
 
+            });
 
         });
 
+});
 
 </script>
-
 
 </body>
 
