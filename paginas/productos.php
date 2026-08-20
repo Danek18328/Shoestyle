@@ -10,14 +10,12 @@
 
     <title>Productos | SHOESTYLE</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="../CSS/PRODUCTOS5.CSS">
 
     <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- 4 FUENTES -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -45,8 +43,6 @@
     <header class="banner-portada">
 
 
-
-
         <div class="imagen-banner">
 
             <img
@@ -56,7 +52,7 @@
             <div class="capa-oscura"></div>
 
         </div>
-    
+
 
         <!-- =================================================
              BARRA SUPERIOR
@@ -74,9 +70,26 @@
             </a>
 
 
-            <!-- MENÚ -->
+            <!-- =================================================
+                 BOTÓN HAMBURGUESA
+            ================================================== -->
 
-            <nav class="navegacion">
+            <button
+                class="menu-movil"
+                id="menuMovil"
+                aria-label="Abrir menú"
+                aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <!-- =================================================
+                 MENÚ
+            ================================================== -->
+
+            <nav class="navegacion" id="navegacion">
 
                 <ul>
 
@@ -103,8 +116,6 @@
                             CONTACTENOS
                         </a>
                     </li>
-
-
 
                     <li>
                         <a href="../paginas/inicio de sesion.html">
@@ -135,7 +146,9 @@
             </nav>
 
 
-            <!-- ICONOS -->
+            <!-- =================================================
+                 ICONOS
+            ================================================== -->
 
             <div class="top-icons">
 
@@ -159,20 +172,19 @@
 
             </div>
 
+
         </div>
 
 
         <!-- =================================================
-             CONTENIDO DEL HERO
+             CONTENIDO HERO
         ================================================== -->
 
         <div class="contenido-centro">
 
-
             <p class="etiqueta-hero">
                 SHOESTYLE
             </p>
-
 
             <h1 class="titulo-hero">
 
@@ -184,7 +196,6 @@
 
             </h1>
 
-
             <p class="subtitulo">
 
                 Descubre nuestra colección de calzado,
@@ -192,11 +203,7 @@
 
             </p>
 
-
             <div class="botones-container">
-
-
-
             </div>
 
         </div>
@@ -207,9 +214,6 @@
         ================================================== -->
 
         <div class="lema-centro">
-
-
-
         </div>
 
 
@@ -238,8 +242,6 @@
 
     <main id="catalogo" class="productos">
 
-
-        <!-- CABECERA -->
 
         <section class="encabezado-productos">
 
@@ -278,7 +280,6 @@
 
         <section class="grid-productos">
 
-
             <?php
 
             $resultado = $conexion->query(
@@ -291,13 +292,8 @@
 
             ?>
 
-
-                <!-- TARJETA -->
-
                 <article class="card-producto">
 
-
-                    <!-- IMAGEN -->
 
                     <div class="imagen-producto">
 
@@ -313,15 +309,11 @@
                     </div>
 
 
-                    <!-- INFORMACIÓN -->
-
                     <div class="info-producto">
 
 
                         <h3>
-
                             <?= htmlspecialchars($fila['nombre']) ?>
-
                         </h3>
 
 
@@ -376,8 +368,6 @@
                         </div>
 
 
-                        <!-- PRECIO -->
-
                         <div class="precio">
 
                             $
@@ -390,14 +380,11 @@
                         </div>
 
 
-                        <!-- AGREGAR AL CARRITO -->
-
                         <form
                             action="../paginas/carrito.php"
                             method="POST"
                             class="form-carrito"
                         >
-
 
                             <?php foreach ($fila as $key => $value): ?>
 
@@ -466,8 +453,6 @@
 
     <footer>
 
-
-        <!-- REDES -->
 
         <div class="redes-sociales">
 
@@ -538,12 +523,8 @@
 
 
 
-        <!-- INFORMACIÓN -->
-
         <div class="footer-info">
 
-
-            <!-- AYUDA -->
 
             <div class="columna">
 
@@ -582,9 +563,6 @@
             </div>
 
 
-
-            <!-- SHOESTYLE -->
-
             <div class="columna">
 
                 <h4>
@@ -619,9 +597,6 @@
             </div>
 
 
-
-            <!-- LEGAL -->
-
             <div class="columna">
 
                 <h4>
@@ -631,7 +606,6 @@
                 <ul>
 
                     <li>
-
                         <a
                             href="../paginas/terminos.pdf"
                             target="_blank">
@@ -639,27 +613,18 @@
                             Términos y Condiciones
 
                         </a>
-
                     </li>
 
                     <li>
-
                         <a href="#">
-
                             Política de Privacidad
-
                         </a>
-
                     </li>
 
                     <li>
-
                         <a href="#">
-
                             Condiciones de Uso
-
                         </a>
-
                     </li>
 
                 </ul>
@@ -670,16 +635,11 @@
         </div>
 
 
-
-        <!-- COPYRIGHT -->
-
         <div class="copyright">
 
             <p>
-
                 &copy; 2025 SHOESTYLE.
                 Todos los derechos reservados.
-
             </p>
 
         </div>
@@ -691,33 +651,107 @@
 </div>
 
 
+
 <!-- =====================================================
      JAVASCRIPT
 ====================================================== -->
 
 <script>
 
-document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+const menuMovil =
+    document.getElementById("menuMovil");
 
-    enlace.addEventListener("click", function(e) {
+const navegacion =
+    document.getElementById("navegacion");
 
-        const destino = document.querySelector(
-            this.getAttribute("href")
+
+if (menuMovil && navegacion) {
+
+    menuMovil.addEventListener("click", function () {
+
+        navegacion.classList.toggle("activo");
+
+        const abierto =
+            navegacion.classList.contains("activo");
+
+        menuMovil.setAttribute(
+            "aria-expanded",
+            abierto
         );
 
-        if (destino) {
+        const icono =
+            menuMovil.querySelector("i");
 
-            e.preventDefault();
+        if (abierto) {
 
-            destino.scrollIntoView({
-                behavior: "smooth"
-            });
+            icono.classList.remove("fa-bars");
+            icono.classList.add("fa-xmark");
+
+        } else {
+
+            icono.classList.remove("fa-xmark");
+            icono.classList.add("fa-bars");
 
         }
 
     });
 
-});
+
+    navegacion
+        .querySelectorAll("a")
+        .forEach(enlace => {
+
+            enlace.addEventListener("click", function () {
+
+                navegacion.classList.remove("activo");
+
+                menuMovil.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                const icono =
+                    menuMovil.querySelector("i");
+
+                icono.classList.remove("fa-xmark");
+                icono.classList.add("fa-bars");
+
+            });
+
+        });
+
+}
+
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(enlace => {
+
+        enlace.addEventListener("click", function(e) {
+
+            const href =
+                this.getAttribute("href");
+
+            if (href === "#") {
+                return;
+            }
+
+            const destino =
+                document.querySelector(href);
+
+            if (destino) {
+
+                e.preventDefault();
+
+                destino.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        });
+
+    });
 
 </script>
 
