@@ -258,22 +258,15 @@ select {
 
     position: relative;
 
-    display: block;
-
     color: #b3b3b3;
 
     font-family: 'Poppins', sans-serif;
-
-    font-size: 0.75rem;
-
+    font-size: 0.8  5rem;
     font-weight: 600;
 
-    letter-spacing: 0.6px;
+    letter-spacing: 0.7px;
 
-    white-space: nowrap;
-
-    transition:
-        color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .navegacion ul li a:hover {
