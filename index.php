@@ -39,35 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<script>
-    const menuMovil = document.getElementById('menuMovil');
-    const navegacion = document.querySelector('.navegacion');
 
-    menuMovil.addEventListener('click', () => {
-        navegacion.classList.toggle('activo');
-
-        const icono = menuMovil.querySelector('i');
-
-        if (navegacion.classList.contains('activo')) {
-            icono.classList.remove('fa-bars');
-            icono.classList.add('fa-xmark');
-        } else {
-            icono.classList.remove('fa-xmark');
-            icono.classList.add('fa-bars');
-        }
-    });
-
-    // Cerrar menú al seleccionar una opción
-    document.querySelectorAll('.navegacion a').forEach(enlace => {
-        enlace.addEventListener('click', () => {
-            navegacion.classList.remove('activo');
-
-            const icono = menuMovil.querySelector('i');
-            icono.classList.remove('fa-xmark');
-            icono.classList.add('fa-bars');
-        });
-    });
-</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -454,6 +426,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             document.getElementById("zapato-imagen").src = zapatos[indexZapato];
         }
     }
+
+
+    const menuMovil = document.getElementById('menuMovil');
+    const navegacion = document.querySelector('.navegacion');
+
+    menuMovil.addEventListener('click', () => {
+        navegacion.classList.toggle('activo');
+
+        const icono = menuMovil.querySelector('i');
+
+        if (navegacion.classList.contains('activo')) {
+            icono.classList.remove('fa-bars');
+            icono.classList.add('fa-xmark');
+        } else {
+            icono.classList.remove('fa-xmark');
+            icono.classList.add('fa-bars');
+        }
+    });
+
+    // Cerrar menú al seleccionar una opción
+    document.querySelectorAll('.navegacion a').forEach(enlace => {
+        enlace.addEventListener('click', () => {
+            navegacion.classList.remove('activo');
+
+            const icono = menuMovil.querySelector('i');
+            icono.classList.remove('fa-xmark');
+            icono.classList.add('fa-bars');
+        });
+    });
+
 </script>
 
 
