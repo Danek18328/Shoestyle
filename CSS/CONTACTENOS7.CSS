@@ -1,11 +1,5 @@
-/* =========================================================
-   FUENTES
-========================================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 
@@ -16,23 +10,21 @@
 :root {
 
     --rojo: #e10620;
-    --rojo-oscuro: #a20000;
     --rojo-brillante: #ff2e2e;
 
     --fondo: #050505;
     --fondo-2: #0d0d0d;
     --fondo-3: #151515;
 
-    --tarjeta: #181818;
-
     --blanco: #ffffff;
 
     --gris-claro: #c7c7c7;
     --gris: #8c8c8c;
-    --gris-oscuro: #303030;
 
     --borde: rgba(255,255,255,0.08);
-    --borde-hover: rgba(225,6,32,0.65);
+
+    --borde-hover:
+        rgba(225,6,32,0.65);
 }
 
 
@@ -52,16 +44,7 @@ html {
 
 body {
 
-    margin: 0;
-    padding: 0;
-
-    background:
-        radial-gradient(
-            circle at top,
-            #151515 0%,
-            #050505 45%,
-            #030303 100%
-        );
+    background: var(--fondo);
 
     color: var(--blanco);
 
@@ -74,15 +57,7 @@ a {
     text-decoration: none;
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
-button,
-input,
-textarea,
-select {
+button {
     font-family: inherit;
 }
 
@@ -94,12 +69,10 @@ select {
 #contenedor {
 
     width: 100%;
+
     min-height: 100vh;
 
     background: var(--fondo);
-
-    box-shadow:
-        0 0 30px rgba(0,0,0,0.7);
 }
 
 
@@ -113,23 +86,20 @@ select {
 
     width: 100%;
     height: 100vh;
-    min-height: 650px;
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: space-between;
+
     align-items: center;
 
     overflow: hidden;
-
-    color: #fff;
 }
 
 
-/* =========================================================
-   IMAGEN BANNER
-========================================================= */
+/* IMAGEN */
 
 .imagen-banner {
 
@@ -149,7 +119,12 @@ select {
     height: 100%;
 
     object-fit: cover;
+
+    display: block;
 }
+
+
+/* OSCURECER */
 
 .capa-oscura {
 
@@ -160,8 +135,8 @@ select {
     background:
         radial-gradient(
             circle,
-            rgba(0,0,0,0.45) 0%,
-            rgba(0,0,0,0.88) 100%
+            rgba(0,0,0,0.35) 0%,
+            rgba(0,0,0,0.85) 100%
         );
 
     z-index: 1;
@@ -169,22 +144,25 @@ select {
 
 
 /* =========================================================
-   BARRA SUPERIOR
+   TOP BAR
 ========================================================= */
 
 .top-bar {
 
     position: relative;
 
-    z-index: 20;
+    z-index: 100;
 
     width: 100%;
+
     min-height: 90px;
 
-    padding: 0 5%;
+    padding: 0 6%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     border-bottom:
@@ -203,25 +181,18 @@ select {
 
 .logo {
 
-    flex-shrink: 0;
+    color: white;
 
-    color: var(--blanco);
+    font-size: 1.5rem;
+
+    letter-spacing: 1px;
 
     font-family:
         'Impact',
         'Arial Black',
         sans-serif;
 
-    font-size: 1.5rem;
-
-    letter-spacing: 1px;
-
-    transition:
-        transform 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.04);
+    flex-shrink: 0;
 }
 
 .logo-rojo {
@@ -230,28 +201,18 @@ select {
 
 
 /* =========================================================
-   NAVEGACIÓN DESKTOP
+   NAVEGACIÓN PC
 ========================================================= */
-
-.navegacion {
-
-    display: flex;
-    align-items: center;
-}
 
 .navegacion ul {
 
-    list-style: none;
-
     display: flex;
 
-    gap: 24px;
-
     align-items: center;
-}
 
-.navegacion ul li {
-    flex-shrink: 0;
+    gap: 30px;
+
+    list-style: none;
 }
 
 .navegacion ul li a {
@@ -261,20 +222,30 @@ select {
     color: #b3b3b3;
 
     font-family: 'Poppins', sans-serif;
-    font-size: 0.8  5rem;
+
+    font-size: 0.85rem;
+
     font-weight: 600;
 
     letter-spacing: 0.7px;
 
-    transition: color 0.3s ease;
+    white-space: nowrap;
+
+    transition:
+        color 0.3s ease;
 }
 
 .navegacion ul li a:hover {
-    color: #ffffff;
+
+    color: white;
 }
 
+
+/* ACTIVO */
+
 .navegacion ul li a.activo {
-    color: #ffffff;
+
+    color: white;
 }
 
 .navegacion ul li a.activo::after {
@@ -284,9 +255,11 @@ select {
     position: absolute;
 
     left: 0;
+
     bottom: -8px;
 
     width: 100%;
+
     height: 2px;
 
     background: var(--rojo);
@@ -297,29 +270,29 @@ select {
 
 
 /* =========================================================
-   ICONOS SUPERIORES
+   ICONOS PC
 ========================================================= */
 
 .top-icons {
 
     display: flex;
 
-    gap: 20px;
-
     align-items: center;
+
+    gap: 20px;
 
     flex-shrink: 0;
 }
 
 .icon-link {
 
-    color: #ffffff;
+    color: white;
 
     font-size: 1.1rem;
 
     transition:
         color 0.3s ease,
-        transform 0.2s ease;
+        transform 0.3s ease;
 }
 
 .icon-link:hover {
@@ -331,49 +304,42 @@ select {
 
 
 /* =========================================================
-   BOTÓN HAMBURGUESA
+   HAMBURGUESA
 ========================================================= */
 
-.menu-toggle {
+.menu-movil {
 
     display: none;
 
-    width: 45px;
-    height: 45px;
+    align-items: center;
 
-    border: 1px solid
-        rgba(255,255,255,0.15);
+    justify-content: center;
 
-    border-radius: 10px;
+    width: 40px;
 
-    background:
-        rgba(255,255,255,0.05);
+    height: 40px;
 
-    color: #ffffff;
+    padding: 0;
 
-    font-size: 20px;
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 22px;
 
     cursor: pointer;
 
-    align-items: center;
-    justify-content: center;
+    z-index: 100002;
 
-    transition:
-        background 0.3s ease,
-        border-color 0.3s ease,
-        color 0.3s ease;
+    flex-shrink: 0;
 }
 
-.menu-toggle:hover {
-
-    background:
-        rgba(225,6,32,0.12);
-
-    border-color:
-        var(--rojo);
-
-    color:
-        var(--rojo);
+.menu-movil:hover {
+    color: var(--rojo);
 }
 
 
@@ -387,11 +353,11 @@ select {
 
     z-index: 10;
 
-    text-align: center;
-
-    max-width: 900px;
+    width: min(900px, 100%);
 
     padding: 0 20px;
+
+    text-align: center;
 
     margin-top: -40px;
 
@@ -419,9 +385,7 @@ select {
 }
 
 
-/* =========================================================
-   ETIQUETA HERO
-========================================================= */
+/* ETIQUETA */
 
 .etiqueta-hero {
 
@@ -437,9 +401,7 @@ select {
 }
 
 
-/* =========================================================
-   TÍTULO HERO
-========================================================= */
+/* TITULO */
 
 .titulo-hero {
 
@@ -465,10 +427,10 @@ select {
     display: block;
 
     width: 80px;
+
     height: 4px;
 
-    margin:
-        25px auto 0;
+    margin: 25px auto 0;
 
     background:
         linear-gradient(
@@ -479,9 +441,7 @@ select {
 }
 
 
-/* =========================================================
-   SUBTÍTULO
-========================================================= */
+/* SUBTITULO */
 
 .subtitulo {
 
@@ -499,59 +459,28 @@ select {
 
 
 /* =========================================================
-   LEMA
-========================================================= */
-
-.lema-centro {
-
-    position: relative;
-
-    z-index: 10;
-
-    text-align: center;
-
-    margin-bottom: 5px;
-}
-
-.lema-centro p {
-
-    color:
-        rgba(255,255,255,0.75);
-
-    font-family:
-        'Bebas Neue',
-        sans-serif;
-
-    font-size:
-        clamp(1rem, 2vw, 1.5rem);
-
-    letter-spacing: 5px;
-
-    text-shadow:
-        0 3px 15px rgba(0,0,0,0.8);
-}
-
-
-/* =========================================================
    SCROLL
 ========================================================= */
 
 .scroll-indicator {
 
-    margin-bottom: 20px;
+    position: absolute;
+
+    bottom: 20px;
 
     z-index: 10;
 
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 .mouse {
 
     width: 24px;
+
     height: 40px;
 
     border:
-        2px solid #ffffff;
+        2px solid white;
 
     border-radius: 20px;
 
@@ -565,10 +494,10 @@ select {
 .rueda {
 
     width: 4px;
+
     height: 8px;
 
-    background:
-        var(--rojo);
+    background: var(--rojo);
 
     border-radius: 2px;
 
@@ -600,7 +529,7 @@ select {
    MAIN
 ========================================================= */
 
-main.contacto {
+main {
 
     width: 100%;
 
@@ -615,223 +544,105 @@ main.contacto {
         );
 }
 
+.contacto {
+
+    width: min(1350px, 100%);
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+/* TITULO */
+
+.contacto h2 {
+
+    font-family:
+        'Archivo Black',
+        'Arial Black',
+        sans-serif;
+
+    font-size:
+        clamp(2.3rem, 5vw, 4rem);
+
+    line-height: 1.05;
+}
+
+.contacto h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 60px;
+
+    height: 3px;
+
+    margin: 22px auto 0;
+
+    background: var(--rojo);
+}
+
+
+/* DESCRIPCIÓN */
+
+.descripcion-contacto {
+
+    width: min(750px, 100%);
+
+    margin: 25px auto 65px;
+
+    color: var(--gris-claro);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
 
 /* =========================================================
-   SECCIÓN CONTACTO
+   GRID CONTACTO
 ========================================================= */
 
-.contacto-seccion {
+.contacto-grid {
 
-    width:
-        min(1300px, 100%);
+    width: min(1250px, 100%);
 
     margin: auto;
 
     display: grid;
 
     grid-template-columns:
-        0.9fr 1.1fr;
+        repeat(3, 1fr);
 
-    gap: 80px;
-
-    align-items: center;
+    gap: 25px;
 }
 
 
 /* =========================================================
-   INFORMACIÓN
+   TARJETAS
 ========================================================= */
 
-.contacto-info {
-    padding: 20px;
-}
+.contacto-card {
 
-.seccion-etiqueta {
+    min-height: 310px;
 
-    display: inline-block;
-
-    margin-bottom: 15px;
-
-    color:
-        var(--rojo);
-
-    font-family:
-        'Bebas Neue',
-        sans-serif;
-
-    font-size: 22px;
-
-    letter-spacing: 4px;
-}
-
-.contacto-info h2 {
-
-    font-family:
-        'Archivo Black',
-        sans-serif;
-
-    font-size:
-        clamp(2.3rem, 5vw, 4rem);
-
-    line-height: 1;
-
-    color:
-        var(--blanco);
-
-    margin-bottom: 25px;
-}
-
-.contacto-info h2::after {
-
-    content: "";
-
-    display: block;
-
-    width: 55px;
-    height: 3px;
-
-    margin-top: 18px;
-
-    background:
-        var(--rojo);
-}
-
-.texto-contacto {
-
-    color:
-        var(--gris-claro);
-
-    font-family:
-        'Manrope',
-        sans-serif;
-
-    font-size: 16px;
-
-    line-height: 1.8;
-
-    max-width: 600px;
-}
-
-
-/* =========================================================
-   DATOS
-========================================================= */
-
-.datos-contacto {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 20px;
-
-    margin-top: 40px;
-}
-
-.dato {
+    padding: 40px 30px;
 
     display: flex;
 
-    gap: 15px;
+    flex-direction: column;
 
-    align-items: flex-start;
+    align-items: center;
 
-    padding: 18px;
+    text-align: center;
 
     background:
         linear-gradient(
             145deg,
-            #181818,
+            #1b1b1b,
             #101010
-        );
-
-    border:
-        1px solid var(--borde);
-
-    border-radius: 12px;
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
-}
-
-.dato:hover {
-
-    transform:
-        translateY(-5px);
-
-    border-color:
-        rgba(225,6,32,0.5);
-}
-
-.dato-icono {
-
-    width: 42px;
-    height: 42px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-
-    background:
-        rgba(225,6,32,0.12);
-
-    color:
-        var(--rojo);
-
-    font-size: 16px;
-}
-
-.dato h3 {
-
-    margin-bottom: 7px;
-
-    color:
-        var(--blanco);
-
-    font-family:
-        'Poppins',
-        sans-serif;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
-}
-
-.dato p {
-
-    color:
-        var(--gris);
-
-    font-family:
-        'Manrope',
-        sans-serif;
-
-    font-size: 12px;
-
-    line-height: 1.6;
-}
-
-
-/* =========================================================
-   FORMULARIO
-========================================================= */
-
-.formulario-contacto {
-
-    padding: 45px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #1a1a1a,
-            #0e0e0e
         );
 
     border:
@@ -840,230 +651,188 @@ main.contacto {
     border-radius: 20px;
 
     box-shadow:
-        0 20px 50px rgba(0,0,0,0.45);
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-.formulario-contacto::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 3px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--rojo),
-            var(--rojo-brillante)
-        );
-}
-
-.formulario-header {
-    margin-bottom: 35px;
-}
-
-.formulario-etiqueta {
-
-    color:
-        var(--rojo);
-
-    font-family:
-        'Bebas Neue',
-        sans-serif;
-
-    font-size: 20px;
-
-    letter-spacing: 3px;
-}
-
-.formulario-header h2 {
-
-    margin-top: 8px;
-
-    color:
-        var(--blanco);
-
-    font-family:
-        'Archivo Black',
-        sans-serif;
-
-    font-size: 32px;
-}
-
-.formulario-header h2::after {
-
-    content: "";
-
-    display: block;
-
-    width: 45px;
-    height: 3px;
-
-    margin-top: 14px;
-
-    background:
-        var(--rojo);
-}
-
-
-/* =========================================================
-   CAMPOS
-========================================================= */
-
-.campo {
-    margin-bottom: 22px;
-}
-
-.campo label {
-
-    display: block;
-
-    margin-bottom: 9px;
-
-    color:
-        var(--gris-claro);
-
-    font-family:
-        'Poppins',
-        sans-serif;
-
-    font-size: 12px;
-
-    font-weight: 600;
-
-    letter-spacing: 0.7px;
-}
-
-.campo input,
-.campo textarea {
-
-    width: 100%;
-
-    padding:
-        14px 16px;
-
-    background:
-        #090909;
-
-    color:
-        var(--blanco);
-
-    border:
-        1px solid rgba(255,255,255,0.1);
-
-    border-radius: 9px;
-
-    outline: none;
-
-    font-family:
-        'Manrope',
-        sans-serif;
-
-    font-size: 14px;
+        0 12px 35px rgba(0,0,0,0.35);
 
     transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
-.campo input {
+.contacto-card:hover {
 
-    height: 50px;
-}
-
-.campo textarea {
-
-    min-height: 145px;
-
-    resize: vertical;
-}
-
-.campo input::placeholder,
-.campo textarea::placeholder {
-
-    color:
-        #666;
-}
-
-.campo input:focus,
-.campo textarea:focus {
+    transform:
+        translateY(-10px);
 
     border-color:
-        var(--rojo);
-
-    background:
-        #0c0c0c;
+        var(--borde-hover);
 
     box-shadow:
-        0 0 0 3px
-        rgba(225,6,32,0.1);
+        0 20px 45px rgba(0,0,0,0.5),
+        0 0 25px rgba(225,6,32,0.08);
 }
 
 
 /* =========================================================
-   BOTÓN
+   ICONOS
 ========================================================= */
 
-.formulario-contacto button {
+.contacto-icono {
 
-    width: 100%;
+    width: 70px;
 
-    padding:
-        15px 25px;
+    height: 70px;
 
-    border: none;
+    display: flex;
 
-    border-radius: 30px;
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 50%;
 
     background:
-        linear-gradient(
-            90deg,
-            var(--rojo),
-            #ff3b30
-        );
+        rgba(225,6,32,0.10);
 
-    color:
-        var(--blanco);
+    border:
+        1px solid rgba(225,6,32,0.25);
 
-    font-family:
-        'Poppins',
-        sans-serif;
+    color: var(--rojo);
 
-    font-size: 14px;
-
-    font-weight: 600;
-
-    letter-spacing: 0.5px;
-
-    cursor: pointer;
+    font-size: 27px;
 
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease;
+        background 0.3s ease;
 }
 
-.formulario-contacto button i {
-    margin-left: 8px;
-}
-
-.formulario-contacto button:hover {
+.contacto-card:hover .contacto-icono {
 
     transform:
-        translateY(-3px);
+        scale(1.08);
 
-    box-shadow:
-        0 12px 30px
-        rgba(225,6,32,0.3);
+    background:
+        rgba(225,6,32,0.18);
+}
+
+
+/* =========================================================
+   TEXTO TARJETAS
+========================================================= */
+
+.contacto-card h3 {
+
+    margin-bottom: 15px;
+
+    color: white;
+
+    font-family:
+        'Archivo Black',
+        'Arial Black',
+        sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.3;
+}
+
+.contacto-card p {
+
+    margin-bottom: 20px;
+
+    color: var(--gris);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.contacto-card > a {
+
+    margin-top: 5px;
+
+    color: var(--rojo);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.contacto-card > a:hover {
+
+    color: #ff4b4b;
+
+    transform:
+        translateY(-2px);
+}
+
+.contacto-card strong {
+
+    color: #d5d5d5;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MINI REDES
+========================================================= */
+
+.mini-redes {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: auto;
+}
+
+.mini-redes a {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    border-radius: 50%;
+
+    background: #111;
+
+    color: white;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.mini-redes a:hover {
+
+    transform:
+        translateY(-4px);
+
+    color: var(--rojo);
+
+    border-color:
+        var(--rojo);
 }
 
 
@@ -1088,23 +857,14 @@ footer {
     border-top:
         1px solid rgba(255,255,255,0.08);
 
-    color:
-        var(--blanco);
-
-    text-align:
-        center;
-
-    font-family:
-        'Manrope',
-        sans-serif;
+    text-align: center;
 }
 
 
-/* =========================================================
-   REDES
-========================================================= */
+/* REDES */
 
 .redes-sociales {
+
     margin-bottom: 55px;
 }
 
@@ -1126,7 +886,6 @@ footer {
     display: flex;
 
     justify-content: center;
-    align-items: center;
 
     gap: 15px;
 }
@@ -1134,21 +893,21 @@ footer {
 .iconos-redes a {
 
     width: 48px;
+
     height: 48px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     border:
-        1px solid
-        rgba(255,255,255,0.15);
+        1px solid rgba(255,255,255,0.15);
 
     border-radius: 50%;
 
-    background:
-        #111111;
+    background: #111;
 
     transition:
         transform 0.3s ease,
@@ -1164,13 +923,13 @@ footer {
     border-color:
         var(--rojo);
 
-    background:
-        #181818;
+    background: #181818;
 }
 
-.iconos-redes a img {
+.iconos-redes img {
 
     width: 25px;
+
     height: 25px;
 
     object-fit: contain;
@@ -1179,20 +938,15 @@ footer {
 }
 
 
-/* =========================================================
-   FOOTER INFO
-========================================================= */
+/* FOOTER INFO */
 
 .footer-info {
 
-    width:
-        min(1250px, 100%);
+    width: min(1250px, 100%);
 
-    margin:
-        0 auto;
+    margin: auto;
 
-    padding:
-        45px 0;
+    padding: 45px 0;
 
     display: grid;
 
@@ -1201,24 +955,18 @@ footer {
 
     gap: 60px;
 
-    text-align:
-        left;
+    text-align: left;
 
     border-top:
-        1px solid
-        rgba(255,255,255,0.07);
+        1px solid rgba(255,255,255,0.07);
 
     border-bottom:
-        1px solid
-        rgba(255,255,255,0.07);
+        1px solid rgba(255,255,255,0.07);
 }
 
 .footer-info h4 {
 
     margin-bottom: 22px;
-
-    color:
-        var(--blanco);
 
     font-family:
         'Archivo Black',
@@ -1236,296 +984,325 @@ footer {
     display: block;
 
     width: 30px;
+
     height: 2px;
 
     margin-top: 10px;
 
-    background:
-        var(--rojo);
+    background: var(--rojo);
 }
 
 .footer-info ul {
 
     list-style: none;
-
-    padding: 0;
 }
 
-.footer-info ul li {
+.footer-info li {
 
     margin-bottom: 12px;
 
-    color:
-        #888;
-
-    font-family:
-        'Manrope',
-        sans-serif;
+    color: #888;
 
     font-size: 13px;
 
     line-height: 1.6;
 }
 
-.footer-info ul li strong {
+.footer-info li strong {
+
     color: #d5d5d5;
 }
 
-.footer-info ul li a {
+.footer-info li a {
 
-    color:
-        #888;
+    color: #888;
 
     transition:
         color 0.3s ease;
 }
 
-.footer-info ul li a:hover {
+.footer-info li a:hover {
+
     color: var(--rojo);
 }
 
 
-/* =========================================================
-   COPYRIGHT
-========================================================= */
+/* COPYRIGHT */
 
 .copyright {
 
     padding-top: 25px;
-
-    text-align:
-        center;
 }
 
 .copyright p {
 
-    color:
-        #555;
-
-    font-family:
-        'Manrope',
-        sans-serif;
+    color: #555;
 
     font-size: 12px;
 }
 
 
 /* =========================================================
-   TABLET / PANTALLAS MEDIANAS
-   MENÚ HAMBURGUESA
+   TABLETS
 ========================================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
 
     .top-bar {
 
-        min-height: 80px;
-
         padding:
-            15px 25px;
+            0 3%;
     }
 
-    /*
-       IMPORTANTE:
-       A partir de aquí desaparece el menú gigante
-       y aparece el botón hamburguesa.
-    */
+    .navegacion ul {
 
-    .menu-toggle {
-
-        display: flex;
-
-        order: 2;
+        gap: 12px;
     }
 
-    .logo {
-        order: 1;
+    .navegacion ul li a {
+
+        font-size: 0.62rem;
+
+        letter-spacing: 0.2px;
     }
 
     .top-icons {
-        order: 3;
+
+        gap: 12px;
     }
+
+    .contacto-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   TABLETS + CELULARES
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .top-bar {
+
+        min-height: 65px;
+
+        height: 65px;
+
+        padding: 0 16px;
+
+        z-index: 100000;
+    }
+
+    .logo {
+
+        font-size: 1rem;
+
+        white-space: nowrap;
+    }
+
+
+    /* OCULTAR NAV NORMAL */
 
     .navegacion {
 
-        position: absolute;
-
-        top: 100%;
-
-        left: 0;
-
-        width: 100%;
-
-        max-height: 0;
-
-        overflow: hidden;
-
-        opacity: 0;
-
-        visibility: hidden;
-
-        background:
-            rgba(5,5,5,0.97);
-
-        backdrop-filter:
-            blur(15px);
-
-        border-bottom:
-            1px solid
-            rgba(255,255,255,0.08);
-
-        transition:
-            max-height 0.4s ease,
-            opacity 0.3s ease,
-            visibility 0.3s ease;
+        display: none !important;
     }
 
-    .navegacion.menu-abierto {
+
+    /* OCULTAR ICONOS */
+
+    .top-icons {
+
+        display: none !important;
+    }
+
+
+    /* MOSTRAR HAMBURGUESA */
+
+    .menu-movil {
+
+        display: flex !important;
+    }
+
+
+    /* =====================================================
+       MENÚ ABIERTO
+    ====================================================== */
+
+    .navegacion.activo {
+
+        display: block !important;
+
+        position: fixed !important;
+
+        top: 70px;
+
+        left: 10px;
+
+        right: 10px;
+
+        width: auto;
 
         max-height:
             calc(100vh - 80px);
 
         overflow-y: auto;
 
-        opacity: 1;
+        padding: 8px;
 
-        visibility: visible;
+        background:
+            rgba(10,10,10,0.98);
+
+        border:
+            1px solid rgba(255,255,255,0.12);
+
+        border-radius: 14px;
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,0.8);
+
+        backdrop-filter:
+            blur(15px);
+
+        z-index: 100001;
     }
 
-    .navegacion ul {
 
-        width: 100%;
+    .navegacion.activo ul {
 
-        display: flex;
+        display: flex !important;
 
         flex-direction: column;
 
+        width: 100%;
+
         gap: 0;
 
-        padding:
-            10px 20px 20px;
+        margin: 0;
+
+        padding: 0;
+
+        list-style: none;
     }
 
-    .navegacion ul li {
+
+    .navegacion.activo ul li {
+
+        display: block;
 
         width: 100%;
+
+        margin: 0;
+
+        padding: 0;
     }
 
-    .navegacion ul li a {
+
+    .navegacion.activo ul li a {
+
+        display: block;
 
         width: 100%;
 
-        padding:
-            16px 15px;
+        padding: 12px 10px;
 
-        font-size:
-            0.78rem;
+        color: #c7c7c7;
 
-        text-align:
-            center;
+        font-family:
+            'Poppins',
+            sans-serif;
+
+        font-size: 0.75rem;
+
+        font-weight: 600;
+
+        line-height: 1.2;
 
         border-bottom:
-            1px solid
-            rgba(255,255,255,0.06);
+            1px solid rgba(255,255,255,0.07);
+
+        transition:
+            color 0.2s ease,
+            background 0.2s ease;
     }
 
-    .navegacion ul li a.activo::after {
 
-        display: none;
+    .navegacion.activo ul li:last-child a {
+
+        border-bottom: none;
     }
 
-    .navegacion ul li a.activo {
 
-        color:
-            var(--rojo);
+    .navegacion.activo ul li a:hover {
+
+        color: white;
 
         background:
-            rgba(225,6,32,0.06);
-
-        border-radius:
-            8px;
+            rgba(255,255,255,0.05);
     }
 
-    .contacto-seccion {
 
-        grid-template-columns:
-            1fr;
+    /* HERO */
 
-        gap: 50px;
+    .contenido-centro {
+
+        margin-top: -20px;
     }
 
-    .contacto-info {
+    .titulo-hero {
 
-        text-align:
-            center;
+        font-size:
+            clamp(3rem, 14vw, 4.5rem);
     }
 
-    .texto-contacto {
 
-        margin-left:
-            auto;
+    /* CONTACTO */
 
-        margin-right:
-            auto;
-    }
-
-    .contacto-info h2::after {
-
-        margin-left:
-            auto;
-
-        margin-right:
-            auto;
-    }
-
-    .formulario-contacto {
-
-        max-width:
-            750px;
-
-        width:
-            100%;
-
-        margin:
-            auto;
-    }
-}
-
-
-/* =========================================================
-   TABLET PEQUEÑA
-========================================================= */
-
-@media (max-width: 850px) {
-
-    .top-bar {
+    main {
 
         padding:
-            15px 20px;
+            70px 20px 80px;
     }
 
-    .top-icons {
-
-        gap: 15px;
-    }
-
-    .contacto-seccion {
-
-        gap: 40px;
-    }
-
-    .datos-contacto {
+    .contacto-grid {
 
         grid-template-columns:
             1fr 1fr;
     }
+
+
+    /* FOOTER */
 
     .footer-info {
 
         grid-template-columns:
-            1fr 1fr;
+            1fr;
 
-        gap: 40px;
+        text-align: center;
+
+        gap: 35px;
+    }
+
+    .footer-info h4::after {
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .iconos-redes {
+
+        gap: 10px;
+    }
+
+    .iconos-redes a {
+
+        width: 42px;
+
+        height: 42px;
     }
 }
 
@@ -1536,70 +1313,49 @@ footer {
 
 @media (max-width: 600px) {
 
-    .banner-portada {
-
-        height:
-            800px;
-
-        min-height:
-            800px;
-    }
-
     .top-bar {
 
-        min-height:
-            70px;
+        min-height: 60px;
+
+        height: 60px;
 
         padding:
-            12px 15px;
+            0 12px;
     }
 
     .logo {
 
-        font-size:
-            1.35rem;
+        font-size: 0.9rem;
     }
 
-    .menu-toggle {
+    .menu-movil {
 
-        width:
-            42px;
+        width: 38px;
 
-        height:
-            42px;
+        height: 38px;
 
-        font-size:
-            18px;
+        font-size: 21px;
     }
 
-    .top-icons {
 
-        gap:
-            12px;
-    }
+    .navegacion.activo {
 
-    .icon-link {
+        top: 65px;
 
-        font-size:
-            1rem;
-    }
+        left: 8px;
 
-    .navegacion.menu-abierto {
+        right: 8px;
 
         max-height:
-            calc(100vh - 70px);
+            calc(100vh - 75px);
+
+        padding: 7px;
     }
 
-    .navegacion ul {
+    .navegacion.activo ul li a {
 
         padding:
-            8px 15px 20px;
-    }
-
-    .navegacion ul li a {
-
-        padding:
-            15px 10px;
+            11px 9px;
 
         font-size:
             0.72rem;
@@ -1608,396 +1364,135 @@ footer {
 
     /* HERO */
 
-    .contenido-centro {
+    .titulo-hero {
 
-        margin-top:
-            -20px;
+        font-size: 3.2rem;
 
-        padding:
-            0 18px;
+        letter-spacing: 2px;
     }
 
     .etiqueta-hero {
 
-        font-size:
-            11px;
+        font-size: 11px;
 
-        letter-spacing:
-            3px;
-    }
-
-    .titulo-hero {
-
-        font-size:
-            clamp(
-                2.8rem,
-                15vw,
-                4.5rem
-            );
-
-        letter-spacing:
-            2px;
-    }
-
-    .titulo-hero::after {
-
-        width:
-            60px;
-
-        height:
-            3px;
-
-        margin-top:
-            20px;
+        letter-spacing: 3px;
     }
 
     .subtitulo {
 
-        font-size:
-            13px;
-
-        line-height:
-            1.6;
+        font-size: 13px;
     }
 
-    .lema-centro {
+
+    /* CONTACTO */
+
+    .contacto h2 {
+
+        font-size: 2.2rem;
+    }
+
+    .descripcion-contacto {
+
+        font-size: 14px;
+
+        margin-bottom: 45px;
+    }
+
+    .contacto-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .contacto-card {
+
+        min-height: 290px;
 
         padding:
-            0 15px;
-    }
-
-    .lema-centro p {
-
-        font-size:
-            12px;
-
-        letter-spacing:
-            3px;
-    }
-
-
-    /* MAIN */
-
-    main.contacto {
-
-        padding:
-            65px 18px 75px;
-    }
-
-    .contacto-info {
-
-        padding:
-            0;
-    }
-
-    .seccion-etiqueta {
-
-        font-size:
-            19px;
-
-        letter-spacing:
-            3px;
-    }
-
-    .contacto-info h2 {
-
-        font-size:
-            35px;
-    }
-
-    .texto-contacto {
-
-        font-size:
-            14px;
-
-        line-height:
-            1.7;
-    }
-
-
-    /* DATOS */
-
-    .datos-contacto {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            14px;
-
-        margin-top:
-            30px;
-    }
-
-    .dato {
-
-        padding:
-            16px;
-
-        text-align:
-            left;
-    }
-
-
-    /* FORMULARIO */
-
-    .formulario-contacto {
-
-        padding:
-            30px 20px;
-
-        border-radius:
-            16px;
-    }
-
-    .formulario-header {
-
-        margin-bottom:
-            28px;
-    }
-
-    .formulario-header h2 {
-
-        font-size:
-            26px;
-    }
-
-    .campo {
-
-        margin-bottom:
-            18px;
-    }
-
-    .campo input,
-    .campo textarea {
-
-        font-size:
-            13px;
-    }
-
-
-    /* FOOTER */
-
-    footer {
-
-        padding:
-            55px 20px 20px;
-    }
-
-    .redes-sociales {
-
-        margin-bottom:
-            40px;
-    }
-
-    .redes-sociales h3 {
-
-        font-size:
-            14px;
-
-        line-height:
-            1.5;
-    }
-
-    .iconos-redes {
-
-        gap:
-            9px;
-    }
-
-    .iconos-redes a {
-
-        width:
-            42px;
-
-        height:
-            42px;
-    }
-
-    .iconos-redes a img {
-
-        width:
-            22px;
-
-        height:
-            22px;
-    }
-
-    .footer-info {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            35px;
-
-        text-align:
-            center;
-    }
-
-    .footer-info h4::after {
-
-        margin-left:
-            auto;
-
-        margin-right:
-            auto;
-    }
-
-    .footer-info ul li {
-
-        font-size:
-            12px;
+            35px 25px;
     }
 }
 
 
 /* =========================================================
-   CELULARES MUY PEQUEÑOS
+   CELULARES PEQUEÑOS
 ========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 380px) {
 
     .top-bar {
 
+        min-height: 55px;
+
+        height: 55px;
+
         padding:
-            10px 12px;
+            0 10px;
     }
 
     .logo {
 
-        font-size:
-            1.2rem;
+        font-size: 0.82rem;
     }
 
-    .menu-toggle {
+    .menu-movil {
 
-        width:
-            40px;
+        width: 36px;
 
-        height:
-            40px;
+        height: 36px;
+
+        font-size: 20px;
     }
 
-    .top-icons {
+    .navegacion.activo {
 
-        gap:
-            9px;
+        top: 60px;
+
+        left: 6px;
+
+        right: 6px;
+
+        max-height:
+            calc(100vh - 68px);
+
+        padding: 6px;
     }
 
-    .icon-link {
-
-        font-size:
-            0.9rem;
-    }
-
-    .contenido-centro {
+    .navegacion.activo ul li a {
 
         padding:
-            0 15px;
+            10px 8px;
+
+        font-size:
+            0.68rem;
     }
 
     .titulo-hero {
 
-        font-size:
-            2.7rem;
-    }
-
-    .etiqueta-hero {
-
-        font-size:
-            10px;
-
-        letter-spacing:
-            2px;
-    }
-
-    .subtitulo {
-
-        font-size:
-            12px;
-    }
-
-    .formulario-contacto {
-
-        padding:
-            25px 16px;
-    }
-
-    .formulario-header h2 {
-
-        font-size:
-            24px;
-    }
-
-    .iconos-redes a {
-
-        width:
-            39px;
-
-        height:
-            39px;
+        font-size: 2.7rem;
     }
 }
 
 
 /* =========================================================
-   PANTALLAS MUY BAJAS
+   PC
 ========================================================= */
 
-@media (max-height: 650px) and (max-width: 1100px) {
+@media (min-width: 801px) {
 
-    .banner-portada {
+    .menu-movil {
 
-        min-height:
-            600px;
-
-        height:
-            100vh;
+        display: none !important;
     }
 
-    .navegacion ul li a {
+    .navegacion {
 
-        padding:
-            11px;
+        display: block !important;
     }
 
-    .contenido-centro {
+    .top-icons {
 
-        margin-top:
-            0;
-    }
-
-    .lema-centro p {
-
-        font-size:
-            11px;
-    }
-}
-
-
-/* =========================================================
-   REDUCIR ANIMACIONES
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior:
-            auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-
-        animation-duration:
-            0.01ms !important;
-
-        animation-iteration-count:
-            1 !important;
-
-        transition-duration:
-            0.01ms !important;
+        display: flex !important;
     }
 }
