@@ -197,7 +197,7 @@ img {
 
 /* =========================================================
    BOTÓN HAMBURGUESA
-   OCULTO EN PC
+   OCULTO COMPLETAMENTE EN PC
 ========================================================= */
 
 .menu-hamburguesa {
@@ -216,7 +216,11 @@ img {
 
     padding: 5px;
 
-    transition: 0.3s ease;
+    line-height: 1;
+
+    z-index: 1001;
+
+    transition: color 0.3s ease;
 }
 
 .menu-hamburguesa:hover {
@@ -263,7 +267,7 @@ img {
 .icon-link:hover {
     background: transparent;
 
-    border-color: transparent;
+    border: none;
 
     color: #e50914;
 
@@ -422,13 +426,11 @@ img {
 
     0% {
         transform: translateY(0);
-
         opacity: 1;
     }
 
     100% {
         transform: translateY(15px);
-
         opacity: 0;
     }
 }
@@ -691,7 +693,6 @@ main {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     margin-bottom: 35px;
@@ -923,7 +924,6 @@ footer {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1058,7 +1058,9 @@ footer {
     }
 
 
-    /* Barra */
+    /* =========================
+       BARRA SUPERIOR
+    ========================= */
 
     .top-bar {
         min-height: 80px;
@@ -1071,7 +1073,9 @@ footer {
     }
 
 
-    /* Hamburguesa */
+    /* =========================
+       HAMBURGUESA
+    ========================= */
 
     .menu-hamburguesa {
         display: block;
@@ -1082,7 +1086,9 @@ footer {
     }
 
 
-    /* Navegación cerrada */
+    /* =========================
+       NAVEGACIÓN CERRADA
+    ========================= */
 
     .navegacion {
         position: absolute;
@@ -1094,7 +1100,7 @@ footer {
 
         display: none;
 
-        padding: 20px 5%;
+        padding: 15px 5%;
 
         background: rgba(5, 5, 5, 0.98);
 
@@ -1102,16 +1108,21 @@ footer {
 
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-        z-index: 999;
+        z-index: 9999;
+
+        max-height: calc(100vh - 80px);
+
+        overflow-y: auto;
     }
 
 
-    /* Navegación abierta */
+    /* =========================
+       NAVEGACIÓN ABIERTA
+    ========================= */
 
     .navegacion.activo {
         display: block;
     }
-
 
     .navegacion ul {
         width: 100%;
@@ -1125,11 +1136,9 @@ footer {
         gap: 0;
     }
 
-
     .navegacion li {
         width: 100%;
     }
-
 
     .navegacion a {
         display: block;
@@ -1143,13 +1152,14 @@ footer {
         border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-
     .navegacion a.activo::after {
         display: none;
     }
 
 
-    /* Iconos */
+    /* =========================
+       ICONOS
+    ========================= */
 
     .top-icons {
         order: 3;
@@ -1164,14 +1174,18 @@ footer {
     }
 
 
-    /* Hero */
+    /* =========================
+       HERO
+    ========================= */
 
     .contenido-centro {
         padding-top: 50px;
     }
 
 
-    /* Empresa */
+    /* =========================
+       EMPRESA
+    ========================= */
 
     .bloque-empresa {
         grid-template-columns: 1fr;
@@ -1186,14 +1200,18 @@ footer {
     }
 
 
-    /* Misión / Visión */
+    /* =========================
+       MISIÓN / VISIÓN
+    ========================= */
 
     .mision-vision {
         grid-template-columns: 1fr;
     }
 
 
-    /* Footer */
+    /* =========================
+       FOOTER
+    ========================= */
 
     .footer-info {
         grid-template-columns: 1fr;
@@ -1214,32 +1232,38 @@ footer {
     }
 
 
-    /* Logo */
+    /* =========================
+       LOGO
+    ========================= */
 
     .logo {
         font-size: 20px;
     }
 
 
-    /* Hamburguesa */
+    /* =========================
+       HAMBURGUESA
+    ========================= */
 
     .menu-hamburguesa {
+        display: block;
+
         font-size: 23px;
     }
 
 
-    /* Iconos */
+    /* =========================
+       OCULTAR CARRITO Y OJO
+    ========================= */
 
     .top-icons {
-        gap: 12px;
-    }
-
-    .icon-link {
-        font-size: 17px;
+        display: none;
     }
 
 
-    /* Hero */
+    /* =========================
+       HERO
+    ========================= */
 
     .titulo-hero {
         font-size: 40px;
@@ -1252,14 +1276,18 @@ footer {
     }
 
 
-    /* Introducción */
+    /* =========================
+       INTRODUCCIÓN
+    ========================= */
 
     .introduccion {
         padding: 80px 0 60px;
     }
 
 
-    /* Empresa */
+    /* =========================
+       EMPRESA
+    ========================= */
 
     .empresa-texto {
         padding: 40px 0;
@@ -1270,14 +1298,18 @@ footer {
     }
 
 
-    /* Tarjetas */
+    /* =========================
+       TARJETAS
+    ========================= */
 
     .tarjeta-info {
         padding: 35px 25px;
     }
 
 
-    /* Valores */
+    /* =========================
+       VALORES
+    ========================= */
 
     .valores {
         margin: 80px auto;
@@ -1288,14 +1320,18 @@ footer {
     }
 
 
-    /* Frase */
+    /* =========================
+       FRASE
+    ========================= */
 
     .frase-contenido h2 {
         font-size: 35px;
     }
 
 
-    /* Redes */
+    /* =========================
+       REDES
+    ========================= */
 
     .iconos-redes {
         gap: 8px;
@@ -1315,14 +1351,6 @@ footer {
 
     .menu-hamburguesa {
         font-size: 21px;
-    }
-
-    .top-icons {
-        gap: 9px;
-    }
-
-    .icon-link {
-        font-size: 16px;
     }
 
     .titulo-hero {
