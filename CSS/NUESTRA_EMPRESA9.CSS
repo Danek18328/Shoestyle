@@ -45,10 +45,13 @@ img {
 
 .banner-portada {
     position: relative;
+
     width: 100%;
     height: 720px;
     min-height: 650px;
+
     overflow: hidden;
+
     display: flex;
     flex-direction: column;
 }
@@ -61,12 +64,14 @@ img {
 .video-container {
     position: absolute;
     inset: 0;
+
     z-index: -2;
 }
 
 .video-fondo {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
 }
 
@@ -92,6 +97,7 @@ img {
 
 .top-bar {
     position: relative;
+
     z-index: 100;
 
     width: 100%;
@@ -106,6 +112,7 @@ img {
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 
     background: rgba(0, 0, 0, 0.25);
+
     backdrop-filter: blur(10px);
 }
 
@@ -123,8 +130,6 @@ img {
     letter-spacing: 2px;
 
     white-space: nowrap;
-
-    z-index: 102;
 }
 
 .logo-rojo {
@@ -146,10 +151,6 @@ img {
     list-style: none;
 }
 
-.navegacion li {
-    position: relative;
-}
-
 .navegacion a {
     position: relative;
 
@@ -157,9 +158,10 @@ img {
 
     color: #b3b3b3;
 
-    font-size: 0.85rem;
-
     font-family: 'Poppins', sans-serif;
+
+    /* TAMAÑO ORIGINAL */
+    font-size: 0.85rem;
 
     font-weight: 600;
 
@@ -194,6 +196,35 @@ img {
 
 
 /* =========================================================
+   BOTÓN HAMBURGUESA
+   OCULTO EN PC
+========================================================= */
+
+.menu-hamburguesa {
+    display: none;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    padding: 5px;
+
+    transition: 0.3s ease;
+}
+
+.menu-hamburguesa:hover {
+    color: #e50914;
+}
+
+
+/* =========================================================
    ICONOS SUPERIORES
 ========================================================= */
 
@@ -205,97 +236,38 @@ img {
     gap: 20px;
 }
 
+
+/* SIN CÍRCULO */
+
 .icon-link {
-    width: 38px;
-    height: 38px;
+    width: auto;
+    height: auto;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 0;
 
-    border-radius: 50%;
+    background: transparent;
 
     color: #ffffff;
+
+    font-size: 20px;
 
     transition: 0.3s ease;
 }
 
 .icon-link:hover {
-    background: #e50914;
+    background: transparent;
 
-    border-color: #e50914;
+    border-color: transparent;
+
+    color: #e50914;
 
     transform: translateY(-3px);
-}
-
-
-/* =========================================================
-   BOTÓN HAMBURGUESA
-========================================================= */
-
-.menu-toggle {
-    display: none;
-
-    width: 42px;
-    height: 42px;
-
-    padding: 0;
-
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-    border-radius: 8px;
-
-    background: rgba(0, 0, 0, 0.25);
-
-    color: #ffffff;
-
-    cursor: pointer;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-direction: column;
-
-    gap: 5px;
-
-    transition: 0.3s ease;
-
-    z-index: 102;
-}
-
-.menu-toggle span {
-    display: block;
-
-    width: 21px;
-    height: 2px;
-
-    background: #ffffff;
-
-    border-radius: 3px;
-
-    transition: 0.3s ease;
-}
-
-.menu-toggle:hover {
-    border-color: #e50914;
-}
-
-
-/* Animación hamburguesa */
-
-.menu-toggle.active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
 }
 
 
@@ -450,14 +422,15 @@ img {
 
     0% {
         transform: translateY(0);
+
         opacity: 1;
     }
 
     100% {
         transform: translateY(15px);
+
         opacity: 0;
     }
-
 }
 
 
@@ -718,6 +691,7 @@ main {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     margin-bottom: 35px;
@@ -1054,7 +1028,7 @@ footer {
 
 
 /* =========================================================
-   RESPONSIVE - PORTÁTILES PEQUEÑOS / TABLETS
+   RESPONSIVE — PORTÁTILES
 ========================================================= */
 
 @media (max-width: 1100px) {
@@ -1070,12 +1044,11 @@ footer {
     .valores-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
 }
 
 
 /* =========================================================
-   RESPONSIVE - TABLETS
+   RESPONSIVE — TABLETS
 ========================================================= */
 
 @media (max-width: 850px) {
@@ -1084,59 +1057,61 @@ footer {
         height: 650px;
     }
 
+
+    /* Barra */
+
     .top-bar {
-        min-height: 75px;
+        min-height: 80px;
 
         padding: 15px 5%;
+
+        flex-wrap: nowrap;
 
         gap: 15px;
     }
 
-    /* Mostrar hamburguesa */
 
-    .menu-toggle {
-        display: flex;
+    /* Hamburguesa */
+
+    .menu-hamburguesa {
+        display: block;
+
+        order: 2;
+
+        margin-left: auto;
     }
 
-    /* Ocultar navegación inicialmente */
+
+    /* Navegación cerrada */
 
     .navegacion {
         position: absolute;
 
-        top: 75px;
+        top: 100%;
         left: 0;
 
         width: 100%;
 
-        max-height: 0;
+        display: none;
 
-        overflow: hidden;
+        padding: 20px 5%;
 
-        opacity: 0;
-
-        visibility: hidden;
-
-        background: rgba(5, 5, 5, 0.97);
+        background: rgba(5, 5, 5, 0.98);
 
         backdrop-filter: blur(15px);
 
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-        transition:
-            max-height 0.4s ease,
-            opacity 0.3s ease,
-            visibility 0.3s ease;
+        z-index: 999;
     }
+
 
     /* Navegación abierta */
 
-    .navegacion.active {
-        max-height: 500px;
-
-        opacity: 1;
-
-        visibility: visible;
+    .navegacion.activo {
+        display: block;
     }
+
 
     .navegacion ul {
         width: 100%;
@@ -1148,51 +1123,55 @@ footer {
         align-items: stretch;
 
         gap: 0;
-
-        padding: 10px 5%;
     }
+
 
     .navegacion li {
         width: 100%;
     }
+
 
     .navegacion a {
         display: block;
 
         width: 100%;
 
-        padding: 14px 10px;
+        padding: 14px 5px;
 
-        font-size: 13px;
-
-        letter-spacing: 0.5px;
+        font-size: 14px;
 
         border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .navegacion a:hover {
-        background: rgba(229, 9, 20, 0.08);
-
-        color: #ffffff;
-    }
 
     .navegacion a.activo::after {
-        left: 10px;
-
-        bottom: 6px;
-
-        width: 30px;
+        display: none;
     }
+
+
+    /* Iconos */
 
     .top-icons {
-        margin-left: auto;
+        order: 3;
 
-        gap: 10px;
+        gap: 15px;
+
+        margin-left: 0;
     }
+
+    .icon-link {
+        font-size: 18px;
+    }
+
+
+    /* Hero */
 
     .contenido-centro {
         padding-top: 50px;
     }
+
+
+    /* Empresa */
 
     .bloque-empresa {
         grid-template-columns: 1fr;
@@ -1206,64 +1185,61 @@ footer {
         min-height: 400px;
     }
 
+
+    /* Misión / Visión */
+
     .mision-vision {
         grid-template-columns: 1fr;
     }
+
+
+    /* Footer */
 
     .footer-info {
         grid-template-columns: 1fr;
 
         gap: 40px;
     }
-
 }
 
 
 /* =========================================================
-   RESPONSIVE - CELULARES
+   RESPONSIVE — CELULARES
 ========================================================= */
 
 @media (max-width: 600px) {
 
     .top-bar {
-        padding: 15px 4%;
+        padding: 15px 5%;
     }
+
+
+    /* Logo */
 
     .logo {
         font-size: 20px;
     }
 
-    .menu-toggle {
-        width: 38px;
-        height: 38px;
+
+    /* Hamburguesa */
+
+    .menu-hamburguesa {
+        font-size: 23px;
     }
 
+
+    /* Iconos */
+
     .top-icons {
-        gap: 8px;
+        gap: 12px;
     }
 
     .icon-link {
-        width: 34px;
-        height: 34px;
+        font-size: 17px;
     }
 
-    .icon-link i {
-        font-size: 13px;
-    }
 
-    .navegacion {
-        top: 68px;
-    }
-
-    .navegacion ul {
-        padding: 8px 4%;
-    }
-
-    .navegacion a {
-        font-size: 12px;
-
-        padding: 13px 8px;
-    }
+    /* Hero */
 
     .titulo-hero {
         font-size: 40px;
@@ -1275,17 +1251,15 @@ footer {
         font-size: 14px;
     }
 
+
+    /* Introducción */
+
     .introduccion {
         padding: 80px 0 60px;
     }
 
-    .introduccion h2 {
-        font-size: 28px;
-    }
 
-    .introduccion p {
-        font-size: 15px;
-    }
+    /* Empresa */
 
     .empresa-texto {
         padding: 40px 0;
@@ -1295,29 +1269,15 @@ footer {
         font-size: 27px;
     }
 
-    .empresa-texto p {
-        font-size: 14px;
-    }
 
-    .empresa-destacado {
-        min-height: 350px;
-    }
-
-    .destacado-contenido i {
-        font-size: 55px;
-    }
-
-    .destacado-contenido h3 {
-        font-size: 28px;
-    }
-
-    .destacado-contenido span {
-        font-size: 13px;
-    }
+    /* Tarjetas */
 
     .tarjeta-info {
         padding: 35px 25px;
     }
+
+
+    /* Valores */
 
     .valores {
         margin: 80px auto;
@@ -1327,33 +1287,24 @@ footer {
         grid-template-columns: 1fr;
     }
 
+
+    /* Frase */
+
     .frase-contenido h2 {
         font-size: 35px;
     }
 
-    .frase-contenido p {
-        font-size: 14px;
-    }
+
+    /* Redes */
 
     .iconos-redes {
         gap: 8px;
     }
-
-    .iconos-redes a {
-        width: 40px;
-        height: 40px;
-    }
-
-    .iconos-redes img {
-        width: 20px;
-        height: 20px;
-    }
-
 }
 
 
 /* =========================================================
-   RESPONSIVE - CELULARES MUY PEQUEÑOS
+   CELULARES MUY PEQUEÑOS
 ========================================================= */
 
 @media (max-width: 400px) {
@@ -1362,36 +1313,35 @@ footer {
         font-size: 18px;
     }
 
-    .top-icons {
-        display: none;
+    .menu-hamburguesa {
+        font-size: 21px;
     }
 
-    .menu-toggle {
-        margin-left: auto;
+    .top-icons {
+        gap: 9px;
+    }
+
+    .icon-link {
+        font-size: 16px;
     }
 
     .titulo-hero {
         font-size: 34px;
     }
 
-    .etiqueta-hero {
-        font-size: 11px;
-
-        letter-spacing: 3px;
+    .subtitulo {
+        font-size: 13px;
     }
 
-    .btn-rojo {
-        min-width: 170px;
-
-        padding: 13px 20px;
+    .navegacion a {
+        font-size: 13px;
     }
 
     .destacado-contenido h3 {
-        font-size: 24px;
-    }
-
-    .frase-contenido h2 {
         font-size: 30px;
     }
 
+    .destacado-contenido span {
+        font-size: 13px;
+    }
 }
