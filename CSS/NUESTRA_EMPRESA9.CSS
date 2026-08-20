@@ -143,11 +143,8 @@ img {
 
 .navegacion ul {
     display: flex;
-
     align-items: center;
-
     gap: 28px;
-
     list-style: none;
 }
 
@@ -196,8 +193,8 @@ img {
 
 
 /* =========================================================
-   BOTÓN HAMBURGUESA
-   OCULTO COMPLETAMENTE EN PC
+   HAMBURGUESA
+   OCULTA EN PC
 ========================================================= */
 
 .menu-hamburguesa {
@@ -215,10 +212,6 @@ img {
     cursor: pointer;
 
     padding: 5px;
-
-    line-height: 1;
-
-    z-index: 1001;
 
     transition: color 0.3s ease;
 }
@@ -240,9 +233,6 @@ img {
     gap: 20px;
 }
 
-
-/* SIN CÍRCULO */
-
 .icon-link {
     width: auto;
     height: auto;
@@ -253,7 +243,6 @@ img {
     justify-content: center;
 
     border: none;
-    border-radius: 0;
 
     background: transparent;
 
@@ -265,15 +254,10 @@ img {
 }
 
 .icon-link:hover {
-    background: transparent;
-
-    border: none;
-
     color: #e50914;
 
     transform: translateY(-3px);
 }
-
 
 /* =========================================================
    HERO
