@@ -10,14 +10,12 @@
 
     <title>Productos | SHOESTYLE</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="../CSS/PRODUCTOS5.CSS">
 
     <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- 4 FUENTES -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,15 +30,18 @@
 
 </head>
 
+
 <body>
 
 <div id="contenedor">
+
 
     <!-- =====================================================
          BANNER
     ====================================================== -->
 
     <header class="banner-portada">
+
 
         <div class="imagen-banner">
 
@@ -52,11 +53,13 @@
 
         </div>
 
+
         <!-- =================================================
              BARRA SUPERIOR
         ================================================== -->
 
         <div class="top-bar">
+
 
             <!-- LOGO -->
 
@@ -66,9 +69,27 @@
 
             </a>
 
-            <!-- MENÚ -->
 
-            <nav class="navegacion">
+            <!-- =================================================
+                 BOTÓN HAMBURGUESA
+            ================================================== -->
+
+            <button
+                class="menu-movil"
+                id="menuMovil"
+                aria-label="Abrir menú"
+                aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <!-- =================================================
+                 MENÚ
+            ================================================== -->
+
+            <nav class="navegacion" id="navegacion">
 
                 <ul>
 
@@ -124,7 +145,10 @@
 
             </nav>
 
-            <!-- ICONOS -->
+
+            <!-- =================================================
+                 ICONOS
+            ================================================== -->
 
             <div class="top-icons">
 
@@ -148,10 +172,12 @@
 
             </div>
 
+
         </div>
 
+
         <!-- =================================================
-             CONTENIDO DEL HERO
+             CONTENIDO HERO
         ================================================== -->
 
         <div class="contenido-centro">
@@ -182,12 +208,14 @@
 
         </div>
 
+
         <!-- =================================================
              LEMA
         ================================================== -->
 
         <div class="lema-centro">
         </div>
+
 
         <!-- =================================================
              SCROLL
@@ -203,7 +231,10 @@
 
         </div>
 
+
     </header>
+
+
 
     <!-- =====================================================
          CATÁLOGO
@@ -211,7 +242,6 @@
 
     <main id="catalogo" class="productos">
 
-        <!-- CABECERA -->
 
         <section class="encabezado-productos">
 
@@ -224,12 +254,10 @@
             </h2>
 
             <p>
-
                 Explora nuestra selección de zapatos.
                 Encuentra diferentes marcas, estilos,
                 colores y tallas para elegir el modelo
                 que más te guste.
-
             </p>
 
             <a
@@ -243,6 +271,8 @@
             </a>
 
         </section>
+
+
 
         <!-- =================================================
              PRODUCTOS
@@ -262,11 +292,8 @@
 
             ?>
 
-                <!-- TARJETA -->
-
                 <article class="card-producto">
 
-                    <!-- IMAGEN -->
 
                     <div class="imagen-producto">
 
@@ -281,69 +308,65 @@
 
                     </div>
 
-                    <!-- INFORMACIÓN -->
 
                     <div class="info-producto">
+
 
                         <h3>
                             <?= htmlspecialchars($fila['nombre']) ?>
                         </h3>
 
+
                         <div class="detalles-producto">
 
-                            <p>
 
+                            <p>
                                 <strong>Marca</strong>
 
                                 <span>
                                     <?= htmlspecialchars($fila['marca']) ?>
                                 </span>
-
                             </p>
 
-                            <p>
 
+                            <p>
                                 <strong>Talla</strong>
 
                                 <span>
                                     <?= htmlspecialchars($fila['talla']) ?>
                                 </span>
-
                             </p>
 
-                            <p>
 
+                            <p>
                                 <strong>Género</strong>
 
                                 <span>
                                     <?= htmlspecialchars($fila['genero']) ?>
                                 </span>
-
                             </p>
 
-                            <p>
 
+                            <p>
                                 <strong>Color</strong>
 
                                 <span>
                                     <?= htmlspecialchars($fila['color']) ?>
                                 </span>
-
                             </p>
 
-                            <p>
 
+                            <p>
                                 <strong>Tipo</strong>
 
                                 <span>
                                     <?= htmlspecialchars($fila['tipo']) ?>
                                 </span>
-
                             </p>
+
 
                         </div>
 
-                        <!-- PRECIO -->
 
                         <div class="precio">
 
@@ -356,7 +379,6 @@
 
                         </div>
 
-                        <!-- AGREGAR AL CARRITO -->
 
                         <form
                             action="../paginas/carrito.php"
@@ -374,6 +396,7 @@
 
                             <?php endforeach; ?>
 
+
                             <button type="submit">
 
                                 <i class="fa-solid fa-cart-shopping"></i>
@@ -382,11 +405,14 @@
 
                             </button>
 
+
                         </form>
+
 
                     </div>
 
                 </article>
+
 
             <?php
 
@@ -413,9 +439,13 @@
 
             <?php endif; ?>
 
+
         </section>
 
+
     </main>
+
+
 
     <!-- =====================================================
          FOOTER
@@ -423,7 +453,6 @@
 
     <footer>
 
-        <!-- REDES -->
 
         <div class="redes-sociales">
 
@@ -431,7 +460,9 @@
                 ENCUÉNTRANOS TAMBIÉN EN:
             </h3>
 
+
             <div class="iconos-redes">
+
 
                 <a
                     href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
@@ -443,6 +474,7 @@
 
                 </a>
 
+
                 <a href="#">
 
                     <img
@@ -450,6 +482,7 @@
                         alt="Instagram">
 
                 </a>
+
 
                 <a
                     href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
@@ -461,6 +494,7 @@
 
                 </a>
 
+
                 <a
                     href="https://x.com/shoestyle397157"
                     target="_blank">
@@ -470,6 +504,7 @@
                         alt="Twitter">
 
                 </a>
+
 
                 <a
                     href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
@@ -481,15 +516,15 @@
 
                 </a>
 
+
             </div>
 
         </div>
 
-        <!-- INFORMACIÓN -->
+
 
         <div class="footer-info">
 
-            <!-- AYUDA -->
 
             <div class="columna">
 
@@ -527,7 +562,6 @@
 
             </div>
 
-            <!-- SHOESTYLE -->
 
             <div class="columna">
 
@@ -562,7 +596,6 @@
 
             </div>
 
-            <!-- LEGAL -->
 
             <div class="columna">
 
@@ -573,7 +606,6 @@
                 <ul>
 
                     <li>
-
                         <a
                             href="../paginas/terminos.pdf"
                             target="_blank">
@@ -581,47 +613,44 @@
                             Términos y Condiciones
 
                         </a>
-
                     </li>
 
                     <li>
-
                         <a href="#">
                             Política de Privacidad
                         </a>
-
                     </li>
 
                     <li>
-
                         <a href="#">
                             Condiciones de Uso
                         </a>
-
                     </li>
 
                 </ul>
 
             </div>
 
+
         </div>
 
-        <!-- COPYRIGHT -->
 
         <div class="copyright">
 
             <p>
-
                 &copy; 2025 SHOESTYLE.
                 Todos los derechos reservados.
-
             </p>
 
         </div>
 
+
     </footer>
 
+
 </div>
+
+
 
 <!-- =====================================================
      JAVASCRIPT
@@ -629,16 +658,86 @@
 
 <script>
 
+const menuMovil =
+    document.getElementById("menuMovil");
+
+const navegacion =
+    document.getElementById("navegacion");
+
+
+if (menuMovil && navegacion) {
+
+    menuMovil.addEventListener("click", function () {
+
+        navegacion.classList.toggle("activo");
+
+        const abierto =
+            navegacion.classList.contains("activo");
+
+        menuMovil.setAttribute(
+            "aria-expanded",
+            abierto
+        );
+
+        const icono =
+            menuMovil.querySelector("i");
+
+        if (abierto) {
+
+            icono.classList.remove("fa-bars");
+            icono.classList.add("fa-xmark");
+
+        } else {
+
+            icono.classList.remove("fa-xmark");
+            icono.classList.add("fa-bars");
+
+        }
+
+    });
+
+
+    navegacion
+        .querySelectorAll("a")
+        .forEach(enlace => {
+
+            enlace.addEventListener("click", function () {
+
+                navegacion.classList.remove("activo");
+
+                menuMovil.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                const icono =
+                    menuMovil.querySelector("i");
+
+                icono.classList.remove("fa-xmark");
+                icono.classList.add("fa-bars");
+
+            });
+
+        });
+
+}
+
+
 document
     .querySelectorAll('a[href^="#"]')
     .forEach(enlace => {
 
         enlace.addEventListener("click", function(e) {
 
+            const href =
+                this.getAttribute("href");
+
+            if (href === "#") {
+                return;
+            }
+
             const destino =
-                document.querySelector(
-                    this.getAttribute("href")
-                );
+                document.querySelector(href);
 
             if (destino) {
 
@@ -655,6 +754,7 @@ document
     });
 
 </script>
+
 
 </body>
 </html>
