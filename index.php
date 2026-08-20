@@ -428,34 +428,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    const menuMovil = document.getElementById('menuMovil');
-    const navegacion = document.querySelector('.navegacion');
+    
+    const menuMovil = document.getElementById("menuMovil");
+const navegacion = document.querySelector(".navegacion");
 
-    menuMovil.addEventListener('click', () => {
-        navegacion.classList.toggle('activo');
+menuMovil.addEventListener("click", function () {
 
-        const icono = menuMovil.querySelector('i');
+    navegacion.classList.toggle("activo");
 
-        if (navegacion.classList.contains('activo')) {
-            icono.classList.remove('fa-bars');
-            icono.classList.add('fa-xmark');
-        } else {
-            icono.classList.remove('fa-xmark');
-            icono.classList.add('fa-bars');
-        }
-    });
+    const icono = menuMovil.querySelector("i");
 
-    // Cerrar menú al seleccionar una opción
-    document.querySelectorAll('.navegacion a').forEach(enlace => {
-        enlace.addEventListener('click', () => {
-            navegacion.classList.remove('activo');
+    if (navegacion.classList.contains("activo")) {
 
-            const icono = menuMovil.querySelector('i');
-            icono.classList.remove('fa-xmark');
-            icono.classList.add('fa-bars');
-        });
-    });
+        icono.classList.remove("fa-bars");
+        icono.classList.add("fa-xmark");
 
+    } else {
+
+        icono.classList.remove("fa-xmark");
+        icono.classList.add("fa-bars");
+
+    }
+
+});
+
+
+    
 </script>
 
 
