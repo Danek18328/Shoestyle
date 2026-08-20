@@ -1055,57 +1055,13 @@ footer {
    MENÚ RESPONSIVE
 ========================================================= */
 
-
-/* =========================================================
-   HAMBURGUESA
-   OCULTA POR DEFECTO
-========================================================= */
-
-.menu-hamburguesa {
+.menu-movil {
     display: none !important;
 }
 
 
 /* =========================================================
-   PC GRANDE
-   1201px EN ADELANTE
-========================================================= */
-
-@media (min-width: 1201px) {
-
-    .menu-hamburguesa {
-        display: none !important;
-    }
-
-    .navegacion {
-        display: block !important;
-    }
-
-    .navegacion ul {
-        display: flex;
-        align-items: center;
-        gap: 28px;
-    }
-
-    .navegacion ul li a {
-        /*
-         * TAMAÑO ORIGINAL
-         */
-        font-size: 0.85rem;
-        white-space: nowrap;
-    }
-
-    .top-icons {
-        display: flex !important;
-        align-items: center;
-        gap: 20px;
-    }
-}
-
-
-/* =========================================================
    PORTÁTILES
-   801px - 1200px
 ========================================================= */
 
 @media (min-width: 801px) and (max-width: 1200px) {
@@ -1114,137 +1070,77 @@ footer {
         padding: 0 3%;
     }
 
-
-    /* Logo */
-
     .logo {
         font-size: 1.2rem;
         flex-shrink: 0;
     }
 
-
-    /* Navegación */
-
-    .navegacion {
-        display: block !important;
-    }
-
     .navegacion ul {
-
-        display: flex;
-
-        align-items: center;
-
         gap: 12px;
     }
 
-
     .navegacion ul li a {
-
-        /*
-         * En portátil se reduce para
-         * evitar que el menú se corte.
-         */
-
-        font-size: 0.62rem;
-
-        letter-spacing: 0.2px;
-
+        font-size: 0.85rem;
+        letter-spacing: 0.7px;
         white-space: nowrap;
     }
 
-
-    /* Iconos */
-
     .top-icons {
-
-        display: flex !important;
-
-        align-items: center;
-
         gap: 12px;
-
         font-size: 1rem;
-
         flex-shrink: 0;
     }
 
-
     .icon-link {
         font-size: 0.95rem;
-    }
-
-
-    /* Hamburguesa */
-
-    .menu-hamburguesa {
-        display: none !important;
     }
 }
 
 
 /* =========================================================
    TABLETS + CELULARES
-   HASTA 800px
 ========================================================= */
 
 @media (max-width: 800px) {
 
-
-    /* =====================================================
-       BARRA SUPERIOR
-    ===================================================== */
-
     .top-bar {
-
         min-height: 65px;
-
         padding: 0 16px;
-
-        display: flex;
-
-        align-items: center;
-
         z-index: 100000;
     }
 
-
-    /* =====================================================
-       LOGO
-    ===================================================== */
-
     .logo {
-
         font-size: 1rem;
-
         white-space: nowrap;
-
-        flex-shrink: 0;
     }
 
 
     /* =====================================================
-       HAMBURGUESA
+       OCULTAR NAVEGACIÓN NORMAL
     ===================================================== */
 
-    .menu-hamburguesa {
+    .navegacion {
+        display: none !important;
+    }
 
+
+    /* =====================================================
+       MOSTRAR HAMBURGUESA
+    ===================================================== */
+
+    .menu-movil {
         display: flex !important;
 
         align-items: center;
-
         justify-content: center;
 
         width: 40px;
-
         height: 40px;
 
-        margin-left: auto;
-
+        margin: 0;
         padding: 0;
 
         border: none;
-
         outline: none;
 
         background: transparent;
@@ -1260,23 +1156,10 @@ footer {
         z-index: 100002;
 
         flex-shrink: 0;
-
-        transition: color 0.3s ease;
     }
 
-
-    .menu-hamburguesa:hover {
+    .menu-movil:hover {
         color: #e50914;
-    }
-
-
-    /* =====================================================
-       NAVEGACIÓN CERRADA
-    ===================================================== */
-
-    .navegacion {
-
-        display: none !important;
     }
 
 
@@ -1290,15 +1173,14 @@ footer {
 
         position: fixed !important;
 
-        top: 65px;
+        top: 60px;
 
         left: 10px;
-
         right: 10px;
 
         width: auto;
 
-        max-height: calc(100vh - 80px);
+        max-height: calc(100vh - 75px);
 
         overflow-y: auto;
 
@@ -1306,8 +1188,7 @@ footer {
 
         background: rgba(10, 10, 10, 0.98);
 
-        border:
-            1px solid rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.12);
 
         border-radius: 14px;
 
@@ -1321,7 +1202,7 @@ footer {
 
 
     /* =====================================================
-       LISTA DEL MENÚ
+       LISTA
     ===================================================== */
 
     .navegacion.activo ul {
@@ -1330,23 +1211,16 @@ footer {
 
         flex-direction: column;
 
-        align-items: stretch;
-
         width: 100%;
 
         gap: 0;
 
         margin: 0;
-
         padding: 0;
 
         list-style: none;
     }
 
-
-    /* =====================================================
-       ELEMENTOS
-    ===================================================== */
 
     .navegacion.activo ul li {
 
@@ -1355,13 +1229,12 @@ footer {
         width: 100%;
 
         margin: 0;
-
         padding: 0;
     }
 
 
     /* =====================================================
-       ENLACES DEL MENÚ
+       ENLACES
     ===================================================== */
 
     .navegacion.activo ul li a {
@@ -1382,11 +1255,7 @@ footer {
 
         font-weight: 600;
 
-        letter-spacing: 0.7px;
-
         line-height: 1.2;
-
-        white-space: normal;
 
         border-bottom:
             1px solid rgba(255, 255, 255, 0.07);
@@ -1396,11 +1265,9 @@ footer {
             background 0.2s ease;
     }
 
-
     .navegacion.activo ul li:last-child a {
         border-bottom: none;
     }
-
 
     .navegacion.activo ul li a:hover {
 
@@ -1411,118 +1278,52 @@ footer {
     }
 
 
-    /* Quitar línea roja del activo dentro
-       del menú móvil */
-
-    .navegacion.activo a.activo::after {
-        display: none;
-    }
-
-
     /* =====================================================
-       ICONOS SUPERIORES
-       CARRITO + OJO
+       OCULTAR ICONOS EN TABLET/CELULAR
     ===================================================== */
 
     .top-icons {
-
-        display: flex !important;
-
-        align-items: center;
-
-        gap: 15px;
-
-        margin-left: 10px;
-
-        flex-shrink: 0;
-    }
-
-
-    .icon-link {
-
-        display: flex !important;
-
-        align-items: center;
-
-        justify-content: center;
-
-        width: auto;
-
-        height: auto;
-
-        border: none;
-
-        border-radius: 0;
-
-        background: transparent;
-
-        color: #ffffff;
-
-        font-size: 18px;
-
-        transition: 0.3s ease;
-    }
-
-
-    .icon-link:hover {
-
-        background: transparent;
-
-        border: none;
-
-        color: #e50914;
-
-        transform: translateY(-2px);
+        display: none !important;
     }
 
 
     /* =====================================================
        SOBRE NOSOTROS
-       UNA SOLA COLUMNA
+       HISTORIA ARRIBA + DESTACADO DEBAJO
     ===================================================== */
 
     .bloque-empresa {
 
         grid-template-columns: 1fr;
 
-        width: 90%;
+        min-height: auto;
     }
-
 
     .empresa-texto {
 
         padding: 60px 0;
+
+        width: 100%;
     }
 
-
     .empresa-destacado {
+
+        width: 100%;
 
         min-height: 400px;
     }
 
 
     /* =====================================================
-       MISIÓN / VISIÓN
-    ===================================================== */
-
-    .mision-vision {
-
-        grid-template-columns: 1fr;
-
-        width: 90%;
-    }
-
-
-    /* =====================================================
-       VALORES
-       TABLET
+       VALORES - TABLET
     ===================================================== */
 
     .valores {
 
         width: 90%;
-    }
 
+        margin: 100px auto;
+    }
 
     .valores-grid {
 
@@ -1532,39 +1333,22 @@ footer {
         gap: 20px;
     }
 
-
     .valor {
+
+        width: 100%;
 
         min-height: 280px;
 
         padding: 35px 28px;
-    }
-
-
-    /* =====================================================
-       FOOTER
-    ===================================================== */
-
-    .footer-info {
-
-        grid-template-columns: 1fr;
-
-        gap: 40px;
     }
 }
 
 
 /* =========================================================
    CELULARES
-   HASTA 600px
 ========================================================= */
 
 @media (max-width: 600px) {
-
-
-    /* =====================================================
-       BARRA
-    ===================================================== */
 
     .top-bar {
 
@@ -1587,7 +1371,7 @@ footer {
        HAMBURGUESA
     ===================================================== */
 
-    .menu-hamburguesa {
+    .menu-movil {
 
         width: 38px;
 
@@ -1598,50 +1382,96 @@ footer {
 
 
     /* =====================================================
-       ICONOS
+       SOBRE NOSOTROS
     ===================================================== */
 
-    .top-icons {
+    .empresa-texto {
 
-        display: flex !important;
-
-        gap: 12px;
-
-        margin-left: 5px;
+        padding: 45px 0;
     }
 
+    .empresa-texto h2 {
 
-    .icon-link {
+        font-size: 27px;
+    }
 
-        display: flex !important;
+    .empresa-texto p {
 
-        font-size: 17px;
+        font-size: 14px;
+    }
+
+    .empresa-destacado {
+
+        min-height: 350px;
+    }
+
+    .destacado-contenido {
+
+        padding: 20px;
+    }
+
+    .destacado-contenido i {
+
+        font-size: 55px;
+    }
+
+    .destacado-contenido h3 {
+
+        font-size: 28px;
+    }
+
+    .destacado-contenido span {
+
+        font-size: 13px;
+
+        letter-spacing: 2px;
     }
 
 
     /* =====================================================
-       MENÚ ABIERTO
+       VALORES
     ===================================================== */
 
-    .navegacion.activo {
+    .valores {
 
-        top: 60px;
+        width: 90%;
 
-        left: 8px;
-
-        right: 8px;
-
-        max-height: calc(100vh - 70px);
-
-        padding: 7px;
+        margin: 80px auto;
     }
 
+    .valores-grid {
 
-    .navegacion.activo ul li a {
+        grid-template-columns: 1fr;
 
-        padding: 11px 9px;
+        gap: 16px;
+    }
 
-        font-size: 0.72rem;
+    .valor {
+
+        width: 100%;
+
+        min-height: 0;
+
+        padding: 30px 25px;
+    }
+
+    .valor-icono {
+
+        font-size: 27px;
+
+        margin-bottom: 20px;
+    }
+
+    .valor h3 {
+
+        font-size: 16px;
+    }
+
+    .valor p {
+
+        font-size: 14px;
+
+        line-height: 1.7;
     }
 
 
@@ -1656,173 +1486,31 @@ footer {
         letter-spacing: -1px;
     }
 
-
     .subtitulo {
-        font-size: 14px;
-    }
-
-
-    /* =====================================================
-       INTRODUCCIÓN
-    ===================================================== */
-
-    .introduccion {
-
-        padding: 80px 0 60px;
-    }
-
-
-    /* =====================================================
-       EMPRESA
-    ===================================================== */
-
-    .empresa-texto {
-
-        padding: 45px 0;
-    }
-
-
-    .empresa-texto h2 {
-
-        font-size: 27px;
-    }
-
-
-    .empresa-texto p {
 
         font-size: 14px;
     }
 
 
-    .empresa-destacado {
-
-        min-height: 350px;
-    }
-
-
-    .destacado-contenido {
-
-        padding: 20px;
-    }
-
-
-    .destacado-contenido i {
-
-        font-size: 55px;
-
-        margin-bottom: 20px;
-    }
-
-
-    .destacado-contenido h3 {
-
-        font-size: 28px;
-    }
-
-
-    .destacado-contenido span {
-
-        font-size: 13px;
-
-        letter-spacing: 2px;
-    }
-
-
     /* =====================================================
-       MISIÓN / VISIÓN
+       PRODUCTOS
     ===================================================== */
 
-    .tarjeta-info {
+    .productos {
 
-        padding: 35px 25px;
-    }
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
-
-    /* =====================================================
-       VALORES
-       UNA TARJETA POR FILA
-    ===================================================== */
-
-    .valores {
-
-        width: 90%;
-
-        margin: 80px auto;
-    }
-
-
-    .valores-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 16px;
-    }
-
-
-    .valor {
-
-        width: 100%;
-
-        min-height: 0;
-
-        padding: 30px 25px;
-    }
-
-
-    .valor-icono {
-
-        font-size: 27px;
-
-        margin-bottom: 20px;
-    }
-
-
-    .valor h3 {
-
-        font-size: 16px;
-    }
-
-
-    .valor p {
-
-        font-size: 14px;
-
-        line-height: 1.7;
-    }
-
-
-    /* =====================================================
-       FRASE FINAL
-    ===================================================== */
-
-    .frase-contenido h2 {
-
-        font-size: 35px;
-    }
-
-
-    /* =====================================================
-       REDES
-    ===================================================== */
-
-    .iconos-redes {
-
-        gap: 8px;
+        gap: 12px;
     }
 }
 
 
 /* =========================================================
-   CELULARES MUY PEQUEÑOS
-   HASTA 380px
+   CELULARES PEQUEÑOS
 ========================================================= */
 
 @media (max-width: 380px) {
-
-
-    /* =====================================================
-       BARRA
-    ===================================================== */
 
     .top-bar {
 
@@ -1831,22 +1519,12 @@ footer {
         padding: 0 10px;
     }
 
-
-    /* =====================================================
-       LOGO
-    ===================================================== */
-
     .logo {
 
         font-size: 0.82rem;
     }
 
-
-    /* =====================================================
-       HAMBURGUESA
-    ===================================================== */
-
-    .menu-hamburguesa {
+    .menu-movil {
 
         width: 36px;
 
@@ -1855,46 +1533,19 @@ footer {
         font-size: 20px;
     }
 
-
-    /* =====================================================
-       ICONOS
-    ===================================================== */
-
-    .top-icons {
-
-        display: flex !important;
-
-        gap: 9px;
-
-        margin-left: 3px;
-    }
-
-
-    .icon-link {
-
-        display: flex !important;
-
-        font-size: 16px;
-    }
-
-
-    /* =====================================================
-       MENÚ
-    ===================================================== */
-
     .navegacion.activo {
 
-        top: 55px;
+        top: 50px;
 
         left: 6px;
 
         right: 6px;
 
-        max-height: calc(100vh - 62px);
+        max-height:
+            calc(100vh - 58px);
 
         padding: 6px;
     }
-
 
     .navegacion.activo ul li a {
 
@@ -1905,14 +1556,13 @@ footer {
 
 
     /* =====================================================
-       HERO
+       HERO PEQUEÑO
     ===================================================== */
 
     .titulo-hero {
 
         font-size: 34px;
     }
-
 
     .subtitulo {
 
@@ -1921,7 +1571,7 @@ footer {
 
 
     /* =====================================================
-       DESTACADO
+       DESTACADO PEQUEÑO
     ===================================================== */
 
     .destacado-contenido h3 {
@@ -1929,9 +1579,28 @@ footer {
         font-size: 30px;
     }
 
-
     .destacado-contenido span {
 
         font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   PC
+========================================================= */
+
+@media (min-width: 801px) {
+
+    .menu-movil {
+        display: none !important;
+    }
+
+    .navegacion {
+        display: block !important;
+    }
+
+    .top-icons {
+        display: flex;
     }
 }
