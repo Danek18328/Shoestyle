@@ -1,80 +1,1142 @@
-<nav class="navegacion" id="navegacion">
+<!DOCTYPE html>
+<html lang="es">
 
-    <ul>
+<head>
 
-        <li>
-            <a href="../index.php">
-                INICIO
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestra Empresa | SHOESTYLE</title>
+
+    <link rel="stylesheet" href="../CSS/NUESTRA_EMPRESA9.CSS">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Matangi:wght@300..900&family=Michroma&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+
+<body>
+
+<div id="contenedor">
+
+
+    <!-- =====================================================
+         HEADER / HERO
+    ====================================================== -->
+
+    <header class="banner-portada">
+
+
+        <!-- VIDEO -->
+
+        <div class="video-container">
+
+            <video
+                autoplay
+                muted
+                loop
+                playsinline
+                class="video-fondo">
+
+                <source
+                    src="../Videos/VideoBackground3.mp4"
+                    type="video/mp4">
+
+            </video>
+
+            <div class="capa-oscura"></div>
+
+        </div>
+
+
+        <!-- =================================================
+             BARRA SUPERIOR
+        ================================================== -->
+
+        <div class="top-bar">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="../index.php"
+                class="logo">
+
+                SHOE<span class="logo-rojo">STYLE</span>
+
             </a>
-        </li>
 
-        <li>
-            <a href="#" class="activo">
-                NUESTRA EMPRESA
+
+            <!-- =================================================
+                 NAVEGACIÓN
+            ================================================== -->
+
+            <nav
+                class="navegacion"
+                id="navegacion">
+
+                <ul>
+
+                    <li>
+                        <a href="../index.php">
+                            INICIO
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="#"
+                            class="activo">
+
+                            NUESTRA EMPRESA
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./productos.php">
+                            PRODUCTOS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./contactenos.html">
+                            CONTACTENOS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./inicio de sesion.html">
+                            INICIO DE SESIÓN
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./servicios.html">
+                            SERVICIOS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./galeria fotografica.html">
+                            GALERÍA FOTOGRÁFICA
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./registrarse.html">
+                            REGISTRARSE
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- =================================================
+                 ICONOS
+            ================================================== -->
+
+            <div class="top-icons">
+
+                <a
+                    href="#"
+                    class="icon-link"
+                    aria-label="Carrito">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="icon-link"
+                    aria-label="Visualización">
+
+                    <i class="fa-regular fa-eye"></i>
+
+                </a>
+
+            </div>
+
+
+            <!-- =================================================
+                 MENÚ HAMBURGUESA
+                 SOLO TABLET / CELULAR
+            ================================================== -->
+
+            <button
+                class="menu-movil"
+                id="menuMovil"
+                type="button"
+                aria-label="Abrir menú"
+                aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+        </div>
+
+
+        <!-- =================================================
+             CONTENIDO HERO
+        ================================================== -->
+
+        <div class="contenido-centro">
+
+
+            <p class="etiqueta-hero">
+
+                CONOCE NUESTRA HISTORIA
+
+            </p>
+
+
+            <h1 class="titulo-hero">
+
+                NUESTRA
+                <span>EMPRESA</span>
+
+            </h1>
+
+
+            <p class="subtitulo">
+
+                Conoce quiénes somos, nuestros valores y la visión
+                que impulsa a SHOESTYLE.
+
+            </p>
+
+
+            <a
+                href="#historia"
+                class="btn-rojo">
+
+                CONÓCENOS
+
             </a>
-        </li>
 
-        <li>
-            <a href="./productos.php">
-                PRODUCTOS
-            </a>
-        </li>
 
-        <li>
-            <a href="./contactenos.html">
-                CONTACTENOS
-            </a>
-        </li>
+        </div>
 
-        <li>
-            <a href="./inicio de sesion.html">
-                INICIO DE SESIÓN
-            </a>
-        </li>
 
-        <li>
-            <a href="./servicios.html">
-                SERVICIOS
-            </a>
-        </li>
+        <!-- =================================================
+             SCROLL
+        ================================================== -->
 
-        <li>
-            <a href="./galeria fotografica.html">
-                GALERÍA FOTOGRÁFICA
-            </a>
-        </li>
+        <div class="scroll-indicator">
 
-        <li>
-            <a href="./registrarse.html">
-                REGISTRARSE
-            </a>
-        </li>
+            <div class="mouse">
 
-    </ul>
+                <div class="rueda"></div>
 
-</nav>
+            </div>
 
-<div class="top-icons">
+        </div>
 
-    <a href="#" class="icon-link">
-        <i class="fa-solid fa-cart-shopping"></i>
-    </a>
 
-    <a href="#" class="icon-link">
-        <i class="fa-regular fa-eye"></i>
-    </a>
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             INTRODUCCIÓN
+        ================================================== -->
+
+        <section
+            class="introduccion"
+            id="historia">
+
+            <div class="seccion-etiqueta">
+
+                SHOESTYLE
+
+            </div>
+
+
+            <h2>
+
+                MÁS QUE UNA TIENDA DE CALZADO
+
+            </h2>
+
+
+            <div class="linea-roja"></div>
+
+
+            <p>
+
+                Descubre la historia detrás de SHOESTYLE, una empresa
+                creada con el propósito de ofrecer calzado de calidad,
+                diseños actuales y una experiencia de compra cercana
+                para nuestros clientes.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SOBRE NOSOTROS
+        ================================================== -->
+
+        <section class="bloque-empresa">
+
+
+            <div class="empresa-texto">
+
+
+                <span class="numero-seccion">
+
+                    01
+
+                </span>
+
+
+                <h2>
+
+                    SOBRE NOSOTROS
+
+                </h2>
+
+
+                <div class="linea-roja"></div>
+
+
+                <p>
+
+                    Shoestyle nació en 2020 como una tienda especializada
+                    en calzado de todo tipo, ofreciendo a nuestra familia
+                    la oportunidad de expandir su comercio y mejorar sus
+                    ingresos.
+
+                </p>
+
+
+                <p>
+
+                    Desde entonces, nos hemos dedicado a satisfacer las
+                    necesidades de nuestros clientes, brindando zapatos
+                    de alta calidad, precios accesibles y diseños modernos
+                    que se adaptan a diferentes estilos.
+
+                </p>
+
+
+                <p>
+
+                    Nuestra presencia digital nace con el objetivo de
+                    acercar nuestros productos a más personas y ofrecer
+                    una experiencia de compra sencilla, moderna y
+                    confiable.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="empresa-destacado">
+
+
+                <div class="destacado-contenido">
+
+
+                    <i class="fa-solid fa-shoe-prints"></i>
+
+
+                    <h3>
+
+                        TU ESTILO
+
+                    </h3>
+
+
+                    <span>
+
+                        EMPIEZA POR LOS PIES
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             MISIÓN Y VISIÓN
+        ================================================== -->
+
+        <section class="mision-vision">
+
+
+            <!-- MISIÓN -->
+
+            <article class="tarjeta-info">
+
+
+                <div class="icono-info">
+
+                    <i class="fa-solid fa-bullseye"></i>
+
+                </div>
+
+
+                <span class="numero-seccion">
+
+                    02
+
+                </span>
+
+
+                <h2>
+
+                    MISIÓN
+
+                </h2>
+
+
+                <div class="linea-roja"></div>
+
+
+                <p>
+
+                    Ofrecer calzado moderno, cómodo y de calidad,
+                    promoviendo el comercio local y proporcionando
+                    una atención personalizada que refleje confianza,
+                    cercanía y compromiso.
+
+                </p>
+
+
+            </article>
+
+
+
+            <!-- VISIÓN -->
+
+            <article class="tarjeta-info">
+
+
+                <div class="icono-info">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                </div>
+
+
+                <span class="numero-seccion">
+
+                    03
+
+                </span>
+
+
+                <h2>
+
+                    VISIÓN
+
+                </h2>
+
+
+                <p>
+
+                    Ser reconocidos como un referente local en calzado,
+                    destacando por nuestra atención al cliente, variedad
+                    de estilos y por la manera en que combinamos tradición
+                    familiar con herramientas digitales actuales.
+
+                </p>
+
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             VALORES
+        ================================================== -->
+
+        <section class="valores">
+
+
+            <div class="cabecera-seccion">
+
+
+                <span>
+
+                    04
+
+                </span>
+
+
+                <h2>
+
+                    NUESTROS VALORES
+
+                </h2>
+
+
+                <p>
+
+                    Los principios que definen nuestra forma de trabajar.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="valores-grid">
+
+
+                <!-- COMPROMISO -->
+
+                <article class="valor">
+
+
+                    <div class="valor-icono">
+
+                        <i class="fa-solid fa-handshake"></i>
+
+                    </div>
+
+
+                    <h3>
+
+                        COMPROMISO
+
+                    </h3>
+
+
+                    <p>
+
+                        Trabajamos para cumplir las expectativas
+                        de nuestros clientes y mantener relaciones
+                        basadas en confianza.
+
+                    </p>
+
+
+                </article>
+
+
+
+                <!-- CALIDAD -->
+
+                <article class="valor">
+
+
+                    <div class="valor-icono">
+
+                        <i class="fa-solid fa-gem"></i>
+
+                    </div>
+
+
+                    <h3>
+
+                        CALIDAD
+
+                    </h3>
+
+
+                    <p>
+
+                        Buscamos ofrecer productos que combinen
+                        diseño, comodidad y calidad.
+
+                    </p>
+
+
+                </article>
+
+
+
+                <!-- PASIÓN -->
+
+                <article class="valor">
+
+
+                    <div class="valor-icono">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                    </div>
+
+
+                    <h3>
+
+                        PASIÓN
+
+                    </h3>
+
+
+                    <p>
+
+                        Nos apasiona el calzado y el mundo de la moda,
+                        por eso buscamos mantenernos actualizados.
+
+                    </p>
+
+
+                </article>
+
+
+
+                <!-- INNOVACIÓN -->
+
+                <article class="valor">
+
+
+                    <div class="valor-icono">
+
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                    </div>
+
+
+                    <h3>
+
+                        INNOVACIÓN
+
+                    </h3>
+
+
+                    <p>
+
+                        Utilizamos herramientas digitales para mejorar
+                        la experiencia de nuestros clientes.
+
+                    </p>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FRASE FINAL
+        ================================================== -->
+
+        <section class="frase-final">
+
+
+            <div class="frase-contenido">
+
+
+                <span>
+
+                    SHOESTYLE
+
+                </span>
+
+
+                <h2>
+
+                    ESTILO QUE TE
+                    <strong>REPRESENTA.</strong>
+
+                </h2>
+
+
+                <p>
+
+                    Gracias por conocer nuestra historia.
+                    Queremos seguir creciendo junto a nuestros clientes.
+
+                </p>
+
+
+                <a
+                    href="./productos.php"
+                    class="btn-rojo">
+
+                    VER PRODUCTOS
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+
+        <!-- REDES -->
+
+        <div class="redes-sociales">
+
+
+            <h3>
+
+                ENCUÉNTRANOS TAMBIÉN EN:
+
+            </h3>
+
+
+            <div class="iconos-redes">
+
+
+                <a
+                    href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <img
+                        src="../imagenes/facebook.png"
+                        alt="Facebook">
+
+                </a>
+
+
+                <a href="#">
+
+                    <img
+                        src="../imagenes/instagram.jpg"
+                        alt="Instagram">
+
+                </a>
+
+
+                <a
+                    href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <img
+                        src="../imagenes/tiktok.png"
+                        alt="TikTok">
+
+                </a>
+
+
+                <a
+                    href="https://x.com/shoestyle397157"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <img
+                        src="../imagenes/twitter.png"
+                        alt="X">
+
+                </a>
+
+
+                <a
+                    href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <img
+                        src="../imagenes/whatsapp.png"
+                        alt="WhatsApp">
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- INFORMACIÓN -->
+
+        <div class="footer-info">
+
+
+            <!-- AYUDA -->
+
+            <div class="columna">
+
+
+                <h4>
+
+                    AYUDA
+
+                </h4>
+
+
+                <ul>
+
+                    <li>
+                        <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
+                            Asistencia
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
+                            Seguimiento de pedidos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
+                            Envíos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
+                            Devoluciones
+                        </a>
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+
+
+            <!-- SHOESTYLE -->
+
+            <div class="columna">
+
+
+                <h4>
+
+                    SHOESTYLE
+
+                </h4>
+
+
+                <ul>
+
+                    <li>
+
+                        <strong>Teléfonos:</strong>
+                        +57 310 700 1125 / +57 302 2001695
+
+                    </li>
+
+
+                    <li>
+
+                        <strong>Correo:</strong>
+                        shoestyle@gmail.com
+
+                    </li>
+
+
+                    <li>
+
+                        <strong>Horarios:</strong>
+                        8:00 a.m - 7:00 p.m
+
+                    </li>
+
+
+                    <li>
+
+                        <strong>Dirección:</strong>
+                        Por confirmar
+
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+
+
+            <!-- LEGAL -->
+
+            <div class="columna">
+
+
+                <h4>
+
+                    INFORMACIÓN LEGAL
+
+                </h4>
+
+
+                <ul>
+
+                    <li>
+
+                        <a
+                            href="./terminos.pdf"
+                            target="_blank">
+
+                            Términos y Condiciones
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="#">
+
+                            Política de Privacidad
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="#">
+
+                            Condiciones de Uso
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- COPYRIGHT -->
+
+        <div class="copyright">
+
+
+            <p>
+
+                &copy; 2025 SHOESTYLE.
+                Todos los derechos reservados.
+
+            </p>
+
+
+        </div>
+
+
+    </footer>
+
 
 </div>
 
-<!-- MENÚ HAMBURGUESA -->
 
-<button
-    class="menu-movil"
-    id="menuMovil"
-    aria-label="Abrir menú"
-    aria-expanded="false"
-    type="button">
 
-    <i class="fa-solid fa-bars"></i>
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
 
-</button>
+<script>
+
+    /* =====================================================
+       MENÚ HAMBURGUESA
+    ====================================================== */
+
+    const menuMovil =
+        document.getElementById("menuMovil");
+
+    const navegacion =
+        document.getElementById("navegacion");
+
+
+    if (menuMovil && navegacion) {
+
+
+        menuMovil.addEventListener("click", function () {
+
+
+            navegacion.classList.toggle("activo");
+
+
+            const abierto =
+                navegacion.classList.contains("activo");
+
+
+            menuMovil.setAttribute(
+                "aria-expanded",
+                abierto
+            );
+
+
+            /* Cambiar icono */
+
+            const icono =
+                menuMovil.querySelector("i");
+
+
+            if (abierto) {
+
+                icono.classList.remove("fa-bars");
+
+                icono.classList.add("fa-xmark");
+
+            } else {
+
+                icono.classList.remove("fa-xmark");
+
+                icono.classList.add("fa-bars");
+
+            }
+
+
+        });
+
+
+
+        /* =================================================
+           CERRAR MENÚ AL SELECCIONAR OPCIÓN
+        ================================================== */
+
+        navegacion
+            .querySelectorAll("a")
+            .forEach(enlace => {
+
+
+                enlace.addEventListener(
+                    "click",
+                    function () {
+
+
+                        navegacion.classList.remove(
+                            "activo"
+                        );
+
+
+                        menuMovil.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+
+                        const icono =
+                            menuMovil.querySelector("i");
+
+
+                        icono.classList.remove(
+                            "fa-xmark"
+                        );
+
+
+                        icono.classList.add(
+                            "fa-bars"
+                        );
+
+
+                    }
+                );
+
+
+            });
+
+
+    }
+
+
+
+    /* =====================================================
+       SCROLL SUAVE
+    ====================================================== */
+
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(enlace => {
+
+
+            enlace.addEventListener(
+                "click",
+                function (e) {
+
+
+                    const href =
+                        this.getAttribute("href");
+
+
+                    /* Ignorar href="#" */
+
+                    if (href === "#") {
+                        return;
+                    }
+
+
+                    const destino =
+                        document.querySelector(href);
+
+
+                    if (destino) {
+
+
+                        e.preventDefault();
+
+
+                        destino.scrollIntoView({
+                            behavior: "smooth"
+                        });
+
+
+                    }
+
+
+                }
+            );
+
+
+        });
+
+
+</script>
+
+
+</body>
+
+</html>
