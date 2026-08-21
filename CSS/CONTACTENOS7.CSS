@@ -1058,6 +1058,14 @@ footer {
     font-size: 12px;
 }
 
+/* =========================================================
+   MENÚ RESPONSIVE
+========================================================= */
+
+.menu-movil {
+    display: none !important;
+}
+
 
 /* =========================================================
    PORTÁTILES
@@ -1080,6 +1088,7 @@ footer {
     .navegacion ul li a {
         font-size: 0.60rem;
         letter-spacing: 0.15px;
+        white-space: nowrap;
     }
 
     .top-icons {
@@ -1091,7 +1100,7 @@ footer {
     }
 
     .contacto-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .contenido-centro {
@@ -1099,8 +1108,270 @@ footer {
     }
 
     .titulo-hero {
-        font-size:
-            clamp(3.3rem,7vw,5rem);
+        font-size: clamp(3.3rem, 7vw, 5rem);
+    }
+}
+
+
+/* =========================================================
+   TABLETS + CELULARES
+========================================================= */
+
+@media (max-width: 800px) {
+
+    /* =====================================================
+       BARRA SUPERIOR
+    ===================================================== */
+
+    .top-bar {
+        min-height: 65px;
+        height: 65px;
+
+        padding: 0 16px;
+
+        position: relative;
+        z-index: 100000;
+    }
+
+    .logo {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+
+    /* =====================================================
+       OCULTAR NAVEGACIÓN NORMAL
+    ===================================================== */
+
+    .navegacion {
+        display: none !important;
+    }
+
+
+    /* =====================================================
+       OCULTAR ICONOS
+    ===================================================== */
+
+    .top-icons {
+        display: none !important;
+    }
+
+
+    /* =====================================================
+       HAMBURGUESA
+    ===================================================== */
+
+    .menu-movil {
+
+        display: flex !important;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 40px;
+        height: 40px;
+
+        margin: 0;
+        padding: 0;
+
+        border: none;
+        outline: none;
+
+        background: transparent;
+
+        color: #ffffff;
+
+        font-size: 22px;
+
+        cursor: pointer;
+
+        position: relative;
+        z-index: 100002;
+
+        flex-shrink: 0;
+
+        appearance: none;
+        -webkit-appearance: none;
+
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    .menu-movil:hover {
+        color: #ffffff;
+    }
+
+    .menu-movil:focus {
+        outline: none;
+    }
+
+    .menu-movil:active {
+        transform: scale(0.95);
+    }
+
+
+    /* =====================================================
+       MENÚ ABIERTO
+    ===================================================== */
+
+    .navegacion.activo {
+
+        display: block !important;
+
+        position: fixed !important;
+
+        top: 70px;
+
+        left: 10px;
+        right: 10px;
+
+        width: auto;
+        max-width: none;
+
+        max-height:
+            calc(100vh - 80px);
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        padding: 8px;
+
+        background:
+            rgba(10, 10, 10, 0.98);
+
+        border:
+            1px solid
+            rgba(255, 255, 255, 0.12);
+
+        border-radius: 14px;
+
+        box-shadow:
+            0 20px 50px
+            rgba(0, 0, 0, 0.8);
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        z-index: 100001;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       LISTA
+    ===================================================== */
+
+    .navegacion.activo ul {
+
+        display: flex !important;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 0;
+
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        box-sizing: border-box;
+    }
+
+    .navegacion.activo ul li {
+
+        display: block;
+
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       ENLACES
+    ===================================================== */
+
+    .navegacion.activo ul li a {
+
+        display: block;
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding: 12px 10px;
+
+        color: #c7c7c7;
+
+        font-family: 'Poppins', sans-serif;
+
+        font-size: 0.75rem;
+
+        font-weight: 600;
+
+        line-height: 1.2;
+
+        text-decoration: none;
+
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, 0.07);
+
+        transition:
+            color 0.2s ease,
+            background 0.2s ease;
+    }
+
+    .navegacion.activo ul li:last-child a {
+        border-bottom: none;
+    }
+
+
+    /* =====================================================
+       🚫 QUITAR LÍNEA ROJA DEL ACTIVO EN MÓVIL
+    ===================================================== */
+
+    .navegacion.activo ul li a.activo::after,
+    .navegacion.activo ul li a.active::after {
+
+        content: none !important;
+
+        display: none !important;
+    }
+
+    .navegacion.activo ul li a.activo,
+    .navegacion.activo ul li a.active {
+
+        color: #c7c7c7;
+
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, 0.07);
+    }
+
+
+    /* =====================================================
+       HOVER
+    ===================================================== */
+
+    .navegacion.activo ul li a:hover {
+
+        color: #ffffff;
+
+        background:
+            rgba(255, 255, 255, 0.05);
+    }
+
+    .navegacion.activo ul li a:active {
+
+        background:
+            rgba(255, 255, 255, 0.08);
     }
 }
 
@@ -1116,105 +1387,37 @@ footer {
     }
 
     .top-bar {
-        height: 68px;
-        min-height: 68px;
+        height: 65px;
+        min-height: 65px;
 
-        padding: 0 20px;
-
-        z-index: 100000;
+        padding: 0 16px;
     }
 
     .logo {
         font-size: 1rem;
     }
 
-    .navegacion {
-        display: none !important;
-    }
-
-    .top-icons {
-        display: none !important;
-    }
-
     .menu-movil {
-        display: flex !important;
+        width: 40px;
+        height: 40px;
+
+        font-size: 22px;
     }
-
-
-    /* MENÚ */
 
     .navegacion.activo {
-        display: block !important;
+        top: 70px;
 
-        position: fixed !important;
-
-        top: 68px;
-        left: 15px;
-        right: 15px;
-
-        width: auto;
+        left: 10px;
+        right: 10px;
 
         max-height:
-            calc(100vh - 83px);
-
-        overflow-y: auto;
-
-        padding: 8px;
-
-        background:
-            rgba(10,10,10,0.98);
-
-        border:
-            1px solid rgba(255,255,255,0.12);
-
-        border-radius: 14px;
-
-        box-shadow:
-            0 20px 50px rgba(0,0,0,0.8);
-
-        backdrop-filter: blur(15px);
-
-        z-index: 100001;
-    }
-
-    .navegacion.activo ul {
-        display: flex !important;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        width: 100%;
-
-        gap: 0;
-    }
-
-    .navegacion.activo ul li,
-    .navegacion.activo ul li a {
-        width: 100%;
+            calc(100vh - 80px);
     }
 
     .navegacion.activo ul li a {
-        display: block;
+        padding: 12px 10px;
 
-        padding: 14px 12px;
-
-        color: #c7c7c7;
-
-        font-size: 0.8rem;
-
-        line-height: 1.3;
-
-        border-bottom:
-            1px solid rgba(255,255,255,0.07);
-    }
-
-    .navegacion.activo ul li:last-child a {
-        border-bottom: none;
-    }
-
-    .navegacion.activo ul li a.activo::after {
-        display: none;
+        font-size: 0.75rem;
     }
 
 
@@ -1230,14 +1433,13 @@ footer {
 
     .titulo-hero {
         font-size:
-            clamp(3rem,10vw,5rem);
+            clamp(3rem, 10vw, 5rem);
 
         letter-spacing: 2px;
     }
 
     .subtitulo {
         max-width: 650px;
-
         font-size: 14px;
     }
 
@@ -1245,13 +1447,12 @@ footer {
     /* MAIN */
 
     main {
-        padding:
-            80px 25px 90px;
+        padding: 80px 25px 90px;
     }
 
     .contacto-grid {
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(2, 1fr);
 
         gap: 20px;
     }
@@ -1292,126 +1493,73 @@ footer {
         height: 60px;
         min-height: 60px;
 
-        padding: 0 13px;
+        padding: 0 12px;
     }
 
     .logo {
         font-size: 0.9rem;
     }
 
-    .navegacion {
-        display: none !important;
-    }
-
-    .top-icons {
-        display: none !important;
-    }
-
     .menu-movil {
-        display: flex !important;
+        width: 38px;
+        height: 38px;
 
-        width: 40px;
-        height: 40px;
-
-        font-size: 20px;
-    }
-
-
-    /* MENÚ MÓVIL */
-
-    .navegacion.activo {
-        display: block !important;
-
-        position: fixed !important;
-
-        top: 60px;
-        left: 8px;
-        right: 8px;
-
-        width: auto;
-
-        max-height:
-            calc(100svh - 70px);
-
-        overflow-y: auto;
-
-        padding: 7px;
-
-        background:
-            rgba(10,10,10,0.98);
-
-        border:
-            1px solid rgba(255,255,255,0.13);
-
-        border-radius: 14px;
-
-        box-shadow:
-            0 20px 50px rgba(0,0,0,0.85);
-
-        backdrop-filter: blur(15px);
-
-        z-index: 100001;
-    }
-
-    .navegacion.activo ul {
-        display: flex !important;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        width: 100%;
-
-        gap: 0;
-    }
-
-    .navegacion.activo ul li,
-    .navegacion.activo ul li a {
-        width: 100%;
-    }
-
-    .navegacion.activo ul li a {
-        display: block;
-
-        padding: 12px 10px;
-
-        color: #c7c7c7;
-
-        font-family: 'Poppins', sans-serif;
-
-        font-size: 0.73rem;
-
-        font-weight: 600;
-
-        line-height: 1.3;
-
-        white-space: normal;
-
-        border-bottom:
-            1px solid rgba(255,255,255,0.07);
-    }
-
-    .navegacion.activo ul li:last-child a {
-        border-bottom: none;
-    }
-
-    .navegacion.activo ul li a:hover {
-        color: #ffffff;
-
-        background:
-            rgba(255,255,255,0.05);
-    }
-
-    .navegacion.activo ul li a.activo::after {
-        display: none;
+        font-size: 21px;
     }
 
 
     /* =====================================================
-       HERO CENTRADO
+       MENÚ MÓVIL
+    ===================================================== */
+
+    .navegacion.activo {
+
+        top: 65px;
+
+        left: 8px;
+        right: 8px;
+
+        max-height:
+            calc(100svh - 75px);
+
+        padding: 7px;
+    }
+
+    .navegacion.activo ul li a {
+
+        padding: 11px 9px;
+
+        font-size: 0.72rem;
+    }
+
+
+    /* 🚫 SIN LÍNEA ROJA */
+
+    .navegacion.activo ul li a.activo::after,
+    .navegacion.activo ul li a.active::after {
+
+        content: none !important;
+
+        display: none !important;
+    }
+
+    .navegacion.activo ul li a.activo,
+    .navegacion.activo ul li a.active {
+
+        color: #c7c7c7;
+
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, 0.07);
+    }
+
+
+    /* =====================================================
+       HERO
     ===================================================== */
 
     .contenido-centro {
+
         position: absolute;
 
         top: 50%;
@@ -1423,10 +1571,12 @@ footer {
 
         text-align: center;
 
-        transform: translate(-50%,-50%);
+        transform:
+            translate(-50%, -50%);
     }
 
     .etiqueta-hero {
+
         margin-bottom: 12px;
 
         font-size: 10px;
@@ -1435,8 +1585,9 @@ footer {
     }
 
     .titulo-hero {
+
         font-size:
-            clamp(2.7rem,13vw,4rem);
+            clamp(2.7rem, 13vw, 4rem);
 
         line-height: 0.95;
 
@@ -1448,6 +1599,7 @@ footer {
     }
 
     .titulo-hero::after {
+
         width: 55px;
 
         height: 3px;
@@ -1457,6 +1609,7 @@ footer {
     }
 
     .subtitulo {
+
         width: 100%;
 
         max-width: 340px;
@@ -1472,7 +1625,9 @@ footer {
     }
 
 
-    /* SCROLL */
+    /* =====================================================
+       SCROLL
+    ===================================================== */
 
     .scroll-indicator {
         bottom: 15px;
@@ -1484,7 +1639,9 @@ footer {
     }
 
 
-    /* MAIN */
+    /* =====================================================
+       MAIN
+    ===================================================== */
 
     main {
         padding:
@@ -1504,12 +1661,14 @@ footer {
     }
 
     .contacto-grid {
+
         grid-template-columns: 1fr;
 
         gap: 18px;
     }
 
     .contacto-card {
+
         min-height: 290px;
 
         padding:
@@ -1517,7 +1676,9 @@ footer {
     }
 
 
-    /* FOOTER */
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     footer {
         padding:
@@ -1529,17 +1690,20 @@ footer {
     }
 
     .iconos-redes {
+
         gap: 9px;
 
         flex-wrap: wrap;
     }
 
     .iconos-redes a {
+
         width: 42px;
         height: 42px;
     }
 
     .footer-info {
+
         grid-template-columns: 1fr;
 
         gap: 35px;
@@ -1548,6 +1712,7 @@ footer {
     }
 
     .footer-info h4::after {
+
         margin-left: auto;
         margin-right: auto;
     }
@@ -1565,6 +1730,7 @@ footer {
     }
 
     .top-bar {
+
         height: 55px;
         min-height: 55px;
 
@@ -1576,25 +1742,28 @@ footer {
     }
 
     .menu-movil {
+
         width: 36px;
         height: 36px;
 
-        font-size: 19px;
+        font-size: 20px;
     }
 
     .navegacion.activo {
-        top: 55px;
+
+        top: 60px;
 
         left: 6px;
         right: 6px;
 
         max-height:
-            calc(100svh - 63px);
+            calc(100svh - 68px);
 
         padding: 6px;
     }
 
     .navegacion.activo ul li a {
+
         padding:
             10px 8px;
 
@@ -1602,25 +1771,51 @@ footer {
             0.68rem;
     }
 
+
+    /* 🚫 SIN LÍNEA ROJA */
+
+    .navegacion.activo ul li a.activo::after,
+    .navegacion.activo ul li a.active::after {
+
+        content: none !important;
+
+        display: none !important;
+    }
+
+    .navegacion.activo ul li a.activo,
+    .navegacion.activo ul li a.active {
+
+        color: #c7c7c7;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
     .etiqueta-hero {
+
         font-size: 9px;
 
         letter-spacing: 2.5px;
     }
 
     .titulo-hero {
+
         font-size: 2.6rem;
 
         letter-spacing: 1px;
     }
 
     .titulo-hero::after {
+
         width: 48px;
 
         margin-top: 14px;
     }
 
     .subtitulo {
+
         max-width: 300px;
 
         margin-top: 15px;
@@ -1655,6 +1850,7 @@ footer {
     }
 
     .navegacion.activo {
+
         position: static !important;
 
         display: block !important;
@@ -1677,5 +1873,4 @@ footer {
 
         -webkit-backdrop-filter: none;
     }
-
 }
