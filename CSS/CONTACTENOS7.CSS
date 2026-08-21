@@ -212,29 +212,16 @@ select {
    NAVEGACIÓN DESKTOP
 ========================================================= */
 
-.navegacion {
-    display: block;
-}
-
 .navegacion ul {
+    list-style: none;
+
     display: flex;
-    align-items: center;
 
     gap: 30px;
-
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-}
-
-.navegacion ul li {
-    margin: 0;
-    padding: 0;
 }
 
 .navegacion ul li a {
-position: relative;
+    position: relative;
 
     color: #b3b3b3;
 
@@ -247,17 +234,9 @@ position: relative;
     transition: color 0.3s ease;
 }
 
-.navegacion ul li a:hover {
-    color: #ffffff;
-}
-
-
-/* =========================================================
-   ENLACE ACTIVO
-========================================================= */
-
+.navegacion ul li a:hover,
 .navegacion ul li a.activo {
-    color: #ffffff;
+    color: white;
 }
 
 .navegacion ul li a.activo::after {
@@ -274,8 +253,10 @@ position: relative;
     background: var(--rojo);
 
     box-shadow:
-        0 0 10px rgba(225, 6, 32, 0.7);
+        0 0 10px rgba(225,6,32,0.7);
 }
+
+
 
 
 /* =========================================================
@@ -356,70 +337,20 @@ position: relative;
 
 
 /* =========================================================
-   HERO
-========================================================= */
-
-.contenido-centro {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    z-index: 10;
-
-    width: min(900px, 90%);
-
-    padding: 0 20px;
-
-    margin: 0;
-
-    text-align: center;
-
-    transform: translate(-50%, -50%);
-
-    animation: aparecerHero 1s ease forwards;
-}
-
-
-/* =========================================================
-   ANIMACIÓN HERO
-========================================================= */
-
-@keyframes aparecerHero {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translate(-50%, calc(-50% + 25px));
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%);
-    }
-}
-
-
-/* =========================================================
    ETIQUETA HERO
 ========================================================= */
 
 .etiqueta-hero {
+
     margin-bottom: 18px;
 
     color: var(--rojo);
 
-    font-family: 'Poppins', sans-serif;
+    font-family: 'poppins', sans-serif;
 
     font-size: 13px;
-    font-weight: 600;
 
     letter-spacing: 4px;
-
-    text-transform: uppercase;
 }
 
 
@@ -428,12 +359,9 @@ position: relative;
 ========================================================= */
 
 .titulo-hero {
-    margin: 0;
 
-    font-family:
-        'Impact',
-        'Arial Black',
-        sans-serif;
+        font-family: 'Impact', 'Arial Black', sans-serif;
+
 
     font-size:
         clamp(3rem, 7vw, 6rem);
@@ -446,6 +374,7 @@ position: relative;
 }
 
 .titulo-hero::after {
+
     content: "";
 
     display: block;
@@ -469,22 +398,47 @@ position: relative;
 ========================================================= */
 
 .subtitulo {
-    width: 100%;
-    max-width: 750px;
 
-    margin: 25px auto 0;
+    margin-top: 25px;
 
     color: #cccccc;
 
     font-family: 'Manrope', sans-serif;
 
-    font-size:
-        clamp(0.9rem, 2vw, 1.1rem);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
 
     line-height: 1.6;
 }
 
 
+/* =========================================================
+   LEMA
+========================================================= */
+
+.lema-centro {
+
+    position: relative;
+
+    z-index: 10;
+
+    text-align: center;
+
+    margin-bottom: 5px;
+}
+
+.lema-centro p {
+
+    color: rgba(255,255,255,0.75);
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(1rem, 2vw, 1.5rem);
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 3px 15px rgba(0,0,0,0.8);
+}
 /* =========================================================
    SCROLL
 ========================================================= */
