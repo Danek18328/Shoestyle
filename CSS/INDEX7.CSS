@@ -1302,6 +1302,30 @@ footer {
 /* Hamburguesa oculta por defecto */
 .menu-movil {
     display: none !important;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: #ffffff;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    position: relative;
+    z-index: 100002;
+
+    flex-shrink: 0;
 }
 
 
@@ -1318,7 +1342,6 @@ footer {
 
     .logo {
         font-size: 1.2rem;
-
         flex-shrink: 0;
     }
 
@@ -1328,17 +1351,13 @@ footer {
 
     .navegacion ul li a {
         font-size: 0.62rem;
-
         letter-spacing: 0.2px;
-
         white-space: nowrap;
     }
 
     .top-icons {
         gap: 12px;
-
         font-size: 1rem;
-
         flex-shrink: 0;
     }
 
@@ -1354,33 +1373,51 @@ footer {
 
 @media (max-width: 800px) {
 
+    /* -----------------------------------------
+       BARRA SUPERIOR
+    ----------------------------------------- */
+
     .top-bar {
         min-height: 65px;
+        height: 65px;
 
         padding: 0 16px;
 
-        /*
-         * Hace que el menú abierto quede
-         * por encima del lema.
-         */
+        position: relative;
+
         z-index: 100000;
     }
 
     .logo {
         font-size: 1rem;
-
         white-space: nowrap;
     }
 
 
-    /* Ocultar navegación normal */
+    /* -----------------------------------------
+       OCULTAR MENÚ NORMAL
+    ----------------------------------------- */
+
     .navegacion {
         display: none !important;
     }
 
 
-    /* Mostrar hamburguesa */
+    /* -----------------------------------------
+       OCULTAR ICONOS DE PC
+    ----------------------------------------- */
+
+    .top-icons {
+        display: none !important;
+    }
+
+
+    /* -----------------------------------------
+       MOSTRAR HAMBURGUESA
+    ----------------------------------------- */
+
     .menu-movil {
+
         display: flex !important;
 
         align-items: center;
@@ -1408,12 +1445,35 @@ footer {
         z-index: 100002;
 
         flex-shrink: 0;
+
+        /* Evita comportamientos raros de botones */
+        appearance: none;
+        -webkit-appearance: none;
+
+        /* Evita selección accidental */
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+
+    .menu-movil:hover {
+        color: #ffffff;
+    }
+
+
+    .menu-movil:focus {
+        outline: none;
+    }
+
+
+    .menu-movil:active {
+        transform: scale(0.95);
     }
 
 
     /* =====================================================
        MENÚ ABIERTO
-    ===================================================== */
+    ====================================================== */
 
     .navegacion.activo {
 
@@ -1421,25 +1481,25 @@ footer {
 
         position: fixed !important;
 
-        top: 60px;
+        top: 70px;
 
         left: 10px;
         right: 10px;
 
         width: auto;
 
-        max-height:
-            calc(100vh - 75px);
+        max-width: none;
+
+        max-height: calc(100vh - 80px);
 
         overflow-y: auto;
+        overflow-x: hidden;
 
         padding: 8px;
 
-        background:
-            rgba(10, 10, 10, 0.98);
+        background: rgba(10, 10, 10, 0.98);
 
-        border:
-            1px solid rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.12);
 
         border-radius: 14px;
 
@@ -1447,15 +1507,17 @@ footer {
             0 20px 50px rgba(0, 0, 0, 0.8);
 
         backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
 
-        /*
-         * Por encima del lema.
-         */
         z-index: 100001;
+
+        box-sizing: border-box;
     }
 
 
-    /* Lista */
+    /* =====================================================
+       LISTA
+    ====================================================== */
 
     .navegacion.activo ul {
 
@@ -1468,13 +1530,18 @@ footer {
         gap: 0;
 
         margin: 0;
+
         padding: 0;
 
         list-style: none;
+
+        box-sizing: border-box;
     }
 
 
-    /* Elementos */
+    /* =====================================================
+       ELEMENTOS
+    ====================================================== */
 
     .navegacion.activo ul li {
 
@@ -1483,11 +1550,16 @@ footer {
         width: 100%;
 
         margin: 0;
+
         padding: 0;
+
+        box-sizing: border-box;
     }
 
 
-    /* Enlaces */
+    /* =====================================================
+       ENLACES
+    ====================================================== */
 
     .navegacion.activo ul li a {
 
@@ -1509,6 +1581,8 @@ footer {
 
         line-height: 1.2;
 
+        text-decoration: none;
+
         border-bottom:
             1px solid rgba(255, 255, 255, 0.07);
 
@@ -1517,11 +1591,14 @@ footer {
             background 0.2s ease;
     }
 
+
     .navegacion.activo ul li:last-child a {
         border-bottom: none;
     }
 
+
     .navegacion.activo ul li a:hover {
+
         color: #ffffff;
 
         background:
@@ -1529,10 +1606,10 @@ footer {
     }
 
 
-    /* Ocultar iconos desktop */
+    .navegacion.activo ul li a:active {
 
-    .top-icons {
-        display: none !important;
+        background:
+            rgba(255, 255, 255, 0.08);
     }
 }
 
@@ -1544,37 +1621,43 @@ footer {
 @media (max-width: 600px) {
 
     .top-bar {
+
         min-height: 60px;
+        height: 60px;
 
         padding: 0 12px;
     }
+
 
     .logo {
         font-size: 0.9rem;
     }
 
+
     .menu-movil {
+
         width: 38px;
         height: 38px;
 
         font-size: 21px;
     }
 
+
     .navegacion.activo {
-        top: 55px;
+
+        top: 65px;
 
         left: 8px;
         right: 8px;
 
-        max-height:
-            calc(100vh - 65px);
+        max-height: calc(100vh - 75px);
 
         padding: 7px;
-
-        z-index: 100001;
     }
 
+
     .navegacion.activo ul li a {
+
         padding: 11px 9px;
 
         font-size: 0.72rem;
@@ -1589,35 +1672,43 @@ footer {
 @media (max-width: 380px) {
 
     .top-bar {
+
         min-height: 55px;
+        height: 55px;
 
         padding: 0 10px;
     }
+
 
     .logo {
         font-size: 0.82rem;
     }
 
+
     .menu-movil {
+
         width: 36px;
         height: 36px;
 
         font-size: 20px;
     }
 
+
     .navegacion.activo {
-        top: 50px;
+
+        top: 60px;
 
         left: 6px;
         right: 6px;
 
-        max-height:
-            calc(100vh - 58px);
+        max-height: calc(100vh - 68px);
 
         padding: 6px;
     }
 
+
     .navegacion.activo ul li a {
+
         padding: 10px 8px;
 
         font-size: 0.68rem;
@@ -1632,6 +1723,7 @@ footer {
 @media (max-width: 600px) {
 
     .productos {
+
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
 
@@ -1646,15 +1738,20 @@ footer {
 
 @media (min-width: 801px) {
 
+    /* Hamburguesa completamente oculta */
     .menu-movil {
         display: none !important;
     }
 
+
+    /* Navegación normal */
     .navegacion {
         display: block !important;
     }
 
+
+    /* Iconos normales */
     .top-icons {
-        display: flex;
+        display: flex !important;
     }
 }
