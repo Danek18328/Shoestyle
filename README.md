@@ -49,7 +49,7 @@ La aplicación utiliza **PHP y MySQL** en el backend y está desplegada mediante
 <p align="center">
   <img src="Capturas/SHOESTYLE-3.png" width="45%" alt="SHOESTYLE - Vista 3">
   <img src="Capturas/SHOESTYLE-4.png" width="45%" alt="SHOESTYLE - Vista 4">
-  <img src="Capturas/SHOESTYLE-5.png" width="45%" alt="SHOESTYLE - Vista 4">
+  <img src="Capturas/SHOESTYLE-5.png" width="45%" alt="SHOESTYLE - Vista 5">
 </p>
 
 ---
