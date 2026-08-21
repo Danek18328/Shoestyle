@@ -9,22 +9,33 @@
 
     <link rel="stylesheet" href="../CSS/CONTACTENOS7.CSS">
 
-    <!-- Fuentes -->
+    <!-- =====================================================
+         FUENTES
+    ====================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap"
         rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 
@@ -38,6 +49,9 @@
     ====================================================== -->
 
     <header class="banner-portada">
+
+
+        <!-- IMAGEN -->
 
         <div class="imagen-banner">
 
@@ -56,14 +70,39 @@
 
         <div class="top-bar">
 
+
+            <!-- LOGO -->
+
             <a href="../index.php" class="logo">
+
                 SHOE<span class="logo-rojo">STYLE</span>
+
             </a>
 
 
-            <!-- NAVEGACIÓN -->
+            <!-- =================================================
+                 MENÚ HAMBURGUESA
+            ================================================== -->
 
-            <nav class="navegacion">
+            <button
+                class="menu-movil"
+                type="button"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+                aria-controls="menu-principal">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <!-- =================================================
+                 NAVEGACIÓN
+            ================================================== -->
+
+            <nav
+                class="navegacion"
+                id="menu-principal">
 
                 <ul>
 
@@ -86,8 +125,9 @@
                     </li>
 
                     <li>
-                        <a href="../paginas/contactenos.html"
-                           class="activo">
+                        <a
+                            href="../paginas/contactenos.html"
+                            class="activo">
                             CONTACTENOS
                         </a>
                     </li>
@@ -121,38 +161,37 @@
             </nav>
 
 
-            <!-- ICONOS SOLO PC -->
+            <!-- =================================================
+                 ICONOS
+            ================================================== -->
 
             <div class="top-icons">
 
-                <a href="#" class="icon-link">
+                <a
+                    href="#"
+                    class="icon-link"
+                    aria-label="Carrito">
+
                     <i class="fa-solid fa-cart-shopping"></i>
+
                 </a>
 
-                <a href="#" class="icon-link">
+                <a
+                    href="#"
+                    class="icon-link"
+                    aria-label="Visitas">
+
                     <i class="fa-regular fa-eye"></i>
+
                 </a>
 
             </div>
-
-
-            <!-- HAMBURGUESA -->
-
-            <button
-                class="menu-movil"
-                type="button"
-                aria-label="Abrir menú"
-                aria-expanded="false">
-
-                <i class="fa-solid fa-bars"></i>
-
-            </button>
 
         </div>
 
 
         <!-- =================================================
-             HERO
+             CONTENIDO HERO
         ================================================== -->
 
         <div class="contenido-centro">
@@ -173,18 +212,34 @@
         </div>
 
 
-        <!-- SCROLL -->
+        <!-- =================================================
+             LEMA
+        ================================================== -->
+
+        <div class="lema-centro">
+
+            <p>
+                TU ESTILO EMPIEZA POR LOS PIES
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             SCROLL
+        ================================================== -->
 
         <div class="scroll-indicator">
 
             <div class="mouse">
+
                 <div class="rueda"></div>
+
             </div>
 
         </div>
 
     </header>
-
 
 
     <!-- =====================================================
@@ -208,7 +263,7 @@
 
 
             <!-- =================================================
-                 TARJETAS DE CONTACTO
+                 TARJETAS
             ================================================== -->
 
             <div class="contacto-grid">
@@ -285,7 +340,8 @@
 
                     <a
                         href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
-                        target="_blank">
+                        target="_blank"
+                        rel="noopener noreferrer">
 
                         CONTACTAR
 
@@ -365,13 +421,17 @@
 
                         <a
                             href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
-                            target="_blank">
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook">
 
                             <i class="fa-brands fa-facebook-f"></i>
 
                         </a>
 
-                        <a href="#">
+                        <a
+                            href="#"
+                            aria-label="Instagram">
 
                             <i class="fa-brands fa-instagram"></i>
 
@@ -379,7 +439,9 @@
 
                         <a
                             href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
-                            target="_blank">
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="TikTok">
 
                             <i class="fa-brands fa-tiktok"></i>
 
@@ -387,7 +449,9 @@
 
                         <a
                             href="https://x.com/shoestyle397157"
-                            target="_blank">
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="X">
 
                             <i class="fa-brands fa-x-twitter"></i>
 
@@ -404,12 +468,14 @@
     </main>
 
 
-
     <!-- =====================================================
          FOOTER
     ====================================================== -->
 
     <footer>
+
+
+        <!-- REDES -->
 
         <div class="redes-sociales">
 
@@ -419,15 +485,18 @@
 
             <div class="iconos-redes">
 
+
                 <a
                     href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
 
                     <img
                         src="../imagenes/facebook.png"
                         alt="Facebook">
 
                 </a>
+
 
                 <a href="#">
 
@@ -437,9 +506,11 @@
 
                 </a>
 
+
                 <a
                     href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
 
                     <img
                         src="../imagenes/tiktok.png"
@@ -447,9 +518,11 @@
 
                 </a>
 
+
                 <a
                     href="https://x.com/shoestyle397157"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
 
                     <img
                         src="../imagenes/twitter.png"
@@ -457,9 +530,11 @@
 
                 </a>
 
+
                 <a
                     href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
 
                     <img
                         src="../imagenes/whatsapp.png"
@@ -471,6 +546,8 @@
 
         </div>
 
+
+        <!-- INFORMACIÓN -->
 
         <div class="footer-info">
 
@@ -581,6 +658,8 @@
         </div>
 
 
+        <!-- COPYRIGHT -->
+
         <div class="copyright">
 
             <p>
@@ -600,32 +679,48 @@
 ====================================================== -->
 
 <script>
+
 document.addEventListener("DOMContentLoaded", () => {
 
-    const botonMenu = document.querySelector(".menu-movil");
-    const navegacion = document.querySelector(".navegacion");
-    const icono = botonMenu?.querySelector("i");
+    const botonMenu =
+        document.querySelector(".menu-movil");
+
+    const navegacion =
+        document.querySelector(".navegacion");
+
+    const icono =
+        botonMenu?.querySelector("i");
+
 
     if (!botonMenu || !navegacion || !icono) {
         return;
     }
 
-    // ABRIR / CERRAR MENÚ
-    botonMenu.addEventListener("click", () => {
 
-        const abierto = navegacion.classList.toggle("activo");
+    /* =====================================================
+       ABRIR / CERRAR MENÚ
+    ===================================================== */
+
+    botonMenu.addEventListener("click", (evento) => {
+
+        evento.stopPropagation();
+
+        const abierto =
+            navegacion.classList.toggle("activo");
+
 
         botonMenu.setAttribute(
             "aria-expanded",
             abierto ? "true" : "false"
         );
 
+
         botonMenu.setAttribute(
             "aria-label",
             abierto ? "Cerrar menú" : "Abrir menú"
         );
 
-        // Cambiar icono
+
         if (abierto) {
 
             icono.classList.remove("fa-bars");
@@ -641,7 +736,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // CERRAR AL HACER CLICK EN UN ENLACE
+    /* =====================================================
+       CERRAR AL SELECCIONAR UNA OPCIÓN
+    ===================================================== */
+
     navegacion.querySelectorAll("a").forEach(enlace => {
 
         enlace.addEventListener("click", () => {
@@ -666,7 +764,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // CERRAR AL HACER CLICK FUERA DEL MENÚ
+    /* =====================================================
+       CERRAR AL HACER CLICK FUERA
+    ===================================================== */
+
     document.addEventListener("click", (evento) => {
 
         if (
@@ -689,15 +790,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 "aria-label",
                 "Abrir menú"
             );
+
         }
 
     });
 
 
-    // CERRAR SI PASAMOS DE CELULAR A PC
+    /* =====================================================
+       CERRAR AL VOLVER A PC
+    ===================================================== */
+
     window.addEventListener("resize", () => {
 
-        if (window.innerWidth > 800) {
+        if (window.innerWidth > 850) {
 
             navegacion.classList.remove("activo");
 
@@ -719,7 +824,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
 </script>
 
 </body>
+
 </html>
