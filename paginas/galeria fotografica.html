@@ -11,6 +11,11 @@
     >
 
     <title>Galería Fotográfica | SHOESTYLE</title>
+
+    <!-- =====================================================
+         FUENTES
+    ====================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -24,7 +29,15 @@
         rel="stylesheet"
     >
 
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -34,7 +47,11 @@
          CSS
     ====================================================== -->
 
-    <link rel="stylesheet" href="../CSS/galeria.css">
+    <link
+        rel="stylesheet"
+        href="../CSS/galeria.css"
+    >
+
 </head>
 
 
@@ -42,13 +59,17 @@
 
     <div id="contenedor">
 
+
         <!-- =================================================
              HEADER / HERO
         ================================================== -->
 
         <header class="banner-portada">
 
-            <!-- VIDEO DE FONDO -->
+
+            <!-- =================================================
+                 VIDEO DE FONDO
+            ================================================== -->
 
             <div class="video-container">
 
@@ -60,13 +81,16 @@
                     playsinline
                     aria-hidden="true"
                 >
+
                     <source
                         src="../Videos/VideoBackground-gallery2.mp4"
                         type="video/mp4"
                     >
 
                     Tu navegador no soporta videos HTML5.
+
                 </video>
+
 
                 <div class="capa-oscura"></div>
 
@@ -79,7 +103,10 @@
 
             <div class="top-bar">
 
-                <!-- LOGO -->
+
+                <!-- =================================================
+                     LOGO
+                ================================================== -->
 
                 <a
                     href="../index.php"
@@ -90,10 +117,13 @@
                 </a>
 
 
-                <!-- MENÚ -->
+                <!-- =================================================
+                     NAVEGACIÓN
+                ================================================== -->
 
                 <nav
                     class="navegacion"
+                    id="menu-navegacion"
                     aria-label="Navegación principal"
                 >
 
@@ -105,17 +135,20 @@
                             </a>
                         </li>
 
+
                         <li>
                             <a href="../paginas/nuestra empresa.html">
                                 NUESTRA EMPRESA
                             </a>
                         </li>
 
+
                         <li>
                             <a href="../paginas/productos.php">
                                 PRODUCTOS
                             </a>
                         </li>
+
 
                         <li>
                             <a href="../paginas/contactenos.html">
@@ -130,11 +163,15 @@
                             </a>
                         </li>
 
+
                         <li>
                             <a href="../paginas/servicios.html">
                                 SERVICIOS
                             </a>
                         </li>
+
+
+                        <!-- PÁGINA ACTUAL -->
 
                         <li>
                             <a
@@ -145,7 +182,7 @@
                                 GALERÍA FOTOGRÁFICA
                             </a>
                         </li>
-                        
+
 
                         <li>
                             <a href="../paginas/registrarse.html">
@@ -158,7 +195,9 @@
                 </nav>
 
 
-                <!-- ICONOS -->
+                <!-- =================================================
+                     ICONOS DESKTOP
+                ================================================== -->
 
                 <div class="top-icons">
 
@@ -171,6 +210,7 @@
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
 
+
                     <a
                         href="#"
                         class="icon-link"
@@ -181,6 +221,28 @@
                     </a>
 
                 </div>
+
+
+                <!-- =================================================
+                     BOTÓN HAMBURGUESA
+                     SOLO TABLET / CELULAR
+                ================================================== -->
+
+                <button
+                    type="button"
+                    class="menu-movil"
+                    id="boton-menu"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="menu-navegacion"
+                >
+
+                    <i
+                        class="fa-solid fa-bars"
+                        aria-hidden="true"
+                    ></i>
+
+                </button>
 
             </div>
 
@@ -195,9 +257,11 @@
                     DESCUBRE SHOESTYLE
                 </p>
 
+
                 <h1 class="titulo-hero">
                     GALERÍA
                 </h1>
+
 
                 <p class="subtitulo">
                     Explora nuestra colección y descubre nuestro estilo.
@@ -206,18 +270,20 @@
             </div>
 
 
-            <!-- LEMA -->
+            <!-- =================================================
+                 LEMA
+            ================================================== -->
 
             <div class="lema-centro">
 
-                <p>
-                 
-                </p>
+                <p></p>
 
             </div>
 
 
-            <!-- INDICADOR DE SCROLL -->
+            <!-- =================================================
+                 INDICADOR DE SCROLL
+            ================================================== -->
 
             <div
                 class="scroll-indicator"
@@ -225,7 +291,9 @@
             >
 
                 <div class="mouse">
+
                     <div class="rueda"></div>
+
                 </div>
 
             </div>
@@ -249,6 +317,7 @@
                     GALERÍA FOTOGRÁFICA
                 </h2>
 
+
                 <p class="descripcion-galeria">
                     Conoce nuestra colección, nuestros diseños y
                     el estilo que representa a SHOESTYLE.
@@ -261,6 +330,7 @@
 
                 <div class="galeria-contenedor">
 
+
                     <div
                         class="visor"
                         aria-label="Galería de imágenes SHOESTYLE"
@@ -268,74 +338,104 @@
 
                         <ul class="slider">
 
+
                             <li id="slide1">
+
                                 <img
                                     src="../imagenes/IMAGEN 1.JPG"
                                     alt="Colección SHOESTYLE - Imagen 1"
                                 >
+
                             </li>
 
+
                             <li id="slide2">
+
                                 <img
                                     src="../imagenes/IMAGEN 2.JPG"
                                     alt="Colección SHOESTYLE - Imagen 2"
                                 >
+
                             </li>
 
+
                             <li id="slide3">
+
                                 <img
                                     src="../imagenes/IMAGEN 3.avif"
                                     alt="Colección SHOESTYLE - Imagen 3"
                                 >
+
                             </li>
 
+
                             <li id="slide4">
+
                                 <img
                                     src="../imagenes/IMAGEN 4.jpg"
                                     alt="Colección SHOESTYLE - Imagen 4"
                                 >
+
                             </li>
 
+
                             <li id="slide5">
+
                                 <img
                                     src="../imagenes/IMAGEN 5.jpg"
                                     alt="Colección SHOESTYLE - Imagen 5"
                                 >
+
                             </li>
 
+
                             <li id="slide6">
+
                                 <img
                                     src="../imagenes/IMAGEN 6.jpg"
                                     alt="Colección SHOESTYLE - Imagen 6"
                                 >
+
                             </li>
 
+
                             <li id="slide7">
+
                                 <img
                                     src="../imagenes/IMAGEN 7.JPG"
                                     alt="Colección SHOESTYLE - Imagen 7"
                                 >
+
                             </li>
 
+
                             <li id="slide8">
+
                                 <img
                                     src="../imagenes/IMAGEN 8.JPG"
                                     alt="Colección SHOESTYLE - Imagen 8"
                                 >
+
                             </li>
 
+
                             <li id="slide9">
+
                                 <img
                                     src="../imagenes/imagen_9.jpg"
                                     alt="Colección SHOESTYLE - Imagen 9"
                                 >
+
                             </li>
 
+
                             <li id="slide10">
+
                                 <img
                                     src="../imagenes/IMAGEN 10.JPG"
                                     alt="Colección SHOESTYLE - Imagen 10"
                                 >
+
                             </li>
 
                         </ul>
@@ -352,45 +452,16 @@
                         aria-label="Seleccionar imagen"
                     >
 
-                        <a href="#slide1" aria-label="Ver imagen 1">
-                            01
-                        </a>
-
-                        <a href="#slide2" aria-label="Ver imagen 2">
-                            02
-                        </a>
-
-                        <a href="#slide3" aria-label="Ver imagen 3">
-                            03
-                        </a>
-
-                        <a href="#slide4" aria-label="Ver imagen 4">
-                            04
-                        </a>
-
-                        <a href="#slide5" aria-label="Ver imagen 5">
-                            05
-                        </a>
-
-                        <a href="#slide6" aria-label="Ver imagen 6">
-                            06
-                        </a>
-
-                        <a href="#slide7" aria-label="Ver imagen 7">
-                            07
-                        </a>
-
-                        <a href="#slide8" aria-label="Ver imagen 8">
-                            08
-                        </a>
-
-                        <a href="#slide9" aria-label="Ver imagen 9">
-                            09
-                        </a>
-
-                        <a href="#slide10" aria-label="Ver imagen 10">
-                            10
-                        </a>
+                        <a href="#slide1" aria-label="Ver imagen 1">01</a>
+                        <a href="#slide2" aria-label="Ver imagen 2">02</a>
+                        <a href="#slide3" aria-label="Ver imagen 3">03</a>
+                        <a href="#slide4" aria-label="Ver imagen 4">04</a>
+                        <a href="#slide5" aria-label="Ver imagen 5">05</a>
+                        <a href="#slide6" aria-label="Ver imagen 6">06</a>
+                        <a href="#slide7" aria-label="Ver imagen 7">07</a>
+                        <a href="#slide8" aria-label="Ver imagen 8">08</a>
+                        <a href="#slide9" aria-label="Ver imagen 9">09</a>
+                        <a href="#slide10" aria-label="Ver imagen 10">10</a>
 
                     </div>
 
@@ -402,6 +473,7 @@
                 ================================================== -->
 
                 <div class="galeria-info">
+
 
                     <article class="info-item">
 
@@ -469,7 +541,10 @@
 
         <footer>
 
-            <!-- REDES SOCIALES -->
+
+            <!-- =================================================
+                 REDES SOCIALES
+            ================================================== -->
 
             <div class="redes-sociales">
 
@@ -477,7 +552,9 @@
                     ENCUÉNTRANOS TAMBIÉN EN:
                 </h3>
 
+
                 <div class="iconos-redes">
+
 
                     <a
                         href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
@@ -485,21 +562,27 @@
                         rel="noopener noreferrer"
                         aria-label="Facebook"
                     >
+
                         <img
                             src="../imagenes/facebook.png"
                             alt="Facebook"
                         >
+
                     </a>
+
 
                     <a
                         href="#"
                         aria-label="Instagram"
                     >
+
                         <img
                             src="../imagenes/instagram.jpg"
                             alt="Instagram"
                         >
+
                     </a>
+
 
                     <a
                         href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
@@ -507,11 +590,14 @@
                         rel="noopener noreferrer"
                         aria-label="TikTok"
                     >
+
                         <img
                             src="../imagenes/tiktok.png"
                             alt="TikTok"
                         >
+
                     </a>
+
 
                     <a
                         href="https://x.com/shoestyle397157"
@@ -519,11 +605,14 @@
                         rel="noopener noreferrer"
                         aria-label="X"
                     >
+
                         <img
                             src="../imagenes/twitter.png"
                             alt="X"
                         >
+
                     </a>
+
 
                     <a
                         href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
@@ -531,10 +620,12 @@
                         rel="noopener noreferrer"
                         aria-label="WhatsApp"
                     >
+
                         <img
                             src="../imagenes/whatsapp.png"
                             alt="WhatsApp"
                         >
+
                     </a>
 
                 </div>
@@ -542,9 +633,12 @@
             </div>
 
 
-            <!-- INFORMACIÓN DEL FOOTER -->
+            <!-- =================================================
+                 INFORMACIÓN FOOTER
+            ================================================== -->
 
             <div class="footer-info">
+
 
                 <!-- AYUDA -->
 
@@ -585,7 +679,7 @@
                 </div>
 
 
-                <!-- INFORMACIÓN SHOESTYLE -->
+                <!-- SHOESTYLE -->
 
                 <div class="columna">
 
@@ -660,7 +754,9 @@
             </div>
 
 
-            <!-- COPYRIGHT -->
+            <!-- =================================================
+                 COPYRIGHT
+            ================================================== -->
 
             <div class="copyright">
 
@@ -674,6 +770,168 @@
         </footer>
 
     </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT MENÚ HAMBURGUESA
+    ====================================================== -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const botonMenu =
+                document.getElementById("boton-menu");
+
+            const navegacion =
+                document.getElementById("menu-navegacion");
+
+
+            if (!botonMenu || !navegacion) {
+                return;
+            }
+
+
+            botonMenu.addEventListener("click", function () {
+
+                const abierto =
+                    navegacion.classList.toggle("activo");
+
+
+                botonMenu.setAttribute(
+                    "aria-expanded",
+                    abierto
+                );
+
+
+                botonMenu.setAttribute(
+                    "aria-label",
+                    abierto
+                        ? "Cerrar menú"
+                        : "Abrir menú"
+                );
+
+
+                const icono =
+                    botonMenu.querySelector("i");
+
+
+                if (icono) {
+
+                    icono.classList.toggle(
+                        "fa-bars",
+                        !abierto
+                    );
+
+                    icono.classList.toggle(
+                        "fa-xmark",
+                        abierto
+                    );
+
+                }
+
+            });
+
+
+            /* =================================================
+               CERRAR MENÚ AL SELECCIONAR UNA OPCIÓN
+            ================================================== */
+
+            const enlaces =
+                navegacion.querySelectorAll("a");
+
+
+            enlaces.forEach(function (enlace) {
+
+                enlace.addEventListener(
+                    "click",
+                    function () {
+
+                        navegacion.classList.remove("activo");
+
+                        botonMenu.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        botonMenu.setAttribute(
+                            "aria-label",
+                            "Abrir menú"
+                        );
+
+
+                        const icono =
+                            botonMenu.querySelector("i");
+
+
+                        if (icono) {
+
+                            icono.classList.remove(
+                                "fa-xmark"
+                            );
+
+                            icono.classList.add(
+                                "fa-bars"
+                            );
+
+                        }
+
+                    }
+                );
+
+            });
+
+
+            /* =================================================
+               CERRAR CON ESC
+            ================================================== */
+
+            document.addEventListener(
+                "keydown",
+                function (evento) {
+
+                    if (
+                        evento.key === "Escape" &&
+                        navegacion.classList.contains("activo")
+                    ) {
+
+                        navegacion.classList.remove("activo");
+
+                        botonMenu.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        botonMenu.setAttribute(
+                            "aria-label",
+                            "Abrir menú"
+                        );
+
+
+                        const icono =
+                            botonMenu.querySelector("i");
+
+
+                        if (icono) {
+
+                            icono.classList.remove(
+                                "fa-xmark"
+                            );
+
+                            icono.classList.add(
+                                "fa-bars"
+                            );
+
+                        }
+
+                    }
+
+                }
+            );
+
+        });
+
+    </script>
 
 </body>
 
