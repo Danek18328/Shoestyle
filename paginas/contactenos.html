@@ -600,46 +600,118 @@
 ====================================================== -->
 
 <script>
+document.addEventListener("DOMContentLoaded", () => {
 
-document.addEventListener("DOMContentLoaded", function () {
+    const botonMenu = document.querySelector(".menu-movil");
+    const navegacion = document.querySelector(".navegacion");
+    const icono = botonMenu?.querySelector("i");
 
-    const botonMenu =
-        document.querySelector(".menu-movil");
-
-    const navegacion =
-        document.querySelector(".navegacion");
-
-    if (!botonMenu || !navegacion) {
+    if (!botonMenu || !navegacion || !icono) {
         return;
     }
 
+    // ABRIR / CERRAR MENÚ
+    botonMenu.addEventListener("click", () => {
 
-    botonMenu.addEventListener("click", function () {
-
-        const abierto =
-            navegacion.classList.toggle("activo");
-
+        const abierto = navegacion.classList.toggle("activo");
 
         botonMenu.setAttribute(
             "aria-expanded",
             abierto ? "true" : "false"
         );
 
+        botonMenu.setAttribute(
+            "aria-label",
+            abierto ? "Cerrar menú" : "Abrir menú"
+        );
 
-        const icono =
-            botonMenu.querySelector("i");
+        // Cambiar icono
+        if (abierto) {
+
+            icono.classList.remove("fa-bars");
+            icono.classList.add("fa-xmark");
+
+        } else {
+
+            icono.classList.remove("fa-xmark");
+            icono.classList.add("fa-bars");
+
+        }
+
+    });
 
 
-        if (icono) {
+    // CERRAR AL HACER CLICK EN UN ENLACE
+    navegacion.querySelectorAll("a").forEach(enlace => {
 
-            icono.classList.toggle(
-                "fa-bars",
-                !abierto
+        enlace.addEventListener("click", () => {
+
+            navegacion.classList.remove("activo");
+
+            icono.classList.remove("fa-xmark");
+            icono.classList.add("fa-bars");
+
+            botonMenu.setAttribute(
+                "aria-expanded",
+                "false"
             );
 
-            icono.classList.toggle(
-                "fa-xmark",
-                abierto
+            botonMenu.setAttribute(
+                "aria-label",
+                "Abrir menú"
+            );
+
+        });
+
+    });
+
+
+    // CERRAR AL HACER CLICK FUERA DEL MENÚ
+    document.addEventListener("click", (evento) => {
+
+        if (
+            navegacion.classList.contains("activo") &&
+            !navegacion.contains(evento.target) &&
+            !botonMenu.contains(evento.target)
+        ) {
+
+            navegacion.classList.remove("activo");
+
+            icono.classList.remove("fa-xmark");
+            icono.classList.add("fa-bars");
+
+            botonMenu.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            botonMenu.setAttribute(
+                "aria-label",
+                "Abrir menú"
+            );
+        }
+
+    });
+
+
+    // CERRAR SI PASAMOS DE CELULAR A PC
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 800) {
+
+            navegacion.classList.remove("activo");
+
+            icono.classList.remove("fa-xmark");
+            icono.classList.add("fa-bars");
+
+            botonMenu.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            botonMenu.setAttribute(
+                "aria-label",
+                "Abrir menú"
             );
 
         }
@@ -647,7 +719,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
-
 </script>
 
 </body>
