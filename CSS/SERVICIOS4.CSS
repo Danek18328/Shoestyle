@@ -1370,3 +1370,16 @@ footer {
         display: flex !important;
     }
 }
+@media (max-width: 800px) {
+
+    .navegacion.activo ul li a.activo::after,
+    .navegacion.activo ul li a.active::after {
+        content: none !important;
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        box-shadow: none !important;
+        background: none !important;
+    }
+
+}
