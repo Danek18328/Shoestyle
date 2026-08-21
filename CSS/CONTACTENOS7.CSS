@@ -384,7 +384,6 @@ select {
     width: min(900px, calc(100% - 40px));
 
     padding: 0 20px;
-
     margin: 0;
 
     text-align: center;
@@ -408,16 +407,12 @@ select {
 
     from {
         opacity: 0;
-
-        transform:
-            translate(-50%, calc(-50% + 25px));
+        transform: translate(-50%, calc(-50% + 25px));
     }
 
     to {
         opacity: 1;
-
-        transform:
-            translate(-50%, -50%);
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -427,18 +422,16 @@ select {
 ========================================================= */
 
 .etiqueta-hero {
-    margin: 0 0 16px;
+    margin: 0 0 10px;
 
     color: var(--rojo);
 
     font-family: 'Poppins', sans-serif;
 
     font-size: 12px;
-
     font-weight: 600;
 
     letter-spacing: 4px;
-
     line-height: 1.2;
 
     text-transform: uppercase;
@@ -459,10 +452,9 @@ select {
         'Arial Black',
         sans-serif;
 
-    font-size:
-        clamp(3.5rem, 7vw, 6rem);
+    font-size: clamp(3.5rem, 7vw, 6rem);
 
-    line-height: 0.95;
+    line-height: 0.9;
 
     letter-spacing: 3px;
 
@@ -473,23 +465,26 @@ select {
     white-space: nowrap;
 }
 
+
+/* =========================================================
+   LÍNEA DECORATIVA
+========================================================= */
+
 .titulo-hero::after {
     content: "";
 
     display: block;
 
     width: 75px;
-
     height: 4px;
 
-    margin: 22px auto 0;
+    margin: 14px auto 0;
 
-    background:
-        linear-gradient(
-            90deg,
-            var(--rojo),
-            var(--rojo-brillante)
-        );
+    background: linear-gradient(
+        90deg,
+        var(--rojo),
+        var(--rojo-brillante)
+    );
 
     border-radius: 10px;
 }
@@ -505,7 +500,7 @@ select {
     width: 100%;
     max-width: 750px;
 
-    margin: 22px auto 0;
+    margin: 12px auto 0;
 
     padding: 0;
 
@@ -513,19 +508,16 @@ select {
 
     font-family: 'Manrope', sans-serif;
 
-    font-size:
-        clamp(0.85rem, 1.5vw, 1.05rem);
+    font-size: clamp(0.85rem, 1.5vw, 1.05rem);
 
     font-weight: 400;
 
-    line-height: 1.6;
+    line-height: 1.4;
 
     text-align: center;
 
     white-space: normal;
 }
-
-
 /* =========================================================
    SCROLL
 ========================================================= */
