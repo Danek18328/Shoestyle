@@ -1103,9 +1103,15 @@ footer {
 
 @media (max-width: 800px) {
 
+    /* BARRA SUPERIOR */
+
     .top-bar {
         min-height: 65px;
+        height: 65px;
+
         padding: 0 16px;
+
+        position: relative;
         z-index: 100000;
     }
 
@@ -1125,10 +1131,20 @@ footer {
 
 
     /* =====================================================
+       OCULTAR ICONOS
+    ===================================================== */
+
+    .top-icons {
+        display: none !important;
+    }
+
+
+    /* =====================================================
        MOSTRAR HAMBURGUESA
     ===================================================== */
 
     .menu-movil {
+
         display: flex !important;
 
         align-items: center;
@@ -1156,10 +1172,21 @@ footer {
         z-index: 100002;
 
         flex-shrink: 0;
+
+        appearance: none;
+        -webkit-appearance: none;
     }
 
     .menu-movil:hover {
-        color: #e50914;
+        color: #ffffff;
+    }
+
+    .menu-movil:focus {
+        outline: none;
+    }
+
+    .menu-movil:active {
+        transform: scale(0.95);
     }
 
 
@@ -1180,9 +1207,12 @@ footer {
 
         width: auto;
 
+        max-width: none;
+
         max-height: calc(100vh - 75px);
 
         overflow-y: auto;
+        overflow-x: hidden;
 
         padding: 8px;
 
@@ -1196,8 +1226,11 @@ footer {
             0 20px 50px rgba(0, 0, 0, 0.8);
 
         backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
 
         z-index: 100001;
+
+        box-sizing: border-box;
     }
 
 
@@ -1219,6 +1252,8 @@ footer {
         padding: 0;
 
         list-style: none;
+
+        box-sizing: border-box;
     }
 
 
@@ -1230,6 +1265,8 @@ footer {
 
         margin: 0;
         padding: 0;
+
+        box-sizing: border-box;
     }
 
 
@@ -1257,6 +1294,8 @@ footer {
 
         line-height: 1.2;
 
+        text-decoration: none;
+
         border-bottom:
             1px solid rgba(255, 255, 255, 0.07);
 
@@ -1265,9 +1304,15 @@ footer {
             background 0.2s ease;
     }
 
+
+    /* ÚLTIMO ELEMENTO */
+
     .navegacion.activo ul li:last-child a {
         border-bottom: none;
     }
+
+
+    /* HOVER */
 
     .navegacion.activo ul li a:hover {
 
@@ -1279,67 +1324,32 @@ footer {
 
 
     /* =====================================================
-       OCULTAR ICONOS EN TABLET/CELULAR
+       🔥 QUITAR LÍNEA ROJA DEL ACTIVO EN MÓVIL
     ===================================================== */
 
-    .top-icons {
+    .navegacion.activo ul li a.activo::after,
+    .navegacion.activo ul li a.active::after {
+
+        content: none !important;
+
         display: none !important;
+
+        width: 0 !important;
+        height: 0 !important;
+
+        background: none !important;
+
+        box-shadow: none !important;
     }
 
 
-    /* =====================================================
-       SOBRE NOSOTROS
-       HISTORIA ARRIBA + DESTACADO DEBAJO
-    ===================================================== */
+    /* POR SI EL ACTIVO USA OTRA REGLA */
 
-    .bloque-empresa {
+    .navegacion.activo ul li a.activo,
+    .navegacion.activo ul li a.active {
 
-        grid-template-columns: 1fr;
-
-        min-height: auto;
-    }
-
-    .empresa-texto {
-
-        padding: 60px 0;
-
-        width: 100%;
-    }
-
-    .empresa-destacado {
-
-        width: 100%;
-
-        min-height: 400px;
-    }
-
-
-    /* =====================================================
-       VALORES - TABLET
-    ===================================================== */
-
-    .valores {
-
-        width: 90%;
-
-        margin: 100px auto;
-    }
-
-    .valores-grid {
-
-        grid-template-columns:
-            repeat(2, minmax(280px, 1fr));
-
-        gap: 20px;
-    }
-
-    .valor {
-
-        width: 100%;
-
-        min-height: 280px;
-
-        padding: 35px 28px;
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.07);
     }
 }
 
@@ -1353,148 +1363,52 @@ footer {
     .top-bar {
 
         min-height: 60px;
+        height: 60px;
 
         padding: 0 12px;
     }
 
-
-    /* =====================================================
-       LOGO
-    ===================================================== */
 
     .logo {
         font-size: 0.9rem;
     }
 
 
-    /* =====================================================
-       HAMBURGUESA
-    ===================================================== */
+    /* HAMBURGUESA */
 
     .menu-movil {
 
         width: 38px;
-
         height: 38px;
 
         font-size: 21px;
     }
 
 
-    /* =====================================================
-       SOBRE NOSOTROS
-    ===================================================== */
+    /* MENÚ */
 
-    .empresa-texto {
+    .navegacion.activo {
 
-        padding: 45px 0;
-    }
+        top: 65px;
 
-    .empresa-texto h2 {
+        left: 8px;
+        right: 8px;
 
-        font-size: 27px;
-    }
+        max-height: calc(100vh - 75px);
 
-    .empresa-texto p {
-
-        font-size: 14px;
-    }
-
-    .empresa-destacado {
-
-        min-height: 350px;
-    }
-
-    .destacado-contenido {
-
-        padding: 20px;
-    }
-
-    .destacado-contenido i {
-
-        font-size: 55px;
-    }
-
-    .destacado-contenido h3 {
-
-        font-size: 28px;
-    }
-
-    .destacado-contenido span {
-
-        font-size: 13px;
-
-        letter-spacing: 2px;
+        padding: 7px;
     }
 
 
-    /* =====================================================
-       VALORES
-    ===================================================== */
+    .navegacion.activo ul li a {
 
-    .valores {
+        padding: 11px 9px;
 
-        width: 90%;
-
-        margin: 80px auto;
-    }
-
-    .valores-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 16px;
-    }
-
-    .valor {
-
-        width: 100%;
-
-        min-height: 0;
-
-        padding: 30px 25px;
-    }
-
-    .valor-icono {
-
-        font-size: 27px;
-
-        margin-bottom: 20px;
-    }
-
-    .valor h3 {
-
-        font-size: 16px;
-    }
-
-    .valor p {
-
-        font-size: 14px;
-
-        line-height: 1.7;
+        font-size: 0.72rem;
     }
 
 
-    /* =====================================================
-       HERO
-    ===================================================== */
-
-    .titulo-hero {
-
-        font-size: 40px;
-
-        letter-spacing: -1px;
-    }
-
-    .subtitulo {
-
-        font-size: 14px;
-    }
-
-
-    /* =====================================================
-       PRODUCTOS
-    ===================================================== */
+    /* PRODUCTOS */
 
     .productos {
 
@@ -1515,73 +1429,44 @@ footer {
     .top-bar {
 
         min-height: 55px;
+        height: 55px;
 
         padding: 0 10px;
     }
 
-    .logo {
 
+    .logo {
         font-size: 0.82rem;
     }
+
 
     .menu-movil {
 
         width: 36px;
-
         height: 36px;
 
         font-size: 20px;
     }
 
+
     .navegacion.activo {
 
-        top: 50px;
+        top: 60px;
 
         left: 6px;
-
         right: 6px;
 
-        max-height:
-            calc(100vh - 58px);
+        max-height: calc(100vh - 68px);
 
         padding: 6px;
     }
+
 
     .navegacion.activo ul li a {
 
         padding: 10px 8px;
 
         font-size: 0.68rem;
-    }
-
-
-    /* =====================================================
-       HERO PEQUEÑO
-    ===================================================== */
-
-    .titulo-hero {
-
-        font-size: 34px;
-    }
-
-    .subtitulo {
-
-        font-size: 13px;
-    }
-
-
-    /* =====================================================
-       DESTACADO PEQUEÑO
-    ===================================================== */
-
-    .destacado-contenido h3 {
-
-        font-size: 30px;
-    }
-
-    .destacado-contenido span {
-
-        font-size: 13px;
     }
 }
 
@@ -1601,6 +1486,6 @@ footer {
     }
 
     .top-icons {
-        display: flex;
+        display: flex !important;
     }
 }
