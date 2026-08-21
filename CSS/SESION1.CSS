@@ -1,178 +1,712 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-:root {
-    --principal: #a20000;
-    --texto: #ffffff;
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;400;500;600;700;800&family=Manrope:wght@200..800&display=swap');
 
-    --gris: #4d4d4d;
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --rojo: #e10620;
+    --rojo-oscuro: #a20000;
+    --rojo-brillante: #ff2e2e;
+
+    --fondo: #050505;
+    --fondo-2: #0d0d0d;
+    --fondo-3: #151515;
+    --tarjeta: #181818;
+
     --blanco: #ffffff;
-    --negro: #000000;
-   --fondo_2: #333333;
+    --gris-claro: #c7c7c7;
+    --gris: #8c8c8c;
+    --gris-oscuro: #303030;
+
+    --borde: rgba(255, 255, 255, 0.08);
+    --borde-hover: rgba(225, 6, 32, 0.65);
+
+    --sombra:
+        0 20px 50px rgba(0, 0, 0, 0.45);
+
+    --sombra-roja:
+        0 10px 30px rgba(225, 6, 32, 0.18);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "Matangi", sans-serif;
-    background: linear-gradient(
-      135deg,
-      #050505,
-      #111111,
-      #1a1a1a,
-      #2a0000
-    );
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    font-family: 'Manrope', sans-serif;
+
+    color: var(--blanco);
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(225, 6, 32, 0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(162, 0, 0, 0.08),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #030303 0%,
+            #080808 45%,
+            #0d0d0d 100%
+        );
+
+    overflow-x: hidden;
 }
 
-@keyframes brilloContenedor {
-    0% {
-        box-shadow: 0 0 10px var(--principal);
-    }
-    50% {
-        box-shadow: 0 0 25px var(--principal), 0 0 40px var(--principal);
-    }
-    100% {
-        box-shadow: 0 0 10px var(--principal);
-    }
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
 }
+
+input,
+select {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
 
 .contenedor {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
+/* =========================================================
+   TARJETA PRINCIPAL
+========================================================= */
 
 .caja1 {
-    background-color: var(--fondo_2);
-    color: var(--texto);
-    padding: 30px;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    animation: brilloContenedor 3s infinite ease-in-out;
+    position: relative;
+
+    width: min(100%, 450px);
+
+    padding: 42px 38px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28, 28, 28, 0.98),
+            rgba(12, 12, 12, 0.98)
+        );
+
+    border: 1px solid var(--borde);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.65),
+        0 0 40px rgba(225, 6, 32, 0.05);
+
     text-align: center;
+
+    overflow: hidden;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    animation:
+        aparecer 0.7s ease forwards;
 }
+
+
+/* Línea roja superior */
+
+.caja1::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 80px;
+    height: 3px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--rojo),
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px rgba(225, 6, 32, 0.5);
+}
+
+
+/* Brillo decorativo */
+
+.caja1::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -100px;
+    right: -100px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(225, 6, 32, 0.12),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ANIMACIÓN
+========================================================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
 
 .titulo {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 10px var(--blanco);
-    font-family: "Poppins", sans-serif;
-	font-weight:normal;
+    margin-bottom: 30px;
+
+    color: var(--blanco);
+
+    font-family:
+        'Archivo Black',
+        'Arial Black',
+        sans-serif;
+
+    font-size: clamp(1.7rem, 5vw, 2.2rem);
+
+    line-height: 1.1;
+
+    letter-spacing: -0.5px;
+
+    text-shadow:
+        0 0 20px rgba(255, 255, 255, 0.08);
 }
 
+
+/* =========================================================
+   ETIQUETAS
+========================================================= */
+
 .ub1 {
+    display: block;
+
+    margin:
+        0 0 8px;
+
+    color: var(--gris-claro);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 0.82rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
     text-align: left;
-    font-weight: bold;
-    margin: 10px 0 5px;
 }
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
 
 input[type="text"],
 input[type="password"],
 select {
     width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 15px;
-    font-size: 16px;
-    box-sizing: border-box;
+
+    height: 48px;
+
+    padding:
+        0 15px;
+
+    margin-bottom: 18px;
+
+    color: var(--blanco);
+
+    background:
+        rgba(5, 5, 5, 0.85);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 0.9rem;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
 }
+
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #666;
+}
+
+
+input[type="text"]:hover,
+input[type="password"]:hover,
+select:hover {
+    border-color:
+        rgba(255, 255, 255, 0.2);
+}
+
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+
+    background: #090909;
+
+    border-color:
+        var(--rojo);
+
+    box-shadow:
+        0 0 0 3px rgba(225, 6, 32, 0.1),
+        0 0 18px rgba(225, 6, 32, 0.08);
+}
+
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
 
 input[type="checkbox"] {
-    width: auto;
-    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+
+    margin-right: 7px;
+
+    accent-color: var(--rojo);
+
+    cursor: pointer;
+
+    vertical-align: middle;
 }
+
+
+/* =========================================================
+   BOTONES
+========================================================= */
 
 .botones {
+
     display: flex;
+
     flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+
+    gap: 12px;
+
+    margin-top: 12px;
 }
+
 
 .botones-superior {
+
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+
+    gap: 12px;
+
+    width: 100%;
 }
+
+
+/* =========================================================
+   BOTÓN PRINCIPAL
+========================================================= */
 
 input[type="submit"],
-a.btn-volver {
-    flex: 1;
-    padding: 10px;
-    border-radius: 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
+a.btn-volver,
+input[type="reset"] {
+
+    min-height: 46px;
+
+    border-radius: 50px;
+
+    border: 1px solid transparent;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
     cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    font-family: "Michroma", sans-serif;
-	font-weight: normal;
-    transition: 0.3s;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
 
 input[type="submit"] {
-       background: linear-gradient(
-      135deg,
-      #5c0000,
-      #a20000,
-      #ff2b2b
-    );
+
+    width: 100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--rojo-oscuro),
+            var(--rojo),
+            var(--rojo-brillante)
+        );
+
     color: var(--blanco);
-    box-shadow: 2px 2px 10px var(--blanco);
+
+    box-shadow:
+        0 8px 25px rgba(225, 6, 32, 0.2);
 }
+
 
 input[type="submit"]:hover {
-    background-color: var(--blanco);
-    color: var(--principal);
-    border: 1px solid var(--principal);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(225, 6, 32, 0.32);
 }
+
+
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   BOTÓN VOLVER
+========================================================= */
 
 a.btn-volver {
-    background: linear-gradient(
-      135deg,
-      #5c0000,
-      #a20000,
-      #ff2b2b
-    );
-    color: var(--blanco);
-    box-shadow: 2px 2px 10px var(--blanco);
-    border: 1px solid var(--principal);
 
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    color: var(--gris-claro);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
 }
+
 
 a.btn-volver:hover {
-    background-color: var(--principal);
+
+    transform: translateY(-2px);
+
     color: var(--blanco);
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-color:
+        rgba(255, 255, 255, 0.3);
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 input[type="reset"] {
-    width: 50%;
-    padding: 10px;
-    border-radius: 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    background-color: var(--principal);
-    color: var(--blanco);
-    font-family: "Michroma", sans-serif;
-    box-shadow: 2px 2px 10px var(--blanco);
-    transition: 0.3s;
-	font-weight: normal;
+
+    width: 100%;
+
+    background:
+        transparent;
+
+    color: var(--gris-claro);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
 }
 
+
 input[type="reset"]:hover {
-    background-color: var(--blanco);
-    color: var(--principal);
-    border: 1px solid var(--principal);
+
+    transform: translateY(-2px);
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color: var(--blanco);
+
+    border-color:
+        rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================================================
+   FOCUS GENERAL
+========================================================= */
+
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+    outline:
+        2px solid var(--rojo);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 30px 18px;
+    }
+
+    .caja1 {
+        width: min(100%, 430px);
+
+        padding:
+            36px 30px;
+
+        border-radius: 20px;
+    }
+
+    .titulo {
+        margin-bottom: 26px;
+    }
+}
+
+
+/* =========================================================
+   CELULARES
+========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        min-height: 100dvh;
+
+        padding:
+            20px 14px;
+    }
+
+    .caja1 {
+
+        width: 100%;
+
+        padding:
+            32px 22px;
+
+        border-radius: 18px;
+    }
+
+    .titulo {
+
+        font-size: 1.65rem;
+
+        margin-bottom: 24px;
+    }
+
+    .ub1 {
+        font-size: 0.78rem;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select {
+
+        height: 46px;
+
+        padding:
+            0 13px;
+
+        font-size: 0.85rem;
+    }
+
+    .botones-superior {
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    a.btn-volver,
+    input[type="submit"],
+    input[type="reset"] {
+
+        min-height: 44px;
+
+        font-size: 0.82rem;
+    }
+}
+
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    body {
+        padding:
+            15px 10px;
+    }
+
+    .caja1 {
+
+        padding:
+            28px 18px;
+
+        border-radius: 16px;
+    }
+
+    .titulo {
+
+        font-size: 1.45rem;
+
+        margin-bottom: 22px;
+    }
+
+    .ub1 {
+        font-size: 0.75rem;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select {
+
+        height: 44px;
+
+        margin-bottom: 15px;
+
+        font-size: 0.82rem;
+    }
+
+    .botones {
+        gap: 9px;
+    }
+}
+
+
+/* =========================================================
+   ALTURAS PEQUEÑAS
+========================================================= */
+
+@media (max-height: 650px) {
+
+    body {
+        align-items: flex-start;
+
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .caja1 {
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+
+    .titulo {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* =========================================================
+   REDUCIR ANIMACIONES
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
 }
