@@ -963,126 +963,211 @@ footer {
     font-size: 12px;
 }
 
-
 /* =========================================================
-   LAPTOPS
+   MENÚ RESPONSIVE — IGUAL AL INDEX
 ========================================================= */
 
-@media (max-width: 1200px) {
+/* HAMBURGUESA OCULTA EN PC */
+.menu-movil {
+    display: none !important;
+
+    width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: #ffffff;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    position: relative;
+    z-index: 100002;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   PORTÁTILES
+========================================================= */
+
+@media (min-width: 801px) and (max-width: 1200px) {
 
     .top-bar {
-        padding:
-            0 3%;
+        padding: 0 3%;
+    }
+
+    .logo {
+        font-size: 1.2rem;
     }
 
     .navegacion ul {
-        gap: 13px;
+        gap: 12px;
     }
 
-    .navegacion a {
-        font-size: 0.67rem;
+    .navegacion ul li a {
+        font-size: 0.62rem;
+        letter-spacing: 0.2px;
+        white-space: nowrap;
     }
 
     .top-icons {
         gap: 12px;
+        font-size: 1rem;
     }
 
-    .servicios-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+    .icon-link {
+        font-size: 0.95rem;
     }
 }
 
 
 /* =========================================================
-   TABLETS
+   TABLETS + CELULARES
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
+
+    /* BARRA */
 
     .top-bar {
-        min-height: 70px;
+        min-height: 65px;
+        height: 65px;
 
-        padding:
-            0 22px;
+        padding: 0 16px;
+
+        position: relative;
+        z-index: 100000;
     }
 
-    /* OCULTAR NAVEGACIÓN NORMAL */
+    .logo {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+
+    /* OCULTAR NAV NORMAL */
 
     .navegacion {
-        display: none;
+        display: none !important;
     }
+
 
     /* OCULTAR ICONOS */
 
     .top-icons {
-        display: none;
+        display: none !important;
     }
+
 
     /* MOSTRAR HAMBURGUESA */
 
     .menu-movil {
-        display: flex;
+        display: flex !important;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 40px;
+        height: 40px;
+
+        padding: 0;
+        margin: 0;
+
+        border: none;
+        outline: none;
+
+        background: transparent;
+        color: #ffffff;
+
+        font-size: 22px;
+
+        cursor: pointer;
+
+        position: relative;
+        z-index: 100002;
+
+        flex-shrink: 0;
+
+        appearance: none;
+        -webkit-appearance: none;
+
+        user-select: none;
     }
 
 
-    /* GRID */
-
-    .servicios-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 18px;
+    .menu-movil:hover {
+        color: #ffffff;
     }
 
-    .servicio-card {
-        min-height: 330px;
+    .menu-movil:focus {
+        outline: none;
+    }
 
-        padding:
-            35px 25px;
+    .menu-movil:active {
+        transform: scale(0.95);
     }
 
 
-    /* MENÚ */
+    /* =====================================================
+       MENÚ ABIERTO
+    ====================================================== */
 
     .navegacion.activo {
-        display: block;
 
-        position: fixed;
+        display: block !important;
 
-        top: 80px;
+        position: fixed !important;
 
-        left: 15px;
-        right: 15px;
+        top: 70px;
+
+        left: 10px;
+        right: 10px;
 
         width: auto;
 
-        max-height:
-            calc(100vh - 95px);
+        max-width: none;
+
+        max-height: calc(100vh - 80px);
 
         overflow-y: auto;
+        overflow-x: hidden;
 
         padding: 8px;
 
-        background:
-            rgba(10, 10, 10, 0.98);
+        background: rgba(10, 10, 10, 0.98);
 
-        border:
-            1px solid rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.12);
 
         border-radius: 14px;
 
         box-shadow:
-            0 20px 50px rgba(0, 0, 0, 0.85);
+            0 20px 50px rgba(0, 0, 0, 0.8);
 
-        backdrop-filter:
-            blur(18px);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
 
-        z-index: 100000;
+        z-index: 100001;
+
+        box-sizing: border-box;
     }
 
+
+    /* LISTA */
+
     .navegacion.activo ul {
-        display: flex;
+
+        display: flex !important;
 
         flex-direction: column;
 
@@ -1090,40 +1175,79 @@ footer {
 
         gap: 0;
 
+        margin: 0;
+        padding: 0;
+
         list-style: none;
+
+        box-sizing: border-box;
     }
 
-    .navegacion.activo li {
+
+    /* ITEMS */
+
+    .navegacion.activo ul li {
+
+        display: block;
+
         width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
     }
 
-    .navegacion.activo a {
+
+    /* ENLACES */
+
+    .navegacion.activo ul li a {
+
+        display: block;
+
         width: 100%;
 
-        padding:
-            14px 12px;
+        box-sizing: border-box;
 
-        font-size: 0.76rem;
+        padding: 12px 10px;
 
         color: #c7c7c7;
 
+        font-family: 'Poppins', sans-serif;
 
-        white-space: normal;
+        font-size: 0.75rem;
+
+        font-weight: 600;
+
+        line-height: 1.2;
+
+        text-decoration: none;
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.07);
+
+        transition:
+            color 0.2s ease,
+            background 0.2s ease;
     }
 
-    .navegacion.activo li:last-child a {
+
+    .navegacion.activo ul li:last-child a {
         border-bottom: none;
     }
 
-    .navegacion.activo a:hover {
-        color: white;
+
+    .navegacion.activo ul li a:hover {
+        color: #ffffff;
 
         background:
             rgba(255, 255, 255, 0.05);
     }
 
-    .navegacion.activo a.activo::after {
-        display: none;
+
+    .navegacion.activo ul li a:active {
+        background:
+            rgba(255, 255, 255, 0.08);
     }
 }
 
@@ -1134,190 +1258,51 @@ footer {
 
 @media (max-width: 600px) {
 
-    .banner-portada {
-        min-height: 560px;
-    }
-
-
-    /* BARRA */
-
     .top-bar {
         min-height: 60px;
+        height: 60px;
 
-        padding:
-            0 14px;
+        padding: 0 12px;
     }
 
     .logo {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 
     .menu-movil {
-        width: 40px;
-        height: 40px;
+        width: 38px;
+        height: 38px;
 
         font-size: 21px;
     }
 
-
-    /* MENÚ */
-
     .navegacion.activo {
-        top: 67px;
+
+        top: 65px;
 
         left: 8px;
         right: 8px;
 
-        max-height:
-            calc(100vh - 78px);
+        max-height: calc(100vh - 75px);
+
+        padding: 7px;
     }
 
-    .navegacion.activo a {
-        padding:
-            13px 10px;
+    .navegacion.activo ul li a {
+
+        padding: 11px 9px;
 
         font-size: 0.72rem;
     }
 
 
-    /* =====================================================
-       HERO CENTRADO
-    ====================================================== */
+    /* PRODUCTOS 2 COLUMNAS */
 
-    .contenido-centro {
-        top: 50%;
-        left: 50%;
+    .productos {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
-        width: calc(100% - 30px);
-
-        padding:
-            0 10px;
-
-        margin: 0;
-
-        transform:
-            translate(-50%, -50%);
-    }
-
-    .etiqueta-hero {
-        margin-bottom: 15px;
-
-        font-size: 11px;
-
-        letter-spacing: 3px;
-    }
-
-    .titulo-hero {
-        font-size:
-            clamp(3rem, 15vw, 4.5rem);
-
-        letter-spacing: 2px;
-    }
-
-    .titulo-hero::after {
-        width: 60px;
-
-        margin-top: 20px;
-    }
-
-    .subtitulo {
-        margin-top: 20px;
-
-        font-size: 14px;
-
-        line-height: 1.5;
-    }
-
-
-    /* SCROLL */
-
-    .scroll-indicator {
-        bottom: 15px;
-    }
-
-
-    /* =====================================================
-       MAIN
-    ====================================================== */
-
-    main {
-        padding:
-            70px 16px 80px;
-    }
-
-    .servicios h2 {
-        font-size:
-            clamp(2rem, 10vw, 3rem);
-    }
-
-    .descripcion-servicios {
-        font-size: 14px;
-
-        line-height: 1.7;
-
-        margin-bottom: 45px;
-    }
-
-
-    /* =====================================================
-       SERVICIOS
-    ====================================================== */
-
-    .servicios-grid {
-        grid-template-columns: 1fr;
-
-        gap: 18px;
-    }
-
-    .servicio-card {
-        min-height: 320px;
-
-        padding:
-            32px 22px;
-    }
-
-    .servicio-icono {
-        width: 65px;
-        height: 65px;
-
-        font-size: 24px;
-    }
-
-
-    /* =====================================================
-       FOOTER
-    ====================================================== */
-
-    footer {
-        padding:
-            60px 20px 20px;
-    }
-
-    .footer-info {
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-
-        text-align: center;
-    }
-
-    .footer-info h4::after {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .iconos-redes {
-        gap: 10px;
-    }
-
-    .iconos-redes a {
-        width: 42px;
-        height: 42px;
-    }
-
-    .iconos-redes img {
-        width: 22px;
-        height: 22px;
+        gap: 12px;
     }
 }
 
@@ -1330,9 +1315,9 @@ footer {
 
     .top-bar {
         min-height: 55px;
+        height: 55px;
 
-        padding:
-            0 10px;
+        padding: 0 10px;
     }
 
     .logo {
@@ -1347,33 +1332,41 @@ footer {
     }
 
     .navegacion.activo {
-        top: 62px;
+
+        top: 60px;
 
         left: 6px;
         right: 6px;
+
+        max-height: calc(100vh - 68px);
+
+        padding: 6px;
     }
 
-    .navegacion.activo a {
-        padding:
-            11px 8px;
+    .navegacion.activo ul li a {
+
+        padding: 10px 8px;
 
         font-size: 0.68rem;
     }
+}
 
-    .contenido-centro {
-        width: calc(100% - 20px);
 
-        padding:
-            0 5px;
+/* =========================================================
+   PC — TODO NORMAL
+========================================================= */
+
+@media (min-width: 801px) {
+
+    .menu-movil {
+        display: none !important;
     }
 
-    .titulo-hero {
-        font-size:
-            clamp(2.7rem, 15vw, 4rem);
+    .navegacion {
+        display: block !important;
     }
 
-    .servicio-card {
-        padding:
-            28px 18px;
+    .top-icons {
+        display: flex !important;
     }
 }
