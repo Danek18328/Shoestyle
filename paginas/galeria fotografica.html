@@ -5,731 +5,675 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contáctanos | SHOESTYLE</title>
+    <meta
+        name="description"
+        content="Galería fotográfica de SHOESTYLE. Descubre nuestros diseños, colección y estilo."
+    >
 
-    <link rel="stylesheet" href="../CSS/CONTACTENOS7.CSS">
-
-    <!-- FUENTES -->
+    <title>Galería Fotográfica | SHOESTYLE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap"
-        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap"
+        rel="stylesheet"
+    >
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
 
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
 
+    <link rel="stylesheet" href="../CSS/galeria.css">
 </head>
 
 
 <body>
 
-<div id="contenedor">
-
-    <!-- =====================================================
-         BANNER
-    ====================================================== -->
-
-    <header class="banner-portada">
-
-        <!-- IMAGEN -->
-        <div class="imagen-banner">
-
-            <img
-                src="../imagenes/descarga (1).jpg"
-                alt="Banner de productos SHOESTYLE">
-
-            <div class="capa-oscura"></div>
-
-        </div>
-
+    <div id="contenedor">
 
         <!-- =================================================
-             BARRA SUPERIOR
+             HEADER / HERO
         ================================================== -->
 
-        <div class="top-bar">
+        <header class="banner-portada">
 
-            <!-- LOGO -->
+            <!-- VIDEO DE FONDO -->
 
-            <a href="../index.php" class="logo">
-                SHOE<span class="logo-rojo">STYLE</span>
-            </a>
+            <div class="video-container">
 
+                <video
+                    class="video-fondo"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    aria-hidden="true"
+                >
+                    <source
+                        src="../Videos/VideoBackground-gallery2.mp4"
+                        type="video/mp4"
+                    >
 
-            <!-- =================================================
-                 BOTÓN MENÚ MÓVIL
-            ================================================== -->
+                    Tu navegador no soporta videos HTML5.
+                </video>
 
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Abrir menú"
-                aria-expanded="false"
-                type="button">
-
-                <i class="fa-solid fa-bars"></i>
-
-            </button>
-
-
-            <!-- =================================================
-                 NAVEGACIÓN
-            ================================================== -->
-
-            <nav class="navegacion" id="navegacion">
-
-                <ul>
-
-                    <li>
-                        <a href="../index.php">
-                            INICIO
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../paginas/nuestra empresa.html">
-                            NUESTRA EMPRESA
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../paginas/productos.php">
-                            PRODUCTOS
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="activo">
-                            CONTACTANOS
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../paginas/inicio de sesion.html">
-                            INICIO DE SESIÓN
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../paginas/servicios.html">
-                            SERVICIOS
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../paginas/galeria fotografica.html">
-                            GALERIA FOTOGRAFICA
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../paginas/registrarse.html">
-                            REGISTRARSE
-                        </a>
-                    </li>
-
-                </ul>
-
-            </nav>
-
-
-            <!-- =================================================
-                 ICONOS
-            ================================================== -->
-
-            <div class="top-icons">
-
-                <a href="#" class="icon-link" aria-label="Carrito">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </a>
-
-                <a href="#" class="icon-link" aria-label="Visitas">
-                    <i class="fa-regular fa-eye"></i>
-                </a>
+                <div class="capa-oscura"></div>
 
             </div>
 
-        </div>
+
+            <!-- =================================================
+                 BARRA DE NAVEGACIÓN
+            ================================================== -->
+
+            <div class="top-bar">
+
+                <!-- LOGO -->
+
+                <a
+                    href="../index.php"
+                    class="logo"
+                    aria-label="SHOESTYLE - Inicio"
+                >
+                    SHOE<span class="logo-rojo">STYLE</span>
+                </a>
 
 
-        <!-- =================================================
-             HERO
-        ================================================== -->
+                <!-- MENÚ -->
 
-        <div class="contenido-centro">
+                <nav
+                    class="navegacion"
+                    aria-label="Navegación principal"
+                >
 
-            <p class="etiqueta-hero">
-                ESTAMOS PARA AYUDARTE
-            </p>
+                    <ul>
 
-            <h1 class="titulo-hero">
-                CONTÁCTANOS
-            </h1>
+                        <li>
+                            <a href="../index.php">
+                                INICIO
+                            </a>
+                        </li>
 
-            <p class="subtitulo">
-                Ponte en contacto con el equipo de SHOESTYLE.
-            </p>
+                        <li>
+                            <a href="../paginas/nuestra empresa.html">
+                                NUESTRA EMPRESA
+                            </a>
+                        </li>
 
-        </div>
+                        <li>
+                            <a href="../paginas/productos.php">
+                                PRODUCTOS
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../paginas/contactenos.html">
+                                CONTÁCTENOS
+                            </a>
+                        </li>
 
 
-        <!-- =================================================
-             LEMA
-        ================================================== -->
+                        <li>
+                            <a href="../paginas/inicio de sesion.html">
+                                INICIO DE SESIÓN
+                            </a>
+                        </li>
 
-        <div class="lema-centro">
+                        <li>
+                            <a href="../paginas/servicios.html">
+                                SERVICIOS
+                            </a>
+                        </li>
 
-            <p>
-                TU ESTILO EMPIEZA POR LOS PIES
-            </p>
+                        <li>
+                            <a
+                                href="#"
+                                class="activo"
+                                aria-current="page"
+                            >
+                                GALERÍA FOTOGRÁFICA
+                            </a>
+                        </li>
+                        
 
-        </div>
+                        <li>
+                            <a href="../paginas/registrarse.html">
+                                REGISTRARSE
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
 
 
-        <!-- =================================================
-             SCROLL
-        ================================================== -->
+                <!-- ICONOS -->
 
-        <div class="scroll-indicator">
+                <div class="top-icons">
 
-            <div class="mouse">
-                <div class="rueda"></div>
+                    <a
+                        href="#"
+                        class="icon-link"
+                        aria-label="Carrito de compras"
+                        title="Carrito de compras"
+                    >
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        class="icon-link"
+                        aria-label="Visualizar"
+                        title="Visualizar"
+                    >
+                        <i class="fa-regular fa-eye"></i>
+                    </a>
+
+                </div>
+
             </div>
 
-        </div>
 
-    </header>
+            <!-- =================================================
+                 CONTENIDO HERO
+            ================================================== -->
+
+            <div class="contenido-centro">
+
+                <p class="etiqueta-hero">
+                    DESCUBRE SHOESTYLE
+                </p>
+
+                <h1 class="titulo-hero">
+                    GALERÍA
+                </h1>
+
+                <p class="subtitulo">
+                    Explora nuestra colección y descubre nuestro estilo.
+                </p>
+
+            </div>
 
 
-    <!-- =====================================================
-         CONTENIDO PRINCIPAL
-    ====================================================== -->
+            <!-- LEMA -->
 
-    <main class="contacto">
+            <div class="lema-centro">
 
-        <section class="contacto-seccion">
+                <p>
+                 
+                </p>
 
-            <!-- INFORMACIÓN -->
+            </div>
 
-            <div class="contacto-info">
 
-                <span class="seccion-etiqueta">
-                    SHOESTYLE
-                </span>
+            <!-- INDICADOR DE SCROLL -->
 
-                <h2>
-                    HABLEMOS
+            <div
+                class="scroll-indicator"
+                aria-hidden="true"
+            >
+
+                <div class="mouse">
+                    <div class="rueda"></div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CONTENIDO PRINCIPAL
+        ================================================== -->
+
+        <main>
+
+            <section
+                class="galeria"
+                aria-labelledby="titulo-galeria"
+            >
+
+
+                <h2 id="titulo-galeria">
+                    GALERÍA FOTOGRÁFICA
                 </h2>
 
-                <p class="texto-contacto">
-
-                    ¿Tienes alguna pregunta, sugerencia o necesitas
-                    información sobre nuestros productos?
-
-                    <br><br>
-
-                    Escríbenos y nuestro equipo estará encantado
-                    de ayudarte.
-
+                <p class="descripcion-galeria">
+                    Conoce nuestra colección, nuestros diseños y
+                    el estilo que representa a SHOESTYLE.
                 </p>
 
 
-                <!-- DATOS -->
+                <!-- =================================================
+                     VISOR DE GALERÍA
+                ================================================== -->
 
-                <div class="datos-contacto">
+                <div class="galeria-contenedor">
 
-                    <div class="dato">
+                    <div
+                        class="visor"
+                        aria-label="Galería de imágenes SHOESTYLE"
+                    >
 
-                        <div class="dato-icono">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
+                        <ul class="slider">
 
-                        <div>
+                            <li id="slide1">
+                                <img
+                                    src="../imagenes/IMAGEN 1.JPG"
+                                    alt="Colección SHOESTYLE - Imagen 1"
+                                >
+                            </li>
 
-                            <h3>
-                                TELÉFONOS
-                            </h3>
+                            <li id="slide2">
+                                <img
+                                    src="../imagenes/IMAGEN 2.JPG"
+                                    alt="Colección SHOESTYLE - Imagen 2"
+                                >
+                            </li>
 
-                            <p>
-                                +57 310 700 1125
-                            </p>
+                            <li id="slide3">
+                                <img
+                                    src="../imagenes/IMAGEN 3.avif"
+                                    alt="Colección SHOESTYLE - Imagen 3"
+                                >
+                            </li>
 
-                            <p>
-                                +57 302 200 1695
-                            </p>
+                            <li id="slide4">
+                                <img
+                                    src="../imagenes/IMAGEN 4.jpg"
+                                    alt="Colección SHOESTYLE - Imagen 4"
+                                >
+                            </li>
 
-                        </div>
+                            <li id="slide5">
+                                <img
+                                    src="../imagenes/IMAGEN 5.jpg"
+                                    alt="Colección SHOESTYLE - Imagen 5"
+                                >
+                            </li>
+
+                            <li id="slide6">
+                                <img
+                                    src="../imagenes/IMAGEN 6.jpg"
+                                    alt="Colección SHOESTYLE - Imagen 6"
+                                >
+                            </li>
+
+                            <li id="slide7">
+                                <img
+                                    src="../imagenes/IMAGEN 7.JPG"
+                                    alt="Colección SHOESTYLE - Imagen 7"
+                                >
+                            </li>
+
+                            <li id="slide8">
+                                <img
+                                    src="../imagenes/IMAGEN 8.JPG"
+                                    alt="Colección SHOESTYLE - Imagen 8"
+                                >
+                            </li>
+
+                            <li id="slide9">
+                                <img
+                                    src="../imagenes/imagen_9.jpg"
+                                    alt="Colección SHOESTYLE - Imagen 9"
+                                >
+                            </li>
+
+                            <li id="slide10">
+                                <img
+                                    src="../imagenes/IMAGEN 10.JPG"
+                                    alt="Colección SHOESTYLE - Imagen 10"
+                                >
+                            </li>
+
+                        </ul>
 
                     </div>
 
 
-                    <div class="dato">
+                    <!-- =================================================
+                         CONTROLES
+                    ================================================== -->
 
-                        <div class="dato-icono">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
+                    <div
+                        class="controles-galeria"
+                        aria-label="Seleccionar imagen"
+                    >
 
-                        <div>
+                        <a href="#slide1" aria-label="Ver imagen 1">
+                            01
+                        </a>
 
-                            <h3>
-                                CORREO
-                            </h3>
+                        <a href="#slide2" aria-label="Ver imagen 2">
+                            02
+                        </a>
 
-                            <p>
-                                shoestyle@gmail.com
-                            </p>
+                        <a href="#slide3" aria-label="Ver imagen 3">
+                            03
+                        </a>
 
-                        </div>
+                        <a href="#slide4" aria-label="Ver imagen 4">
+                            04
+                        </a>
 
-                    </div>
+                        <a href="#slide5" aria-label="Ver imagen 5">
+                            05
+                        </a>
 
+                        <a href="#slide6" aria-label="Ver imagen 6">
+                            06
+                        </a>
 
-                    <div class="dato">
+                        <a href="#slide7" aria-label="Ver imagen 7">
+                            07
+                        </a>
 
-                        <div class="dato-icono">
-                            <i class="fa-solid fa-clock"></i>
-                        </div>
+                        <a href="#slide8" aria-label="Ver imagen 8">
+                            08
+                        </a>
 
-                        <div>
+                        <a href="#slide9" aria-label="Ver imagen 9">
+                            09
+                        </a>
 
-                            <h3>
-                                HORARIO
-                            </h3>
-
-                            <p>
-                                8:00 a.m - 7:00 p.m
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="dato">
-
-                        <div class="dato-icono">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                DIRECCIÓN
-                            </h3>
-
-                            <p>
-                                Por confirmar
-                            </p>
-
-                        </div>
+                        <a href="#slide10" aria-label="Ver imagen 10">
+                            10
+                        </a>
 
                     </div>
 
                 </div>
 
-            </div>
+
+                <!-- =================================================
+                     INFORMACIÓN
+                ================================================== -->
+
+                <div class="galeria-info">
+
+                    <article class="info-item">
+
+                        <i
+                            class="fa-solid fa-shoe-prints"
+                            aria-hidden="true"
+                        ></i>
+
+                        <h3>
+                            ESTILO
+                        </h3>
+
+                        <p>
+                            Diseños pensados para marcar tendencia.
+                        </p>
+
+                    </article>
 
 
-            <!-- =================================================
-                 FORMULARIO
-            ================================================== -->
+                    <article class="info-item">
 
-            <div class="formulario-contacto">
+                        <i
+                            class="fa-solid fa-star"
+                            aria-hidden="true"
+                        ></i>
 
-                <div class="formulario-header">
+                        <h3>
+                            CALIDAD
+                        </h3>
 
-                    <span class="formulario-etiqueta">
-                        ESCRÍBENOS
-                    </span>
+                        <p>
+                            Productos seleccionados para tu comodidad.
+                        </p>
 
-                    <h2>
-                        CONTÁCTANOS
-                    </h2>
+                    </article>
+
+
+                    <article class="info-item">
+
+                        <i
+                            class="fa-solid fa-bolt"
+                            aria-hidden="true"
+                        ></i>
+
+                        <h3>
+                            ACTITUD
+                        </h3>
+
+                        <p>
+                            Una colección creada para destacar.
+                        </p>
+
+                    </article>
 
                 </div>
 
+            </section>
 
-                <form
-                    action="../PHP/guardar_contacto.php"
-                    method="post">
-
-                    <!-- NOMBRE -->
-
-                    <div class="campo">
-
-                        <label for="nombre">
-                            NOMBRE COMPLETO
-                        </label>
-
-                        <input
-                            type="text"
-                            id="nombre"
-                            name="nombre"
-                            placeholder="Nombre completo"
-                            autocomplete="name"
-                            required>
-
-                    </div>
-
-
-                    <!-- CORREO -->
-
-                    <div class="campo">
-
-                        <label for="email">
-                            CORREO ELECTRÓNICO
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Correo electrónico"
-                            autocomplete="email"
-                            required>
-
-                    </div>
-
-
-                    <!-- TELÉFONO -->
-
-                    <div class="campo">
-
-                        <label for="telefono">
-                            TELÉFONO
-                        </label>
-
-                        <input
-                            type="tel"
-                            id="telefono"
-                            name="telefono"
-                            placeholder="Teléfono (opcional)"
-                            autocomplete="tel">
-
-                    </div>
-
-
-                    <!-- MENSAJE -->
-
-                    <div class="campo">
-
-                        <label for="mensaje">
-                            MENSAJE
-                        </label>
-
-                        <textarea
-                            id="mensaje"
-                            name="mensaje"
-                            rows="6"
-                            placeholder="Escribe tu mensaje..."
-                            required></textarea>
-
-                    </div>
-
-
-                    <!-- BOTÓN -->
-
-                    <button type="submit">
-
-                        ENVIAR MENSAJE
-
-                        <i class="fa-solid fa-paper-plane"></i>
-
-                    </button>
-
-                </form>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
-    <footer>
-
-        <!-- REDES -->
-
-        <div class="redes-sociales">
-
-            <h3>
-                ENCUÉNTRANOS TAMBIÉN EN:
-            </h3>
-
-            <div class="iconos-redes">
-
-                <a
-                    href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    <img
-                        src="../imagenes/facebook.png"
-                        alt="Facebook">
-
-                </a>
-
-
-                <a href="#" aria-label="Instagram">
-
-                    <img
-                        src="../imagenes/instagram.jpg"
-                        alt="Instagram">
-
-                </a>
-
-
-                <a
-                    href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    <img
-                        src="../imagenes/tiktok.png"
-                        alt="TikTok">
-
-                </a>
-
-
-                <a
-                    href="https://x.com/shoestyle397157"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    <img
-                        src="../imagenes/twitter.png"
-                        alt="X">
-
-                </a>
-
-
-                <a
-                    href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    <img
-                        src="../imagenes/whatsapp.png"
-                        alt="WhatsApp">
-
-                </a>
-
-            </div>
-
-        </div>
+        </main>
 
 
         <!-- =================================================
-             INFORMACIÓN FOOTER
+             FOOTER
         ================================================== -->
 
-        <div class="footer-info">
+        <footer>
 
-            <!-- AYUDA -->
+            <!-- REDES SOCIALES -->
 
-            <div class="columna">
+            <div class="redes-sociales">
 
-                <h4>
-                    AYUDA
-                </h4>
+                <h3>
+                    ENCUÉNTRANOS TAMBIÉN EN:
+                </h3>
 
-                <ul>
+                <div class="iconos-redes">
 
-                    <li>
-                        <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
-                            Asistencia
-                        </a>
-                    </li>
+                    <a
+                        href="https://www.facebook.com/profile.php?id=61575560894613&locale=es_LA"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <img
+                            src="../imagenes/facebook.png"
+                            alt="Facebook"
+                        >
+                    </a>
 
-                    <li>
-                        <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
-                            Seguimiento de pedidos
-                        </a>
-                    </li>
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                    >
+                        <img
+                            src="../imagenes/instagram.jpg"
+                            alt="Instagram"
+                        >
+                    </a>
 
-                    <li>
-                        <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
-                            Envíos
-                        </a>
-                    </li>
+                    <a
+                        href="https://vm.tiktok.com/ZSHtArvgSS6t6-bfRuv/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="TikTok"
+                    >
+                        <img
+                            src="../imagenes/tiktok.png"
+                            alt="TikTok"
+                        >
+                    </a>
 
-                    <li>
-                        <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
-                            Devoluciones
-                        </a>
-                    </li>
+                    <a
+                        href="https://x.com/shoestyle397157"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="X"
+                    >
+                        <img
+                            src="../imagenes/twitter.png"
+                            alt="X"
+                        >
+                    </a>
 
-                </ul>
+                    <a
+                        href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="WhatsApp"
+                    >
+                        <img
+                            src="../imagenes/whatsapp.png"
+                            alt="WhatsApp"
+                        >
+                    </a>
 
-            </div>
-
-
-            <!-- SHOESTYLE -->
-
-            <div class="columna">
-
-                <h4>
-                    SHOESTYLE
-                </h4>
-
-                <ul>
-
-                    <li>
-                        <strong>Teléfonos:</strong>
-                        +57 310 700 1125 /
-                        +57 302 200 1695
-                    </li>
-
-                    <li>
-                        <strong>Correo:</strong>
-                        shoestyle@gmail.com
-                    </li>
-
-                    <li>
-                        <strong>Horarios:</strong>
-                        8:00 a.m - 7:00 p.m
-                    </li>
-
-                    <li>
-                        <strong>Dirección:</strong>
-                        Por confirmar
-                    </li>
-
-                </ul>
+                </div>
 
             </div>
 
 
-            <!-- INFORMACIÓN LEGAL -->
+            <!-- INFORMACIÓN DEL FOOTER -->
 
-            <div class="columna">
+            <div class="footer-info">
 
-                <h4>
-                    INFORMACIÓN LEGAL
-                </h4>
+                <!-- AYUDA -->
 
-                <ul>
+                <div class="columna">
 
-                    <li>
-                        <a
-                            href="../paginas/terminos.pdf"
-                            target="_blank">
-                            Términos y Condiciones
-                        </a>
-                    </li>
+                    <h4>
+                        AYUDA
+                    </h4>
 
-                    <li>
-                        <a href="#">
-                            Política de Privacidad
-                        </a>
-                    </li>
+                    <ul>
 
-                    <li>
-                        <a href="#">
-                            Condiciones de Uso
-                        </a>
-                    </li>
+                        <li>
+                            <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
+                                Asistencia
+                            </a>
+                        </li>
 
-                </ul>
+                        <li>
+                            <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
+                                Seguimiento de pedidos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
+                                Envíos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://chat.whatsapp.com/EopjMlzLqiFFMkKOCvCasU?mode=ems_copy_c">
+                                Devoluciones
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- INFORMACIÓN SHOESTYLE -->
+
+                <div class="columna">
+
+                    <h4>
+                        SHOESTYLE
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <strong>Teléfonos:</strong>
+                            +57 310 700 1125 /
+                            +57 302 200 1695
+                        </li>
+
+                        <li>
+                            <strong>Correo:</strong>
+                            shoestyle@gmail.com
+                        </li>
+
+                        <li>
+                            <strong>Horarios:</strong>
+                            8:00 a.m. - 7:00 p.m.
+                        </li>
+
+                        <li>
+                            <strong>Dirección:</strong>
+                            Por confirmar
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- INFORMACIÓN LEGAL -->
+
+                <div class="columna">
+
+                    <h4>
+                        INFORMACIÓN LEGAL
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <a
+                                href="../paginas/terminos.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Términos y Condiciones
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Política de Privacidad
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Condiciones de Uso
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
 
             </div>
 
-        </div>
 
+            <!-- COPYRIGHT -->
 
-        <!-- COPYRIGHT -->
+            <div class="copyright">
 
-        <div class="copyright">
+                <p>
+                    &copy; 2026 SHOESTYLE.
+                    Todos los derechos reservados.
+                </p>
 
-            <p>
-                &copy; 2025 SHOESTYLE.
-                Todos los derechos reservados.
-            </p>
+            </div>
 
-        </div>
+        </footer>
 
-    </footer>
-
-</div>
-
-
-<!-- =====================================================
-     JAVASCRIPT
-====================================================== -->
-
-<script>
-
-const menuToggle = document.getElementById("menuToggle");
-const navegacion = document.getElementById("navegacion");
-
-
-// ABRIR / CERRAR MENÚ
-
-menuToggle.addEventListener("click", () => {
-
-    navegacion.classList.toggle("menu-abierto");
-
-    const abierto =
-        navegacion.classList.contains("menu-abierto");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        abierto
-    );
-
-    menuToggle.innerHTML = abierto
-        ? '<i class="fa-solid fa-xmark"></i>'
-        : '<i class="fa-solid fa-bars"></i>';
-
-});
-
-
-// CERRAR MENÚ AL SELECCIONAR UNA OPCIÓN
-
-document.querySelectorAll(".navegacion a").forEach(enlace => {
-
-    enlace.addEventListener("click", () => {
-
-        navegacion.classList.remove("menu-abierto");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-        menuToggle.innerHTML =
-            '<i class="fa-solid fa-bars"></i>';
-
-    });
-
-});
-
-
-// EVITAR SALTOS DE LOS #
-
-document.querySelectorAll('a[href="#"]').forEach(enlace => {
-
-    enlace.addEventListener("click", function(e) {
-
-        e.preventDefault();
-
-    });
-
-});
-
-</script>
+    </div>
 
 </body>
 
