@@ -207,14 +207,6 @@ img {
     display: flex;
 
     gap: 30px;
-
-    margin: 0;
-    padding: 0;
-}
-
-.navegacion ul li {
-    margin: 0;
-    padding: 0;
 }
 
 .navegacion ul li a {
@@ -231,8 +223,26 @@ img {
     transition: color 0.3s ease;
 }
 
-.navegacion ul li a:hover {
-    color: var(--blanco);
+.navegacion ul li a:hover,
+.navegacion ul li a.activo {
+    color: white;
+}
+
+.navegacion ul li a.activo::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 100%;
+    height: 2px;
+
+    background: var(--rojo);
+
+    box-shadow:
+        0 0 10px rgba(225,6,32,0.7);
 }
 
 
