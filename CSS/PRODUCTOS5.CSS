@@ -1414,300 +1414,79 @@ footer {
    MENÚ RESPONSIVE
 ========================================================= */
 
-
-/* =========================================================
-   PC
-========================================================= */
-
-@media (min-width: 801px) {
-
-    .menu-movil {
-        display: none !important;
-    }
-
-    .navegacion {
-        display: block !important;
-    }
-
-    .top-icons {
-        display: flex !important;
-    }
-
+.menu-movil {
+    display: none !important;
 }
 
 
 /* =========================================================
-   TABLETS
-   601px - 800px
+   PORTÁTILES
 ========================================================= */
 
-@media (min-width: 601px) and (max-width: 800px) {
-
-    /* BARRA */
+@media (min-width: 801px) and (max-width: 1200px) {
 
     .top-bar {
-
-        min-height: 65px;
-
-        padding: 0 16px;
-
-        z-index: 100000;
+        padding: 0 3%;
     }
-
-
-    /* LOGO */
 
     .logo {
-
-        font-size: 1rem;
-
-        white-space: nowrap;
-    }
-
-
-    /* =====================================================
-       OCULTAR MENÚ NORMAL
-    ===================================================== */
-
-    .navegacion {
-
-        display: none !important;
-    }
-
-
-    /* =====================================================
-       OCULTAR ICONOS
-    ===================================================== */
-
-    .top-icons {
-
-        display: none !important;
-    }
-
-
-    /* =====================================================
-       HAMBURGUESA
-    ===================================================== */
-
-    .menu-movil {
-
-        display: flex !important;
-
-        align-items: center;
-        justify-content: center;
-
-        width: 42px;
-        height: 42px;
-
-        margin-left: auto;
-
-        padding: 0;
-
-        border: none;
-        outline: none;
-
-        background: transparent;
-
-        color: #fff;
-
-        font-size: 23px;
-
-        cursor: pointer;
-
-        position: relative;
-
-        z-index: 100002;
-
+        font-size: 1.2rem;
         flex-shrink: 0;
     }
 
-
-    .menu-movil:hover {
-
-        color: var(--rojo);
+    .navegacion ul {
+        gap: 12px;
     }
 
-
-    /* =====================================================
-       MENÚ ABIERTO
-    ===================================================== */
-
-    .navegacion.activo {
-
-        display: block !important;
-
-        position: fixed !important;
-
-        top: 65px;
-
-        left: 12px;
-        right: 12px;
-
-        width: auto;
-
-        max-height: calc(100vh - 80px);
-
-        overflow-y: auto;
-
-        padding: 8px;
-
-        background: rgba(10,10,10,0.98);
-
-        border:
-            1px solid
-            rgba(255,255,255,0.12);
-
-        border-radius: 14px;
-
-        box-shadow:
-            0 20px 50px
-            rgba(0,0,0,0.8);
-
-        backdrop-filter: blur(15px);
-
-        z-index: 100001;
+    .navegacion ul li a {
+        font-size: 0.85rem;
+        letter-spacing: 0.7px;
+        white-space: nowrap;
     }
 
-
-    .navegacion.activo ul {
-
-        display: flex !important;
-
-        flex-direction: column;
-
-        width: 100%;
-
-        gap: 0;
-
-        margin: 0;
-        padding: 0;
-
-        list-style: none;
+    .top-icons {
+        gap: 12px;
+        font-size: 1rem;
+        flex-shrink: 0;
     }
 
-
-    .navegacion.activo ul li {
-
-        display: block;
-
-        width: 100%;
-
-        margin: 0;
-        padding: 0;
+    .icon-link {
+        font-size: 0.95rem;
     }
-
-
-    .navegacion.activo ul li a {
-
-        display: block;
-
-        width: 100%;
-
-        padding: 13px 12px;
-
-        box-sizing: border-box;
-
-        color: #c7c7c7;
-
-        font-family: 'Poppins', sans-serif;
-
-        font-size: 0.78rem;
-
-        font-weight: 600;
-
-        line-height: 1.3;
-
-        border-bottom:
-            1px solid
-            rgba(255,255,255,0.07);
-
-        transition:
-            color 0.2s ease,
-            background 0.2s ease;
-    }
-
-
-    .navegacion.activo ul li:last-child a {
-
-        border-bottom: none;
-    }
-
-
-    .navegacion.activo ul li a:hover {
-
-        color: #fff;
-
-        background:
-            rgba(255,255,255,0.05);
-    }
-
-
-    /* =====================================================
-       PRODUCTOS
-    ===================================================== */
-
-    .grid-productos {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 20px;
-    }
-
-
-    .card-producto {
-
-        min-height: 560px;
-    }
-
-
-    /* =====================================================
-       FOOTER
-    ===================================================== */
-
-    .footer-info {
-
-        gap: 30px;
-    }
-
 }
 
 
 /* =========================================================
-   CELULARES
-   600px o menos
+   TABLETS + CELULARES
 ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
-    /* BARRA */
+    /* =====================================================
+       BARRA SUPERIOR
+    ===================================================== */
 
     .top-bar {
+        min-height: 65px;
+        height: 65px;
 
-        min-height: 60px;
+        padding: 0 16px;
 
-        padding: 0 12px;
-
+        position: relative;
         z-index: 100000;
     }
 
-
-    /* LOGO */
-
     .logo {
-
-        font-size: 0.9rem;
-
+        font-size: 1rem;
         white-space: nowrap;
     }
 
 
     /* =====================================================
-       OCULTAR MENÚ NORMAL
+       OCULTAR NAVEGACIÓN NORMAL
     ===================================================== */
 
     .navegacion {
-
         display: none !important;
     }
 
@@ -1717,7 +1496,6 @@ footer {
     ===================================================== */
 
     .top-icons {
-
         display: none !important;
     }
 
@@ -1736,8 +1514,7 @@ footer {
         width: 40px;
         height: 40px;
 
-        margin-left: auto;
-
+        margin: 0;
         padding: 0;
 
         border: none;
@@ -1745,23 +1522,34 @@ footer {
 
         background: transparent;
 
-        color: #fff;
+        color: #ffffff;
 
         font-size: 22px;
 
         cursor: pointer;
 
         position: relative;
-
         z-index: 100002;
 
         flex-shrink: 0;
+
+        appearance: none;
+        -webkit-appearance: none;
+
+        user-select: none;
+        -webkit-user-select: none;
     }
 
-
     .menu-movil:hover {
+        color: #ffffff;
+    }
 
-        color: var(--rojo);
+    .menu-movil:focus {
+        outline: none;
+    }
+
+    .menu-movil:active {
+        transform: scale(0.95);
     }
 
 
@@ -1775,38 +1563,47 @@ footer {
 
         position: fixed !important;
 
-        top: 60px;
+        top: 70px;
 
-        left: 8px;
-        right: 8px;
+        left: 10px;
+        right: 10px;
 
         width: auto;
+        max-width: none;
 
-        max-height: calc(100vh - 70px);
+        max-height:
+            calc(100vh - 80px);
 
         overflow-y: auto;
+        overflow-x: hidden;
 
-        padding: 7px;
+        padding: 8px;
 
         background:
-            rgba(10,10,10,0.98);
+            rgba(10, 10, 10, 0.98);
 
         border:
             1px solid
-            rgba(255,255,255,0.12);
+            rgba(255, 255, 255, 0.12);
 
         border-radius: 14px;
 
         box-shadow:
             0 20px 50px
-            rgba(0,0,0,0.8);
+            rgba(0, 0, 0, 0.8);
 
-        backdrop-filter:
-            blur(15px);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
 
         z-index: 100001;
+
+        box-sizing: border-box;
     }
 
+
+    /* =====================================================
+       LISTA
+    ===================================================== */
 
     .navegacion.activo ul {
 
@@ -1822,6 +1619,8 @@ footer {
         padding: 0;
 
         list-style: none;
+
+        box-sizing: border-box;
     }
 
 
@@ -1833,8 +1632,14 @@ footer {
 
         margin: 0;
         padding: 0;
+
+        box-sizing: border-box;
     }
 
+
+    /* =====================================================
+       ENLACES
+    ===================================================== */
 
     .navegacion.activo ul li a {
 
@@ -1850,15 +1655,18 @@ footer {
 
         font-family: 'Poppins', sans-serif;
 
-        font-size: 0.73rem;
+        font-size: 0.75rem;
 
         font-weight: 600;
 
-        line-height: 1.3;
+        line-height: 1.2;
 
+        text-decoration: none;
+
+        /* SIN LÍNEA ROJA */
         border-bottom:
             1px solid
-            rgba(255,255,255,0.07);
+            rgba(255, 255, 255, 0.07);
 
         transition:
             color 0.2s ease,
@@ -1867,17 +1675,159 @@ footer {
 
 
     .navegacion.activo ul li:last-child a {
-
         border-bottom: none;
     }
 
 
+    /* =====================================================
+       QUITAR COMPLETAMENTE EL INDICADOR ACTIVO
+       DEL MENÚ MÓVIL
+    ===================================================== */
+
+    .navegacion.activo ul li a.activo::after,
+    .navegacion.activo ul li a.active::after {
+
+        display: none !important;
+
+        content: none !important;
+    }
+
+
+    .navegacion.activo ul li a.activo,
+    .navegacion.activo ul li a.active {
+
+        color: #c7c7c7;
+
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, 0.07);
+    }
+
+
+    /* =====================================================
+       HOVER
+    ===================================================== */
+
     .navegacion.activo ul li a:hover {
 
-        color: #fff;
+        color: #ffffff;
 
         background:
-            rgba(255,255,255,0.05);
+            rgba(255, 255, 255, 0.05);
+    }
+
+    .navegacion.activo ul li a:active {
+
+        background:
+            rgba(255, 255, 255, 0.08);
+    }
+
+
+    /* =====================================================
+       PRODUCTOS - TABLET
+    ===================================================== */
+
+    .grid-productos {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+    .card-producto {
+        min-height: 560px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .footer-info {
+        gap: 30px;
+    }
+}
+
+
+/* =========================================================
+   CELULARES
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .top-bar {
+
+        min-height: 60px;
+        height: 60px;
+
+        padding: 0 12px;
+    }
+
+
+    .logo {
+        font-size: 0.9rem;
+    }
+
+
+    /* =====================================================
+       HAMBURGUESA
+    ===================================================== */
+
+    .menu-movil {
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 21px;
+    }
+
+
+    /* =====================================================
+       MENÚ ABIERTO
+    ===================================================== */
+
+    .navegacion.activo {
+
+        top: 65px;
+
+        left: 8px;
+        right: 8px;
+
+        max-height:
+            calc(100vh - 75px);
+
+        padding: 7px;
+    }
+
+
+    .navegacion.activo ul li a {
+
+        padding: 11px 9px;
+
+        font-size: 0.72rem;
+    }
+
+
+    /* =====================================================
+       ASEGURAR QUE NO APAREZCA LÍNEA ROJA
+    ===================================================== */
+
+    .navegacion.activo ul li a.activo::after,
+    .navegacion.activo ul li a.active::after {
+
+        display: none !important;
+        content: none !important;
+    }
+
+    .navegacion.activo ul li a.activo,
+    .navegacion.activo ul li a.active {
+
+        color: #c7c7c7;
+
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, 0.07);
     }
 
 
@@ -1888,10 +1838,8 @@ footer {
     .banner-portada {
 
         min-height: 100svh;
-
         height: 100svh;
     }
-
 
     .contenido-centro {
 
@@ -1902,14 +1850,12 @@ footer {
         margin-top: -20px;
     }
 
-
     .etiqueta-hero {
 
         font-size: 11px;
 
         letter-spacing: 3px;
     }
-
 
     .titulo-hero {
 
@@ -1920,7 +1866,6 @@ footer {
 
         line-height: 0.95;
     }
-
 
     .subtitulo {
 
@@ -1940,14 +1885,12 @@ footer {
             70px 20px 90px;
     }
 
-
     .encabezado-productos h2 {
 
         font-size: 28px;
 
         line-height: 1.15;
     }
-
 
     .encabezado-productos p {
 
@@ -1956,14 +1899,12 @@ footer {
         line-height: 1.7;
     }
 
-
     .grid-productos {
 
         grid-template-columns: 1fr;
 
         gap: 22px;
     }
-
 
     .card-producto {
 
@@ -1976,15 +1917,11 @@ footer {
         min-height: 0;
     }
 
-
     .imagen-producto {
-
         height: 260px;
     }
 
-
     .info-producto {
-
         padding: 25px;
     }
 
@@ -2002,14 +1939,11 @@ footer {
         text-align: center;
     }
 
-
     .footer-info h4::after {
 
         margin-left: auto;
-
         margin-right: auto;
     }
-
 
     .iconos-redes {
 
@@ -2018,13 +1952,11 @@ footer {
         flex-wrap: wrap;
     }
 
-
     .iconos-redes a {
 
         width: 42px;
         height: 42px;
     }
-
 }
 
 
@@ -2037,16 +1969,14 @@ footer {
     .top-bar {
 
         min-height: 55px;
+        height: 55px;
 
         padding: 0 10px;
     }
 
-
     .logo {
-
         font-size: 0.82rem;
     }
-
 
     .menu-movil {
 
@@ -2059,17 +1989,16 @@ footer {
 
     .navegacion.activo {
 
-        top: 55px;
+        top: 60px;
 
         left: 6px;
         right: 6px;
 
         max-height:
-            calc(100vh - 62px);
+            calc(100vh - 68px);
 
         padding: 6px;
     }
-
 
     .navegacion.activo ul li a {
 
@@ -2079,60 +2008,81 @@ footer {
     }
 
 
+    /* QUITAR INDICADOR ACTIVO */
+
+    .navegacion.activo ul li a.activo::after,
+    .navegacion.activo ul li a.active::after {
+
+        display: none !important;
+        content: none !important;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
     .titulo-hero {
 
         font-size:
             clamp(2.3rem, 13vw, 3.2rem);
     }
 
-
     .subtitulo {
-
         font-size: 13px;
     }
 
 
-    .encabezado-productos h2 {
+    /* =====================================================
+       PRODUCTOS
+    ===================================================== */
 
+    .encabezado-productos h2 {
         font-size: 24px;
     }
 
-
     .encabezado-productos p {
-
         font-size: 13px;
     }
 
-
     .imagen-producto {
-
         height: 230px;
     }
 
-
     .info-producto {
-
         padding: 20px;
     }
 
-
     .info-producto h3 {
-
         font-size: 18px;
     }
 
-
     .precio {
-
         font-size: 24px;
     }
 
-
     .form-carrito button {
-
         font-size: 11px;
-
         padding: 12px 10px;
     }
+}
 
+
+/* =========================================================
+   PC
+========================================================= */
+
+@media (min-width: 801px) {
+
+    .menu-movil {
+        display: none !important;
+    }
+
+    .navegacion {
+        display: block !important;
+    }
+
+    .top-icons {
+        display: flex !important;
+    }
 }
