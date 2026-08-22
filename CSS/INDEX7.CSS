@@ -88,6 +88,7 @@ select {
 
 /* =========================================================
    BANNER
+   NO MODIFICADO
 ========================================================= */
 
 .banner-portada {
@@ -144,6 +145,7 @@ select {
 
 /* =========================================================
    TOP BAR
+   NO MODIFICADO
 ========================================================= */
 
 .top-bar {
@@ -172,6 +174,7 @@ select {
 
 /* =========================================================
    LOGO
+   NO MODIFICADO
 ========================================================= */
 
 .logo {
@@ -194,6 +197,7 @@ select {
 
 /* =========================================================
    NAVEGACIÓN
+   NO MODIFICADO
 ========================================================= */
 
 .navegacion ul {
@@ -244,6 +248,7 @@ select {
 
 /* =========================================================
    ICONOS TOP
+   NO MODIFICADO
 ========================================================= */
 
 .top-icons {
@@ -279,6 +284,7 @@ select {
 
 /* =========================================================
    CONTENIDO CENTRAL
+   NO MODIFICADO
 ========================================================= */
 
 .contenido-centro {
@@ -339,6 +345,7 @@ select {
 
 /* =========================================================
    BOTONES
+   NO MODIFICADO
 ========================================================= */
 
 .botones-container {
@@ -423,6 +430,7 @@ select {
 
 /* =========================================================
    SCROLL
+   NO MODIFICADO
 ========================================================= */
 
 .scroll-indicator {
@@ -480,14 +488,20 @@ select {
 
 /* =========================================================
    CONTENIDO GENERAL
+   RENOVADO
 ========================================================= */
 
 main {
     width: 100%;
 
-    padding: 80px 5% 20px;
+    padding: 100px 5% 30px;
 
     background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(225, 6, 32, 0.055),
+            transparent 35%
+        ),
         linear-gradient(
             180deg,
             #080808 0%,
@@ -499,25 +513,40 @@ main > section {
     width: min(1450px, 100%);
 
     margin:
-        0 auto 110px;
+        0 auto 130px;
+
+    position: relative;
 }
 
+
+/* =========================================================
+   TÍTULOS DE SECCIÓN
+   RENOVADO
+========================================================= */
+
 main h2 {
+    position: relative;
+
     font-family:
         'Archivo Black',
         'Arial Black',
         sans-serif;
 
     font-size:
-        clamp(2rem, 4vw, 3.2rem);
+        clamp(2rem, 4vw, 3.3rem);
 
     line-height: 1.1;
 
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
 
     color: var(--blanco);
 
     text-align: center;
+
+    text-transform: uppercase;
+
+    animation:
+        aparecer-titulo 0.8s ease both;
 }
 
 main > section > h2::after {
@@ -525,18 +554,33 @@ main > section > h2::after {
 
     display: block;
 
-    width: 55px;
-    height: 3px;
+    width: 70px;
+    height: 4px;
 
-    margin: 20px auto 0;
+    margin: 22px auto 0;
 
-    background: var(--rojo);
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--rojo),
+            #ff4500,
+            transparent
+        );
+
+    box-shadow:
+        0 0 18px rgba(225, 6, 32, 0.45);
+
+    animation:
+        linea-titulo 1s ease both;
 }
 
 main > section > p {
     width: min(850px, 100%);
 
-    margin: 25px auto 0;
+    margin: 28px auto 0;
 
     color: var(--gris-claro);
 
@@ -544,70 +588,275 @@ main > section > p {
 
     font-size: 16px;
 
-    line-height: 1.8;
+    line-height: 1.85;
 
     text-align: center;
+
+    animation:
+        aparecer-contenido 1s ease 0.15s both;
+}
+
+
+/* =========================================================
+   ANIMACIONES GENERALES
+========================================================= */
+
+@keyframes aparecer-titulo {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aparecer-contenido {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes linea-titulo {
+
+    from {
+        opacity: 0;
+        width: 0;
+    }
+
+    to {
+        opacity: 1;
+        width: 70px;
+    }
+}
+
+@keyframes flotar-marca {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes brillo-marca {
+
+    0% {
+        box-shadow:
+            0 0 0 rgba(225, 6, 32, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 25px rgba(225, 6, 32, 0.18);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 rgba(225, 6, 32, 0);
+    }
+}
+
+
+/* =========================================================
+   BIENVENIDOS A SHOESTYLE
+   RENOVADO
+========================================================= */
+
+main > section:first-child {
+    padding:
+        45px 30px 60px;
+
+    border-radius: 30px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(225, 6, 32, 0.09),
+            transparent 45%
+        );
+
+    overflow: hidden;
+}
+
+main > section:first-child::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 250px;
+    height: 250px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(225, 6, 32, 0.08),
+            transparent 70%
+        );
+
+    filter: blur(10px);
+
+    pointer-events: none;
+}
+
+main > section:first-child h2 {
+    position: relative;
+    z-index: 1;
+}
+
+main > section:first-child p {
+    position: relative;
+    z-index: 1;
+
+    font-size: 17px;
+
+    max-width: 900px;
+
+    color: #bdbdbd;
 }
 
 
 /* =========================================================
    MARCAS
+   RENOVADO
 ========================================================= */
 
 .marcas {
+    position: relative;
+
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(130px, 1fr));
+        repeat(auto-fit, minmax(150px, 1fr));
 
     align-items: center;
 
-    gap: 18px;
+    gap: 22px;
 
-    width: min(1200px, 100%);
+    width: min(1250px, 100%);
 
-    margin: 55px auto 0;
+    margin: 60px auto 0;
 
-    padding: 25px;
+    padding: 10px;
 }
 
-.marcas img {
-    width: 100%;
-    height: 100px;
 
-    padding: 18px;
+/* Línea decorativa */
+
+.marcas::before {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(225, 6, 32, 0.15),
+            transparent
+        );
+
+    z-index: 0;
+}
+
+
+/* Tarjetas de marca */
+
+.marcas img {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+    height: 115px;
+
+    padding: 22px;
 
     object-fit: contain;
 
-    background: #ffffff;
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #eeeeee
+        );
 
-    border-radius: 14px;
+    border-radius: 18px;
 
-    border: 1px solid transparent;
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
 
     filter: grayscale(100%);
 
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.3);
+
     transition:
-        transform 0.3s ease,
-        filter 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.4s cubic-bezier(.2,.8,.2,1),
+        filter 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
 }
+
+
+/* Hover */
 
 .marcas img:hover {
     filter: grayscale(0%);
 
-    transform: translateY(-7px);
+    transform:
+        translateY(-10px)
+        scale(1.035);
 
-    border-color: var(--rojo);
+    border-color:
+        rgba(225, 6, 32, 0.7);
 
     box-shadow:
-        0 12px 30px rgba(225, 6, 32, 0.15);
+        0 18px 40px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(225, 6, 32, 0.13);
+}
+
+
+/* Animación sutil */
+
+.marcas img:nth-child(odd) {
+    animation:
+        flotar-marca 5s ease-in-out infinite;
+}
+
+.marcas img:nth-child(even) {
+    animation:
+        flotar-marca 5s ease-in-out 1.2s infinite;
 }
 
 
 /* =========================================================
    PRODUCTOS
+   ORIGINAL
 ========================================================= */
 
 .productos {
@@ -762,7 +1011,7 @@ main > section > p {
 .producto .btn:hover {
     background: var(--blanco);
 
-    color: var(--negro);
+    color: #000000;
 
     transform: translateY(-2px);
 
@@ -773,47 +1022,120 @@ main > section > p {
 
 /* =========================================================
    CARRUSEL
+   RENOVADO — 16:9
 ========================================================= */
 
 .carrusel {
-    width: min(1100px, 100%);
+    position: relative;
 
-    margin: 55px auto 0;
+    width: min(1200px, 100%);
+
+    margin: 60px auto 0;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    gap: 20px;
+    gap: 25px;
+
+    padding: 0 10px;
 }
 
-.carrusel img {
-    width: min(800px, 75vw);
 
-    height: 470px;
+/*
+   CONTENEDOR VISUAL
+
+   16:9 REAL
+*/
+
+.carrusel img {
+    display: block;
+
+    width: min(1000px, calc(100vw - 180px));
+
+    aspect-ratio: 16 / 9;
+
+    height: auto;
+
+    min-height: 0;
 
     object-fit: cover;
 
-    border-radius: 18px;
+    object-position: center;
+
+    border-radius: 22px;
 
     border:
-        1px solid var(--borde);
+        1px solid rgba(255, 255, 255, 0.1);
+
+    background: #101010;
 
     box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.5);
+        0 25px 70px rgba(0, 0, 0, 0.65),
+        0 0 35px rgba(225, 6, 32, 0.06);
+
+    animation:
+        carrusel-entrada 0.8s ease both;
 
     transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
+        transform 0.45s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.45s ease,
+        border-color 0.45s ease,
+        filter 0.45s ease;
 }
 
-.flecha {
+
+/* Efecto hover */
+
+.carrusel img:hover {
+    transform:
+        scale(1.015)
+        translateY(-4px);
+
+    border-color:
+        rgba(225, 6, 32, 0.45);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.75),
+        0 0 45px rgba(225, 6, 32, 0.13);
+
+    filter:
+        brightness(1.04);
+}
+
+
+/* Entrada */
+
+@keyframes carrusel-entrada {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.96)
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   FLECHAS DEL CARRUSEL
+========================================================= */
+
+.carrusel .flecha {
     flex-shrink: 0;
 
-    width: 50px;
-    height: 50px;
+    width: 54px;
+    height: 54px;
 
     display: flex;
 
@@ -823,11 +1145,12 @@ main > section > p {
     padding: 0;
 
     border:
-        1px solid var(--borde);
+        1px solid rgba(255, 255, 255, 0.12);
 
     border-radius: 50%;
 
-    background: #151515;
+    background:
+        rgba(20, 20, 20, 0.9);
 
     color: var(--blanco);
 
@@ -835,23 +1158,42 @@ main > section > p {
 
     cursor: pointer;
 
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.45);
+
     transition:
         background 0.3s ease,
         border-color 0.3s ease,
-        transform 0.3s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.flecha:hover {
-    background: var(--rojo);
+.carrusel .flecha:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--rojo),
+            #ff3b30
+        );
 
     border-color: var(--rojo);
 
-    transform: scale(1.08);
+    transform:
+        scale(1.12);
+
+    box-shadow:
+        0 10px 30px rgba(225, 6, 32, 0.35);
+}
+
+.carrusel .flecha:active {
+    transform:
+        scale(0.95);
 }
 
 
 /* =========================================================
    SEPARADORES
+   ORIGINAL
 ========================================================= */
 
 hr {
@@ -868,6 +1210,7 @@ hr {
 
 /* =========================================================
    RESEÑAS
+   ORIGINAL
 ========================================================= */
 
 .resenas-contenedor {
@@ -968,6 +1311,7 @@ hr {
 
 /* =========================================================
    FORMULARIO RESEÑA
+   ORIGINAL
 ========================================================= */
 
 .formulario-resena {
@@ -1105,6 +1449,7 @@ hr {
 
 /* =========================================================
    FOOTER
+   ORIGINAL
 ========================================================= */
 
 footer {
@@ -1297,9 +1642,9 @@ footer {
 
 /* =========================================================
    MENÚ RESPONSIVE
+   NO MODIFICADO
 ========================================================= */
 
-/* Hamburguesa oculta por defecto */
 .menu-movil {
     display: none !important;
 
@@ -1331,7 +1676,6 @@ footer {
 
 /* =========================================================
    PORTÁTILES
-   NAV NORMAL - MÁS COMPACTO
 ========================================================= */
 
 @media (min-width: 801px) and (max-width: 1200px) {
@@ -1373,10 +1717,6 @@ footer {
 
 @media (max-width: 800px) {
 
-    /* -----------------------------------------
-       BARRA SUPERIOR
-    ----------------------------------------- */
-
     .top-bar {
         min-height: 65px;
         height: 65px;
@@ -1393,28 +1733,13 @@ footer {
         white-space: nowrap;
     }
 
-
-    /* -----------------------------------------
-       OCULTAR MENÚ NORMAL
-    ----------------------------------------- */
-
     .navegacion {
         display: none !important;
     }
 
-
-    /* -----------------------------------------
-       OCULTAR ICONOS DE PC
-    ----------------------------------------- */
-
     .top-icons {
         display: none !important;
     }
-
-
-    /* -----------------------------------------
-       MOSTRAR HAMBURGUESA
-    ----------------------------------------- */
 
     .menu-movil {
 
@@ -1446,34 +1771,24 @@ footer {
 
         flex-shrink: 0;
 
-        /* Evita comportamientos raros de botones */
         appearance: none;
         -webkit-appearance: none;
 
-        /* Evita selección accidental */
         user-select: none;
         -webkit-user-select: none;
     }
-
 
     .menu-movil:hover {
         color: #ffffff;
     }
 
-
     .menu-movil:focus {
         outline: none;
     }
 
-
     .menu-movil:active {
         transform: scale(0.95);
     }
-
-
-    /* =====================================================
-       MENÚ ABIERTO
-    ====================================================== */
 
     .navegacion.activo {
 
@@ -1514,11 +1829,6 @@ footer {
         box-sizing: border-box;
     }
 
-
-    /* =====================================================
-       LISTA
-    ====================================================== */
-
     .navegacion.activo ul {
 
         display: flex !important;
@@ -1538,11 +1848,6 @@ footer {
         box-sizing: border-box;
     }
 
-
-    /* =====================================================
-       ELEMENTOS
-    ====================================================== */
-
     .navegacion.activo ul li {
 
         display: block;
@@ -1555,11 +1860,6 @@ footer {
 
         box-sizing: border-box;
     }
-
-
-    /* =====================================================
-       ENLACES
-    ====================================================== */
 
     .navegacion.activo ul li a {
 
@@ -1591,11 +1891,9 @@ footer {
             background 0.2s ease;
     }
 
-
     .navegacion.activo ul li:last-child a {
         border-bottom: none;
     }
-
 
     .navegacion.activo ul li a:hover {
 
@@ -1605,11 +1903,90 @@ footer {
             rgba(255, 255, 255, 0.05);
     }
 
-
     .navegacion.activo ul li a:active {
 
         background:
             rgba(255, 255, 255, 0.08);
+    }
+
+
+    /* =============================================
+       CONTENIDO
+    ============================================= */
+
+    main {
+        padding:
+            70px 4% 20px;
+    }
+
+    main > section {
+        margin-bottom: 90px;
+    }
+
+    main > section:first-child {
+        padding:
+            35px 15px 45px;
+    }
+
+    main > section > p {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+
+    /* =============================================
+       MARCAS
+    ============================================= */
+
+    .marcas {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 14px;
+
+        margin-top: 45px;
+    }
+
+    .marcas img {
+        height: 90px;
+
+        padding: 15px;
+
+        border-radius: 14px;
+    }
+
+
+    /* =============================================
+       CARRUSEL
+    ============================================= */
+
+    .carrusel {
+        width: 100%;
+
+        gap: 10px;
+
+        padding: 0;
+    }
+
+    .carrusel img {
+
+        width:
+            calc(100vw - 100px);
+
+        aspect-ratio:
+            16 / 9;
+
+        height: auto;
+
+        border-radius: 16px;
+    }
+
+    .carrusel .flecha {
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
     }
 }
 
@@ -1628,11 +2005,9 @@ footer {
         padding: 0 12px;
     }
 
-
     .logo {
         font-size: 0.9rem;
     }
-
 
     .menu-movil {
 
@@ -1641,7 +2016,6 @@ footer {
 
         font-size: 21px;
     }
-
 
     .navegacion.activo {
 
@@ -1655,12 +2029,148 @@ footer {
         padding: 7px;
     }
 
-
     .navegacion.activo ul li a {
 
         padding: 11px 9px;
 
         font-size: 0.72rem;
+    }
+
+
+    /* =============================================
+       CONTENIDO MÓVIL
+    ============================================= */
+
+    main {
+        padding:
+            60px 14px 10px;
+    }
+
+    main > section {
+        margin-bottom: 75px;
+    }
+
+    main h2 {
+        font-size:
+            clamp(1.7rem, 8vw, 2.3rem);
+
+        letter-spacing: -0.8px;
+    }
+
+    main > section > h2::after {
+        width: 55px;
+        height: 3px;
+
+        margin-top: 16px;
+    }
+
+    main > section > p {
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        margin-top: 20px;
+    }
+
+
+    /* =============================================
+       BIENVENIDOS
+    ============================================= */
+
+    main > section:first-child {
+        padding:
+            25px 8px 35px;
+
+        border-radius: 20px;
+    }
+
+
+    /* =============================================
+       MARCAS
+    ============================================= */
+
+    .marcas {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+
+        margin-top: 35px;
+
+        padding: 0;
+    }
+
+    .marcas::before {
+        display: none;
+    }
+
+    .marcas img {
+
+        height: 82px;
+
+        padding: 13px;
+
+        border-radius: 13px;
+
+        animation: none !important;
+    }
+
+    .marcas img:hover {
+        transform:
+            translateY(-5px)
+            scale(1.02);
+    }
+
+
+    /* =============================================
+       CARRUSEL 16:9
+    ============================================= */
+
+    .carrusel {
+
+        gap: 7px;
+
+        margin-top: 40px;
+    }
+
+    .carrusel img {
+
+        width:
+            calc(100vw - 85px);
+
+        aspect-ratio:
+            16 / 9;
+
+        height: auto;
+
+        min-height: 0;
+
+        border-radius: 14px;
+
+        box-shadow:
+            0 18px 45px rgba(0, 0, 0, 0.65);
+    }
+
+    .carrusel .flecha {
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 16px;
+    }
+
+
+    /* =============================================
+       PRODUCTOS
+    ============================================= */
+
+    .productos {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
     }
 }
 
@@ -1679,11 +2189,9 @@ footer {
         padding: 0 10px;
     }
 
-
     .logo {
         font-size: 0.82rem;
     }
-
 
     .menu-movil {
 
@@ -1692,7 +2200,6 @@ footer {
 
         font-size: 20px;
     }
-
 
     .navegacion.activo {
 
@@ -1706,28 +2213,75 @@ footer {
         padding: 6px;
     }
 
-
     .navegacion.activo ul li a {
 
         padding: 10px 8px;
 
         font-size: 0.68rem;
     }
-}
 
 
-/* =========================================================
-   PRODUCTOS - 2 COLUMNAS EN CELULAR
-========================================================= */
+    /* =============================================
+       CONTENIDO
+    ============================================= */
 
-@media (max-width: 600px) {
+    main {
+        padding:
+            50px 10px 10px;
+    }
 
-    .productos {
+    main h2 {
+        font-size: 1.6rem;
+    }
+
+    main > section > p {
+        font-size: 13px;
+    }
+
+
+    /* =============================================
+       MARCAS
+    ============================================= */
+
+    .marcas {
 
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
 
-        gap: 12px;
+        gap: 10px;
+    }
+
+    .marcas img {
+        height: 72px;
+        padding: 10px;
+    }
+
+
+    /* =============================================
+       CARRUSEL
+    ============================================= */
+
+    .carrusel {
+        gap: 5px;
+    }
+
+    .carrusel img {
+
+        width:
+            calc(100vw - 72px);
+
+        aspect-ratio:
+            16 / 9;
+
+        border-radius: 11px;
+    }
+
+    .carrusel .flecha {
+
+        width: 30px;
+        height: 30px;
+
+        font-size: 14px;
     }
 }
 
@@ -1738,20 +2292,36 @@ footer {
 
 @media (min-width: 801px) {
 
-    /* Hamburguesa completamente oculta */
     .menu-movil {
         display: none !important;
     }
 
-
-    /* Navegación normal */
     .navegacion {
         display: block !important;
     }
 
-
-    /* Iconos normales */
     .top-icons {
         display: flex !important;
+    }
+}
+
+
+/* =========================================================
+   ACCESIBILIDAD / REDUCCIÓN DE MOVIMIENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
     }
 }
