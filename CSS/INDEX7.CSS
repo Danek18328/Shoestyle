@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
+
 :root {
     --rojo: #e10620;
     --rojo-oscuro: #a20000;
@@ -145,7 +146,6 @@ select {
 
 /* =========================================================
    TOP BAR
-   NO MODIFICADO
 ========================================================= */
 
 .top-bar {
@@ -174,7 +174,6 @@ select {
 
 /* =========================================================
    LOGO
-   NO MODIFICADO
 ========================================================= */
 
 .logo {
@@ -197,7 +196,6 @@ select {
 
 /* =========================================================
    NAVEGACIÓN
-   NO MODIFICADO
 ========================================================= */
 
 .navegacion ul {
@@ -214,7 +212,7 @@ select {
     color: #b3b3b3;
 
     font-family: 'Poppins', sans-serif;
-    font-size: 0.8  5rem;
+    font-size: 0.85rem;
     font-weight: 600;
 
     letter-spacing: 0.7px;
@@ -248,7 +246,6 @@ select {
 
 /* =========================================================
    ICONOS TOP
-   NO MODIFICADO
 ========================================================= */
 
 .top-icons {
@@ -284,7 +281,6 @@ select {
 
 /* =========================================================
    CONTENIDO CENTRAL
-   NO MODIFICADO
 ========================================================= */
 
 .contenido-centro {
@@ -345,7 +341,6 @@ select {
 
 /* =========================================================
    BOTONES
-   NO MODIFICADO
 ========================================================= */
 
 .botones-container {
@@ -373,7 +368,7 @@ select {
 
     font-family: 'Poppins', sans-serif;
 
-    font-weight: medium;
+    font-weight: 500;
 
     font-size: 1rem;
 
@@ -395,7 +390,7 @@ select {
 
     font-family: 'Poppins', sans-serif;
 
-    font-weight: medium;
+    font-weight: 500;
 
     font-size: 1rem;
 
@@ -430,7 +425,6 @@ select {
 
 /* =========================================================
    SCROLL
-   NO MODIFICADO
 ========================================================= */
 
 .scroll-indicator {
@@ -464,64 +458,90 @@ select {
 
     border-radius: 2px;
 
-    animation:
-        encoger-rueda 1.5s infinite;
+    animation: encoger-rueda 1.5s infinite;
 }
 
 @keyframes encoger-rueda {
 
     0% {
         opacity: 1;
-
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 
     100% {
         opacity: 0;
-
-        transform:
-            translateY(10px);
+        transform: translateY(10px);
     }
 }
 
 
 /* =========================================================
-   CONTENIDO GENERAL
-   RENOVADO
+   =========================================================
+   MAIN — NUEVO BRANDING SHOESTYLE
+   =========================================================
 ========================================================= */
 
 main {
+    position: relative;
+
     width: 100%;
 
-    padding: 100px 5% 30px;
+    padding: 120px 5% 60px;
 
     background:
         radial-gradient(
             circle at 50% 0%,
-            rgba(225, 6, 32, 0.055),
-            transparent 35%
+            rgba(225, 6, 32, 0.08),
+            transparent 30%
         ),
         linear-gradient(
             180deg,
             #080808 0%,
-            #050505 100%
+            #050505 50%,
+            #080808 100%
         );
 }
 
-main > section {
-    width: min(1450px, 100%);
 
-    margin:
-        0 auto 130px;
+/* Línea decorativa lateral */
 
-    position: relative;
+main::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 1px;
+    height: 180px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--rojo),
+            transparent
+        );
+
+    opacity: 0.5;
 }
 
 
 /* =========================================================
-   TÍTULOS DE SECCIÓN
-   RENOVADO
+   SECCIONES
+========================================================= */
+
+main > section {
+    position: relative;
+
+    width: min(1450px, 100%);
+
+    margin: 0 auto 150px;
+}
+
+
+/* =========================================================
+   ENCABEZADOS
 ========================================================= */
 
 main h2 {
@@ -533,182 +553,134 @@ main h2 {
         sans-serif;
 
     font-size:
-        clamp(2rem, 4vw, 3.3rem);
+        clamp(2.3rem, 5vw, 4.5rem);
 
-    line-height: 1.1;
+    line-height: 0.95;
 
-    letter-spacing: -1.5px;
+    letter-spacing: -2px;
 
     color: var(--blanco);
 
     text-align: center;
 
     text-transform: uppercase;
-
-    animation:
-        aparecer-titulo 0.8s ease both;
 }
+
+
+/* palabra visualmente más potente */
+
+main > section > h2::before {
+    content: "SHOESTYLE";
+
+    display: block;
+
+    margin-bottom: -8px;
+
+    color: rgba(255,255,255,0.035);
+
+    font-family: 'Archivo Black', sans-serif;
+
+    font-size: clamp(4rem, 10vw, 9rem);
+
+    letter-spacing: -5px;
+
+    pointer-events: none;
+}
+
+
+/* línea */
 
 main > section > h2::after {
     content: "";
 
     display: block;
 
-    width: 70px;
+    width: 75px;
     height: 4px;
 
-    margin: 22px auto 0;
-
-    border-radius: 10px;
+    margin: 24px auto 0;
 
     background:
         linear-gradient(
             90deg,
-            transparent,
             var(--rojo),
-            #ff4500,
-            transparent
+            var(--rojo-brillante)
         );
 
     box-shadow:
-        0 0 18px rgba(225, 6, 32, 0.45);
+        0 0 20px rgba(225,6,32,0.35);
 
-    animation:
-        linea-titulo 1s ease both;
+    transition:
+        width 0.4s ease;
 }
 
+main > section:hover > h2::after {
+    width: 120px;
+}
+
+
 main > section > p {
-    width: min(850px, 100%);
+    width: min(800px, 100%);
 
-    margin: 28px auto 0;
+    margin: 30px auto 0;
 
-    color: var(--gris-claro);
+    color: #a7a7a7;
 
     font-family: 'Manrope', sans-serif;
 
     font-size: 16px;
 
-    line-height: 1.85;
+    line-height: 1.9;
 
     text-align: center;
-
-    animation:
-        aparecer-contenido 1s ease 0.15s both;
-}
-
-
-/* =========================================================
-   ANIMACIONES GENERALES
-========================================================= */
-
-@keyframes aparecer-titulo {
-
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes aparecer-contenido {
-
-    from {
-        opacity: 0;
-        transform: translateY(18px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes linea-titulo {
-
-    from {
-        opacity: 0;
-        width: 0;
-    }
-
-    to {
-        opacity: 1;
-        width: 70px;
-    }
-}
-
-@keyframes flotar-marca {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
-}
-
-@keyframes brillo-marca {
-
-    0% {
-        box-shadow:
-            0 0 0 rgba(225, 6, 32, 0);
-    }
-
-    50% {
-        box-shadow:
-            0 0 25px rgba(225, 6, 32, 0.18);
-    }
-
-    100% {
-        box-shadow:
-            0 0 0 rgba(225, 6, 32, 0);
-    }
 }
 
 
 /* =========================================================
    BIENVENIDOS A SHOESTYLE
-   RENOVADO
 ========================================================= */
 
-main > section:first-child {
-    padding:
-        45px 30px 60px;
+.bienvenida {
+    position: relative;
+
+    padding: 75px 8%;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255,255,255,0.07);
 
     border-radius: 30px;
 
     background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(225, 6, 32, 0.09),
-            transparent 45%
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.015)
         );
 
-    overflow: hidden;
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.4);
 }
 
-main > section:first-child::before {
+
+/* brillo */
+
+.bienvenida::before {
     content: "";
 
     position: absolute;
 
-    top: 0;
-    left: 50%;
+    width: 350px;
+    height: 350px;
 
-    width: 250px;
-    height: 250px;
-
-    transform: translateX(-50%);
+    top: -180px;
+    right: -100px;
 
     background:
         radial-gradient(
             circle,
-            rgba(225, 6, 32, 0.08),
+            rgba(225,6,32,0.3),
             transparent 70%
         );
 
@@ -717,84 +689,61 @@ main > section:first-child::before {
     pointer-events: none;
 }
 
-main > section:first-child h2 {
-    position: relative;
-    z-index: 1;
-}
 
-main > section:first-child p {
-    position: relative;
-    z-index: 1;
+/* decoración roja */
 
-    font-size: 17px;
+.bienvenida::after {
+    content: "SS";
 
-    max-width: 900px;
+    position: absolute;
 
-    color: #bdbdbd;
+    right: 5%;
+
+    bottom: -55px;
+
+    font-family: 'Archivo Black', sans-serif;
+
+    font-size: 15rem;
+
+    line-height: 1;
+
+    color: rgba(255,255,255,0.025);
+
+    transform: rotate(-8deg);
+
+    pointer-events: none;
 }
 
 
 /* =========================================================
-   MARCAS
-   RENOVADO
+   MARCAS — BRAND WALL
 ========================================================= */
 
 .marcas {
-    position: relative;
-
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(150px, 1fr));
+        repeat(5, 1fr);
 
-    align-items: center;
+    align-items: stretch;
 
-    gap: 22px;
+    gap: 15px;
 
     width: min(1250px, 100%);
 
     margin: 60px auto 0;
 
-    padding: 10px;
+    padding: 0;
 }
 
-
-/* Línea decorativa */
-
-.marcas::before {
-    content: "";
-
-    position: absolute;
-
-    top: 50%;
-    left: 0;
-
-    width: 100%;
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(225, 6, 32, 0.15),
-            transparent
-        );
-
-    z-index: 0;
-}
-
-
-/* Tarjetas de marca */
 
 .marcas img {
     position: relative;
 
-    z-index: 1;
-
     width: 100%;
-    height: 115px;
+    height: 130px;
 
-    padding: 22px;
+    padding: 25px;
 
     object-fit: contain;
 
@@ -802,82 +751,65 @@ main > section:first-child p {
         linear-gradient(
             145deg,
             #ffffff,
-            #eeeeee
+            #e9e9e9
         );
 
     border-radius: 18px;
 
     border:
-        1px solid rgba(255, 255, 255, 0.08);
+        1px solid rgba(255,255,255,0.15);
 
     filter: grayscale(100%);
 
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.3);
+    opacity: 0.72;
 
     transition:
-        transform 0.4s cubic-bezier(.2,.8,.2,1),
-        filter 0.4s ease,
-        border-color 0.4s ease,
-        box-shadow 0.4s ease;
+        transform 0.45s cubic-bezier(.2,.8,.2,1),
+        filter 0.45s ease,
+        opacity 0.45s ease,
+        box-shadow 0.45s ease;
 }
 
-
-/* Hover */
 
 .marcas img:hover {
     filter: grayscale(0%);
 
+    opacity: 1;
+
     transform:
         translateY(-10px)
-        scale(1.035);
-
-    border-color:
-        rgba(225, 6, 32, 0.7);
+        scale(1.03);
 
     box-shadow:
-        0 18px 40px rgba(0, 0, 0, 0.5),
-        0 0 30px rgba(225, 6, 32, 0.13);
-}
-
-
-/* Animación sutil */
-
-.marcas img:nth-child(odd) {
-    animation:
-        flotar-marca 5s ease-in-out infinite;
-}
-
-.marcas img:nth-child(even) {
-    animation:
-        flotar-marca 5s ease-in-out 1.2s infinite;
+        0 20px 45px rgba(0,0,0,0.5),
+        0 0 30px rgba(225,6,32,0.12);
 }
 
 
 /* =========================================================
-   PRODUCTOS
-   ORIGINAL
+   PRODUCTOS — PREMIUM CARDS
 ========================================================= */
 
 .productos {
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(245px, 1fr));
+        repeat(auto-fit, minmax(250px, 1fr));
 
-    gap: 25px;
+    gap: 22px;
 
     width: min(1350px, 100%);
 
-    margin: 55px auto 0;
+    margin: 60px auto 0;
 }
+
 
 .producto {
     position: relative;
 
     width: 100%;
 
-    min-height: 435px;
+    min-height: 455px;
 
     display: flex;
 
@@ -888,52 +820,93 @@ main > section:first-child p {
     background:
         linear-gradient(
             145deg,
-            #1b1b1b,
-            #101010
+            #1a1a1a,
+            #0d0d0d
         );
 
     border:
-        1px solid var(--borde);
+        1px solid rgba(255,255,255,0.07);
 
-    border-radius: 18px;
+    border-radius: 24px;
 
     text-align: center;
 
     box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.35);
+        0 15px 40px rgba(0,0,0,0.35);
 
     transition:
-        transform 0.35s ease,
-        border-color 0.35s ease,
-        box-shadow 0.35s ease;
+        transform 0.5s cubic-bezier(.2,.8,.2,1),
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
 }
+
+
+.producto::before {
+    content: "";
+
+    position: absolute;
+
+    top: -100px;
+    left: 50%;
+
+    width: 180px;
+    height: 180px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(225,6,32,0.15),
+            transparent 70%
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+}
+
 
 .producto:hover {
-    transform: translateY(-10px);
+    transform: translateY(-14px);
 
-    border-color: var(--borde-hover);
+    border-color:
+        rgba(225,6,32,0.5);
 
     box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.5),
-        0 0 25px rgba(225, 6, 32, 0.08);
+        0 30px 65px rgba(0,0,0,0.55),
+        0 0 35px rgba(225,6,32,0.08);
 }
+
+
+.producto:hover::before {
+    opacity: 1;
+}
+
 
 .producto img {
     width: 100%;
-    height: 235px;
+    height: 250px;
 
     object-fit: cover;
 
     transition:
-        transform 0.5s ease;
+        transform 0.7s cubic-bezier(.2,.8,.2,1),
+        filter 0.5s ease;
 }
+
 
 .producto:hover img {
-    transform: scale(1.06);
+    transform: scale(1.08);
+
+    filter:
+        brightness(1.05)
+        contrast(1.05);
 }
 
+
 .producto h3 {
-    margin: 22px 18px 8px;
+    margin: 24px 18px 8px;
 
     font-family:
         'Archivo Black',
@@ -949,6 +922,7 @@ main > section:first-child p {
     text-transform: uppercase;
 }
 
+
 .producto p {
     margin: 0 18px 20px;
 
@@ -956,20 +930,23 @@ main > section:first-child p {
 
     font-family: 'Manrope', sans-serif;
 
-    font-size: 15px;
+    font-size: 14px;
 
-    line-height: 1.5;
+    line-height: 1.6;
 }
+
 
 .producto p strong {
     color: var(--blanco);
 }
 
+
 .producto p del {
-    color: #777;
+    color: #666;
 
     margin-right: 7px;
 }
+
 
 .producto .btn {
     margin-top: auto;
@@ -978,7 +955,7 @@ main > section:first-child p {
 
     align-self: center;
 
-    padding: 11px 25px;
+    padding: 12px 27px;
 
     background:
         linear-gradient(
@@ -995,34 +972,34 @@ main > section:first-child p {
 
     font-size: 13px;
 
-    font-weight: 600;
+    font-weight: 700;
 
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
 
     box-shadow:
-        0 6px 18px rgba(225, 6, 32, 0.2);
+        0 8px 25px rgba(225,6,32,0.18);
 
     transition:
         transform 0.3s ease,
-        background 0.3s ease,
-        color 0.3s ease;
+        box-shadow 0.3s ease,
+        background 0.3s ease;
 }
 
+
 .producto .btn:hover {
-    background: var(--blanco);
+    background: #ffffff;
 
     color: #000000;
 
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 
     box-shadow:
-        0 8px 20px rgba(255, 255, 255, 0.15);
+        0 10px 30px rgba(255,255,255,0.15);
 }
 
 
 /* =========================================================
-   CARRUSEL
-   RENOVADO — 16:9
+   CARRUSEL — 16:9 REAL
 ========================================================= */
 
 .carrusel {
@@ -1030,29 +1007,27 @@ main > section:first-child p {
 
     width: min(1200px, 100%);
 
-    margin: 60px auto 0;
+    margin: 65px auto 0;
 
-    display: flex;
+    display: grid;
+
+    grid-template-columns: 60px minmax(0, 1fr) 60px;
 
     align-items: center;
-    justify-content: center;
 
     gap: 25px;
-
-    padding: 0 10px;
 }
 
 
 /*
-   CONTENEDOR VISUAL
-
-   16:9 REAL
+    IMPORTANTE:
+    16:9 = ancho / 1.777...
 */
 
 .carrusel img {
     display: block;
 
-    width: min(1000px, calc(100vw - 180px));
+    width: 100%;
 
     aspect-ratio: 16 / 9;
 
@@ -1064,78 +1039,39 @@ main > section:first-child p {
 
     object-position: center;
 
-    border-radius: 22px;
+    border-radius: 24px;
 
     border:
-        1px solid rgba(255, 255, 255, 0.1);
+        1px solid rgba(255,255,255,0.1);
 
     background: #101010;
 
     box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.65),
-        0 0 35px rgba(225, 6, 32, 0.06);
-
-    animation:
-        carrusel-entrada 0.8s ease both;
+        0 30px 80px rgba(0,0,0,0.6);
 
     transition:
-        transform 0.45s cubic-bezier(.2,.8,.2,1),
-        box-shadow 0.45s ease,
-        border-color 0.45s ease,
-        filter 0.45s ease;
+        opacity 0.4s ease,
+        transform 0.5s cubic-bezier(.2,.8,.2,1),
+        filter 0.4s ease;
 }
 
-
-/* Efecto hover */
 
 .carrusel img:hover {
-    transform:
-        scale(1.015)
-        translateY(-4px);
-
-    border-color:
-        rgba(225, 6, 32, 0.45);
-
-    box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.75),
-        0 0 45px rgba(225, 6, 32, 0.13);
+    transform: scale(1.015);
 
     filter:
-        brightness(1.04);
+        brightness(1.06)
+        contrast(1.03);
 }
 
 
-/* Entrada */
+/* botones */
 
-@keyframes carrusel-entrada {
-
-    from {
-        opacity: 0;
-
-        transform:
-            scale(0.96)
-            translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            scale(1)
-            translateY(0);
-    }
-}
-
-
-/* =========================================================
-   FLECHAS DEL CARRUSEL
-========================================================= */
-
-.carrusel .flecha {
+.flecha {
     flex-shrink: 0;
 
-    width: 54px;
-    height: 54px;
+    width: 55px;
+    height: 55px;
 
     display: flex;
 
@@ -1145,21 +1081,22 @@ main > section:first-child p {
     padding: 0;
 
     border:
-        1px solid rgba(255, 255, 255, 0.12);
+        1px solid rgba(255,255,255,0.1);
 
     border-radius: 50%;
 
     background:
-        rgba(20, 20, 20, 0.9);
+        linear-gradient(
+            145deg,
+            #191919,
+            #0c0c0c
+        );
 
     color: var(--blanco);
 
-    font-size: 24px;
+    font-size: 23px;
 
     cursor: pointer;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.45);
 
     transition:
         background 0.3s ease,
@@ -1168,60 +1105,58 @@ main > section:first-child p {
         box-shadow 0.3s ease;
 }
 
-.carrusel .flecha:hover {
-    background:
-        linear-gradient(
-            135deg,
-            var(--rojo),
-            #ff3b30
-        );
+
+.flecha:hover {
+    background: var(--rojo);
 
     border-color: var(--rojo);
 
-    transform:
-        scale(1.12);
+    transform: scale(1.12);
 
     box-shadow:
-        0 10px 30px rgba(225, 6, 32, 0.35);
+        0 0 25px rgba(225,6,32,0.35);
 }
 
-.carrusel .flecha:active {
-    transform:
-        scale(0.95);
+
+.flecha:active {
+    transform: scale(0.95);
 }
 
 
 /* =========================================================
    SEPARADORES
-   ORIGINAL
 ========================================================= */
 
 hr {
     width: min(1300px, 90%);
 
-    margin: 100px auto;
+    margin: 120px auto;
 
     border: none;
 
     border-top:
-        1px solid rgba(255, 255, 255, 0.08);
+        1px solid rgba(255,255,255,0.07);
 }
 
 
 /* =========================================================
    RESEÑAS
-   ORIGINAL
 ========================================================= */
 
 .resenas-contenedor {
     width: min(1300px, 100%);
+
     margin: 0 auto;
 
     display: flex;
+
     flex-direction: column;
-    gap: 50px;
+
+    gap: 55px;
+
     align-items: stretch;
 }
+
 
 .lista-resenas h2,
 .formulario-resena h2 {
@@ -1230,10 +1165,12 @@ hr {
     font-size: 30px;
 }
 
+
 .lista-resenas h2::after,
 .formulario-resena h2::after {
     margin-left: 0;
 }
+
 
 .reseñas {
     display: grid;
@@ -1248,41 +1185,48 @@ hr {
     padding: 0;
 }
 
+
 .reseña {
     width: 100%;
 
-    min-height: 180px;
+    min-height: 190px;
 
-    padding: 25px;
+    padding: 28px;
 
     background:
         linear-gradient(
             145deg,
             #1b1b1b,
-            #111111
+            #101010
         );
 
     border:
-        1px solid var(--borde);
+        1px solid rgba(255,255,255,0.07);
 
-    border-radius: 15px;
+    border-radius: 20px;
 
     text-align: left;
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.3);
+        0 15px 35px rgba(0,0,0,0.3);
 
     transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
 }
+
 
 .reseña:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
 
     border-color:
-        rgba(225, 6, 32, 0.45);
+        rgba(225,6,32,0.45);
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,0.45);
 }
+
 
 .reseña h3 {
     margin-bottom: 15px;
@@ -1291,6 +1235,7 @@ hr {
 
     color: #ffc107;
 }
+
 
 .reseña p {
     margin: 8px 0;
@@ -1304,34 +1249,35 @@ hr {
     line-height: 1.6;
 }
 
+
 .reseña p strong {
     color: var(--blanco);
 }
 
 
 /* =========================================================
-   FORMULARIO RESEÑA
-   ORIGINAL
+   FORMULARIO
 ========================================================= */
 
 .formulario-resena {
-    padding: 35px;
+    padding: 40px;
 
     background:
         linear-gradient(
             145deg,
             #181818,
-            #0f0f0f
+            #0d0d0d
         );
 
     border:
-        1px solid var(--borde);
+        1px solid rgba(255,255,255,0.08);
 
-    border-radius: 18px;
+    border-radius: 22px;
 
     box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.35);
+        0 20px 50px rgba(0,0,0,0.4);
 }
+
 
 .formulario-resena form {
     width: 100%;
@@ -1346,6 +1292,7 @@ hr {
 
     box-shadow: none;
 }
+
 
 .formulario-resena label {
     display: block;
@@ -1363,30 +1310,33 @@ hr {
     text-align: left;
 }
 
+
 .formulario-resena input,
 .formulario-resena textarea,
 .formulario-resena select {
     width: 100%;
 
-    padding: 13px 15px;
+    padding: 14px 15px;
 
     margin-bottom: 18px;
 
-    background: #0b0b0b;
+    background: #090909;
 
     color: var(--blanco);
 
     border:
-        1px solid rgba(255, 255, 255, 0.12);
+        1px solid rgba(255,255,255,0.1);
 
-    border-radius: 9px;
+    border-radius: 10px;
 
     outline: none;
 
     transition:
         border-color 0.3s ease,
-        box-shadow 0.3s ease;
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
 }
+
 
 .formulario-resena input:focus,
 .formulario-resena textarea:focus,
@@ -1394,8 +1344,9 @@ hr {
     border-color: var(--rojo);
 
     box-shadow:
-        0 0 0 3px rgba(225, 6, 32, 0.1);
+        0 0 0 3px rgba(225,6,32,0.1);
 }
+
 
 .formulario-resena textarea {
     min-height: 120px;
@@ -1403,14 +1354,16 @@ hr {
     resize: vertical;
 }
 
+
 .formulario-resena select {
     cursor: pointer;
 }
 
+
 .formulario-resena button {
     width: 100%;
 
-    padding: 13px;
+    padding: 14px;
 
     border: none;
 
@@ -1429,27 +1382,27 @@ hr {
 
     font-size: 14px;
 
-    font-weight: 600;
+    font-weight: 700;
 
     cursor: pointer;
 
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+        box-shadow 0.3s ease;
 }
+
 
 .formulario-resena button:hover {
     transform: translateY(-3px);
 
     box-shadow:
-        0 10px 25px rgba(225, 6, 32, 0.25);
+        0 12px 30px rgba(225,6,32,0.25);
 }
 
 
 /* =========================================================
    FOOTER
-   ORIGINAL
+   SE CONSERVA
 ========================================================= */
 
 footer {
@@ -1467,7 +1420,7 @@ footer {
         );
 
     border-top:
-        1px solid rgba(255, 255, 255, 0.08);
+        1px solid rgba(255,255,255,0.08);
 
     color: var(--blanco);
 
@@ -1476,9 +1429,11 @@ footer {
     font-family: 'Manrope', sans-serif;
 }
 
+
 .redes-sociales {
     margin-bottom: 55px;
 }
+
 
 .redes-sociales h3 {
     margin-bottom: 25px;
@@ -1492,6 +1447,7 @@ footer {
     color: var(--blanco);
 }
 
+
 .iconos-redes {
     display: flex;
 
@@ -1500,6 +1456,7 @@ footer {
 
     gap: 15px;
 }
+
 
 .iconos-redes a {
     width: 48px;
@@ -1511,7 +1468,7 @@ footer {
     justify-content: center;
 
     border:
-        1px solid rgba(255, 255, 255, 0.15);
+        1px solid rgba(255,255,255,0.15);
 
     border-radius: 50%;
 
@@ -1523,6 +1480,7 @@ footer {
         background 0.3s ease;
 }
 
+
 .iconos-redes a:hover {
     transform: translateY(-5px);
 
@@ -1530,6 +1488,7 @@ footer {
 
     background: #181818;
 }
+
 
 .iconos-redes a img {
     width: 25px;
@@ -1539,6 +1498,7 @@ footer {
 
     border-radius: 50%;
 }
+
 
 .footer-info {
     width: min(1250px, 100%);
@@ -1557,15 +1517,17 @@ footer {
     text-align: left;
 
     border-top:
-        1px solid rgba(255, 255, 255, 0.07);
+        1px solid rgba(255,255,255,0.07);
 
     border-bottom:
-        1px solid rgba(255, 255, 255, 0.07);
+        1px solid rgba(255,255,255,0.07);
 }
+
 
 .footer-info .columna {
     min-width: 0;
 }
+
 
 .footer-info h4 {
     margin-bottom: 22px;
@@ -1578,6 +1540,7 @@ footer {
 
     letter-spacing: 1.5px;
 }
+
 
 .footer-info h4::after {
     content: "";
@@ -1592,11 +1555,13 @@ footer {
     background: var(--rojo);
 }
 
+
 .footer-info ul {
     list-style: none;
 
     padding: 0;
 }
+
 
 .footer-info ul li {
     margin-bottom: 12px;
@@ -1610,9 +1575,11 @@ footer {
     line-height: 1.6;
 }
 
+
 .footer-info ul li strong {
     color: #d5d5d5;
 }
+
 
 .footer-info ul li a {
     color: #888;
@@ -1621,15 +1588,18 @@ footer {
         color 0.3s ease;
 }
 
+
 .footer-info ul li a:hover {
     color: var(--rojo);
 }
+
 
 .copyright {
     padding-top: 25px;
 
     text-align: center;
 }
+
 
 .copyright p {
     color: #555;
@@ -1812,21 +1782,19 @@ footer {
 
         padding: 8px;
 
-        background: rgba(10, 10, 10, 0.98);
+        background: rgba(10,10,10,0.98);
 
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255,255,255,0.12);
 
         border-radius: 14px;
 
         box-shadow:
-            0 20px 50px rgba(0, 0, 0, 0.8);
+            0 20px 50px rgba(0,0,0,0.8);
 
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
 
         z-index: 100001;
-
-        box-sizing: border-box;
     }
 
     .navegacion.activo ul {
@@ -1844,8 +1812,6 @@ footer {
         padding: 0;
 
         list-style: none;
-
-        box-sizing: border-box;
     }
 
     .navegacion.activo ul li {
@@ -1857,8 +1823,6 @@ footer {
         margin: 0;
 
         padding: 0;
-
-        box-sizing: border-box;
     }
 
     .navegacion.activo ul li a {
@@ -1866,8 +1830,6 @@ footer {
         display: block;
 
         width: 100%;
-
-        box-sizing: border-box;
 
         padding: 12px 10px;
 
@@ -1884,7 +1846,7 @@ footer {
         text-decoration: none;
 
         border-bottom:
-            1px solid rgba(255, 255, 255, 0.07);
+            1px solid rgba(255,255,255,0.07);
 
         transition:
             color 0.2s ease,
@@ -1900,93 +1862,58 @@ footer {
         color: #ffffff;
 
         background:
-            rgba(255, 255, 255, 0.05);
+            rgba(255,255,255,0.05);
     }
 
     .navegacion.activo ul li a:active {
 
         background:
-            rgba(255, 255, 255, 0.08);
+            rgba(255,255,255,0.08);
     }
+}
 
 
-    /* =============================================
-       CONTENIDO
-    ============================================= */
+/* =========================================================
+   RESPONSIVE MAIN
+========================================================= */
+
+@media (max-width: 900px) {
 
     main {
-        padding:
-            70px 4% 20px;
+        padding: 90px 4% 40px;
     }
 
     main > section {
-        margin-bottom: 90px;
+        margin-bottom: 110px;
     }
 
-    main > section:first-child {
-        padding:
-            35px 15px 45px;
+    .bienvenida {
+        padding: 60px 6%;
+        border-radius: 24px;
     }
-
-    main > section > p {
-        font-size: 15px;
-        line-height: 1.75;
-    }
-
-
-    /* =============================================
-       MARCAS
-    ============================================= */
 
     .marcas {
         grid-template-columns:
-            repeat(3, minmax(0, 1fr));
+            repeat(3, 1fr);
 
-        gap: 14px;
-
-        margin-top: 45px;
+        gap: 12px;
     }
 
     .marcas img {
-        height: 90px;
-
-        padding: 15px;
-
-        border-radius: 14px;
+        height: 110px;
+        padding: 20px;
     }
-
-
-    /* =============================================
-       CARRUSEL
-    ============================================= */
 
     .carrusel {
-        width: 100%;
+        grid-template-columns:
+            48px minmax(0, 1fr) 48px;
 
-        gap: 10px;
-
-        padding: 0;
+        gap: 12px;
     }
 
-    .carrusel img {
-
-        width:
-            calc(100vw - 100px);
-
-        aspect-ratio:
-            16 / 9;
-
-        height: auto;
-
-        border-radius: 16px;
-    }
-
-    .carrusel .flecha {
-
-        width: 38px;
-        height: 38px;
-
-        font-size: 18px;
+    .flecha {
+        width: 48px;
+        height: 48px;
     }
 }
 
@@ -1998,7 +1925,6 @@ footer {
 @media (max-width: 600px) {
 
     .top-bar {
-
         min-height: 60px;
         height: 60px;
 
@@ -2010,7 +1936,6 @@ footer {
     }
 
     .menu-movil {
-
         width: 38px;
         height: 38px;
 
@@ -2037,97 +1962,120 @@ footer {
     }
 
 
-    /* =============================================
-       CONTENIDO MÓVIL
-    ============================================= */
+    /* MAIN */
 
     main {
         padding:
-            60px 14px 10px;
+            75px 14px 30px;
     }
 
     main > section {
-        margin-bottom: 75px;
+        margin-bottom: 85px;
     }
 
     main h2 {
         font-size:
-            clamp(1.7rem, 8vw, 2.3rem);
+            clamp(2rem, 10vw, 3rem);
 
-        letter-spacing: -0.8px;
+        letter-spacing: -1px;
     }
 
-    main > section > h2::after {
-        width: 55px;
-        height: 3px;
+    main > section > h2::before {
+        font-size: 4rem;
 
-        margin-top: 16px;
+        margin-bottom: -5px;
     }
 
     main > section > p {
         font-size: 14px;
 
         line-height: 1.7;
-
-        margin-top: 20px;
     }
 
 
-    /* =============================================
-       BIENVENIDOS
-    ============================================= */
+    /* bienvenida */
 
-    main > section:first-child {
-        padding:
-            25px 8px 35px;
+    .bienvenida {
+        padding: 45px 22px;
 
         border-radius: 20px;
     }
 
 
-    /* =============================================
-       MARCAS
-    ============================================= */
+    /* marcas */
 
     .marcas {
+        grid-template-columns:
+            repeat(2, 1fr);
 
+        gap: 10px;
+
+        margin-top: 40px;
+    }
+
+    .marcas img {
+        height: 95px;
+
+        padding: 15px;
+
+        border-radius: 13px;
+    }
+
+
+    /* productos */
+
+    .productos {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
 
         gap: 12px;
 
-        margin-top: 35px;
-
-        padding: 0;
+        margin-top: 40px;
     }
 
-    .marcas::before {
-        display: none;
+    .producto {
+        min-height: 390px;
+
+        border-radius: 17px;
     }
 
-    .marcas img {
-
-        height: 82px;
-
-        padding: 13px;
-
-        border-radius: 13px;
-
-        animation: none !important;
+    .producto img {
+        height: 170px;
     }
 
-    .marcas img:hover {
-        transform:
-            translateY(-5px)
-            scale(1.02);
+    .producto h3 {
+        margin:
+            17px 10px 7px;
+
+        font-size: 14px;
+    }
+
+    .producto p {
+        margin:
+            0 10px 15px;
+
+        font-size: 12px;
+    }
+
+    .producto .btn {
+        margin-bottom: 17px;
+
+        padding:
+            9px 17px;
+
+        font-size: 11px;
     }
 
 
-    /* =============================================
-       CARRUSEL 16:9
-    ============================================= */
+    /* =====================================================
+       CARRUSEL MOBILE 16:9
+    ===================================================== */
 
     .carrusel {
+        width: 100%;
+
+        grid-template-columns:
+            38px minmax(0, 1fr) 38px;
 
         gap: 7px;
 
@@ -2135,42 +2083,44 @@ footer {
     }
 
     .carrusel img {
+        width: 100%;
 
-        width:
-            calc(100vw - 85px);
-
-        aspect-ratio:
-            16 / 9;
+        aspect-ratio: 16 / 9;
 
         height: auto;
 
-        min-height: 0;
+        border-radius: 15px;
 
-        border-radius: 14px;
-
-        box-shadow:
-            0 18px 45px rgba(0, 0, 0, 0.65);
+        object-fit: cover;
     }
 
-    .carrusel .flecha {
+    .flecha {
+        width: 38px;
+        height: 38px;
 
-        width: 34px;
-        height: 34px;
-
-        font-size: 16px;
+        font-size: 18px;
     }
 
 
-    /* =============================================
-       PRODUCTOS
-    ============================================= */
+    /* reseñas */
 
-    .productos {
-
+    .reseñas {
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            1fr;
 
         gap: 12px;
+    }
+
+    .reseña {
+        min-height: 160px;
+
+        padding: 22px;
+    }
+
+    .formulario-resena {
+        padding: 25px 20px;
+
+        border-radius: 18px;
     }
 }
 
@@ -2221,67 +2171,39 @@ footer {
     }
 
 
-    /* =============================================
-       CONTENIDO
-    ============================================= */
-
-    main {
-        padding:
-            50px 10px 10px;
+    .productos {
+        gap: 8px;
     }
 
-    main h2 {
-        font-size: 1.6rem;
+    .producto {
+        min-height: 365px;
     }
 
-    main > section > p {
-        font-size: 13px;
+    .producto img {
+        height: 150px;
     }
 
-
-    /* =============================================
-       MARCAS
-    ============================================= */
-
-    .marcas {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 10px;
+    .producto h3 {
+        font-size: 12px;
     }
 
-    .marcas img {
-        height: 72px;
-        padding: 10px;
+    .producto p {
+        font-size: 11px;
     }
 
-
-    /* =============================================
-       CARRUSEL
-    ============================================= */
 
     .carrusel {
+        grid-template-columns:
+            32px minmax(0, 1fr) 32px;
+
         gap: 5px;
     }
 
-    .carrusel img {
+    .flecha {
+        width: 32px;
+        height: 32px;
 
-        width:
-            calc(100vw - 72px);
-
-        aspect-ratio:
-            16 / 9;
-
-        border-radius: 11px;
-    }
-
-    .carrusel .flecha {
-
-        width: 30px;
-        height: 30px;
-
-        font-size: 14px;
+        font-size: 15px;
     }
 }
 
@@ -2307,7 +2229,37 @@ footer {
 
 
 /* =========================================================
-   ACCESIBILIDAD / REDUCCIÓN DE MOVIMIENTO
+   ANIMACIONES DE ENTRADA
+========================================================= */
+
+@keyframes aparecer-arriba {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+.marcas img,
+.producto,
+.reseña {
+    animation:
+        aparecer-arriba 0.8s ease both;
+}
+
+
+/* =========================================================
+   REDUCIR MOVIMIENTO
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
